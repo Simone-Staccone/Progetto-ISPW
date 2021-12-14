@@ -1,10 +1,14 @@
 package GUI;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
@@ -34,7 +38,8 @@ public class  GenericInterface {
     public Label userLabel;
     @FXML
     public ImageView userIcon;
-
+    @FXML
+    public AreaChart grafico;
 
 
     @FXML
@@ -102,7 +107,7 @@ public class  GenericInterface {
 
     @FXML
     public void SwaptoH() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("MainInterface.fxml"));
+        Parent parent = FXMLLoader.load(MainInterface.class.getResource("MainInterface.fxml"));
         Scene scene = new Scene(parent);
         Stage window = (Stage)mainPane.getScene().getWindow();
         window.setScene(scene);
@@ -111,8 +116,20 @@ public class  GenericInterface {
 
 
     @FXML
+    public void GenericEnter()
+    {
+        mainPane.setCursor(Cursor.HAND);
+    }
+
+    @FXML
+    public void GenericExit()
+    {
+        mainPane.setCursor(Cursor.DEFAULT);
+    }
+
+    @FXML
     public void SwaptoP() throws IOException {
-        Parent parent = FXMLLoader.load(PlaygroundInterfaceController.class.getResource("PlaygroundInterface.fxml"));
+        Parent parent = FXMLLoader.load(MainInterface.class.getResource("PlaygroundShowInterface.fxml"));
         Scene scene = new Scene(parent);
         Stage window = (Stage)mainPane.getScene().getWindow();
         window.setScene(scene);
@@ -127,11 +144,53 @@ public class  GenericInterface {
 
     @FXML
     public void SwaptoS() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("StatsInterface.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("StatsInterfaceUse.fxml"));
         Scene scene = new Scene(parent);
         Stage window = (Stage)mainPane.getScene().getWindow();
         window.setScene(scene);
         window.show();
+    }
+
+
+
+    @FXML
+    public void SwapToS2(Event e) throws IOException {
+        Parent parent = FXMLLoader.load(MainInterface.class.getResource("AveregeStats.fxml"));
+        Scene scene = new Scene(parent);
+        Stage window = (Stage)mainPane.getScene().getWindow();
+        window.setScene(scene);
+        window.show();
+/*
+        XYChart.Series seriesApril= new XYChart.Series();
+        seriesApril.setName("April");
+        seriesApril.getData().add(new XYChart.Data(1, 4));
+        seriesApril.getData().add(new XYChart.Data(3, 10));
+        seriesApril.getData().add(new XYChart.Data(6, 15));
+        seriesApril.getData().add(new XYChart.Data(9, 8));
+        seriesApril.getData().add(new XYChart.Data(12, 5));
+        seriesApril.getData().add(new XYChart.Data(15, 18));
+        seriesApril.getData().add(new XYChart.Data(18, 15));
+        seriesApril.getData().add(new XYChart.Data(21, 13));
+        seriesApril.getData().add(new XYChart.Data(24, 19));
+        seriesApril.getData().add(new XYChart.Data(27, 21));
+        seriesApril.getData().add(new XYChart.Data(30, 21));
+
+        XYChart.Series seriesMay = new XYChart.Series();
+        seriesMay.setName("May");
+        seriesMay.getData().add(new XYChart.Data(1, 20));
+        seriesMay.getData().add(new XYChart.Data(3, 15));
+        seriesMay.getData().add(new XYChart.Data(6, 13));
+        seriesMay.getData().add(new XYChart.Data(9, 12));
+        seriesMay.getData().add(new XYChart.Data(12, 14));
+        seriesMay.getData().add(new XYChart.Data(15, 18));
+        seriesMay.getData().add(new XYChart.Data(18, 25));
+        seriesMay.getData().add(new XYChart.Data(21, 25));
+        seriesMay.getData().add(new XYChart.Data(24, 23));
+        seriesMay.getData().add(new XYChart.Data(27, 26));
+        seriesMay.getData().add(new XYChart.Data(31, 26));
+
+        Scene scene  = new Scene(ac,800,600);
+        ac.getData().addAll(seriesApril, seriesMay);*/
     }
 
     @FXML

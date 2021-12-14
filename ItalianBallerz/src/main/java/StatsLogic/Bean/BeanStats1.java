@@ -1,8 +1,7 @@
 package StatsLogic.Bean;
 
 import StatsLogic.Boundary.BoundaryAddstats;
-import StatsLogic.Control.AddStatsController;
-import StatsLogic.Entity.Stats;
+import StatsLogic.Control.StatsController;
 
 import java.io.IOException;
 
@@ -14,7 +13,7 @@ public class BeanStats1 {
         {
             res = "Success";
             BeanStats1.notify(res);
-            AddStatsController.create(Integer.parseInt(points), Integer.parseInt(assists), Integer.parseInt(rebounds), Integer.parseInt(minutes));
+            StatsController.create(Integer.parseInt(points), Integer.parseInt(assists), Integer.parseInt(rebounds), Integer.parseInt(minutes));
         }
         else
         {

@@ -1,18 +1,9 @@
 package StatsLogic.Boundary;
 
 
-import GUI.MainInterface;
-import GUI.StatsInterface;
 import StatsLogic.Bean.BeanStats1;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Scanner;
 
 
 public class BoundaryAddstats {
@@ -22,7 +13,7 @@ public class BoundaryAddstats {
         String reb;
         String min;
 
-        StatsInterface.tryLaunch();
+
 
         /*
         System.out.println("Insert points:");

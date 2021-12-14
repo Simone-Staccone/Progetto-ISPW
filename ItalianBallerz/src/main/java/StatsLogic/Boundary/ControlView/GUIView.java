@@ -1,15 +1,16 @@
-package GUI;
+package StatsLogic.Boundary.ControlView;
 
+import GUI.GenericInterface;
+import StatsLogic.Boundary.BoundaryAddstats;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
-public class CourtController extends GenericInterface{
+public class GUIView extends GenericInterface {
     @FXML
     public ImageView userIcon;
     @FXML
@@ -21,14 +22,22 @@ public class CourtController extends GenericInterface{
     @FXML
     public Label statsLabel;
     @FXML
-    private Pane statsImagePane;
+    public TextField pointsField;
     @FXML
-    public TextField Username;
+    public TextField assistsField;
     @FXML
-    public TextField Password;
+    public TextField reboundsField;
     @FXML
-    public Pane element1;
+    public TextField minutesField;
 
+    @FXML
+    public void PassOnS(){
+        PassOn(null,statsLabel);
+    }
+    @FXML
+    public void PassOffS(){
+        PassOff(null,statsLabel);
+    }
 
     @FXML
     public void PassOnInstance(){
@@ -40,17 +49,9 @@ public class CourtController extends GenericInterface{
     }
 
     @FXML
-    public void PassOnS(){
-        PassOn(null,statsLabel);
+    public void addStats() throws IOException {
+        BoundaryAddstats.addStats(pointsField.getText(),assistsField.getText(),reboundsField.getText(),minutesField.getText());
     }
-    @FXML
-    public void PassOffS(){
-        PassOff(null,statsLabel);
-    }
-
-
-
-
 
 
     @FXML
@@ -77,15 +78,4 @@ public class CourtController extends GenericInterface{
         BringUP(userIcon);
     }
 
-
-
-    @FXML
-    public void LoginI()
-    {
-        try {
-            Login(Username.getText(),Password.getText());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

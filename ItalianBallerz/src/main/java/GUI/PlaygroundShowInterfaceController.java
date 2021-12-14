@@ -26,8 +26,19 @@ public class PlaygroundShowInterfaceController extends GenericInterface{
     public TextField Username;
     @FXML
     public TextField Password;
+    @FXML
+    public TextField serachList;
 
+    private boolean first = true;
 
+    @FXML
+    public void tryClear()
+    {
+        if(first)
+        {
+            serachList.setText("");
+        }
+    }
 
     @FXML
     public void PassOnInstance(){

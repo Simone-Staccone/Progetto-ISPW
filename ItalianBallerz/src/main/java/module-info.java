@@ -15,4 +15,6 @@ module com.example.italianballerz {
 
     opens StatsLogic.Boundary to javafx.fxml;
     exports StatsLogic.Boundary;
+    exports StatsLogic.Boundary.ControlView;
+    opens StatsLogic.Boundary.ControlView to javafx.fxml;
 }
