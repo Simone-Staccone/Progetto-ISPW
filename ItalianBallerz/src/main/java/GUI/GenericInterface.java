@@ -1,5 +1,6 @@
 package GUI;
 
+import StatsLogic.Boundary.ControlView.Swap;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +8,6 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
@@ -106,12 +105,8 @@ public class  GenericInterface {
     }
 
     @FXML
-    public void SwaptoH() throws IOException {
-        Parent parent = FXMLLoader.load(MainInterface.class.getResource("MainInterface.fxml"));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage)mainPane.getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+    public void SwaptoH(){
+        Swap.goTo("MainInterface.fxml",mainPane);
     }
 
 
@@ -128,12 +123,8 @@ public class  GenericInterface {
     }
 
     @FXML
-    public void SwaptoP() throws IOException {
-        Parent parent = FXMLLoader.load(MainInterface.class.getResource("PlaygroundShowInterface.fxml"));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage)mainPane.getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+    public void SwaptoP(){
+        Swap.goTo("PlaygroundShowInterface.fxml",mainPane);
         if(logged) {
             System.out.println("Esegui");
             mainPane.getChildren().remove(loginPane);
@@ -143,23 +134,15 @@ public class  GenericInterface {
     }
 
     @FXML
-    public void SwaptoS() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("StatsInterfaceUse.fxml"));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage)mainPane.getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+    public void SwaptoS(){
+        Swap.goTo("StatsInterfaceUse.fxml",mainPane);
     }
 
 
 
     @FXML
-    public void SwapToS2(Event e) throws IOException {
-        Parent parent = FXMLLoader.load(MainInterface.class.getResource("AveregeStats.fxml"));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage)mainPane.getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+    public void SwapToS2(Event e){
+        Swap.goTo("AveregeStats.fxml",mainPane);
 /*
         XYChart.Series seriesApril= new XYChart.Series();
         seriesApril.setName("April");
@@ -195,11 +178,7 @@ public class  GenericInterface {
 
     @FXML
     public void SwaptoR() throws IOException {
-        Parent parent = FXMLLoader.load(MainInterface.class .getResource("RegisterInterface.fxml"));
-        Scene scene = new Scene(parent);
-        Stage window = (Stage)mainPane.getScene().getWindow();
-        window.setScene(scene);
-        window.show();
+        Swap.goTo("RegisterInterface.fxml",mainPane);
     }
 
     @FXML
