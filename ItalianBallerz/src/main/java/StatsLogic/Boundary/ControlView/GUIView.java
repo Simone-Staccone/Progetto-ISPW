@@ -39,18 +39,15 @@ public class GUIView extends GenericInterface {
         PassOff(null,statsLabel);
     }
 
-    @FXML
-    public void PassOnInstance(){
-        PassOn(userIcon,null);
-    }
-    @FXML
-    public void PassOffInstance(){
-        PassOff(userIcon,null);
-    }
+
 
     @FXML
     public void addStats() throws IOException {
         BoundaryAddstats.addStats(pointsField.getText(),assistsField.getText(),reboundsField.getText(),minutesField.getText());
+        pointsField.setText("");
+        assistsField.setText("");
+        reboundsField.setText("");
+        minutesField.setText("");
     }
 
 
@@ -74,8 +71,5 @@ public class GUIView extends GenericInterface {
         PassOff(null,homeLabel);
     }
 
-    public void BringUP() {
-        BringUP(userIcon);
-    }
 
 }

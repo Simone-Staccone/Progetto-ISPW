@@ -43,16 +43,35 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button layoutX="174.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#SwaptoH" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="HOME" textFill="#ffa700" />
                   <AreaChart fx:id="grafico" layoutX="323.0" layoutY="228.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM"/>
+                      <CategoryAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
                   </AreaChart>
-                  <Button layoutX="164.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#Aggiorna" text="Button" />
+                  <Text fx:id="pointsText" fill="#ffa700" layoutX="321.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" wrappingWidth="84.800048828125">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="assistsText" fill="#ffa700" layoutX="321.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" wrappingWidth="92.80000000000013">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="reboundsText" fill="#ffa700" layoutX="740.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" wrappingWidth="92.80000000000007">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="minutesText" fill="#ffa700" layoutX="744.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" wrappingWidth="84.800048828125">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="144.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#SwaptoS" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
                </children></AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>

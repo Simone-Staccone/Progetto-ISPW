@@ -1,12 +1,20 @@
 package StatsLogic.Boundary.ControlView;
 
 import GUI.GenericInterface;
+import StatsLogic.Control.StatsController;
+import StatsLogic.Entity.Stats;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
-public class GUIView2 extends GenericInterface {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class GUIView2 extends GenericInterface implements Initializable {
 
     @FXML
     public AnchorPane mainPane;
@@ -18,7 +26,14 @@ public class GUIView2 extends GenericInterface {
     public Label statsLabel;
     @FXML
     public AnchorPane topAnchor;
-
+    @FXML
+    public Text pointsText;
+    @FXML
+    public Text assistsText;
+    @FXML
+    public Text minutesText;
+    @FXML
+    public Text reboundsText;
 
 
     @FXML
@@ -94,4 +109,31 @@ public class GUIView2 extends GenericInterface {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Stats s = StatsController.average();
+            String temp;
+            temp = Float.toString(s.getPoints());
+            temp = temp.substring(0,4);
+            pointsText.setText(temp);
+
+            temp = Float.toString(s.getAssists());
+            temp = temp.substring(0,4);
+
+            assistsText.setText(temp);
+
+            temp = Float.toString(s.getRebounds());
+            temp = temp.substring(0,4);
+
+            reboundsText.setText(temp);
+
+            temp = Float.toString(s.getMinutes());
+            temp = temp.substring(0,4);
+
+            minutesText.setText(temp);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

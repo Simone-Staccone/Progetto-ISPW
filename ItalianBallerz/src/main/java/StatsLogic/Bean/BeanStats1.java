@@ -13,7 +13,7 @@ public class BeanStats1 {
         {
             res = "Success";
             BeanStats1.notify(res);
-            StatsController.create(Integer.parseInt(points), Integer.parseInt(assists), Integer.parseInt(rebounds), Integer.parseInt(minutes));
+            StatsController.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
         }
         else
         {
