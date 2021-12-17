@@ -17,6 +17,7 @@ public class LoginControl {
     private static void addPlayerUser(String name) {
         PlayerUser p = new PlayerUser(name, ++PlayerID);
     }
+
     public PlayerUser searchUser(int ID){
         int i;
         PlayerUser p = null;

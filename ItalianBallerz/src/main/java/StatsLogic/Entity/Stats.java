@@ -1,5 +1,7 @@
 package StatsLogic.Entity;
 
+import StatsLogic.Control.FileManager;
+
 import java.io.*;
 
 public class Stats {
@@ -32,32 +34,6 @@ public class Stats {
         System.out.println("Points: " + this.points + " Assists: " + this.assists + " Rebounds: " + this.rebounds + " Minutes: " + this.minutes);
     }
 
-    public void writeOnFile(String s, String path)  {
-        File file;
-        try {
-            file = new File(path);
-            if (file.exists())
-                System.out.println("Il file " + path + " esiste");
-            else if (file.createNewFile())
-                System.out.println("Il file " + path + " è stato crate");
-            else
-                System.out.println("Il file " + path + " non può essere crate");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        try {
-            String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(path, "rw");
-            raf.seek(raf.length());
-            raf.write(res.getBytes());
-            raf.close();
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public static float getAveregePoints()
     {
@@ -128,16 +104,16 @@ public class Stats {
             e.printStackTrace();
         }
 
-        try {
             StringBuilder buffer = new StringBuilder();
             String s;
 
+            FileManager fm = new FileManager(path);
 
-            RandomAccessFile raf = new RandomAccessFile("src/main/java/Data/assists.txt", "rw");
+            //RandomAccessFile raf = new RandomAccessFile("src/main/java/Data/assists.txt", "rw");
 
-            while(raf.getFilePointer() < raf.length()) {
+            while(!fm.checkEnd()) {
                 buffer.delete(0,buffer.length());
-                buffer.append(raf.readLine());
+                buffer.append(fm.readLine());
                 s = buffer.toString();
                 count++;
                 x+=Float.parseFloat(s);
@@ -146,11 +122,7 @@ public class Stats {
             }
             avg = x/count;
             System.out.println("La media è:"+avg);
-            raf.close();
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
+
 
         return avg;
     }
