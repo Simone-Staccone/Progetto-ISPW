@@ -1,8 +1,6 @@
 package StatsLogic.Boundary.ControlView;
 
 import GUI.MainInterface;
-import javafx.event.Event;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +8,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+/* Ha la responsabilità di cambiare scene nei controller grafici*/
 
 public class Swap {
 

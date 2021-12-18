@@ -59,7 +59,7 @@ public class LoginControl {
         fm.writeAppend(name);
     }
 
-    public PlayerUser searchUser(int ID){
+    public PlayerUser searchUser(String name){
         int i;
         PlayerUser p = null;
         boolean flag = false;
@@ -67,7 +67,7 @@ public class LoginControl {
         for(i=0;i<PlayerInst.size();i++)
         {
             PlayerUser actual = PlayerInst.get(i);
-            if(actual.getID() == ID){
+            if(actual.getName().compareTo(name) == 0){
                 p = actual;
                 flag = true;
                 break;
@@ -76,7 +76,7 @@ public class LoginControl {
 
         if(flag)
         {
-            p = new PlayerUser("nome",ID);
+            p = new PlayerUser("nome",0);
         }
 
 

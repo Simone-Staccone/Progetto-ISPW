@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static java.lang.Math.min;
+
 public class GUIView2 extends GenericInterface implements Initializable {
 
     @FXML
@@ -115,21 +117,21 @@ public class GUIView2 extends GenericInterface implements Initializable {
             Stats s = StatsController.average();
             String temp;
             temp = Float.toString(s.getPoints());
-            temp = temp.substring(0,4);
+            temp = temp.substring(0,min(temp.length(),4));
             pointsText.setText(temp);
 
             temp = Float.toString(s.getAssists());
-            temp = temp.substring(0,4);
+            temp = temp.substring(0,min(temp.length(),4));
 
             assistsText.setText(temp);
 
             temp = Float.toString(s.getRebounds());
-            temp = temp.substring(0,4);
+            temp = temp.substring(0,min(temp.length(),4));
 
             reboundsText.setText(temp);
 
             temp = Float.toString(s.getMinutes());
-            temp = temp.substring(0,4);
+            temp = temp.substring(0,min(temp.length(),4));
 
             minutesText.setText(temp);
         } catch (IOException e) {

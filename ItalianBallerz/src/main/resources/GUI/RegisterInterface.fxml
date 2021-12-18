@@ -19,7 +19,7 @@
                   <TextField layoutX="450.0" layoutY="110.0" />
                   <TextField layoutX="450.0" layoutY="210.0" />
                   <TextField layoutX="450.0" layoutY="310.0" />
-                  <Button layoutX="500.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#SwaptoH" onMouseEntered="#GenerricEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="Register" />
+                  <Button layoutX="500.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#SwaptoH" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="Register" />
                   <Text layoutX="450.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
                   <Text layoutX="450.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
                   <Text layoutX="450.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
