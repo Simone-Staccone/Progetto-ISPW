@@ -17,12 +17,11 @@
             <AnchorPane layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: WHITE; -fx-border-color: #FFA700; -fx-border-width: 5;" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
                <children>
                   <TextField layoutX="450.0" layoutY="110.0" />
-                  <TextField layoutX="450.0" layoutY="210.0" />
                   <TextField layoutX="450.0" layoutY="310.0" />
-                  <Button layoutX="500.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#SwaptoH" onMouseEntered="#GenerricEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="Register" />
+                  <Button layoutX="500.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#SwaptoH" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="Login" />
                   <Text layoutX="450.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-                  <Text layoutX="450.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
                   <Text layoutX="450.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                  <Button layoutX="493.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#SwaptoR" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Register" textFill="#ffa700" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

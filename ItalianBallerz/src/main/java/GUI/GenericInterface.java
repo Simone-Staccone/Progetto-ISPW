@@ -3,17 +3,13 @@ package GUI;
 import StatsLogic.Boundary.ControlView.Swap;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -138,7 +134,10 @@ public class  GenericInterface {
         Swap.goTo("StatsInterfaceUse.fxml",mainPane);
     }
 
-
+    @FXML
+    public void SwaptoL(){
+        Swap.goTo("LoginInterface.fxml",mainPane);
+    }
 
     @FXML
     public void SwapToS2(Event e){

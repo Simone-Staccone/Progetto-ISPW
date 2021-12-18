@@ -1,5 +1,6 @@
 package GUI;
 
+import StatsLogic.Control.LoginControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +21,8 @@ public class MainInterface extends Application {
         stage.setTitle("Italian Ballerz");
         stage.setScene(scene);
         stage.show();
+        LoginControl lg = new LoginControl();
+        System.out.println(lg.getUser());
     }
 
 
