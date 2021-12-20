@@ -21,13 +21,10 @@ public class CourtController extends GenericInterface{
     @FXML
     public Label statsLabel;
     @FXML
-    private Pane statsImagePane;
-    @FXML
     public TextField Username;
     @FXML
     public TextField Password;
-    @FXML
-    public Pane element1;
+
 
 
     @FXML
@@ -79,13 +76,4 @@ public class CourtController extends GenericInterface{
 
 
 
-    @FXML
-    public void LoginI()
-    {
-        try {
-            Login(Username.getText(),Password.getText());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

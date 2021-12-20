@@ -1,5 +1,6 @@
 package StatsLogic.Bean;
 
+import StatsLogic.Control.FileManager;
 import StatsLogic.Control.LoginControl;
 import StatsLogic.Entity.PlayerUser;
 
@@ -9,7 +10,7 @@ public class BeanLogin {
         LoginControl lg = new LoginControl();
         PlayerUser p = null;
         try{
-            p = lg.searchUser(Username);
+            p = lg.searchUser(Username,Password);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -20,6 +21,14 @@ public class BeanLogin {
         else
         {
             System.out.println("User found!");
+        }
+    }
+
+    public static void addUser(String user,String password){
+        LoginControl lg = new LoginControl();
+        if(lg.searchUser(user,password) == null)
+        {
+            lg.writePlayerUser(user,password);
         }
     }
 }

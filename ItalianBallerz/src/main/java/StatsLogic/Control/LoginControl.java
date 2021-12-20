@@ -4,8 +4,6 @@ package StatsLogic.Control;
 
 import StatsLogic.Entity.PlayerUser;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,16 +26,13 @@ public class LoginControl {
             buffer.append(fm.readLine());
             s = buffer.toString();
 
-            addPlayerUser(s);
+            addPlayerUser(s.substring(0,s.indexOf("$")),s.substring(s.indexOf("$")));
         }
     }
 
-    public int getPlayerID() {
-        return PlayerID;
-    }
 
-    private void addPlayerUser(String name) {
-        PlayerUser p = new PlayerUser(name, ++PlayerID);
+    private void addPlayerUser(String name,String password) {
+        PlayerUser p = new PlayerUser(name, password.substring(1));
         PlayerInst.add(p);
     }
 
@@ -50,23 +45,23 @@ public class LoginControl {
     }
 
 
-    public void writePlayerUser(String name)
+    public void writePlayerUser(String name,String password)
     {
         String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
 
         FileManager fm = new FileManager(path);
 
-        fm.writeAppend(name);
+        fm.writeAppend(name + "$" + password );
     }
 
-    public PlayerUser searchUser(String name){
+    public PlayerUser searchUser(String name,String password){
         int i;
         PlayerUser p = null;
         boolean flag = false;
-
+        PlayerUser actual = new PlayerUser("","");
         for(i=0;i<PlayerInst.size();i++)
         {
-            PlayerUser actual = PlayerInst.get(i);
+            actual = PlayerInst.get(i);
             if(actual.getName().compareTo(name) == 0){
                 p = actual;
                 flag = true;
@@ -74,9 +69,15 @@ public class LoginControl {
             }
         }
 
+        if(actual.getPassword().compareTo(password) == 0)
+        {
+            System.out.println("Verified");
+        }
+        else
+            System.out.println("Wrong"+actual.getPassword()+password);
         if(flag)
         {
-            p = new PlayerUser("nome",0);
+            p = new PlayerUser("nome","psw");
         }
 
 

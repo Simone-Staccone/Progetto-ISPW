@@ -5,18 +5,18 @@ import java.util.List;
 public class PlayerUser {
     private List<Stats> playerstats;
     private final String name;
-    private final int ID;
+    private final String password;
 
-    public PlayerUser(String name,int ID) {
+    public PlayerUser(String name,String password) {
         this.name = name;
-        this.ID = ID;
+        this.password = password;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getID() {
-        return ID;
+    public String getPassword() {
+        return this.password;
     }
 }

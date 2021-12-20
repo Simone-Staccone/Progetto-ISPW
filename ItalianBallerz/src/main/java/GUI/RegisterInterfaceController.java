@@ -1,7 +1,9 @@
 package GUI;
 
+import StatsLogic.Bean.BeanLogin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 
 public class RegisterInterfaceController extends GenericInterface{
@@ -12,8 +14,15 @@ public class RegisterInterfaceController extends GenericInterface{
     public Label playgroundLabel;
     @FXML
     public Label statsLabel;
+    @FXML
+    public TextField username;
+    @FXML
+    public TextField password;
 
-
+    @FXML
+    public void Register(){
+        BeanLogin.addUser(username.getText(),password.getText());
+    }
 
 
     @FXML

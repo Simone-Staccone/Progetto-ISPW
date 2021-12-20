@@ -1,6 +1,6 @@
 package StatsLogic.Bean;
 
-import StatsLogic.Boundary.BoundaryAddstats;
+import StatsLogic.Boundary.GUIView;
 import StatsLogic.Control.StatsController;
 
 import java.io.IOException;
@@ -22,7 +22,8 @@ public class BeanStats1 {
     }
 
     private static void notify(String res) {
-        BoundaryAddstats.showM(res);
+        GUIView guistats = new GUIView();
+        guistats.showM(res);
     }
 
     private static String controlPoints(String points)

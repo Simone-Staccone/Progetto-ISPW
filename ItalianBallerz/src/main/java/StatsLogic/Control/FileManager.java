@@ -27,12 +27,8 @@ public class FileManager {
         Boolean ret = false;
         try {
             file = new File(this.path);
-            if (file.exists())
-                System.out.println("Il file " + this.path + " esiste");
-            else if (file.createNewFile())
-                System.out.println("Il file " + this.path + " è stato crate");
-            else
-                System.out.println("Il file " + this.path + " non può essere crate");
+            if (!file.exists())
+                file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,12 +53,8 @@ public class FileManager {
         File file;
         try {
             file = new File(this.path);
-            if (file.exists())
-                System.out.println("Il file " + this.path + " esiste");
-            else if (file.createNewFile())
-                System.out.println("Il file " + this.path + " è stato crate");
-            else
-                System.out.println("Il file " + this.path + " non può essere crate");
+            if (!file.exists())
+                file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,18 +72,14 @@ public class FileManager {
         }
     }
 
-    public static String readAll(String path,String mode)
+    public String readAll(String path, String mode)
     {
         File file;
         String text = "";
         try {
-            file = new File(path);
-            if (file.exists())
-                System.out.println("Il file " + path + " esiste");
-            else if (file.createNewFile())
-                System.out.println("Il file " + path + " è stato crate");
-            else
-                System.out.println("Il file " + path + " non può essere crate");
+            file = new File(this.path);
+            if (!file.exists())
+                file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -121,12 +109,8 @@ public class FileManager {
         String text = "";
         try {
             file = new File(this.path);
-            if (file.exists())
-                System.out.println("Il file " + this.path + " esiste");
-            else if (file.createNewFile())
-                System.out.println("Il file " + this.path + " è stato crate");
-            else
-                System.out.println("Il file " + this.path + " non può essere crate");
+            if (!file.exists())
+                file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }

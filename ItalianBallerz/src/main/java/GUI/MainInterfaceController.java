@@ -83,14 +83,5 @@ public class MainInterfaceController extends GenericInterface{
         HighlightOff(statsImagePane);
     }
 
-    @FXML
-    public void LoginI()
-    {
-        try {
-            Login(Username.getText(),Password.getText());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 

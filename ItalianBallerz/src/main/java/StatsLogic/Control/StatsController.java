@@ -8,7 +8,7 @@ public class StatsController {
 
     public static Stats create(float points, float assists, float rebounds, float minutes){
         Stats s = new Stats(points, assists, rebounds, minutes);
-        s.display();
+
 
         return s;
     }
@@ -36,6 +36,30 @@ public class StatsController {
     }
 
     public static Stats average() throws IOException {
-        return StatsController.create(Stats.getAveregePoints(),Stats.getAveregeAssists(),Stats.getAveregeRebounds(),Stats.getAveregeMinutes());
+        StatsController st = new StatsController();
+        return StatsController.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
+    }
+
+
+    public static float getAverege(String str)
+    {
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" + str + ".txt";
+        float x = 0;
+        int count = 0;
+        float avg;
+        StringBuilder buffer = new StringBuilder();
+        String s;
+
+        FileManager fm = new FileManager(path);
+
+        while(!fm.checkEnd()) {
+            buffer.delete(0,buffer.length());
+            buffer.append(fm.readLine());
+            s = buffer.toString();
+            count++;
+            x+=Float.parseFloat(s);
+        }
+        avg = x/count;
+        return avg;
     }
 }

@@ -1,6 +1,6 @@
 package GUI;
 
-import StatsLogic.Boundary.ControlView.Swap;
+import StatsLogic.Boundary.Swap;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -15,9 +15,6 @@ import java.io.IOException;
 
 public class  GenericInterface {
     protected boolean clicked = false;
-    protected boolean logged = false;
-    protected String UserLog = "";
-    protected String UserPassw = "";
 
     @FXML
     public Pane blockPane;
@@ -68,21 +65,6 @@ public class  GenericInterface {
     }
 
 
-
-
-    @FXML
-    public void Login(String Username, String Password) throws IOException {
-        mainPane.getChildren().remove(loginPane);
-        userIconPane.getChildren().remove(userIcon);
-        mainPane.getChildren().remove(userIconPane);
-        userLabel = new Label(Username + " " + Password);
-        mainPane.getChildren().add(userLabel);
-        UserLog = Username;
-        UserPassw = Password;
-        logged = true;
-    }
-
-
     @FXML
     public void BringUP(ImageView img) {
         if (!clicked) {
@@ -121,12 +103,6 @@ public class  GenericInterface {
     @FXML
     public void SwaptoP(){
         Swap.goTo("PlaygroundShowInterface.fxml",mainPane);
-        if(logged) {
-            System.out.println("Esegui");
-            mainPane.getChildren().remove(loginPane);
-            mainPane.getChildren().remove(userIcon);
-            mainPane.getChildren().remove(userIconPane);
-        }
     }
 
     @FXML
