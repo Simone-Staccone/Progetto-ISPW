@@ -20,7 +20,7 @@
       <AnchorPane fx:id="loginPane" layoutX="1035.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="296.0" layoutX="-24.0" layoutY="11.0" stroke="#ffa700" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="3.0" width="254.0" />
-            <Button layoutX="88.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#LoginI" style="-fx-background-color: #FFA700; -fx-border-radius: 10;" text="Log in" />
+            <Button layoutX="88.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#SwaptoL" style="-fx-background-color: #FFA700; -fx-border-radius: 10;" text="Log in" />
             <Text layoutX="38.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text layoutX="39.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <TextField fx:id="Password" layoutX="39.0" layoutY="146.0" style="-fx-border-color: ORANGE;" />

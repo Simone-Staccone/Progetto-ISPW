@@ -1,6 +1,5 @@
 package GUI;
 
-import StatsLogic.Control.LoginControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,13 +15,10 @@ public class MainInterface extends Application {
     public void start(Stage stage) throws Exception{
         FXMLLoader xml =  new FXMLLoader(MainInterface.class.getResource("MainInterface.fxml"));
         Scene scene = new Scene(xml.load());
-        //stage.setMaximized(true);
         stage.setResizable(false);
         stage.setTitle("Italian Ballerz");
         stage.setScene(scene);
         stage.show();
-        LoginControl lg = new LoginControl();
-        System.out.println(lg.getUser());
     }
 
 
@@ -30,8 +26,4 @@ public class MainInterface extends Application {
         launch();
     }
 
-    public static void tryLaunch()
-    {
-        launch();
-    }
 }

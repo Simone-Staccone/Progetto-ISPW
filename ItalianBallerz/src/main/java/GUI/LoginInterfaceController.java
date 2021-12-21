@@ -1,6 +1,6 @@
 package GUI;
 
-import StatsLogic.Bean.BeanLogin;
+import Logic.Bean.BeanLogin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -26,32 +26,32 @@ public class LoginInterfaceController extends GenericInterface{
 
     @FXML
     public void PassOnH(){
-        PassOn(null,homeLabel);
+        super.PassOn(null,homeLabel);
     }
     @FXML
     public void PassOffH(){
-        PassOff(null,homeLabel);
+        super.PassOff(null,homeLabel);
     }
 
 
     @FXML
     public void PassOnP(){
-        PassOn(null,playgroundLabel);
+        super.PassOn(null,playgroundLabel);
     }
     @FXML
     public void PassOffP(){
-        PassOff(null,playgroundLabel);
+        super.PassOff(null,playgroundLabel);
     }
 
 
 
     @FXML
     public void PassOnS(){
-        PassOn(null,statsLabel);
+        super.PassOn(null,statsLabel);
     }
     @FXML
     public void PassOffS(){
-        PassOff(null,statsLabel);
+        super.PassOff(null,statsLabel);
     }
 
 

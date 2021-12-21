@@ -1,6 +1,6 @@
 package GUI;
 
-import StatsLogic.Boundary.Swap;
+import Logic.Boundary.Swap;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -26,10 +26,6 @@ public class  GenericInterface {
     public Pane userIconPane;
     @FXML
     public Pane topAnchorPane;
-    @FXML
-    public Label userLabel;
-    @FXML
-    public ImageView userIcon;
     @FXML
     public AreaChart grafico;
 
@@ -65,22 +61,6 @@ public class  GenericInterface {
     }
 
 
-    @FXML
-    public void BringUP(ImageView img) {
-        if (!clicked) {
-            loginPane.toFront();
-            clicked = true;
-            ColorAdjust colorAdjust = new ColorAdjust();
-            colorAdjust.setBrightness(+0.5);
-            img.setEffect(colorAdjust);
-        } else {
-            blockPane.toFront();
-            clicked = false;
-            ColorAdjust colorAdjust = new ColorAdjust();
-            colorAdjust.setBrightness(-0.5);
-            img.setEffect(colorAdjust);
-        }
-    }
 
     @FXML
     public void SwaptoH(){

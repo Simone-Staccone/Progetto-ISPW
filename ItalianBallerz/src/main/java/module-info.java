@@ -13,6 +13,6 @@ module com.example.italianballerz {
     opens GUI to javafx.fxml;
     exports GUI;
 
-    opens StatsLogic.Boundary to javafx.fxml;
-    exports StatsLogic.Boundary;
+    opens Logic.Boundary to javafx.fxml;
+    exports Logic.Boundary;
 }

@@ -2,11 +2,9 @@ package GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
-import java.io.IOException;
 
 
 public class MainInterfaceController extends GenericInterface{
@@ -23,64 +21,57 @@ public class MainInterfaceController extends GenericInterface{
     public Pane playgroundImagePane;
     @FXML
     public Pane statsImagePane;
-    @FXML
-    public TextField Username;
-    @FXML
-    public TextField Password;
+
 
 
 
     @FXML
     public void PassOnInstance() {
-        PassOn(userIcon,null);
+        super.PassOn(userIcon,null);
     }
     @FXML
     public void PassOffInstance(){
-        PassOff(userIcon,null);
+        super.PassOff(userIcon,null);
     }
 
-    @FXML
-    public void BringUP(){
-        BringUP(userIcon);
-    }
 
 
     @FXML
     public void PassOnP(){
-        PassOn(null,playgroundLabel);
+        super.PassOn(null,playgroundLabel);
     }
     @FXML
     public void PassOffP(){
-        PassOff(null,playgroundLabel);
+        super.PassOff(null,playgroundLabel);
     }
 
 
 
     @FXML
     public void PassOnS(){
-        PassOn(null,statsLabel);
+        super.PassOn(null,statsLabel);
     }
     @FXML
     public void PassOffS(){
-        PassOff(null,statsLabel);
+        super.PassOff(null,statsLabel);
     }
 
     @FXML
     public void HighlightOnL(){
-        HighlightOn(playgroundImagePane);
+        super.HighlightOn(playgroundImagePane);
     }
     @FXML
     public void HighlightOffL(){
-        HighlightOff(playgroundImagePane);
+        super.HighlightOff(playgroundImagePane);
     }
 
     @FXML
     public void HighlightOnD(){
-        HighlightOn(statsImagePane);
+        super.HighlightOn(statsImagePane);
     }
     @FXML
     public void HighlightOffD(){
-        HighlightOff(statsImagePane);
+        super.HighlightOff(statsImagePane);
     }
 
 }

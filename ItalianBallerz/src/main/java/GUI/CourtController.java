@@ -5,9 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 
-import java.io.IOException;
 
 public class CourtController extends GenericInterface{
     @FXML
@@ -29,20 +27,20 @@ public class CourtController extends GenericInterface{
 
     @FXML
     public void PassOnInstance(){
-        PassOn(userIcon,null);
+        super.PassOn(userIcon,null);
     }
     @FXML
     public void PassOffInstance(){
-        PassOff(userIcon,null);
+        super.PassOff(userIcon,null);
     }
 
     @FXML
     public void PassOnS(){
-        PassOn(null,statsLabel);
+        super.PassOn(null,statsLabel);
     }
     @FXML
     public void PassOffS(){
-        PassOff(null,statsLabel);
+        super.PassOff(null,statsLabel);
     }
 
 
@@ -70,9 +68,7 @@ public class CourtController extends GenericInterface{
         PassOff(null,homeLabel);
     }
 
-    public void BringUP() {
-        BringUP(userIcon);
-    }
+
 
 
 
