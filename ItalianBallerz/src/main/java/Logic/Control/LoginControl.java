@@ -2,6 +2,8 @@ package Logic.Control;
 
 /* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
 
+import Logic.Entity.StatsList;
+import Logic.Other.Swap;
 import Logic.Entity.PlayerUser;
 
 import java.util.ArrayList;
@@ -27,6 +29,8 @@ public class LoginControl {
 
             addPlayerUser(s.substring(0,s.indexOf("$")),s.substring(s.indexOf("$")));
         }
+        StatsList stlst = new StatsList();
+        stlst.print();
     }
 
 
@@ -71,6 +75,8 @@ public class LoginControl {
         if(actual.getPassword().compareTo(password) == 0)
         {
             System.out.println("Verified");
+            Swap.setUser(name);
+            Swap.setPassword("password");
         }
         else
             System.out.println("Wrong"+actual.getPassword()+password);

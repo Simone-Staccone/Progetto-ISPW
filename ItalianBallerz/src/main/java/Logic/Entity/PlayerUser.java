@@ -3,7 +3,7 @@ package Logic.Entity;
 import java.util.List;
 
 public class PlayerUser {
-    private List<Stats> playerstats;
+    private List<Stat> playerstats;
     private final String name;
     private final String password;
 
@@ -13,7 +13,7 @@ public class PlayerUser {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getPassword() {

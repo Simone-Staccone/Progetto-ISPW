@@ -32,6 +32,7 @@ public class BeanLogin {
                 System.out.println("User found!");
             }
         }
+
     }
 
     public static void addUser(String user,String password){

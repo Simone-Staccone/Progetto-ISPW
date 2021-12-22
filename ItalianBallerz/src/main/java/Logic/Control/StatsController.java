@@ -1,20 +1,16 @@
 package Logic.Control;
 
-import Logic.Entity.Stats;
+import Logic.Entity.Stat;
 
 import java.io.IOException;
 
 public class StatsController {
-
-    public static Stats create(float points, float assists, float rebounds, float minutes){
-        Stats s = new Stats(points, assists, rebounds, minutes);
-
-
-        return s;
+    public Stat create(float points, float assists, float rebounds, float minutes){
+        return new Stat(points, assists, rebounds, minutes);
     }
 
-    public static void write(float points, float assists, float rebounds, float minutes){
-        Stats s = new Stats(points, assists, rebounds, minutes);
+    public void write(float points, float assists, float rebounds, float minutes){
+        new Stat(points, assists, rebounds, minutes);
         FileManager fm = new FileManager("C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\points.txt");
 
         fm.writeAppend(Float.toString(points));
@@ -35,13 +31,13 @@ public class StatsController {
 
     }
 
-    public static Stats average() throws IOException {
+    public Stat average() throws IOException {
         StatsController st = new StatsController();
-        return StatsController.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
+        return st.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
     }
 
 
-    public static float getAverege(String str)
+    public float getAverege(String str)
     {
         String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" + str + ".txt";
         float x = 0;
