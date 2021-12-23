@@ -1,13 +1,13 @@
 package Logic.Bean;
 
 import Logic.Control.LoginControl;
-import Logic.Entity.PlayerUser;
+import Logic.Other.SingletonPlayer;
 
 public class BeanLogin {
-    public static void verifyUser(String Username, String Password)
+    public static Boolean verifyUser(String Username, String Password)
     {
         LoginControl lg = new LoginControl();
-        PlayerUser p = null;
+        Boolean b = false;
 
         if(Username.compareTo("") == 0)
         {
@@ -19,11 +19,11 @@ public class BeanLogin {
         }
         else{
             try{
-                p = lg.searchUser(Username,Password);
+                b = lg.searchUser(Username,Password);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            if(p == null)
+            if(!b)
             {
                 System.out.println("User not found");
             }
@@ -31,15 +31,21 @@ public class BeanLogin {
             {
                 System.out.println("User found!");
             }
-        }
 
+        }
+        return b;
     }
 
     public static void addUser(String user,String password){
         LoginControl lg = new LoginControl();
-        if(lg.searchUser(user,password) == null)
+        if(!lg.searchUser(user,password))
         {
             lg.writePlayerUser(user,password);
         }
+    }
+
+    public static String getUsername(){
+        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
+        return sp.getUsername();
     }
 }

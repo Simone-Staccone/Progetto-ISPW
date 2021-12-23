@@ -16,10 +16,12 @@ public class LoginInterfaceController extends GenericInterface{
 
     @FXML
     private void Login(){
-        BeanLogin.verifyUser(username.getText(),password.getText());
+        Boolean b;
+        b = BeanLogin.verifyUser(username.getText(),password.getText());
         username.setText("");
         password.setText("");
-        Swap.goTo("LoggedInterface.fxml",mainPane);
+        if(b)
+            Swap.goTo("LoggedInterface.fxml",mainPane);
     }
 }
 

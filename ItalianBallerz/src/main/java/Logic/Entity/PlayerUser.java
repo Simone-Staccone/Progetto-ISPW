@@ -4,19 +4,14 @@ import java.util.List;
 
 public class PlayerUser {
     private List<Stat> playerstats;
-    private final String name;
-    private final String password;
+    private static String name;
 
-    public PlayerUser(String name,String password) {
-        this.name = name;
-        this.password = password;
+
+    public static String getUsername() {
+        return PlayerUser.name;
+    }
+    public static void setUsername(String s) {
+        PlayerUser.name = s;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
 }

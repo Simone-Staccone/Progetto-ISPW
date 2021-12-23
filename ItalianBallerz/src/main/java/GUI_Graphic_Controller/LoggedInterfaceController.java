@@ -1,6 +1,7 @@
 package GUI_Graphic_Controller;
 
-import Logic.Other.Swap;
+import Logic.Bean.BeanLogin;
+import Logic.Entity.PlayerUser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
@@ -15,7 +16,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        text.setText(Swap.user);
+        text.setText(BeanLogin.getUsername());
     }
 }
 

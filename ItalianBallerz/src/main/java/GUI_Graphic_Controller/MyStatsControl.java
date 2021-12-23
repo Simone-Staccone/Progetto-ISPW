@@ -66,12 +66,19 @@ public class MyStatsControl extends GenericInterface implements Initializable {
                         Button button = new Button();
 
                         button.setText("Delete");
-                        button.setOnMouseClicked(event -> BeanStats.delete());
+                        button.setLayoutX(170);
+                        button.setLayoutY(80);
+                        Stat finalS = s;
+                        button.setOnMouseClicked(event -> {
+                            BeanStats.delete(statList.indexOf(finalS));
+                            stage.close();
+                        });
 
                         pane.getChildren().add(button);
                         Scene scene = new Scene(pane, 400, 200);
                         stage.setTitle("Stat " + statList.indexOf(s));
                         stage.setScene(scene);
+                        stage.setResizable(false);
                         b.setOnMouseClicked(event -> stage.show());
                     } catch (Exception e) {
                         e.printStackTrace();

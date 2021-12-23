@@ -55,6 +55,8 @@ public class BeanStats {
         return st.getStlst();
     }
 
-    public static void delete() {
+    public static void delete(int i) {
+        StatsController st = new StatsController();
+        st.delete(i);
     }
 }
