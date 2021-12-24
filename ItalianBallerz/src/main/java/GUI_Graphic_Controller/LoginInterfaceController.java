@@ -4,7 +4,9 @@ import Logic.Bean.BeanLogin;
 import Logic.Other.Swap;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+
 
 public class LoginInterfaceController extends GenericInterface{
     @FXML
@@ -22,6 +24,12 @@ public class LoginInterfaceController extends GenericInterface{
         password.setText("");
         if(b)
             Swap.goTo("LoggedInterface.fxml",mainPane);
+    }
+
+    @FXML
+    private void Try(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            Login();
     }
 }
 

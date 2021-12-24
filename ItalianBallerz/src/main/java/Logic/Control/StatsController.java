@@ -1,8 +1,8 @@
 package Logic.Control;
 
 import Logic.Entity.Stat;
+import Logic.Other.SingletonPlayer;
 
-import java.io.IOException;
 
 public class StatsController {
     public Stat create(float points, float assists, float rebounds, float minutes){
@@ -10,35 +10,35 @@ public class StatsController {
     }
 
     public void write(float points, float assists, float rebounds, float minutes){
-        new Stat(points, assists, rebounds, minutes);
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
 
-        FileManager fm = new FileManager("C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\points.txt");
+        FileManager fm = new FileManager(path + SingletonPlayer.getLoginInstance().getUsername());
 
-        fm.writeAppend(Float.toString(points));
+        fm.writeAppend(Float.toString(points),"points");
 
-        fm.changePath("C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\assists.txt");
+        fm.changePath(path + SingletonPlayer.getLoginInstance().getUsername());
 
-        fm.writeAppend(Float.toString(assists));
+        fm.writeAppend(Float.toString(assists),"assists");
 
-        fm.changePath("C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\rebounds.txt");
+        fm.changePath(path + SingletonPlayer.getLoginInstance().getUsername());
 
-        fm.writeAppend(Float.toString(rebounds));
+        fm.writeAppend(Float.toString(rebounds),"rebounds");
 
-        fm.changePath("C:\\\\Users\\\\simon\\\\IdeaProjects\\\\ItalianBallerz\\\\src\\\\main\\\\java\\\\Data\\\\minutes.txt");
+        fm.changePath(path + SingletonPlayer.getLoginInstance().getUsername());
 
-        fm.writeAppend(Float.toString(minutes));
+        fm.writeAppend(Float.toString(minutes),"minutes");
 
 
 
     }
 
-    public Stat average() throws IOException {
+    public Stat average(){
         StatsController st = new StatsController();
         return st.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
     }
 
     public Boolean delete(int i) {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" + SingletonPlayer.getLoginInstance().getUsername() + "\\";
         FileManager fm = new FileManager(path + "points.txt");
         FileManager fm2 = new FileManager(path + "assists.txt");
         FileManager fm3 = new FileManager(path + "rebounds.txt");
@@ -60,7 +60,8 @@ public class StatsController {
 
     public float getAverege(String str)
     {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" + str + ".txt";
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" +
+                SingletonPlayer.getLoginInstance().getUsername() + "\\" +str + ".txt";
         float x = 0;
         int count = 0;
         float avg;

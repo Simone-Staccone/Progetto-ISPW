@@ -2,6 +2,7 @@ package Logic.Entity;
 
 import Logic.Control.FileManager;
 import Logic.Control.StatsController;
+import Logic.Other.SingletonPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,8 @@ public class StatsList {
     private List<Stat> stlst = new ArrayList<>();
 
     public StatsList() {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\"
+                + SingletonPlayer.getLoginInstance().getUsername() + "\\";
         FileManager fm = new FileManager(path + "points.txt");
         FileManager fm2 = new FileManager(path + "assists.txt");
         FileManager fm3 = new FileManager(path + "rebounds.txt");

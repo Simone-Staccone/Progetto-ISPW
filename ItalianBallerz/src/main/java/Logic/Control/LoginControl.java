@@ -18,7 +18,7 @@ public class LoginControl extends SingletonPlayer{
 
         FileManager fm = new FileManager(path);
 
-        fm.writeAppend(name + "$" + password );
+        fm.writeAppendE(name + "$" + password );
     }
 
     public Boolean searchUser(String user,String password){

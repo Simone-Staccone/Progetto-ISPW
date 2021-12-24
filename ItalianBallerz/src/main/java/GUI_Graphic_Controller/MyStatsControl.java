@@ -79,7 +79,10 @@ public class MyStatsControl extends GenericInterface implements Initializable {
                         stage.setTitle("Stat " + statList.indexOf(s));
                         stage.setScene(scene);
                         stage.setResizable(false);
-                        b.setOnMouseClicked(event -> stage.show());
+                        b.setOnMouseClicked(event -> {
+                            stage.show();
+                            stage.toFront();
+                        });
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

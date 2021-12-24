@@ -48,7 +48,7 @@ public class FileManager {
     }
 
 
-    public void writeAppend(String text)
+    public void writeAppendE(String text)
     {
         File file;
         try {
@@ -170,6 +170,34 @@ public class FileManager {
 
         } catch (IOException ex) {
             ex.printStackTrace();
+        }
+    }
+
+    public void writeAppend(String s,String what) {
+        File folder;
+        File file = null;
+        folder = new File(this.path);
+        if (!folder.exists())
+            folder.mkdir();
+        try {
+            file = new File(this.path + "\\"+ what+ ".txt");
+            if (!file.exists())
+                file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(file.getAbsolutePath());
+
+        try {
+            String res = s + "\n";
+            RandomAccessFile raf = new RandomAccessFile(this.path + "\\"+ what+ ".txt", "rw");
+            raf.seek(raf.length());
+            raf.write(res.getBytes());
+            raf.close();
+        }
+        catch(IOException e) {
+            e.printStackTrace();
         }
     }
 }

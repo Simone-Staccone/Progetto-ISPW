@@ -59,4 +59,10 @@ public class BeanStats {
         StatsController st = new StatsController();
         st.delete(i);
     }
+
+    public static Stat averege() throws IOException {
+        StatsController st = new StatsController();
+        Stat s = st.average();
+        return s;
+    }
 }

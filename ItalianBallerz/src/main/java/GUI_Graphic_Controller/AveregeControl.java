@@ -1,14 +1,19 @@
 package GUI_Graphic_Controller;
 
 
-import Logic.Control.StatsController;
+import Logic.Bean.BeanStats;
 import Logic.Entity.Stat;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static java.lang.Math.min;
@@ -22,51 +27,13 @@ public class AveregeControl extends GenericInterface implements Initializable {
     private Text minutesText;
     @FXML
     private Text reboundsText;
-
-
-/*
-        grafico.setTitle("Titolo");
-
-
-        XYChart.Series seriesApril= new XYChart.Series();
-        seriesApril.setName("April");
-        seriesApril.getData().add(new XYChart.Data(1, 4));
-        seriesApril.getData().add(new XYChart.Data(3, 10));
-        seriesApril.getData().add(new XYChart.Data(6, 15));
-        seriesApril.getData().add(new XYChart.Data(9, 8));
-        seriesApril.getData().add(new XYChart.Data(12, 5));
-        seriesApril.getData().add(new XYChart.Data(15, 18));
-        seriesApril.getData().add(new XYChart.Data(18, 15));
-        seriesApril.getData().add(new XYChart.Data(21, 13));
-        seriesApril.getData().add(new XYChart.Data(24, 19));
-        seriesApril.getData().add(new XYChart.Data(27, 21));
-        seriesApril.getData().add(new XYChart.Data(30, 21));
-
-        XYChart.Series seriesMay = new XYChart.Series();
-        seriesMay.setName("May");
-        seriesMay.getData().add(new XYChart.Data(1, 20));
-        seriesMay.getData().add(new XYChart.Data(3, 15));
-        seriesMay.getData().add(new XYChart.Data(6, 13));
-        seriesMay.getData().add(new XYChart.Data(9, 12));
-        seriesMay.getData().add(new XYChart.Data(12, 14));
-        seriesMay.getData().add(new XYChart.Data(15, 18));
-        seriesMay.getData().add(new XYChart.Data(18, 25));
-        seriesMay.getData().add(new XYChart.Data(21, 25));
-        seriesMay.getData().add(new XYChart.Data(24, 23));
-        seriesMay.getData().add(new XYChart.Data(27, 26));
-        seriesMay.getData().add(new XYChart.Data(31, 26));
-
-
-        //grafico.getData().addAll(seriesApril, seriesMay);
-
-*/
-
+    @FXML
+    private AnchorPane centralPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            StatsController st = new StatsController();
-            Stat s = st.average();
+            Stat s = BeanStats.averege();
             String temp;
             temp = Float.toString(s.getPoints());
             temp = temp.substring(0,min(temp.length(),4));
@@ -89,5 +56,63 @@ public class AveregeControl extends GenericInterface implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        try{
+            final NumberAxis xAxis = new NumberAxis();
+            final NumberAxis yAxis = new NumberAxis();
+            final AreaChart<Number,Number> ac =
+                    new AreaChart<Number,Number>(xAxis,yAxis);
+            AnchorPane chartPane = new AnchorPane();
+            ac.setTitle("Your stats");
+
+            List<Stat> stlst = BeanStats.getStatsList();
+
+            XYChart.Series seriesPoints = new XYChart.Series();
+            seriesPoints.setName("Points");
+
+            for(int i = 0;i<stlst.size();i++)
+            {
+                seriesPoints.getData().add(new XYChart.Data(i,stlst.get(i).getPoints()));
+            }
+
+            XYChart.Series seriesAssists = new XYChart.Series();
+            seriesAssists.setName("Assists");
+
+            for(int i = 0;i<stlst.size();i++)
+            {
+                seriesAssists.getData().add(new XYChart.Data(i,stlst.get(i).getAssists()));
+            }
+
+            XYChart.Series seriesRebounds = new XYChart.Series();
+            seriesRebounds.setName("Rebounds");
+
+            for(int i = 0;i<stlst.size();i++)
+            {
+                seriesRebounds.getData().add(new XYChart.Data(i,stlst.get(i).getRebounds()));
+            }
+
+            XYChart.Series seriesMinutes = new XYChart.Series();
+            seriesMinutes.setName("Minutes");
+
+            for(int i = 0;i<stlst.size();i++)
+            {
+                seriesMinutes.getData().add(new XYChart.Data(i,stlst.get(i).getMinutes()));
+            }
+
+
+            ac.getData().addAll(seriesPoints, seriesAssists, seriesRebounds,seriesMinutes);
+
+            chartPane.getChildren().add(ac);
+            chartPane.setLayoutX(360);
+            chartPane.setLayoutY(260);
+
+            centralPane.getChildren().add(chartPane);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
