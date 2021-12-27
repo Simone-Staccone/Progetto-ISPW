@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_Graphic_Controller.NotLoggedInterfaceController">
+   <children>
+      <AnchorPane fx:id="blockPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;">
+         <children>
+            <AnchorPane fx:id="topAnchorPane" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: WHITE; -fx-border-color: #FFA700; -fx-border-width: 5;" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+               <children>
+                  <Text layoutX="788.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorry, you're not logged. You must have an account in order to see your stats or book a playground!" textAlignment="CENTER" wrappingWidth="239.5126953125">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Text>
+                  <Text layoutX="438.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Try to log in! Click on the user icon! Look UP-RIGHT!" textAlignment="CENTER" wrappingWidth="288.3125">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="335.0" fitWidth="688.0" layoutX="38.0" layoutY="93.0">
+                     <image>
+                        <Image url="@../Images/streaming-1280x720.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#SwaptoH" onMouseEntered="#PassOnH" onMouseExited="#PassOffH" text="Home" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#SwaptoP" onMouseEntered="#PassOnP" onMouseExited="#PassOffP" text="Playground" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#SwaptoS" onMouseEntered="#PassOnS" onMouseExited="#PassOffS" text="Statistics" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="48.0" fitWidth="340.0" layoutX="465.0" layoutY="10.0" AnchorPane.leftAnchor="465.0" AnchorPane.rightAnchor="475.0">
+                     <image>
+                        <Image url="@../Images/Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
+                     <image>
+                        <Image url="@../Images/UserIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
