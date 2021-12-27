@@ -1,47 +1,67 @@
 package Logic.Bean;
 
 import Logic.Control.LoginControl;
-import Logic.Other.SingletonPlayer;
 
 public class BeanLogin {
-    public static Boolean verifyUser(String Username, String Password)
+    public static int verifyUser(String Username, String Password)
     {
         LoginControl lg = new LoginControl();
+        int ret  = 0;
         Boolean b = false;
 
         if(Username.compareTo("") == 0)
         {
             System.out.println("Empty username");
+            ret = -1;
         }
         else if(Password.compareTo("") == 0)
         {
             System.out.println("Empty password");
+            ret = -2;
         }
         else{
             try{
-                b = lg.searchUser(Username,Password);
+                b = lg.searchUserU(Username);
             } catch (Exception e) {
                 e.printStackTrace();
             }
             if(!b)
             {
                 System.out.println("User not found");
+                ret = 1;
             }
             else
             {
-                System.out.println("User found!");
+                b = lg.searchUser(Username,Password);
+                if(b){
+                    System.out.println("User found!");
+                    ret = 2;
+                }
             }
 
         }
-        return b;
+        return ret;
     }
 
-    public static void addUser(String user,String password){
-        LoginControl lg = new LoginControl();
-        if(!lg.searchUser(user,password))
-        {
-            lg.writePlayerUser(user,password);
+    public static int addUser(String user,String password,String passwordConf,String email){
+        int b = 0;
+        if(user.compareTo("") == 0 || password.compareTo("") == 0 ||
+                passwordConf.compareTo("") == 0 || email.compareTo("") == 0){
+            b = -1;
         }
+        else if(password.compareTo(passwordConf) != 0)
+        {
+            b = 1;
+        }
+        else{
+            LoginControl lg = new LoginControl();
+            if(!lg.searchUserU(user))
+            {
+                lg.writePlayerUser(user,password,email);
+                b = 2;
+            }
+        }
+        return b;
     }
 
     public static String getUsername(){

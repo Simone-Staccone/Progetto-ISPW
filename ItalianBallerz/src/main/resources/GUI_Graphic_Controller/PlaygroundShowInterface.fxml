@@ -59,7 +59,7 @@
                   <Image url="@../Images/Mappa.png" />
                </image>
             </ImageView>
-            <TextField fx:id="searchList" layoutX="50.0" layoutY="101.0" onMouseClicked="#tryClear" prefHeight="26.0" prefWidth="416.0" text="Cerca..." />
+            <TextField fx:id="searchBar" layoutX="50.0" layoutY="101.0" onMouseClicked="#tryClear" prefHeight="26.0" prefWidth="416.0" text="Cerca..." />
             <Button layoutX="480.0" layoutY="101.0" mnemonicParsing="false" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #FFA700;" text="Cerca" textFill="WHITE" />
          </children>
       </AnchorPane>

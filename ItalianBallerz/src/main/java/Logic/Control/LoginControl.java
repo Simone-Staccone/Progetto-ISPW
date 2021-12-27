@@ -6,11 +6,11 @@ import Logic.Entity.PlayerUser;
 import Logic.Other.SingletonPlayer;
 
 public class LoginControl{
-    public void writePlayerUser(String name, String password)
+    public void writePlayerUser(String name, String password,String email)
     {
         String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
         FileManager fm = new FileManager(path);
-        fm.writeAppendE(name + "$" + password );
+        fm.writeAppendE(name + "$" + password + "$" + email);
     }
 
     public Boolean searchUser(String user,String password){
@@ -25,7 +25,7 @@ public class LoginControl{
         while(!fm.checkEnd()) {
             name = fm.readLine();
 
-            psw = name.substring(name.indexOf("$")+1);
+            psw = name.substring(name.indexOf("$")+1, name.indexOf("%"));
             name = name.substring(0,name.indexOf("$"));
             System.out.println(name + " " + psw);
             if(name.compareTo(user) == 0 && psw.compareTo(password) == 0){
@@ -38,12 +38,32 @@ public class LoginControl{
         return b;
     }
 
+
+    public Boolean searchUserU(String user){
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
+        String name;
+        boolean b = false;
+        FileManager fm = new FileManager(path);
+
+        while(!fm.checkEnd()) {
+            name = fm.readLine();
+            name = name.substring(0,name.indexOf("$"));
+            if(name.compareTo(user) == 0){
+                b = true;
+                break;
+            }
+        }
+        return b;
+    }
+
+
+
     public String getUsername(){
         SingletonPlayer sp = SingletonPlayer.getLoginInstance();
         String s = null;
         try{
             s = sp.getUsername();
-        } catch (NullPointerException n) {
+        } catch (NullPointerException ignored) {
         }
         return s;
     }
@@ -52,7 +72,7 @@ public class LoginControl{
         SingletonPlayer sp = SingletonPlayer.getLoginInstance();
         try{
             sp.deleteInstance();
-        } catch (NullPointerException n) {
+        } catch (NullPointerException ignored) {
         }
     }
 

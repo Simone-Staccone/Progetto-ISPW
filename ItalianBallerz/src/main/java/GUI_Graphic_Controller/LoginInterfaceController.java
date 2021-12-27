@@ -3,9 +3,11 @@ package GUI_Graphic_Controller;
 import Logic.Bean.BeanLogin;
 import Logic.Other.Swap;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 
 public class LoginInterfaceController extends GenericInterface{
@@ -15,15 +17,40 @@ public class LoginInterfaceController extends GenericInterface{
     private TextField password;
     @FXML
     private AnchorPane mainPane;
+    @FXML
+    private Text errorText;
 
     @FXML
     private void login(){
-        Boolean b;
-        b = BeanLogin.verifyUser(username.getText(),password.getText());
-        username.setText("");
-        password.setText("");
-        if(b)
-            Swap.goTo("LoggedInterface.fxml",mainPane);
+        int ret;
+        errorText.setText("");
+        errorText.setStyle("-fx-fill: RED");
+        ret = BeanLogin.verifyUser(username.getText(),password.getText());
+
+
+
+        switch (ret){
+            case -1:
+                errorText.setText("*Username field is empty!");
+                break;
+            case -2:
+                errorText.setText("*Password field is empty!");
+                break;
+            case 0:
+                errorText.setText("*Wrong password!");
+                password.setText("");
+                break;
+            case 1:
+                errorText.setText("*Username not found!");
+                username.setText("");
+                password.setText("");
+                break;
+            case 2:
+                Swap.goTo("LoggedInterface.fxml",mainPane);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + ret);
+        }
     }
 
     @FXML
