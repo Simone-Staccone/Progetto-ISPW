@@ -32,7 +32,7 @@ public class RegisterInterfaceController extends GenericInterface{
         errorText.setText("");
 
         try {
-            b = BeanLogin.addUser(username.getText(), password.getText(), passwordConf.getText(), email.getText());
+            b = BeanLogin.addUser(username.getText(), password.getText(), passwordConf.getText(), email.getText(),owner.isSelected());
         } catch (Exception e) {
             e.printStackTrace();
         }

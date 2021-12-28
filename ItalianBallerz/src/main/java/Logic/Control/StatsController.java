@@ -1,18 +1,18 @@
 package Logic.Control;
 
-import Logic.Entity.PlayerUser;
 import Logic.Entity.Stat;
 import Logic.Other.SingletonPlayer;
 
 
 public class StatsController {
+    private String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\Users\\";
+
+
     public Stat create(float points, float assists, float rebounds, float minutes){
         return new Stat(points, assists, rebounds, minutes);
     }
 
     public void write(float points, float assists, float rebounds, float minutes){
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
-
         FileManager fm = new FileManager(path + SingletonPlayer.getLoginInstance().getUsername());
 
         fm.writeAppend(Float.toString(points),"points");
@@ -27,8 +27,7 @@ public class StatsController {
     }
 
     public Boolean delete(int i) {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\"
-                + SingletonPlayer.getLoginInstance().getUsername()+ "\\";
+        String path = this.path + SingletonPlayer.getLoginInstance().getUsername()+ "\\";
         FileManager fm = new FileManager(path + "points.txt");
         FileManager fm2 = new FileManager(path + "assists.txt");
         FileManager fm3 = new FileManager(path + "rebounds.txt");
@@ -50,8 +49,7 @@ public class StatsController {
 
     public float getAverege(String str)
     {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\" +
-                SingletonPlayer.getLoginInstance().getUsername() + "\\" +str + ".txt";
+        String path = this.path + SingletonPlayer.getLoginInstance().getUsername() + "\\" +str + ".txt";
         float x = 0;
         int count = 0;
         float avg;

@@ -13,7 +13,7 @@ import javafx.scene.paint.Color;
 
 public class  GenericInterface {
     @FXML
-    private AnchorPane mainPane;
+    public AnchorPane mainPane;
     @FXML
     private Pane userIconPane;
     @FXML
@@ -26,39 +26,39 @@ public class  GenericInterface {
     public Label statsLabel;
 
     @FXML
-    private void PassOnInstance(){
-        this.PassOn(userIcon,null);
+    private void passOnInstance(){
+        this.passOn(userIcon,null);
     }
     @FXML
-    private void PassOffInstance(){
-        this.PassOff(userIcon,null);
+    private void passOffInstance(){
+        this.passOff(userIcon,null);
     }
     @FXML
     protected void PassOnS(){
-        this.PassOn(null,statsLabel);
+        this.passOn(null,statsLabel);
     }
     @FXML
     protected void PassOffS(){
-        this.PassOff(null,statsLabel);
+        this.passOff(null,statsLabel);
     }
     @FXML
     protected void PassOnP(){
-        PassOn(null,playgroundLabel);
+        passOn(null,playgroundLabel);
     }
     @FXML
     protected void PassOffP(){
-        PassOff(null,playgroundLabel);
+        passOff(null,playgroundLabel);
     }
     @FXML
     protected void PassOnH(){
-        PassOn(null,homeLabel);
+        passOn(null,homeLabel);
     }
     @FXML
     protected void PassOffH(){
-        PassOff(null,homeLabel);
+        passOff(null,homeLabel);
     }
     @FXML
-    private void PassOn(ImageView img, Label label) {
+    private void passOn(ImageView img, Label label) {
         if (img != null) {
             ColorAdjust colorAdjust = new ColorAdjust();
             colorAdjust.setBrightness(+0.5);
@@ -71,7 +71,7 @@ public class  GenericInterface {
     }
 
     @FXML
-    private void PassOff(ImageView img, Label label) {
+    private void passOff(ImageView img, Label label) {
         if (img != null) {
             ColorAdjust colorAdjust = new ColorAdjust();
             colorAdjust.setBrightness(-0.5);
@@ -93,13 +93,13 @@ public class  GenericInterface {
 
 
     @FXML
-    protected void GenericEnter()
+    protected void genericEnter()
     {
         mainPane.setCursor(Cursor.HAND);
     }
 
     @FXML
-    protected void GenericExit()
+    protected void genericExit()
     {
         mainPane.setCursor(Cursor.DEFAULT);
     }

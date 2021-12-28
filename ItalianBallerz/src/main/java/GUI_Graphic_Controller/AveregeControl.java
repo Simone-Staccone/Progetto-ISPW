@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 import static java.lang.Math.min;
 
+
 public class AveregeControl extends GenericInterface implements Initializable {
     @FXML
     private Text pointsText;
@@ -62,7 +63,7 @@ public class AveregeControl extends GenericInterface implements Initializable {
             final NumberAxis xAxis = new NumberAxis();
             final NumberAxis yAxis = new NumberAxis();
             final AreaChart<Number,Number> ac =
-                    new AreaChart<Number,Number>(xAxis,yAxis);
+                    new AreaChart<>(xAxis, yAxis);
             AnchorPane chartPane = new AnchorPane();
             ac.setTitle("Your stats");
 
@@ -73,7 +74,7 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
             for(int i = 0;i<stlst.size();i++)
             {
-                seriesPoints.getData().add(new XYChart.Data(i,stlst.get(i).getPoints()));
+                 seriesPoints.getData().add(new XYChart.Data(i, stlst.get(i).getPoints()));
             }
 
             XYChart.Series seriesAssists = new XYChart.Series();

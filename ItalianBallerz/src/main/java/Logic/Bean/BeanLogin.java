@@ -1,9 +1,10 @@
 package Logic.Bean;
 
 import Logic.Control.LoginControl;
+import Logic.Other.SingletonPlayer;
 
 public class BeanLogin {
-    public static int verifyUser(String Username, String Password)
+    public static int verifyUser(String Username, String Password,Boolean owner)
     {
         LoginControl lg = new LoginControl();
         int ret  = 0;
@@ -21,7 +22,7 @@ public class BeanLogin {
         }
         else{
             try{
-                b = lg.searchUserU(Username);
+                b = lg.searchUserU(Username,owner);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -32,7 +33,7 @@ public class BeanLogin {
             }
             else
             {
-                b = lg.searchUser(Username,Password);
+                b = lg.searchUser(Username,Password,owner);
                 if(b){
                     System.out.println("User found!");
                     ret = 2;
@@ -43,7 +44,7 @@ public class BeanLogin {
         return ret;
     }
 
-    public static int addUser(String user,String password,String passwordConf,String email){
+    public static int addUser(String user,String password,String passwordConf,String email,Boolean owner){
         int b = 0;
         if(user.compareTo("") == 0 || password.compareTo("") == 0 ||
                 passwordConf.compareTo("") == 0 || email.compareTo("") == 0){
@@ -55,9 +56,9 @@ public class BeanLogin {
         }
         else{
             LoginControl lg = new LoginControl();
-            if(!lg.searchUserU(user))
+            if(!lg.searchUserU(user,owner))
             {
-                lg.writePlayerUser(user,password,email);
+                lg.writePlayerUser(user,password,email,owner);
                 b = 2;
             }
         }
@@ -73,4 +74,10 @@ public class BeanLogin {
         LoginControl lg = new LoginControl();
         lg.logOut();
     }
+    public static Boolean isOwner(){
+        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
+        return sp.getOwner();
+    }
+
+
 }

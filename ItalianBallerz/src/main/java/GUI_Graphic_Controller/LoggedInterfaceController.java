@@ -1,8 +1,6 @@
 package GUI_Graphic_Controller;
 
 import Logic.Bean.BeanLogin;
-import Logic.Entity.PlayerUser;
-import Logic.Other.SingletonPlayer;
 import Logic.Other.Swap;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,10 +23,21 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
     private Text text;
     @FXML
     private AnchorPane mainPane;
+    @FXML
+    private Text txt3;
+    @FXML
+    private AnchorPane box3;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         text.setText(BeanLogin.getUsername());
+        if(BeanLogin.isOwner()){
+            txt3.setText("Add your playground");
+            box3.setOnMouseEntered(this::in);
+            box3.setOnMouseExited(this::out);
+            box3.setOnMouseClicked(MouseEvent -> Swap.goTo("AddPlayground.fxml",mainPane));
+        }
     }
 
 
@@ -88,9 +97,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
             try {
                 bNo.setOnMouseEntered(mouseEvent -> bNo.setCursor(Cursor.HAND));
                 bNo.setOnMouseExited(mouseEvent -> bNo.setCursor(Cursor.DEFAULT));
-                bNo.setOnMouseClicked(MouseEvent -> {
-                    stage.close();
-                });
+                bNo.setOnMouseClicked(MouseEvent -> stage.close());
             } catch (Exception e) {
                 e.printStackTrace();
             }

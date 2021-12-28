@@ -20,19 +20,19 @@
                <children>
                   <TextField fx:id="username" layoutX="450.0" layoutY="95.0" />
                   <TextField fx:id="email" layoutX="450.0" layoutY="195.0" />
-                  <Button layoutX="462.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#Register" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #FFA700;" text="Register">
+                  <Button layoutX="462.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#Register" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="135.0" style="-fx-background-color: #FFA700;" text="Register">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
                   <Text layoutX="450.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
                   <Text layoutX="450.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
                   <Text layoutX="450.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-                  <Button layoutX="500.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#SwaptoL" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
+                  <Button layoutX="500.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#SwaptoL" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
                   <PasswordField fx:id="password" layoutX="450.0" layoutY="295.0" />
                   <Text layoutX="450.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password" />
                   <PasswordField fx:id="passwordConf" layoutX="450.0" layoutY="395.0" />
                   <Text fx:id="errorText" layoutX="44.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <RadioButton fx:id="owner" layoutX="450.0" layoutY="458.0" mnemonicParsing="false" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" text="Register as playground owner" />
+                  <RadioButton fx:id="owner" layoutX="450.0" layoutY="458.0" mnemonicParsing="false" onMouseEntered="#genericEnter" onMouseExited="#genericExit" text="Register as playground owner" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_Graphic_Controller.StatsInterfaceControl">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_Graphic_Controller.AddPlaygroundController">
    <children>
       <AnchorPane fx:id="loginPane" layoutX="1035.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -28,12 +28,12 @@
             <Line endX="183.99993896484375" endY="39.19999694824219" layoutX="45.0" layoutY="-24.0" startX="156.47369384765625" startY="24.000003814697266" stroke="#ffa700" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="blockPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;">
+      <AnchorPane fx:id="blockPane" layoutX="-8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;">
          <children>
             <AnchorPane prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane layoutX="200.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="860.0" style="-fx-background-color: WHITE; -fx-border-color: #FFA700; -fx-border-width: 3;">
                <children>
-                  <Text fill="#ffa700" layoutX="329.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add your stats here" wrappingWidth="333.33674240112305">
+                  <Text fill="#ffa700" layoutX="87.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aggiungi le informazioni del tuo campetto!" wrappingWidth="686.9367790222168">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -42,28 +42,31 @@
                   <TextField fx:id="assistsField" layoutX="342.0" layoutY="193.0" prefHeight="26.0" prefWidth="308.0" />
                   <TextField fx:id="reboundsField" layoutX="342.0" layoutY="270.0" prefHeight="26.0" prefWidth="308.0" />
                   <TextField fx:id="minutesField" layoutX="342.0" layoutY="350.0" prefHeight="26.0" prefWidth="308.0" />
-                  <Text fill="#ffa700" layoutX="148.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points" wrappingWidth="104.53673934936523">
+                  <Text fill="#ffa700" layoutX="149.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="102.13676071166992">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fill="#ffa700" layoutX="144.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assists" wrappingWidth="112.00002441406252">
+                  <Text fill="#ffa700" layoutX="148.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Luogo" wrappingWidth="102.13676071166992">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fill="#ffa700" layoutX="116.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rebounds" wrappingWidth="168.80001220703127">
+                  <Text fill="#ffa700" layoutX="22.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero di telefono" wrappingWidth="328.8000122070313">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fill="#ffa700" layoutX="134.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes" wrappingWidth="133.59998474121096">
+                  <Text fill="#ffa700" layoutX="76.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Costo orario € " textAlignment="CENTER" wrappingWidth="247.20003662109377">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button layoutX="476.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#addStats" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: #FFA700;" text="ADD" textFill="WHITE" />
-                  <Button layoutX="450.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#SwaptoA" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="GET AVAREGE" textFill="#ffa700" />
+                  <Button layoutX="435.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#addCourt" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #FFA700;" text="Aggiungi" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button layoutX="466.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#SwaptoL" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
                </children></AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
@@ -77,7 +80,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" style="-fx-text-fill: WHITE;" text="Statistics" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#SwaptoS" onMouseEntered="#PassOnS" onMouseExited="#PassOnS" text="Statistics" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>

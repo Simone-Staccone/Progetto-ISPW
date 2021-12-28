@@ -6,15 +6,26 @@ import Logic.Entity.PlayerUser;
 import Logic.Other.SingletonPlayer;
 
 public class LoginControl{
-    public void writePlayerUser(String name, String password,String email)
+    public void writePlayerUser(String name, String password,String email,Boolean owner)
     {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
+        if(owner)
+            path = path + "owner.txt";
+        else
+            path = path + "log.txt";
+
         FileManager fm = new FileManager(path);
-        fm.writeAppendE(name + "$" + password + "$" + email);
+        fm.writeAppendE(name + "$" + password + "%" + email);
     }
 
-    public Boolean searchUser(String user,String password){
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
+    public Boolean searchUser(String user,String password,Boolean owner){
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
+
+        if(owner)
+            path = path + "owner.txt";
+        else
+            path = path + "log.txt";
+
 
         String name;
         String psw;
@@ -29,7 +40,8 @@ public class LoginControl{
             name = name.substring(0,name.indexOf("$"));
             System.out.println(name + " " + psw);
             if(name.compareTo(user) == 0 && psw.compareTo(password) == 0){
-                PlayerUser.setUsername(user);
+                PlayerUser.setUsernameP(user);
+                PlayerUser.setOwner(owner);
                 SingletonPlayer.getLoginInstance();
                 b = true;
                 break;
@@ -39,10 +51,18 @@ public class LoginControl{
     }
 
 
-    public Boolean searchUserU(String user){
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\log.txt";
+    public Boolean searchUserU(String user,Boolean owner){
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\";
         String name;
         boolean b = false;
+
+        if(owner)
+            path = path + "owner.txt";
+        else
+            path = path + "log.txt";
+
+
+
         FileManager fm = new FileManager(path);
 
         while(!fm.checkEnd()) {

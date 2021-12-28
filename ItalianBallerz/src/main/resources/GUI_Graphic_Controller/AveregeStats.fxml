@@ -58,8 +58,8 @@
                <Font size="36.0" />
             </font>
          </Text>
-         <Button layoutX="144.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#SwaptoS" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
-         <Button layoutX="152.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#SwaptoS2" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="Stats" />
+         <Button layoutX="144.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#SwaptoS" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Indietro" textFill="#ffa700" />
+         <Button layoutX="152.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#SwaptoS2" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: #FFA700;" text="Stats" />
       </AnchorPane>
       <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#SwaptoH" onMouseEntered="#PassOnH" onMouseExited="#PassOffH" text="Home" AnchorPane.topAnchor="15.0">
@@ -80,7 +80,7 @@
          <ImageView fitHeight="48.0" fitWidth="340.0" layoutX="465.0" layoutY="10.0" AnchorPane.leftAnchor="465.0" AnchorPane.rightAnchor="475.0">
             <Image url="@../Images/Logo.png" />
          </ImageView>
-         <Pane fx:id="userIconPane" layoutX="1195.0" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <Pane fx:id="userIconPane" layoutX="1195.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                <Image url="@../Images/UserIcon.png" />
             </ImageView>

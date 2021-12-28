@@ -19,15 +19,15 @@ public class LoginInterfaceController extends GenericInterface{
     private AnchorPane mainPane;
     @FXML
     private Text errorText;
+    @FXML
+    private RadioButton owner;
 
     @FXML
     private void login(){
         int ret;
         errorText.setText("");
         errorText.setStyle("-fx-fill: RED");
-        ret = BeanLogin.verifyUser(username.getText(),password.getText());
-
-
+        ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
 
         switch (ret){
             case -1:
@@ -57,10 +57,6 @@ public class LoginInterfaceController extends GenericInterface{
     private void Try(KeyEvent k){
         if(k.getCode().toString().compareTo("ENTER") == 0)
             login();
-        else if(k.getCode().toString().compareTo("DOWN") == 0)
-        {
-            password.onMouseClickedProperty();
-        }
     }
 }
 

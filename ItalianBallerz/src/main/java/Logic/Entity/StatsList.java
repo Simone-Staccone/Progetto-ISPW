@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatsList {
-    private List<Stat> stlst = new ArrayList<>();
+    private final List<Stat> stlst = new ArrayList<>();
 
     public StatsList() {
-        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\"
-                + PlayerUser.getUsername() + "\\";
+        String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\Users\\"
+                + SingletonPlayer.getLoginInstance().getUsername() + "\\";
         FileManager fm = new FileManager(path + "points.txt");
         FileManager fm2 = new FileManager(path + "assists.txt");
         FileManager fm3 = new FileManager(path + "rebounds.txt");
@@ -32,8 +32,8 @@ public class StatsList {
     public void print() {
         System.out.println(stlst.size());
         Stat s;
-        for(int i=0;i<stlst.size();i++){
-            s = stlst.get(i);
+        for (Stat stat : stlst) {
+            s = stat;
             System.out.println(s.getPoints() + "-" + s.getAssists() + "-" + s.getRebounds() + "-" + s.getMinutes());
         }
     }
