@@ -55,7 +55,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <children>
                   <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                      <image>

@@ -1,7 +1,6 @@
 package GUI_Graphic_Controller;
 
 import Logic.Bean.BeanCourt;
-import Logic.Bean.BeanLogin;
 import Logic.Bean.BeanStats;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

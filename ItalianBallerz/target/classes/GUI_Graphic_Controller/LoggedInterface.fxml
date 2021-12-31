@@ -43,19 +43,19 @@
                                     <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage your profile" />
                                  </children>
                               </AnchorPane>
+                              <AnchorPane fx:id="box3" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="65.0" prefWidth="486.0" style="-fx-background-color: WHITE;">
+                                 <children>
+                                    <Text fx:id="txt3" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming soon" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="65.0" prefWidth="486.0" style="-fx-background-color: WHITE;">
+                                 <children>
+                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming soon" />
+                                 </children>
+                              </AnchorPane>
                               <AnchorPane onMouseClicked="#logOut" onMouseEntered="#in" onMouseExited="#out" prefHeight="65.0" prefWidth="486.0" style="-fx-background-color: WHITE;">
                                  <children>
                                     <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" prefHeight="65.0" prefWidth="486.0" style="-fx-background-color: WHITE;">
-                                 <children>
-                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming soon" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" prefHeight="65.0" prefWidth="486.0" style="-fx-background-color: WHITE;">
-                                 <children>
-                                    <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming soon" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -88,7 +88,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
          </children>
       </AnchorPane>
    </children>

@@ -62,8 +62,8 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Button layoutX="476.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#addStats" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: #FFA700;" text="ADD" textFill="WHITE" />
-                  <Button layoutX="450.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#SwaptoA" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="GET AVAREGE" textFill="#ffa700" />
+                  <Button layoutX="476.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#addStats" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: #FFA700;" text="ADD" textFill="WHITE" />
+                  <Button layoutX="450.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#SwaptoA" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="GET AVAREGE" textFill="#ffa700" />
                </children></AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
@@ -87,7 +87,7 @@
                         <Image url="@../Images/Logo.png" />
                      </image>
                   </ImageView>
-                  <Pane fx:id="userIconPane" layoutX="1195.0" layoutY="5.0" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Pane fx:id="userIconPane" layoutX="1195.0" layoutY="5.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <children>
                         <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                            <image>

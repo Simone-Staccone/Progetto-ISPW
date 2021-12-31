@@ -40,7 +40,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Pane fx:id="userIconPane" onMouseClicked="#SwaptoL" onMouseEntered="#PassOnInstance" onMouseExited="#PassOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Pane fx:id="userIconPane" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <children>
                   <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                      <image>
@@ -59,8 +59,8 @@
                   <Image url="@../Images/Mappa.png" />
                </image>
             </ImageView>
-            <TextField fx:id="searchList" layoutX="50.0" layoutY="101.0" onMouseClicked="#tryClear" prefHeight="26.0" prefWidth="416.0" text="Cerca..." />
-            <Button layoutX="480.0" layoutY="101.0" mnemonicParsing="false" onMouseEntered="#GenericEnter" onMouseExited="#GenericExit" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #FFA700;" text="Cerca" textFill="WHITE" />
+            <TextField fx:id="searchBar" layoutX="50.0" layoutY="101.0" onMouseClicked="#tryClear" prefHeight="26.0" prefWidth="416.0" text="Cerca..." />
+            <Button layoutX="480.0" layoutY="101.0" mnemonicParsing="false" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #FFA700;" text="Cerca" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>
