@@ -1,4 +1,4 @@
-package Logic.Control;
+package logic.control;
 
 import java.io.*;
 import java.util.ArrayList;

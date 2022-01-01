@@ -1,7 +1,7 @@
-package Logic.Bean;
+package logic.bean;
 
-import Logic.Control.LoginControl;
-import Logic.Other.SingletonPlayer;
+import logic.control.LoginControl;
+import logic.other.SingletonPlayer;
 
 public class BeanLogin {
     public static int verifyUser(String Username, String Password,Boolean owner)

@@ -1,4 +1,4 @@
-package Logic.Other;
+package logic.other;
 
 import javafx.scene.layout.HBox;
 

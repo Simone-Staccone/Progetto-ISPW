@@ -1,6 +1,6 @@
-package Logic.Bean;
+package logic.bean;
 
-import Logic.Control.CourtController;
+import logic.control.CourtController;
 import javafx.scene.layout.HBox;
 
 import java.util.List;

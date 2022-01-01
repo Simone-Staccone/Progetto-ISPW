@@ -1,4 +1,4 @@
-package Logic.Control;;
+package logic.control;;
 
 public class CourtController {
     private String path = "C:\\Users\\simon\\IdeaProjects\\ItalianBallerz\\src\\main\\java\\Data\\Court";

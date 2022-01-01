@@ -1,7 +1,7 @@
-package Logic.Other;
+package logic.other;
 
-import Logic.Bean.BeanStats;
-import Logic.Entity.Stat;
+import logic.bean.BeanStats;
+import logic.entity.Stat;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;

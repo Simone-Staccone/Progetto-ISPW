@@ -1,8 +1,8 @@
-package Logic.Entity;
+package logic.entity;
 
-import Logic.Control.FileManager;
-import Logic.Control.StatsController;
-import Logic.Other.SingletonPlayer;
+import logic.control.FileManager;
+import logic.control.StatsController;
+import logic.other.SingletonPlayer;
 
 import java.util.ArrayList;
 import java.util.List;

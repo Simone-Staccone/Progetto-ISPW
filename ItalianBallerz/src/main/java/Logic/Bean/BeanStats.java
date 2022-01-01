@@ -1,9 +1,9 @@
-package Logic.Bean;
+package logic.bean;
 
-import gui_Graphic_Controller.StatsInterfaceControl;
-import Logic.Control.StatsController;
-import Logic.Entity.Stat;
-import Logic.Entity.StatsList;
+import guicontroller.StatsInterfaceControl;
+import logic.control.StatsController;
+import logic.entity.Stat;
+import logic.entity.StatsList;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Logic.Entity;
+package logic.entity;
 
 public class CourtList {
 }

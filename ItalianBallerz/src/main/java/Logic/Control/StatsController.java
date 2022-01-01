@@ -1,7 +1,7 @@
-package Logic.Control;
+package logic.control;
 
-import Logic.Entity.Stat;
-import Logic.Other.SingletonPlayer;
+import logic.entity.Stat;
+import logic.other.SingletonPlayer;
 
 
 public class StatsController {

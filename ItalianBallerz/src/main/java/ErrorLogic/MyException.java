@@ -1,4 +1,4 @@
-package errorLogic;
+package errorlogic;
 
 public class MyException {
 }

@@ -1,7 +1,7 @@
-package Logic.Other;
+package logic.other;
 
 
-import Logic.Entity.PlayerUser;
+import logic.entity.PlayerUser;
 
 public class SingletonPlayer {
     private static SingletonPlayer instance = null;

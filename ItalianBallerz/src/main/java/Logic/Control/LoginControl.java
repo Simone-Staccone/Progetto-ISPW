@@ -1,9 +1,9 @@
-package Logic.Control;
+package logic.control;
 
 /* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
 
-import Logic.Entity.PlayerUser;
-import Logic.Other.SingletonPlayer;
+import logic.entity.PlayerUser;
+import logic.other.SingletonPlayer;
 
 public class LoginControl{
     public void writePlayerUser(String name, String password,String email,Boolean owner)

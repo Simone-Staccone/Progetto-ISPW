@@ -1,6 +1,6 @@
-package Logic.Entity;
+package logic.entity;
 
-import Logic.Other.SingletonPlayer;
+import logic.other.SingletonPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
