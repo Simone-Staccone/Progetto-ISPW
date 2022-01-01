@@ -32,17 +32,23 @@ public class FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        RandomAccessFile raf = null;
         try {
-            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
+            raf = new RandomAccessFile(this.path, "rw");
             if(raf.length() == this.fp)
             {
                 ret = true;
             }
-            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
+        }
+        finally{
+            try {
+                raf.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return ret;
     }
