@@ -31,12 +31,12 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/guicontroller/MainInterfaceController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/guicontroller/MainInterface.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/guicontroller/LoginInterfaceController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Logic/Bean/BeanLogin.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/logic/bean/BeanLogin.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/guicontroller/MyStatsControl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/guicontroller/LoggedInterface.fxml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/guicontroller/GenericInterface.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Logic/Other/Swap.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Logic/Other/SingletonPlayer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/logic/other/Swap.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/logic/other/SingletonPlayer.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20Y1Bz119OKOcVfxFSN5ZmURRCI" />
   <component name="ProjectViewState">
@@ -47,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -305,6 +305,9 @@
       <workItem from="1641063560946" duration="121000" />
       <workItem from="1641063877384" duration="787000" />
       <workItem from="1641064887227" duration="24000" />
+      <workItem from="1641065146625" duration="5000" />
+      <workItem from="1641065223311" duration="14000" />
+      <workItem from="1641070009937" duration="62000" />
     </task>
     <servers />
   </component>
