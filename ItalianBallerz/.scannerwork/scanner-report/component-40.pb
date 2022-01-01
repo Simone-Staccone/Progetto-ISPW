@@ -1,0 +1,1 @@
+( 2javaXJhr'src/main/java/logic/Bean/BeanStats.java
