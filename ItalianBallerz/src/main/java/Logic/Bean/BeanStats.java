@@ -1,6 +1,6 @@
 package Logic.Bean;
 
-import GUI_Graphic_Controller.StatsInterfaceControl;
+import gui_Graphic_Controller.StatsInterfaceControl;
 import Logic.Control.StatsController;
 import Logic.Entity.Stat;
 import Logic.Entity.StatsList;

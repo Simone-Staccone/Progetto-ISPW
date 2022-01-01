@@ -1,4 +1,4 @@
-package GUI_Graphic_Controller;
+package gui_Graphic_Controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

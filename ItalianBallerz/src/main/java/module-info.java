@@ -10,8 +10,8 @@ module com.example.italianballerz {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens GUI_Graphic_Controller to javafx.fxml;
-    exports GUI_Graphic_Controller;
+    opens gui_Graphic_Controller to javafx.fxml;
+    exports gui_Graphic_Controller;
 
     opens Logic.Other to javafx.fxml;
     exports Logic.Other;

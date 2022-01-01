@@ -1,4 +1,4 @@
-package ErrorLogic.Trigger;
+package errorLogic.Trigger;
 
 public class MyTrigger {
 }

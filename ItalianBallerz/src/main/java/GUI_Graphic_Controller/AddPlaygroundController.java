@@ -1,4 +1,4 @@
-package GUI_Graphic_Controller;
+package gui_Graphic_Controller;
 
 import Logic.Bean.BeanCourt;
 import Logic.Bean.BeanStats;
@@ -18,7 +18,7 @@ public class AddPlaygroundController extends GenericInterface {
     private TextField minutesField;
 
     public void showM(String s){
-        System.out.println("Interaction returned: " + s);
+        System.err.println("Interaction returned: " + s);
     }
 
     @FXML
@@ -29,20 +29,21 @@ public class AddPlaygroundController extends GenericInterface {
 
     @FXML
     private void addStats() {
-        String p, a, r, m;
+        String p;
+        String a;
+        String r;
+        String m;
 
         try {
             p = pointsField.getText();
             a = assistsField.getText();
             r = reboundsField.getText();
             m = minutesField.getText();
-            try {
-                BeanStats.add(p, a, r, m);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            System.out.println("Wrong input");
+            BeanStats.add(p, a, r, m);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (Exception e){
+            System.err.println("Wrong input");
         } finally {
             pointsField.setText("");
             assistsField.setText("");

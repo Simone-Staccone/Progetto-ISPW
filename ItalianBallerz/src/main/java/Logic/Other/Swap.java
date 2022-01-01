@@ -1,6 +1,6 @@
 package Logic.Other;
 
-import GUI_Graphic_Controller.MainInterface;
+import gui_Graphic_Controller.MainInterface;
 import Logic.Bean.BeanLogin;
 import Logic.Entity.PlayerUser;
 import javafx.fxml.FXMLLoader;

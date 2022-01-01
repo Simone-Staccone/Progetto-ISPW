@@ -1,4 +1,4 @@
-package GUI_Graphic_Controller;
+package gui_Graphic_Controller;
 
 import Logic.Other.Swap;
 import javafx.fxml.FXML;
