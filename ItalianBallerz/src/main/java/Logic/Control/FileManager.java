@@ -3,6 +3,7 @@ package Logic.Control;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /* Questa classe ha la responsabilità di comunicare con i file*/
 
@@ -45,7 +46,7 @@ public class FileManager {
         }
         finally{
             try {
-                raf.close();
+                Objects.requireNonNull(raf).close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -65,16 +66,23 @@ public class FileManager {
             e.printStackTrace();
         }
 
-
+        RandomAccessFile raf = null;
         try {
             String res = text + "\n";
-            RandomAccessFile raf = new RandomAccessFile(path, "rw");
+            raf = new RandomAccessFile(path, "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
+        }
+        finally{
+            try {
+                Objects.requireNonNull(raf).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -121,11 +129,10 @@ public class FileManager {
             e.printStackTrace();
         }
 
+        RandomAccessFile raf = null;
         try {
             StringBuilder buffer = new StringBuilder();
-
-
-            RandomAccessFile raf = new RandomAccessFile(path, "rw");
+            raf = new RandomAccessFile(path, "rw");
 
             raf.seek(this.fp);
 
@@ -137,6 +144,12 @@ public class FileManager {
         }
         catch(IOException e) {
             e.printStackTrace();
+        }finally{
+            try {
+                Objects.requireNonNull(raf).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return text;
     }
@@ -151,8 +164,9 @@ public class FileManager {
             e.printStackTrace();
         }
 
+        BufferedReader br = null;
         try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            br = new BufferedReader(new FileReader(file));
             List<String> str = new ArrayList<>();
             String s = "";
             int count = 0;
@@ -176,6 +190,12 @@ public class FileManager {
 
         } catch (IOException ex) {
             ex.printStackTrace();
+        }finally{
+            try{
+                Objects.requireNonNull(br).close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -194,16 +214,22 @@ public class FileManager {
         }
 
         System.out.println(file.getAbsolutePath());
-
+        RandomAccessFile raf  = null;
         try {
             String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path + "\\"+ what+ ".txt", "rw");
+            raf = new RandomAccessFile(this.path + "\\"+ what+ ".txt", "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
+        }finally{
+            try {
+                Objects.requireNonNull(raf).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
