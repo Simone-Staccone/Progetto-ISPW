@@ -13,11 +13,11 @@ public class StatsList {
 
     public StatsList() {
         String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\users\\"
-                + SingletonPlayer.getLoginInstance().getUsername() + "\\";
-        FileManager fm = new FileManager(path + "points.txt");
-        FileManager fm2 = new FileManager(path + "assists.txt");
-        FileManager fm3 = new FileManager(path + "rebounds.txt");
-        FileManager fm4 = new FileManager(path + "minutes.txt");
+                + SingletonPlayer.getLoginInstance().getUsername();
+        FileManager fm = new FileManager(path + "\\points.txt");
+        FileManager fm2 = new FileManager(path + "\\assists.txt");
+        FileManager fm3 = new FileManager(path + "\\rebounds.txt");
+        FileManager fm4 = new FileManager(path + "\\minutes.txt");
         StatsController st = new StatsController();
         Stat s;
         while(!fm.checkEnd()){
@@ -31,11 +31,11 @@ public class StatsList {
     }
 
     public void print() {
-        System.out.println(stlst.size());
+        System.err.println(stlst.size());
         Stat s;
         for (Stat stat : stlst) {
             s = stat;
-            System.out.println(s.getPoints() + "-" + s.getAssists() + "-" + s.getRebounds() + "-" + s.getMinutes());
+            System.err.println(s.getPoints() + "-" + s.getAssists() + "-" + s.getRebounds() + "-" + s.getMinutes());
         }
     }
 }
