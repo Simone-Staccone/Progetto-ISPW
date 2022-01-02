@@ -1,1 +1,0 @@
-5 2javaX(hr.src/main/java/Logic/Other/SingletonPlayer.java

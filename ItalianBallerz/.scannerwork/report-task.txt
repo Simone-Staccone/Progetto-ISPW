@@ -1,7 +1,0 @@
-organization=simone-staccone
-projectKey=Simone-Staccone_Progetto-ISPW
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.25642
-dashboardUrl=https://sonarcloud.io/dashboard?id=Simone-Staccone_Progetto-ISPW
-ceTaskId=AX4W_TWGjcBQqkp5RwWr
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX4W_TWGjcBQqkp5RwWr
