@@ -34,7 +34,7 @@ public class MyStatsControl extends GenericInterface implements Initializable {
             e.printStackTrace();
         }
 
-        bList = this.scL.getList();
+        bList = this.scL.getList("");
 
         try{
             ancPane.setMinHeight(bList.size()*40);
