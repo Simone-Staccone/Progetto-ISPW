@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerUser extends SingletonPlayer {
-    private List<Stat> playerstats = new ArrayList<>();
+    private List<Stat> playerStats = new ArrayList<>();
     private static String name;
     private static Boolean owner;
 

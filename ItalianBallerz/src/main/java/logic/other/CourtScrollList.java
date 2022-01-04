@@ -13,8 +13,8 @@ import java.util.List;
 
 public class CourtScrollList implements ScrollList{
     @Override
-    public List<HBox> getList(String name) {
-        CourtList crt = new CourtList(name);
+    public List<HBox> getList() {
+        List<Court> crt = CourtList.getCourts();
         List<HBox> bList = new ArrayList<>();
         Court c;
         HBox b;

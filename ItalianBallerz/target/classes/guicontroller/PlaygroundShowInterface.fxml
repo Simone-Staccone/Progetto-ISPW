@@ -60,7 +60,7 @@
                </image>
             </ImageView>
             <TextField fx:id="searchBar" layoutX="50.0" layoutY="101.0" onKeyPressed="#tryS" onMouseClicked="#tryClear" prefHeight="26.0" prefWidth="416.0" text="Cerca..." />
-            <Button layoutX="480.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#search" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #FFA700;" text="Cerca" textFill="WHITE" />
+            <Button fx:id="searchButton" layoutX="480.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #FFA700;" text="Cerca" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

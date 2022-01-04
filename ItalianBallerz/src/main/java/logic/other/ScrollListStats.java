@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ScrollListStats implements ScrollList{
     @Override
-    public List<HBox> getList(String str) {
+    public List<HBox> getList() {
         List<Stat> statList = BeanStats.getStatsList();
         Stat s;
         List<HBox> bList = new ArrayList<>();

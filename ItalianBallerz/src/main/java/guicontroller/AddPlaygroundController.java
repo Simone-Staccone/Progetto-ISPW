@@ -1,53 +1,42 @@
 package guicontroller;
 
+import javafx.scene.input.KeyEvent;
 import logic.bean.BeanCourt;
-import logic.bean.BeanStats;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
+
 
 public class AddPlaygroundController extends GenericInterface {
     @FXML
-    private TextField pointsField;
+    private TextField nameField;
     @FXML
-    private TextField assistsField;
+    private TextField locationField;
     @FXML
-    private TextField reboundsField;
+    private TextField phoneField;
     @FXML
-    private TextField minutesField;
+    private TextField moneyField;
 
     public void showM(String s){
         System.out.println("Interaction returned: " + s);
     }
-
     @FXML
-    private void addCourt(){
-        BeanCourt.addCourt(pointsField.getText(),assistsField.getText());
-    }
-
-
-    @FXML
-    private void addStats() {
-        String p, a, r, m;
-
+    private void addCourt() {
         try {
-            p = pointsField.getText();
-            a = assistsField.getText();
-            r = reboundsField.getText();
-            m = minutesField.getText();
-            try {
-                BeanStats.add(p, a, r, m);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            BeanCourt.addCourt(nameField.getText(),locationField.getText());
         } catch (Exception e) {
             System.out.println("Wrong input");
         } finally {
-            pointsField.setText("");
-            assistsField.setText("");
-            reboundsField.setText("");
-            minutesField.setText("");
+            nameField.setText("");
+            locationField.setText("");
+            phoneField.setText("");
+            moneyField.setText("");
         }
+    }
+
+    @FXML
+    private void tryAdd(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            addCourt();
     }
 }

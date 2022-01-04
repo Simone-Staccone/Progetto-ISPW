@@ -38,10 +38,10 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="pointsField" layoutX="342.0" layoutY="113.0" prefHeight="26.0" prefWidth="308.0" />
-                  <TextField fx:id="assistsField" layoutX="342.0" layoutY="193.0" prefHeight="26.0" prefWidth="308.0" />
-                  <TextField fx:id="reboundsField" layoutX="342.0" layoutY="270.0" prefHeight="26.0" prefWidth="308.0" />
-                  <TextField fx:id="minutesField" layoutX="342.0" layoutY="350.0" prefHeight="26.0" prefWidth="308.0" />
+                  <TextField fx:id="nameField" layoutX="342.0" layoutY="113.0" onKeyPressed="#tryAdd" prefHeight="26.0" prefWidth="308.0" />
+                  <TextField fx:id="locationField" layoutX="342.0" layoutY="193.0" onKeyPressed="#tryAdd" prefHeight="26.0" prefWidth="308.0" />
+                  <TextField fx:id="phoneField" layoutX="342.0" layoutY="270.0" onKeyPressed="#tryAdd" prefHeight="26.0" prefWidth="308.0" />
+                  <TextField fx:id="moneyField" layoutX="342.0" layoutY="350.0" onKeyPressed="#tryAdd" prefHeight="26.0" prefWidth="308.0" />
                   <Text fill="#ffa700" layoutX="149.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="102.13676071166992">
                      <font>
                         <Font size="36.0" />
