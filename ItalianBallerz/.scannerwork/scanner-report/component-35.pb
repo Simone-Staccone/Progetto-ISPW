@@ -1,0 +1,1 @@
+# 2javaXThr'src/main/java/logic/bean/BeanLogin.java

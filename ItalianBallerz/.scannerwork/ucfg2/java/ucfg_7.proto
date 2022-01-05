@@ -1,0 +1,104 @@
+
+7logic.control.FileManager#checkEnd()Ljava/lang/Boolean;p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java ("14*≠
+13p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java ( º
+π
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (%
+%0java.lang.String"__id*'*%
+logic.control.FileManager"
+pathóî
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (
+%1java.io.File"java.io.File’
+“
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (&
+%2"(java.io.File#<init>(Ljava/lang/String;)V*
+
+%1java.io.File*
+
+%0java.lang.String*
+12*ò
+14p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (ô
+ñ
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (
+filejava.io.File"__id*
+""*
+13*Œ
+3p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java* *(—Œ
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java* *(
+%10void"!java.io.RandomAccessFile#close()V*!
+
+rafjava.io.RandomAccessFile2close()*
+1*ê
+6p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java% %(Iæ
+ª
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java% %(I
+rafjava.io.RandomAccessFile"__id* 
+
+%7java.io.RandomAccessFile“œ
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java& &(
+
+%9long""java.io.RandomAccessFile#length()J*!
+
+rafjava.io.RandomAccessFile2length()*
+3*ı
+7p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java%8 %(<º
+π
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java%8 %(A
+%6java.lang.String"__id*'*%
+logic.control.FileManager"
+pathØ¨
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java%' %(7
+%7java.io.RandomAccessFile"java.io.RandomAccessFileá
+Ñ
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java%# %(H
+%8"Fjava.io.RandomAccessFile#<init>(Ljava/lang/String;Ljava/lang/String;)V* 
+
+%7java.io.RandomAccessFile*
+
+%6java.lang.String*
+rw*
+6* 
+10p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (Ã…
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java ($
+%4boolean"java.io.File#createNewFile()Z*
+
+filejava.io.File2createNewFile()*
+7*Í
+12p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (&ß
+§
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (&
+filejava.io.File"__id*
+
+%1java.io.Fileæª
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java (
+%3boolean"java.io.File#exists()Z*
+
+filejava.io.File2exists()*
+7
+10*Ò
+1p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java/ /("z
+p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java/ /(
+""B
+logic.control.FileManager
