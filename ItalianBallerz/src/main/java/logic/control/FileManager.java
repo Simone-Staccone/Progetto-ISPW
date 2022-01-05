@@ -66,37 +66,6 @@ public class FileManager {
         }
     }
 
-    public String readAll(String path, String mode)
-    {
-        File file;
-        String text = "";
-        try {
-            file = new File(this.path);
-            if (!file.exists())
-                file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            StringBuilder buffer = new StringBuilder();
-
-
-            RandomAccessFile raf = new RandomAccessFile(path, mode);
-
-            while(raf.getFilePointer() < raf.length()) {
-                buffer.append(raf.readLine());
-            }
-            text = buffer.toString();
-            raf.close();
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
-        return text;
-    }
-
-
     public String readLine()
     {
         File file;
