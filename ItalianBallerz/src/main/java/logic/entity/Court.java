@@ -9,4 +9,8 @@ public class Court {
     public String getName() {
         return this.name;
     }
+
+    public void setName(String s) {
+        this.name = s;
+    }
 }

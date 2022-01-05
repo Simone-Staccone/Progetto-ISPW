@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 import logic.bean.BeanCourt;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.entity.Court;
+import logic.entity.CourtCache;
+import logic.other.Swap;
 
 import java.net.URL;
 import java.util.List;
@@ -36,6 +39,11 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
             bList.add(new HBox(new Text("Nessun risultato per questa ricerca")));
         for(HBox b : bList)
         {
+            b.setOnMouseClicked(MouseEvent -> {
+                Text t = (Text)b.getChildren().get(0);
+                CourtCache.setName(t.getText());
+                Swap.goTo("Court.fxml", super.mainPane);
+            });
             courtList.getChildren().add(b);
         }
 

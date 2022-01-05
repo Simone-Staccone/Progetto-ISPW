@@ -20,4 +20,9 @@ public class BeanCourt {
         GetPlaygroundListController gpl = new GetPlaygroundListController();
         return gpl.get(name);
     }
+
+    public static String getCurrent() {
+        GetPlaygroundListController gp = new GetPlaygroundListController();
+        return gp.getCurrent();
+    }
 }

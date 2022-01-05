@@ -17,6 +17,14 @@
       </list>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="236sx6bdQMhtitDBNQiq0xFDXgc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,6 +43,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="logic.entity" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="MainInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -78,6 +91,7 @@
       <workItem from="1641308078791" duration="7571000" />
       <workItem from="1641317851758" duration="200000" />
       <workItem from="1641327162312" duration="2711000" />
+      <workItem from="1641380933405" duration="3021000" />
     </task>
     <servers />
   </component>

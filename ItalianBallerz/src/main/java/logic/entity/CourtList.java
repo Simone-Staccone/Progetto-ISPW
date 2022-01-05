@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourtList {
-    private static List<Court> courtList = new ArrayList<>();
+    private static final List<Court> courtList = new ArrayList<>();
 
     public CourtList(String name){
         FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
@@ -18,13 +18,13 @@ public class CourtList {
         }
     }
     public int size(){
-        return this.courtList.size();
+        return courtList.size();
     }
 
     public Court get(int i) {
         Court c = null;
-        if(this.courtList.size() > i)
-            c = this.courtList.get(i);
+        if(courtList.size() > i)
+            c = courtList.get(i);
         return c;
     }
 
@@ -32,15 +32,13 @@ public class CourtList {
         return CourtList.courtList;
     }
 
-    public static List<Court> setCourts(String name){
+    public static void setCourts(String name){
         courtList.clear();
-
         FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
         String s;
         while(!fm.checkEnd()){
             s = fm.readLine();
             courtList.add(new Court(s));
         }
-        return CourtList.courtList;
     }
 }

@@ -45,7 +45,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Text fill="#ffa700" layoutX="55.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOR VERGATA SPORTING CENTER">
+                  <Text fx:id="label" fill="#ffa700" layoutX="55.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOR VERGATA SPORTING CENTER">
                      <font>
                         <Font size="36.0" />
                      </font>

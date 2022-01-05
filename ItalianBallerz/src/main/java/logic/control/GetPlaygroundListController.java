@@ -1,6 +1,8 @@
 package logic.control;
 
 import javafx.scene.layout.HBox;
+import logic.entity.Court;
+import logic.entity.CourtCache;
 import logic.entity.CourtList;
 import logic.other.FactoryScrollList;
 import logic.other.ScrollList;
@@ -26,5 +28,8 @@ public class GetPlaygroundListController {
         }
 
         return bList;
+    }
+    public String getCurrent(){
+        return CourtCache.getName();
     }
 }
