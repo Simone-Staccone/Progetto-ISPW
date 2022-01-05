@@ -28,7 +28,7 @@ public class GetPlaygroundListController {
 
         return bList;
     }
-    public String getCurrent(){
+    public String getCurrentName(){
         return CourtCache.getName();
     }
 

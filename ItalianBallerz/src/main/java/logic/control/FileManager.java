@@ -66,6 +66,13 @@ public class FileManager {
         }
     }
 
+    public void exist() throws Exception{
+        File file;
+        file = new File(this.path);
+        if (!file.exists())
+            throw new Exception();
+    }
+
     public String readLine()
     {
         File file;
@@ -143,7 +150,7 @@ public class FileManager {
         if (!folder.exists())
             folder.mkdir();
         try {
-            file = new File(this.path + "\\"+ what+ ".txt");
+            file = new File(this.path + "\\"+ what + ".txt");
             if (!file.exists())
                 file.createNewFile();
         } catch (IOException e) {
@@ -154,7 +161,7 @@ public class FileManager {
 
         try {
             String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path + "\\"+ what+ ".txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(this.path + "\\"+ what + ".txt", "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();

@@ -34,11 +34,14 @@ public class CourtList {
 
     public static void setCourts(String name){
         courtList.clear();
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
-        String s;
-        while(!fm.checkEnd()){
-            s = fm.readLine();
-            courtList.add(new Court(s));
+        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + "\\" + name + ".txt");
+        try {
+            fm.exist();
+            while (!fm.checkEnd()) {
+                courtList.add(new Court(fm.readLine()));
+            }
+        } catch (Exception e) {
+            System.out.println("File non esiste");
         }
     }
 }

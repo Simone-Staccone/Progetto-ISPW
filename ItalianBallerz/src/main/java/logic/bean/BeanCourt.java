@@ -7,8 +7,9 @@ import logic.control.GetPlaygroundListController;
 import java.util.List;
 
 public class BeanCourt {
-    public static List<HBox> search(String s) {
-        return BeanCourt.getCourtList(s);
+    public static List<HBox> search(String name) {
+        GetPlaygroundListController gpl = new GetPlaygroundListController();
+        return gpl.get(name);
     }
 
     public static void addCourt(String name, String location, String phone, String money) throws Exception{
@@ -17,18 +18,13 @@ public class BeanCourt {
         }
         else {
             AddPlaygroundController cc = new AddPlaygroundController();
-            cc.addCourt(location, name, phone, money);
+            cc.addCourt(name, location, phone, money);
         }
     }
 
-    public static List<HBox> getCourtList(String name) {
-        GetPlaygroundListController gpl = new GetPlaygroundListController();
-        return gpl.get(name);
-    }
-
-    public static String getCurrent() {
+    public static String getCurrentName() {
         GetPlaygroundListController gp = new GetPlaygroundListController();
-        return gp.getCurrent();
+        return gp.getCurrentName();
     }
     public static void setCache(String name){
         GetPlaygroundListController gp = new GetPlaygroundListController();

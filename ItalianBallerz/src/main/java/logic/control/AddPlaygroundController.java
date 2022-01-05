@@ -1,5 +1,7 @@
 package logic.control;
 
+import logic.other.SingletonPlayer;
+
 import java.nio.file.Paths;
 
 
@@ -8,7 +10,7 @@ public class AddPlaygroundController {
 
 
     public void addCourt(String name,String location, String phone, String money) {
-        FileManager fm = new FileManager(path);
-        fm.writeAppend(location,name);
+        FileManager fm = new FileManager(path + "\\" + location);
+        fm.writeAppend((name + "\n" + phone + "\n" + money + "\n" + SingletonPlayer.getLoginInstance().getUsername()),location);
     }
 }
