@@ -8,16 +8,10 @@ import java.util.List;
 
 public class FileManager {
     private long fp;
-    private String path;
+    private final String path;
 
     public FileManager(String path)
     {
-        this.path = path;
-    }
-
-    public void changePath(String path)
-    {
-        this.fp = 0;
         this.path = path;
     }
 

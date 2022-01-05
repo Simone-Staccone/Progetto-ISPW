@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 
 public class StatsController {
-    private String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\users\\";
+    private final String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\users\\";
 
 
     public Stat create(float points, float assists, float rebounds, float minutes){
@@ -34,7 +34,7 @@ public class StatsController {
         FileManager fm2 = new FileManager(path + "assists.txt");
         FileManager fm3 = new FileManager(path + "rebounds.txt");
         FileManager fm4 = new FileManager(path + "minutes.txt");
-        Boolean b;
+        boolean b;
         try{
             fm.deleteLine(i);
             fm2.deleteLine(i);

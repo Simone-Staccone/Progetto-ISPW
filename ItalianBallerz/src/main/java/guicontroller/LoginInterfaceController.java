@@ -29,32 +29,25 @@ public class LoginInterfaceController extends GenericInterface{
         errorText.setStyle("-fx-fill: RED");
         ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
 
-        switch (ret){
-            case -1:
-                errorText.setText("*Username field is empty!");
-                break;
-            case -2:
-                errorText.setText("*Password field is empty!");
-                break;
-            case 0:
+        switch (ret) {
+            case -1 -> errorText.setText("*Username field is empty!");
+            case -2 -> errorText.setText("*Password field is empty!");
+            case 0 -> {
                 errorText.setText("*Wrong password!");
                 password.setText("");
-                break;
-            case 1:
+            }
+            case 1 -> {
                 errorText.setText("*Username not found!");
                 username.setText("");
                 password.setText("");
-                break;
-            case 2:
-                Swap.goTo("LoggedInterface.fxml",mainPane);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + ret);
+            }
+            case 2 -> Swap.goTo("LoggedInterface.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + ret);
         }
     }
 
     @FXML
-    private void Try(KeyEvent k){
+    private void tryL(KeyEvent k){
         if(k.getCode().toString().compareTo("ENTER") == 0)
             login();
     }

@@ -25,7 +25,7 @@ public class LoginControl{
 
     public Boolean searchUser(String user,String password,Boolean owner){
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";;
+        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
 
         if(owner)
             path = path + "owner.txt";
@@ -59,7 +59,7 @@ public class LoginControl{
 
     public Boolean searchUserU(String user,Boolean owner){
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";;
+        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
         String name;
         boolean b = false;
 

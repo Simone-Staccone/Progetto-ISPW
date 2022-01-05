@@ -37,24 +37,21 @@ public class RegisterInterfaceController extends GenericInterface{
             e.printStackTrace();
         }
         System.out.println(b);
-        switch (b){
-            case -1:
+        switch (b) {
+            case -1 -> {
                 errorText.setText("*Every field is required!");
                 errorText.setStyle("-fx-fill: RED");
-                break;
-            case 0:
+            }
+            case 0 -> {
                 errorText.setText("*Username already used!");
                 passwordConf.setText("");
-                break;
-            case 1:
+            }
+            case 1 -> {
                 errorText.setText("*Password and confirm password doesn't match");
                 errorText.setStyle("-fx-fill: RED");
-                break;
-            case 2:
-                Swap.goTo("LoginInterface.fxml", mainPane);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + b);
+            }
+            case 2 -> Swap.goTo("LoginInterface.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + b);
         }
 
     }

@@ -71,8 +71,7 @@ public class BeanLogin {
     }
 
     public static void logOut(){
-        LoginControl lg = new LoginControl();
-        lg.logOut();
+        LoginControl.logOut();
     }
     public static Boolean isOwner(){
         SingletonPlayer sp = SingletonPlayer.getLoginInstance();
