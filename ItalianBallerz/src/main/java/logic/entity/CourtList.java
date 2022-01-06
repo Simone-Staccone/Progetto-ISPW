@@ -37,8 +37,10 @@ public class CourtList {
         FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + "\\" + name + ".txt");
         try {
             fm.exist();
+            String s;
             while (!fm.checkEnd()) {
-                courtList.add(new Court(fm.readLine()));
+                s = fm.readLine();
+                courtList.add(new Court(s.substring(0,s.indexOf("$"))));
             }
         } catch (Exception e) {
             System.out.println("File non esiste");
