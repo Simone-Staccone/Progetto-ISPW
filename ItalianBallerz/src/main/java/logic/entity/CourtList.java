@@ -2,6 +2,7 @@ package logic.entity;
 
 import logic.control.FileManager;
 
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,13 @@ public class CourtList {
     public CourtList(String name){
         FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
         String s;
-        while(!fm.checkEnd()){
-            s = fm.readLine();
-            courtList.add(new Court(s));
+        try {
+            while (!fm.checkEnd()) {
+                s = fm.readLine();
+                courtList.add(new Court(s));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
     public int size(){

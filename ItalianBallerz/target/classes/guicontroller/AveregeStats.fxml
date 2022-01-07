@@ -12,8 +12,9 @@
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guicontroller.AveregeControl">
    <AnchorPane fx:id="blockPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #FBB97C;">
       <AnchorPane prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Text fx:id="errorText" fill="RED" layoutX="410.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*No data was found about you, if you want to se your stats go back to the add form" />
       <AnchorPane fx:id="centralPane" layoutX="200.0" layoutY="70.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="860.0" style="-fx-background-color: WHITE; -fx-border-color: #FFA700; -fx-border-width: 3;">
-         <Text fill="#ffa700" layoutX="263.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="These are your stats" wrappingWidth="333.33674240112305">
+         <Text fill="#ffa700" layoutX="203.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="These are your averege stats" wrappingWidth="470.93671798706055">
             <font>
                <Font size="36.0" />
             </font>

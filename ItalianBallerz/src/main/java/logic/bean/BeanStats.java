@@ -1,9 +1,9 @@
 package logic.bean;
 
+import errorlogic.MyException;
 import guicontroller.StatsInterfaceControl;
 import logic.control.StatsController;
 import logic.entity.Stat;
-import logic.entity.StatsList;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,6 @@ public class BeanStats {
         String res2 = BeanStats.control(assists);
         String res3 = BeanStats.control(rebounds);
         String res4 = BeanStats.control(minutes);
-        /* Integrare con soluzione try catch */
         if(res.compareTo("") == 0 && res2.compareTo("") == 0 && res3.compareTo("") == 0 && res4.compareTo("") == 0)
         {
             res = "Success";
@@ -49,10 +48,10 @@ public class BeanStats {
         return res;
     }
 
-    public static List<Stat> getStatsList()
+    public static List<Stat> getStatsList() throws MyException
     {
-        StatsList st = new StatsList();
-        return st.getStlst();
+        StatsController sc = new StatsController();
+        return sc.getList();
     }
 
     public static void delete(int i) {
@@ -60,13 +59,14 @@ public class BeanStats {
         st.delete(i);
     }
 
-    public static Stat averege() throws IOException {
+    public static Stat averege() throws MyException {
         StatsController st = new StatsController();
-        Stat s = null;
+        Stat s;
         try {
             s = st.average();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Errore!!!");
+            throw new MyException("Error message",e);
         }
         return s;
     }

@@ -15,8 +15,7 @@ public class FileManager {
         this.path = path;
     }
 
-    public Boolean checkEnd()
-    {
+    public Boolean checkEnd() throws FileNotFoundException {
         File file;
         boolean ret = false;
         try {
@@ -24,7 +23,7 @@ public class FileManager {
             if (!file.exists())
                 file.createNewFile();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException();
         }
 
         try {

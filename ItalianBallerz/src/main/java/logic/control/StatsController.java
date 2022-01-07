@@ -1,9 +1,14 @@
 package logic.control;
 
+import errorlogic.MyException;
 import logic.entity.Stat;
+import logic.entity.StatsList;
 import logic.other.SingletonPlayer;
 
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class StatsController {
@@ -23,7 +28,7 @@ public class StatsController {
         fm.writeAppend(Float.toString(minutes),"minutes");
     }
 
-    public Stat average(){
+    public Stat average() throws Exception {
         StatsController st = new StatsController();
         return st.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
     }
@@ -49,7 +54,7 @@ public class StatsController {
     }
 
 
-    public float getAverege(String str)
+    public float getAverege(String str) throws MyException
     {
         String path = this.path + SingletonPlayer.getLoginInstance().getUsername() + "\\" +str + ".txt";
         float x = 0;
@@ -58,16 +63,37 @@ public class StatsController {
         StringBuilder buffer = new StringBuilder();
         String s;
 
-        FileManager fm = new FileManager(path);
+        FileManager fm;
+        try {
+            fm = new FileManager(path);
 
-        while(!fm.checkEnd()) {
-            buffer.delete(0,buffer.length());
-            buffer.append(fm.readLine());
-            s = buffer.toString();
-            count++;
-            x+=Float.parseFloat(s);
-        }
+            while(!fm.checkEnd()) {
+                buffer.delete(0,buffer.length());
+                buffer.append(fm.readLine());
+                s = buffer.toString();
+                count++;
+                x+=Float.parseFloat(s);
+            }
         avg = x/count;
+        }catch (FileNotFoundException e){
+            throw new MyException("No file found",e);
+        }
         return avg;
+    }
+
+    public List<Stat> getList() throws MyException{
+        List<Stat> stLst = null;
+        boolean flag = true;
+        try {
+            StatsList st = new StatsList();
+            stLst = st.getStlst();
+            flag = false;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(flag)
+                stLst = new ArrayList<>();
+        }
+        return stLst;
     }
 }

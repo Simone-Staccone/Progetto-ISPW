@@ -1,5 +1,6 @@
 package logic.other;
 
+import errorlogic.MyException;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.layout.*;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class CourtScrollList implements ScrollList{
     @Override
-    public List<HBox> getList() {
+    public List<HBox> getList() throws MyException {
         List<Court> crt = CourtList.getCourts();
         List<HBox> bList = new ArrayList<>();
         Court c;

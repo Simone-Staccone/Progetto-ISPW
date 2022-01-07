@@ -1,4 +1,17 @@
 package errorlogic;
 
-public class MyException {
+public class MyException extends Exception{
+    private static final long serialVersionUID = 1L;
+
+    public MyException (String message){
+        super("this was the original message :" + message);
+    }
+
+    public MyException (Throwable cause) {
+        super(cause);
+    }
+
+    public MyException (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
 }

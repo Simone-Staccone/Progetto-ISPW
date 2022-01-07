@@ -1,6 +1,7 @@
 package guicontroller;
 
 
+import errorlogic.MyException;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
 import javafx.fxml.FXML;
@@ -11,7 +12,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -30,6 +30,8 @@ public class AveregeControl extends GenericInterface implements Initializable {
     private Text reboundsText;
     @FXML
     private AnchorPane centralPane;
+    @FXML
+    private Text errorText;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,8 +56,9 @@ public class AveregeControl extends GenericInterface implements Initializable {
             temp = temp.substring(0,min(temp.length(),4));
 
             minutesText.setText(temp);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (MyException e) {
+            System.err.println("Errore" + e.getCause() + e.getMessage());
+            errorText.toFront();
         }
 
 
@@ -66,8 +69,8 @@ public class AveregeControl extends GenericInterface implements Initializable {
                     new AreaChart<>(xAxis, yAxis);
             AnchorPane chartPane = new AnchorPane();
             ac.setTitle("Your stats");
-
-            List<Stat> stlst = BeanStats.getStatsList();
+            List<Stat> stlst;
+            stlst = BeanStats.getStatsList();
 
             XYChart.Series seriesPoints = new XYChart.Series();
             seriesPoints.setName("Points");
@@ -110,10 +113,8 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
             centralPane.getChildren().add(chartPane);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        }catch(MyException e){
+            errorText.toFront();
         }
-
-
     }
 }

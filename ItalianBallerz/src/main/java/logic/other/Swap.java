@@ -26,18 +26,14 @@ public class Swap {
         try{
             Parent parent = FXMLLoader.load(Objects.requireNonNull(MainInterface.class.getResource(s)));
             Scene scene = new Scene(parent);
-            Stage window = null;
+            Stage window;
             try {
                 window = (Stage)mainPane.getScene().getWindow();
-            } catch (Exception e) {
-                System.out.println("Trovato errore nello swap");
-            }
-            try {
                 Objects.requireNonNull(window).setScene(scene);
+                Objects.requireNonNull(window).show();
             } catch (Exception e) {
-                e.printStackTrace();
+                System.err.println("Trovato errore nello swap");
             }
-            Objects.requireNonNull(window).show();
         } catch (IOException e) {
             e.printStackTrace();
         }

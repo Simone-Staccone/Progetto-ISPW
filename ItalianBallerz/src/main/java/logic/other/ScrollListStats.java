@@ -1,5 +1,6 @@
 package logic.other;
 
+import errorlogic.MyException;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
 import javafx.geometry.Insets;
@@ -16,8 +17,9 @@ import java.util.List;
 
 public class ScrollListStats implements ScrollList{
     @Override
-    public List<HBox> getList() {
-        List<Stat> statList = BeanStats.getStatsList();
+    public List<HBox> getList() throws MyException{
+        List<Stat> statList;
+        statList = BeanStats.getStatsList();
         Stat s;
         List<HBox> bList = new ArrayList<>();
 

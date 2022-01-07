@@ -5,6 +5,7 @@ package logic.control;
 import logic.entity.PlayerUser;
 import logic.other.SingletonPlayer;
 
+import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -39,19 +40,23 @@ public class LoginControl{
 
         FileManager fm = new FileManager(path);
 
-        while(!fm.checkEnd()) {
-            name = fm.readLine();
+        try {
+            while (!fm.checkEnd()) {
+                name = fm.readLine();
 
-            psw = name.substring(name.indexOf("$")+1, name.indexOf("%"));
-            name = name.substring(0,name.indexOf("$"));
-            System.out.println(name + " " + psw);
-            if(name.compareTo(user) == 0 && psw.compareTo(password) == 0){
-                PlayerUser.setUsernameP(user);
-                PlayerUser.setOwner(owner);
-                SingletonPlayer.getLoginInstance();
-                b = true;
-                break;
+                psw = name.substring(name.indexOf("$") + 1, name.indexOf("%"));
+                name = name.substring(0, name.indexOf("$"));
+                System.out.println(name + " " + psw);
+                if (name.compareTo(user) == 0 && psw.compareTo(password) == 0) {
+                    PlayerUser.setUsernameP(user);
+                    PlayerUser.setOwner(owner);
+                    SingletonPlayer.getLoginInstance();
+                    b = true;
+                    break;
+                }
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
         return b;
     }
@@ -72,13 +77,17 @@ public class LoginControl{
 
         FileManager fm = new FileManager(path);
 
-        while(!fm.checkEnd()) {
-            name = fm.readLine();
-            name = name.substring(0,name.indexOf("$"));
-            if(name.compareTo(user) == 0){
-                b = true;
-                break;
+        try {
+            while (!fm.checkEnd()) {
+                name = fm.readLine();
+                name = name.substring(0, name.indexOf("$"));
+                if (name.compareTo(user) == 0) {
+                    b = true;
+                    break;
+                }
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
         return b;
     }
