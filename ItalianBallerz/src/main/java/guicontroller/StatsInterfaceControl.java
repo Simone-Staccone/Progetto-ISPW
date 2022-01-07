@@ -1,10 +1,9 @@
 package guicontroller;
 
+import javafx.scene.text.Text;
 import logic.bean.BeanStats;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
 
 public class StatsInterfaceControl extends GenericInterface {
     @FXML
@@ -15,6 +14,8 @@ public class StatsInterfaceControl extends GenericInterface {
     private TextField reboundsField;
     @FXML
     private TextField minutesField;
+    @FXML
+    private Text returnText;
 
     public void showM(String s){
         System.out.println("Interaction returned: " + s);
@@ -29,13 +30,16 @@ public class StatsInterfaceControl extends GenericInterface {
             a = assistsField.getText();
             r = reboundsField.getText();
             m = minutesField.getText();
-            try {
-                BeanStats.add(p, a, r, m);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
+            BeanStats.add(p, a, r, m);
+            returnText.setText("*Successfully added");
+            returnText.setStyle("-fx-fill: GREEN");
+            returnText.toFront();
         } catch (Exception e) {
             System.out.println("Wrong input");
+            returnText.setText("*Wrong input");
+            returnText.setStyle("-fx-fill: RED");
+            returnText.toFront();
         } finally {
             pointsField.setText("");
             assistsField.setText("");
