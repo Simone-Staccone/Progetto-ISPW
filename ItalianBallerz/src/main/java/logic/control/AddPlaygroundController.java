@@ -11,6 +11,6 @@ public class AddPlaygroundController {
 
     public void addCourt(String name,String location, String phone, String money) {
         FileManager fm = new FileManager(path + "\\" + location);
-        fm.writeAppend((name + "$" + phone + "%" + money + "$" + SingletonPlayer.getLoginInstance().getUsername()),location);
+        fm.writeAppend((name + "$" + phone + "%" + money + "@" + SingletonPlayer.getLoginInstance().getUsername()),location);
     }
 }

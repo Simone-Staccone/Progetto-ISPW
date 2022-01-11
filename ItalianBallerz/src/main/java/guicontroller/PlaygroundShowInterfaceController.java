@@ -39,7 +39,8 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
         {
             b.setOnMouseClicked(MouseEvent -> {
                 Text t = (Text)b.getChildren().get(0);
-                BeanCourt.setCache(t.getText());
+                BeanCourt.setCacheName(t.getText());
+                BeanCourt.setCacheLocation(s);
                 Swap.goTo("Court.fxml", super.mainPane);
             });
             courtList.getChildren().add(b);

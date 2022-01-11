@@ -26,8 +26,42 @@ public class BeanCourt {
         GetPlaygroundListController gp = new GetPlaygroundListController();
         return gp.getCurrentName();
     }
-    public static void setCache(String name){
+    public static void setCacheName(String name){
         GetPlaygroundListController gp = new GetPlaygroundListController();
-        gp.setCache(name);
+        gp.setCacheName(name);
+        try {
+            gp.setCacheOwner(name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setCacheLocation(String name){
+        GetPlaygroundListController gp = new GetPlaygroundListController();
+        gp.setCacheLocation(name);
+    }
+
+    public static String getCurrentOwner() {
+        GetPlaygroundListController gp = new GetPlaygroundListController();
+        String s = "";
+        try {
+            s = gp.getOwner();
+        } catch (Exception e) {
+            System.err.println("Not found!");
+        }
+        return s;
+    }
+
+    public static String getMoney(String currentName) {
+        return null;
+    }
+
+    public static String getPhone(String currentName) {
+        return null;
+    }
+
+    public static String getCurrentLocation() {
+        GetPlaygroundListController gr = new GetPlaygroundListController();
+        return gr.getLocation();
     }
 }
