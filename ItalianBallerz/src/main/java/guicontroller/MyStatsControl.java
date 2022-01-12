@@ -20,17 +20,18 @@ public class MyStatsControl extends GenericInterface implements Initializable {
     @FXML
     private VBox box;
 
-    private ScrollList scL;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScrollList scL;
         List<HBox> bList = null;
 
         FactoryScrollList factory = new FactoryScrollList();
 
         try {
-            this.scL = factory.createList(1);
-            bList = this.scL.getList();
+            scL = factory.createList(1);
+            bList = scL.getList();
         } catch (Exception e) {
             e.printStackTrace();
         }

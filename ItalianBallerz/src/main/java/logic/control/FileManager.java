@@ -21,16 +21,19 @@ public class FileManager {
         this.path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\";
     }
 
-    public Boolean checkEnd() throws FileNotFoundException {
-        File file;
-        boolean ret = false;
+    private static void check(String path) throws FileNotFoundException{
         try {
-            file = new File(this.path);
+            File file = new File(path);
             if (!file.exists())
                 file.createNewFile();
         } catch (IOException e) {
             throw new FileNotFoundException();
         }
+    }
+
+    public Boolean checkEnd() throws FileNotFoundException {
+        boolean ret = false;
+        FileManager.check(this.path);
 
         try {
             RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
@@ -47,16 +50,9 @@ public class FileManager {
     }
 
 
-    public void writeAppendE(String text)
+    public void writeAppendE(String text) throws FileNotFoundException
     {
-        File file;
-        try {
-            file = new File(this.path);
-            if (!file.exists())
-                file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileManager.check(this.path);
 
 
         try {
@@ -71,24 +67,16 @@ public class FileManager {
         }
     }
 
-    public void exist() throws Exception{
+    public void exist() throws FileNotFoundException{
         File file;
         file = new File(this.path);
         if (!file.exists())
-            throw new Exception();
+            throw new FileNotFoundException();
     }
 
-    public String readLine()
-    {
-        File file;
+    public String readLine() throws FileNotFoundException {
         String text = "";
-        try {
-            file = new File(this.path);
-            if (!file.exists())
-                file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileManager.check(this.path);
 
         try {
             StringBuilder buffer = new StringBuilder();
@@ -110,15 +98,9 @@ public class FileManager {
         return text;
     }
 
-    public void deleteLine(int i){
+    public void deleteLine(int i) throws FileNotFoundException {
         File file = null;
-        try {
-            file = new File(this.path);
-            if (!file.exists())
-                file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileManager.check(this.path);
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -127,9 +109,8 @@ public class FileManager {
             int count = 0;
             do{
                 s = br.readLine();
-                if(count != i)
+                if(count != i && s!=null && s.compareTo("") != 0)
                 {
-                    if(s!=null && s.compareTo("") != 0)
                         str.add(s);
                 }
                 count++;

@@ -1,1 +1,1 @@
- 2javaX1hr8src/main/java/guicontroller/MainInterfaceController.java
+ 2javaXŠhr1src/main/java/guicontroller/GenericInterface.java

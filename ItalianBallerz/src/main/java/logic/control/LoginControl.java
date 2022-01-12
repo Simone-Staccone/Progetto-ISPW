@@ -10,8 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class LoginControl{
-    public void writePlayerUser(String name, String password,String email,Boolean owner)
-    {
+    public void writePlayerUser(String name, String password,String email,Boolean owner) throws FileNotFoundException {
         Path currentRelativePath = Paths.get("");
         String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
         if(owner)

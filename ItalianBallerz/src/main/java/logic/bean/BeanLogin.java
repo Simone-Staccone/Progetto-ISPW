@@ -3,26 +3,31 @@ package logic.bean;
 import logic.control.LoginControl;
 import logic.other.SingletonPlayer;
 
+import java.io.FileNotFoundException;
+
 public class BeanLogin {
-    public static int verifyUser(String Username, String Password,Boolean owner)
+    private BeanLogin(){
+    }
+
+    public static int verifyUser(String username, String password,Boolean owner)
     {
         LoginControl lg = new LoginControl();
         int ret  = 0;
-        Boolean b = false;
+        boolean b = false;
 
-        if(Username.compareTo("") == 0)
+        if(username.compareTo("") == 0)
         {
             System.out.println("Empty username");
             ret = -1;
         }
-        else if(Password.compareTo("") == 0)
+        else if(password.compareTo("") == 0)
         {
             System.out.println("Empty password");
             ret = -2;
         }
         else{
             try{
-                b = lg.searchUserU(Username,owner);
+                b = lg.searchUserU(username,owner);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -33,7 +38,7 @@ public class BeanLogin {
             }
             else
             {
-                b = lg.searchUser(Username,Password,owner);
+                b = lg.searchUser(username,password,owner);
                 if(b){
                     System.out.println("User found!");
                     ret = 2;
@@ -58,7 +63,11 @@ public class BeanLogin {
             LoginControl lg = new LoginControl();
             if(!lg.searchUserU(user,owner))
             {
-                lg.writePlayerUser(user,password,email,owner);
+                try {
+                    lg.writePlayerUser(user,password,email,owner);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 b = 2;
             }
         }

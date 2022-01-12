@@ -1,1 +1,1 @@
-/ 2javaX>hr.src/main/java/logic/other/CourtScrollList.java
+/ 2javaXhr%src/main/java/logic/entity/Court.java

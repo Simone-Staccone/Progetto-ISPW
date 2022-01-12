@@ -1,29 +1,33 @@
 package guicontroller;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-
-public class MainInterface extends Application {
+public class CourtController extends GenericInterface implements Initializable {
+    @FXML
+    private Text label;
+    @FXML
+    private Text owner;
+    @FXML
+    private Text phone;
+    @FXML
+    private Text money;
+    @FXML
+    private Text location;
 
 
     @Override
-    public void start(Stage stage) throws Exception{
-        FXMLLoader xml =  new FXMLLoader(MainInterface.class.getResource("MainInterface.fxml"));
-        Scene scene = new Scene(xml.load());
-        stage.setResizable(false);
-        stage.setTitle("Italian Ballerz");
-        stage.setScene(scene);
-        stage.show();
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        label.setText(BeanCourt.getCurrentName());
+        owner.setText(BeanCourt.getCurrentOwner());
+        money.setText(BeanCourt.getCurrentMoney());
+        phone.setText(BeanCourt.getCurrentPhone());
+        location.setText(BeanCourt.getCurrentLocation());
     }
-
-
-    public static void main(String[] args) {
-        launch();
-    }
-
 }

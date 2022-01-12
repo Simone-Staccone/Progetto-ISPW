@@ -35,18 +35,18 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Pane fx:id="playgroundImagePane" layoutX="70.0" layoutY="110.0" onMouseEntered="#HighlightOnL" onMouseExited="#HighlightOffL" prefHeight="356.0" prefWidth="556.0">
+                  <Pane fx:id="playgroundImagePane" layoutX="70.0" layoutY="110.0" onMouseEntered="#highlightOnL" onMouseExited="#highlightOffL" prefHeight="356.0" prefWidth="556.0">
                      <children>
-                        <ImageView fx:id="playgroundImage" fitHeight="350.0" fitWidth="550.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#SwaptoP">
+                        <ImageView fx:id="playgroundImage" fitHeight="350.0" fitWidth="550.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#swaptoP">
                            <image>
                               <Image url="@../Images/download3.jpg" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="statsImagePane" layoutX="680.0" layoutY="110.0" onMouseEntered="#HighlightOnD" onMouseExited="#HighlightOffD" prefHeight="356.0" prefWidth="556.0">
+                  <Pane fx:id="statsImagePane" layoutX="680.0" layoutY="110.0" onMouseEntered="#highlightOnD" onMouseExited="#highlightOffD" prefHeight="356.0" prefWidth="556.0">
                      <children>
-                        <ImageView fitHeight="350.0" fitWidth="550.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#SwaptoS">
+                        <ImageView fitHeight="350.0" fitWidth="550.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#swaptoS">
                            <image>
                               <Image url="@../Images/sc_statistiche_761.jpg" />
                            </image>
@@ -62,12 +62,12 @@
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#SwaptoP" onMouseEntered="#PassOnP" onMouseExited="#PassOffP" text="Playground" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#swaptoP" onMouseEntered="#passOnP" onMouseExited="#passOffP" text="Playground" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#SwaptoS" onMouseEntered="#PassOnS" onMouseExited="#PassOffS" text="Statistics" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#swaptoS" onMouseEntered="#passOnS" onMouseExited="#passOffS" text="Statistics" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -79,7 +79,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Pane fx:id="userIconPane" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Pane fx:id="userIconPane" onMouseClicked="#swaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <children>
                   <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                      <image>

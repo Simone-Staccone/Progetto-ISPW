@@ -1,1 +1,1 @@
-. 2javaX*hr)src/main/java/logic/entity/StatsList.java
+. 2javaXdhr0src/main/java/logic/control/StatsController.java

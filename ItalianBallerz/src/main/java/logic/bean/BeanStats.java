@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class BeanStats {
+    private BeanStats(){
+    }
+
+
     public static void add(String points, String assists, String rebounds, String minutes) throws IOException {
         String res = BeanStats.control(points);
         String res2 = BeanStats.control(assists);

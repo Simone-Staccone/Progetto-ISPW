@@ -25,7 +25,7 @@
                      </font></Button>
                   <Text layoutX="450.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
                   <Text layoutX="450.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-                  <Button layoutX="493.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#SwaptoR" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Register" textFill="#ffa700" />
+                  <Button layoutX="493.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#swaptoR" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="Register" textFill="#ffa700" />
                   <PasswordField fx:id="password" layoutX="450.0" layoutY="195.0" onKeyPressed="#tryL" />
                   <Text fx:id="errorText" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <RadioButton fx:id="owner" layoutX="450.0" layoutY="291.0" mnemonicParsing="false" onMouseEntered="#genericEnter" onMouseExited="#genericExit" text="Enter as a playground owner" />
@@ -33,17 +33,17 @@
             </AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#SwaptoH" onMouseEntered="#PassOnH" onMouseExited="#PassOffH" text="Home" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#swaptoH" onMouseEntered="#passOnH" onMouseExited="#passOffH" text="Home" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#SwaptoP" onMouseEntered="#PassOnP" onMouseExited="#PassOffP" text="Playground" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#swaptoP" onMouseEntered="#passOnP" onMouseExited="#passOffP" text="Playground" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#SwaptoS" onMouseEntered="#PassOnS" onMouseExited="#PassOffS" text="Statistics" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#swaptoS" onMouseEntered="#passOnS" onMouseExited="#passOffS" text="Statistics" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>

@@ -1,1 +1,1 @@
-- 2javaX hr$src/main/java/logic/entity/Stat.java
+- 2javaXshr-src/main/java/logic/control/LoginControl.java

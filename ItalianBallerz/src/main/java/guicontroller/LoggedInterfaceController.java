@@ -36,7 +36,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
             txt3.setText("Add your playground");
             box3.setOnMouseEntered(this::in);
             box3.setOnMouseExited(this::out);
-            box3.setOnMouseClicked(MouseEvent -> Swap.goTo("AddPlayground.fxml",mainPane));
+            box3.setOnMouseClicked(mouseEvent -> Swap.goTo("AddPlayground.fxml",mainPane));
         }
     }
 
@@ -83,24 +83,17 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
             bNo.setLayoutX(160);
             bNo.setFont(Font.font(txt.getFont().getName(), 14));
 
-            try {
-                bYes.setOnMouseEntered(mouseEvent -> bYes.setCursor(Cursor.HAND));
-                bYes.setOnMouseExited(mouseEvent -> bYes.setCursor(Cursor.DEFAULT));
-                bYes.setOnMouseClicked(MouseEvent -> {
-                    BeanLogin.logOut();
-                    stage.close();
-                    Swap.goTo("MainInterface.fxml",mainPane);
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            try {
-                bNo.setOnMouseEntered(mouseEvent -> bNo.setCursor(Cursor.HAND));
-                bNo.setOnMouseExited(mouseEvent -> bNo.setCursor(Cursor.DEFAULT));
-                bNo.setOnMouseClicked(MouseEvent -> stage.close());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            bYes.setOnMouseEntered(mouseEvent -> bYes.setCursor(Cursor.HAND));
+            bYes.setOnMouseExited(mouseEvent -> bYes.setCursor(Cursor.DEFAULT));
+            bYes.setOnMouseClicked(mouseEvent -> {
+                BeanLogin.logOut();
+                stage.close();
+                Swap.goTo("MainInterface.fxml",mainPane);
+            });
+
+            bNo.setOnMouseEntered(mouseEvent -> bNo.setCursor(Cursor.HAND));
+            bNo.setOnMouseExited(mouseEvent -> bNo.setCursor(Cursor.DEFAULT));
+            bNo.setOnMouseClicked(mouseEvent -> stage.close());
 
             pane.getChildren().addAll(txt, bYes, bNo);
 

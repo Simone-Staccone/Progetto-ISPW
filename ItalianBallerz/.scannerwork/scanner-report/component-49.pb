@@ -1,2 +1,1 @@
-1 2javaX
-hr)src/main/java/logic/other/ScrollList.java
+1 2javaX7hr)src/main/java/logic/entity/CourtList.java

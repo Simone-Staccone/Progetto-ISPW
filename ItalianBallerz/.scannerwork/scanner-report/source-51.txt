@@ -1,39 +1,31 @@
-package logic.other;
+package logic.entity;
 
 
-import logic.entity.PlayerUser;
 
-public class SingletonPlayer {
-    private static SingletonPlayer instance = null;
-    private static String username;
-    private Boolean owner;
+public class Stat {
+    private final float points;
+    private final float assists;
+    private final float rebounds;
+    private final float minutes;
 
-
-    protected SingletonPlayer(String init, Boolean owner) {
-        this.username = init;
-        this.owner = owner;
+    public Stat(float points, float assists, float rebounds, float minutes){
+        this.points = points;
+        this.assists = assists;
+        this.rebounds = rebounds;
+        this.minutes = minutes;
+    }
+    public float getPoints()
+    {
+        return this.points;
+    }
+    public float getAssists() {
+        return this.assists;
+    }
+    public float getRebounds() {
+        return this.rebounds;
+    }
+    public float getMinutes() {
+        return this.minutes;
     }
 
-    public synchronized static SingletonPlayer getLoginInstance() {
-        if (SingletonPlayer.instance == null && PlayerUser.getUsernameP() != null){
-            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getUsernameP(),PlayerUser.getOwnerP());
-        }
-        return instance;
-    }
-
-    public String getUsername() {
-        return this.username;
-    }
-
-    public void deleteInstance(){
-        if (SingletonPlayer.instance != null){
-            SingletonPlayer.instance = null;
-            SingletonPlayer.username = null;
-            PlayerUser.setUsernameP(null);
-        }
-    }
-
-    public Boolean getOwner() {
-        return owner;
-    }
 }

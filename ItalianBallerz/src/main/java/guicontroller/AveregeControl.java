@@ -57,7 +57,7 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
             minutesText.setText(temp);
         } catch (MyException e) {
-            System.err.println("Errore" + e.getCause() + e.getMessage());
+            System.err.print("Errore" + e.getCause() + e.getMessage());
             errorText.toFront();
         }
 

@@ -1,1 +1,1 @@
- 2javaX?hr9src/main/java/guicontroller/LoginInterfaceController.java
+ 2javaXyhr/src/main/java/guicontroller/AveregeControl.java

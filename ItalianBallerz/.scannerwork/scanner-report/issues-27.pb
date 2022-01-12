@@ -1,2 +1,2 @@
-h
-javaS100NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'. 299 
+S
+javaS1069Replace this use of System.out or System.err by a logger. 2<< 

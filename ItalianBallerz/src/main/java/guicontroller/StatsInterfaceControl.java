@@ -23,7 +23,10 @@ public class StatsInterfaceControl extends GenericInterface {
 
     @FXML
     private void addStats() {
-        String p, a, r, m;
+        String p;
+        String a;
+        String r;
+        String m;
 
         try {
             p = pointsField.getText();

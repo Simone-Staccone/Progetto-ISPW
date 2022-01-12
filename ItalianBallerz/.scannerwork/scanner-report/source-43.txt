@@ -1,31 +1,96 @@
-package logic.entity;
+package logic.control;
 
-import logic.control.FileManager;
+import errorlogic.MyException;
+import javafx.scene.layout.HBox;
+import logic.entity.CourtCache;
+import logic.entity.CourtList;
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
 
-import java.nio.file.Paths;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourtList {
-    private List<Court> courtList = new ArrayList<>();
 
-    public CourtList(String name){
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
-        String s;
-        while(!fm.checkEnd()){
-            s = fm.readLine();
-            courtList.add(new Court(s));
-            System.out.println(s);
+public class GetPlaygroundListController {
+    public List<HBox> get(String name){
+        List<HBox> bList = new ArrayList<>();
+        ScrollList scr;
+
+        CourtList.setCourts(name);
+
+        FactoryScrollList factory = new FactoryScrollList();
+
+        try {
+            scr = factory.createList(2);
+            bList = scr.getList();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+        return bList;
     }
-    public int size(){
-        return this.courtList.size();
+    public String getCurrentName(){
+        return CourtCache.getName();
     }
 
-    public Court get(int i) {
-        Court c = null;
-        if(this.courtList.size() > i)
-            c = this.courtList.get(i);
-        return c;
+    public void setCacheName(String name) {
+        CourtCache.setName(name);
+    }
+
+    public void setCacheLocation(String name) {
+        CourtCache.setLocation(name);
+    }
+
+    public String getOwner() throws Exception{
+        String s;
+        try{
+            s = CourtCache.getOwner();
+        } catch (Exception e) {
+            throw new MyException(e.getMessage(),e);
+        }
+        return s;
+    }
+
+    public String getLocation() {
+        return CourtCache.getLocation();
+    }
+
+    public void setCacheOwner(String name) {
+        String owner = "";
+        try{
+            owner = CourtCache.findOwner(name);
+        }catch (FileNotFoundException f){
+            System.err.println("File not found!");
+        }
+        CourtCache.setOwner(owner);
+    }
+
+    public String getMoney() {
+        return CourtCache.getMoney();
+    }
+
+    public void setCacheMoney(String name) {
+        String money = "";
+        try{
+            money = CourtCache.findMoney(name);
+        }catch (FileNotFoundException f){
+            System.err.println("File not found!");
+        }
+        CourtCache.setMoney(money);
+    }
+
+    public String getPhone() {
+        return CourtCache.getPhone();
+    }
+
+    public void setCachePhone(String name) {
+        String phone = "";
+        try{
+            phone = CourtCache.findPhone(name);
+        }catch (FileNotFoundException f){
+            System.err.println("File not found!");
+        }
+        CourtCache.setPhone(phone);
     }
 }

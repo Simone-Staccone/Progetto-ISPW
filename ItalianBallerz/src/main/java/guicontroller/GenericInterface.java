@@ -34,27 +34,27 @@ public class  GenericInterface {
         this.passOff(userIcon,null);
     }
     @FXML
-    protected void PassOnS(){
+    protected void passOnS(){
         this.passOn(null,statsLabel);
     }
     @FXML
-    protected void PassOffS(){
+    protected void passOffS(){
         this.passOff(null,statsLabel);
     }
     @FXML
-    protected void PassOnP(){
+    protected void passOnP(){
         passOn(null,playgroundLabel);
     }
     @FXML
-    protected void PassOffP(){
+    protected void passOffP(){
         passOff(null,playgroundLabel);
     }
     @FXML
-    protected void PassOnH(){
+    protected void passOnH(){
         passOn(null,homeLabel);
     }
     @FXML
-    protected void PassOffH(){
+    protected void passOffH(){
         passOff(null,homeLabel);
     }
     @FXML
@@ -87,7 +87,7 @@ public class  GenericInterface {
 
 
     @FXML
-    protected void SwaptoH(){
+    protected void swaptoH(){
         Swap.goTo("MainInterface.fxml",mainPane);
     }
 
@@ -105,31 +105,31 @@ public class  GenericInterface {
     }
 
     @FXML
-    protected void SwaptoP(){
+    protected void swaptoP(){
         Swap.goTo("PlaygroundShowInterface.fxml",mainPane);
     }
 
     @FXML
-    protected void SwaptoS(){
+    protected void swaptoS(){
         Swap.goTo("StatsInterfaceUse.fxml",mainPane);
     }
 
     @FXML
-    protected void SwaptoL(){
+    protected void swaptoL(){
         Swap.goTo("LoginInterface.fxml",mainPane);
     }
     @FXML
-    protected void SwaptoA(){
+    protected void swaptoA(){
         Swap.goTo("AveregeStats.fxml",mainPane);
     }
 
     @FXML
-    protected void SwaptoS2(){
+    protected void swaptoS2(){
         Swap.goTo("MyStatsInterface.fxml",mainPane);
     }
 
     @FXML
-    protected void SwaptoR()  {
+    protected void swaptoR()  {
         Swap.goTo("RegisterInterface.fxml",mainPane);
     }
 }

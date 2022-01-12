@@ -37,7 +37,7 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
             bList.add(new HBox(new Text("Nessun risultato per questa ricerca")));
         for(HBox b : bList)
         {
-            b.setOnMouseClicked(MouseEvent -> {
+            b.setOnMouseClicked(mouseEvent -> {
                 Text t = (Text)b.getChildren().get(0);
                 BeanCourt.setCacheName(t.getText());
                 BeanCourt.setCacheLocation(s);
@@ -66,13 +66,13 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        searchButton.setOnMouseEntered(MouseEvent -> {
+        searchButton.setOnMouseEntered(mouseEvent -> {
             searchButton.setBorder(new Border(new BorderStroke(Color.WHITE,
                     BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
             searchButton.setCursor(Cursor.HAND);
         });
 
-        searchButton.setOnMouseExited(MouseEvent -> {
+        searchButton.setOnMouseExited(mouseEvent -> {
             searchButton.setBorder(null);
             searchButton.setCursor(Cursor.DEFAULT);
         });

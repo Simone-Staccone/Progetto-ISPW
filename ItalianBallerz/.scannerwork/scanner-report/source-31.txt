@@ -1,48 +1,55 @@
 package guicontroller;
 
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.VBox;
-import logic.bean.BeanCourt;
+import logic.bean.BeanLogin;
+import logic.other.Swap;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
-import java.util.List;
 
-
-public class PlaygroundShowInterfaceController extends GenericInterface{
-    private boolean first = true;
+public class LoginInterfaceController extends GenericInterface{
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField password;
+    @FXML
+    private AnchorPane mainPane;
+    @FXML
+    private Text errorText;
+    @FXML
+    private RadioButton owner;
 
     @FXML
-    private TextField searchBar;
-    @FXML
-    private VBox courtList;
+    private void login(){
+        int ret;
+        errorText.setText("");
+        errorText.setStyle("-fx-fill: RED");
+        ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
 
-    @FXML
-    public void search(){
-        String s = searchBar.getText();
-        List<HBox> bList = BeanCourt.search(s);
-        if(courtList.getChildren().size() > 0)
-            courtList.getChildren().remove(0);
-        for(HBox b : bList)
-        {
-            courtList.getChildren().add(b);
+        switch (ret) {
+            case -1 -> errorText.setText("*Username field is empty!");
+            case -2 -> errorText.setText("*Password field is empty!");
+            case 0 -> {
+                errorText.setText("*Wrong password!");
+                password.setText("");
+            }
+            case 1 -> {
+                errorText.setText("*Username not found!");
+                username.setText("");
+                password.setText("");
+            }
+            case 2 -> Swap.goTo("LoggedInterface.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + ret);
         }
     }
 
     @FXML
-    private void tryClear()
-    {
-        if(this.first)
-        {
-            searchBar.setText("");
-            this.first = false;
-        }
-    }
-
-    @FXML
-    private void tryS(KeyEvent k){
+    private void tryL(KeyEvent k){
         if(k.getCode().toString().compareTo("ENTER") == 0)
-            search();
+            login();
     }
 }
+

@@ -1,3 +1,2 @@
-`
-javaS112FDefine and throw a dedicated exception instead of using a generic one. 2 #`
-javaS112FDefine and throw a dedicated exception instead of using a generic one. 22 ;
+8
+javaS1118Hide this public constructor. 2 

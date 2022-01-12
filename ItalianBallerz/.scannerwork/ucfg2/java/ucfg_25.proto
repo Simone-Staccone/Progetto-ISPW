@@ -1,16 +1,16 @@
 
-6logic.entity.PlayerUser#getOwnerP()Ljava/lang/Boolean;n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java (#"1*æ
-1n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java (∫
-∑
-n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java (
-%0java.lang.Boolean"__id*&*$
-logic.entity.PlayerUser"
-owner"ã
-n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java ( 
+9logic.other.SingletonPlayer#getOwner()Ljava/lang/Boolean;r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java$ $("1*Œ
+1r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java% %(¬
+ø
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java% %(
+%0java.lang.Boolean"__id***(
+logic.other.SingletonPlayer"
+owner"è
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java% %(
 
-%0java.lang.BooleanB"
-logic.entity.PlayerUser
+%0java.lang.BooleanB
+logic.other.SingletonPlayer

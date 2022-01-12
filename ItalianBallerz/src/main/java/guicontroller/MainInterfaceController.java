@@ -13,35 +13,35 @@ public class MainInterfaceController extends GenericInterface{
     private Pane statsImagePane;
 
     @FXML
-    private void HighlightOn(Pane pane){
+    private void highlightOn(Pane pane){
         pane.setBorder(new Border(new BorderStroke(Color.ORANGE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
         pane.toFront();
         pane.getScene().setCursor(Cursor.HAND);
     }
 
     @FXML
-    private void HighlightOff(Pane pane){
+    private void highlightOff(Pane pane){
         pane.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
         pane.toFront();
         pane.getScene().setCursor(Cursor.DEFAULT);
     }
 
     @FXML
-    public void HighlightOnL(){
-        this.HighlightOn(playgroundImagePane);
+    public void highlightOnL(){
+        this.highlightOn(playgroundImagePane);
     }
     @FXML
-    public void HighlightOffL(){
-        this.HighlightOff(playgroundImagePane);
+    public void highlightOffL(){
+        this.highlightOff(playgroundImagePane);
     }
 
     @FXML
-    public void HighlightOnD(){
-        this.HighlightOn(statsImagePane);
+    public void highlightOnD(){
+        this.highlightOn(statsImagePane);
     }
     @FXML
-    public void HighlightOffD(){
-        this.HighlightOff(statsImagePane);
+    public void highlightOffD(){
+        this.highlightOff(statsImagePane);
     }
 
 }

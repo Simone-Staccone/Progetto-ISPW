@@ -1,1 +1,1 @@
-+ 2javaX hr)src/main/java/logic/entity/CourtList.java
++ 2javaXahr<src/main/java/logic/control/GetPlaygroundListController.java
