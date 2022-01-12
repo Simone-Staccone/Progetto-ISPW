@@ -203,4 +203,62 @@ public class FileManager {
         }
         return ret;
     }
+
+    public String searchMoney(String name) throws FileNotFoundException {
+        String actualPath = this.path + "court\\";
+        File file = new File(actualPath);
+        String[] names = file.list();
+        String ret = "";
+
+
+        for(String s : names)
+        {
+            File file2 = new File(actualPath + s);
+            if (file2.isDirectory()) {
+                String[] subNames = file2.list();
+                for (String str : subNames) {
+                    FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
+                    String s2;
+                    while(!fm2.checkEnd()) {
+                        s2 = fm2.readLine();
+                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
+                            ret = s2.substring(s2.indexOf("%")+1,s2.indexOf("@"));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    public String searchPhone(String name) throws FileNotFoundException {
+        String actualPath = this.path + "court\\";
+        File file = new File(actualPath);
+        String[] names = file.list();
+        String ret = "";
+
+
+        for(String s : names)
+        {
+            File file2 = new File(actualPath + s);
+            if (file2.isDirectory()) {
+                String[] subNames = file2.list();
+                for (String str : subNames) {
+                    FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
+                    String s2;
+                    while(!fm2.checkEnd()) {
+                        s2 = fm2.readLine();
+                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
+                            ret = s2.substring(s2.indexOf("$")+1,s2.indexOf("%"));
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+
 }

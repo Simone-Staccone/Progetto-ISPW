@@ -29,6 +29,8 @@ public class BeanCourt {
     public static void setCacheName(String name){
         GetPlaygroundListController gp = new GetPlaygroundListController();
         gp.setCacheName(name);
+        gp.setCacheMoney(name);
+        gp.setCachePhone(name);
         try {
             gp.setCacheOwner(name);
         } catch (Exception e) {
@@ -52,16 +54,18 @@ public class BeanCourt {
         return s;
     }
 
-    public static String getMoney(String currentName) {
-        return null;
-    }
-
-    public static String getPhone(String currentName) {
-        return null;
-    }
-
     public static String getCurrentLocation() {
         GetPlaygroundListController gr = new GetPlaygroundListController();
         return gr.getLocation();
+    }
+
+    public static String getCurrentMoney() {
+        GetPlaygroundListController gr = new GetPlaygroundListController();
+        return gr.getMoney();
+    }
+
+    public static String getCurrentPhone() {
+        GetPlaygroundListController gr = new GetPlaygroundListController();
+        return gr.getPhone();
     }
 }

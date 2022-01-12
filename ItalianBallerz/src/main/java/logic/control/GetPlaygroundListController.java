@@ -65,4 +65,32 @@ public class GetPlaygroundListController {
         }
         CourtCache.setOwner(owner);
     }
+
+    public String getMoney() {
+        return CourtCache.getMoney();
+    }
+
+    public void setCacheMoney(String name) {
+        String money = "";
+        try{
+            money = CourtCache.findMoney(name);
+        }catch (FileNotFoundException f){
+            System.err.println("File not found!");
+        }
+        CourtCache.setMoney(money);
+    }
+
+    public String getPhone() {
+        return CourtCache.getPhone();
+    }
+
+    public void setCachePhone(String name) {
+        String phone = "";
+        try{
+            phone = CourtCache.findPhone(name);
+        }catch (FileNotFoundException f){
+            System.err.println("File not found!");
+        }
+        CourtCache.setPhone(phone);
+    }
 }

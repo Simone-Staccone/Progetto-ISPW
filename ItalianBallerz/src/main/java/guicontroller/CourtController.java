@@ -26,8 +26,8 @@ public class CourtController extends GenericInterface implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         label.setText(BeanCourt.getCurrentName());
         owner.setText(BeanCourt.getCurrentOwner());
-        money.setText("");
-        phone.setText("");
+        money.setText(BeanCourt.getCurrentMoney());
+        phone.setText(BeanCourt.getCurrentPhone());
         location.setText(BeanCourt.getCurrentLocation());
     }
 }

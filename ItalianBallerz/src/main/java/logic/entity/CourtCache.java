@@ -63,4 +63,14 @@ public class CourtCache {
         FileManager fm = new FileManager();
         return fm.searchOwner(name);
     }
+
+    public static String findMoney(String name) throws FileNotFoundException {
+        FileManager fm = new FileManager();
+        return fm.searchMoney(name);
+    }
+
+    public static String findPhone(String name) throws FileNotFoundException {
+        FileManager fm = new FileManager();
+        return fm.searchPhone(name);
+    }
 }
