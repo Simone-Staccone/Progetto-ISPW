@@ -1,17 +1,18 @@
 package logic.other;
 
 
-import logic.entity.CourtList;
+import errorlogic.MyException;
+
 
 public class FactoryScrollList{
-    public ScrollList createList(int type) throws Exception {
+    public ScrollList createList(int type) throws MyException {
         switch (type) {
             case 1:
                 return statsList();
             case 2:
                 return courtList();
             default:
-                throw new Exception("Invalid type : " + type);
+                throw new MyException("Invalid type : " + type,null);
         }
     }
 

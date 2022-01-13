@@ -9,23 +9,23 @@ public class SingletonPlayer {
     private Boolean owner;
 
 
-    protected SingletonPlayer(String init, Boolean owner) {
-        this.username = init;
+    protected SingletonPlayer(Boolean owner) {
         this.owner = owner;
     }
 
-    public synchronized static SingletonPlayer getLoginInstance() {
+    public static synchronized  SingletonPlayer getLoginInstance() {
         if (SingletonPlayer.instance == null && PlayerUser.getUsernameP() != null){
-            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getUsernameP(),PlayerUser.getOwnerP());
+            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getOwnerP());
+            SingletonPlayer.username = PlayerUser.getUsernameP();
         }
         return instance;
     }
 
     public String getUsername() {
-        return this.username;
+        return username;
     }
 
-    public void deleteInstance(){
+    public static void deleteInstance(){
         if (SingletonPlayer.instance != null){
             SingletonPlayer.instance = null;
             SingletonPlayer.username = null;

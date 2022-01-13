@@ -5,6 +5,7 @@ import logic.entity.Stat;
 import logic.entity.StatsList;
 import logic.other.SingletonPlayer;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -28,17 +29,17 @@ public class StatsController {
         fm.writeAppend(Float.toString(minutes),"minutes");
     }
 
-    public Stat average() throws Exception {
+    public Stat average() throws MyException {
         StatsController st = new StatsController();
         return st.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
     }
 
     public Boolean delete(int i) {
-        String path = this.path + SingletonPlayer.getLoginInstance().getUsername()+ "\\";
-        FileManager fm = new FileManager(path + "points.txt");
-        FileManager fm2 = new FileManager(path + "assists.txt");
-        FileManager fm3 = new FileManager(path + "rebounds.txt");
-        FileManager fm4 = new FileManager(path + "minutes.txt");
+        String actualPath = this.path + SingletonPlayer.getLoginInstance().getUsername()+ File.separator;
+        FileManager fm = new FileManager(actualPath + "points.txt");
+        FileManager fm2 = new FileManager(actualPath + "assists.txt");
+        FileManager fm3 = new FileManager(actualPath + "rebounds.txt");
+        FileManager fm4 = new FileManager(actualPath + "minutes.txt");
         boolean b;
         try{
             fm.deleteLine(i);
@@ -56,7 +57,7 @@ public class StatsController {
 
     public float getAverege(String str) throws MyException
     {
-        String path = this.path + SingletonPlayer.getLoginInstance().getUsername() + "\\" +str + ".txt";
+        String actualPath = this.path + SingletonPlayer.getLoginInstance().getUsername() + File.separator +str + ".txt";
         float x = 0;
         int count = 0;
         float avg;
@@ -65,7 +66,7 @@ public class StatsController {
 
         FileManager fm;
         try {
-            fm = new FileManager(path);
+            fm = new FileManager(actualPath);
 
             while(!fm.checkEnd()) {
                 buffer.delete(0,buffer.length());

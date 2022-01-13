@@ -3,8 +3,10 @@ package logic.control;
 /* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
 
 import logic.entity.PlayerUser;
+import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -61,16 +63,16 @@ public class LoginControl{
     }
 
 
-    public Boolean searchUserU(String user,Boolean owner){
+    public Boolean searchUserU(String user,boolean owner){
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
+        String path = currentRelativePath.toAbsolutePath() + File.separator + "src\\main\\java\\data\\";
         String name;
         boolean b = false;
 
         if(owner)
-            path = path + "owner.txt";
+            path = path + CourtConst.getOWNER();
         else
-            path = path + "log.txt";
+            path = path + CourtConst.getLOG();
 
 
 
@@ -95,20 +97,11 @@ public class LoginControl{
 
     public String getUsername(){
         SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        String s = null;
-        try{
-            s = sp.getUsername();
-        } catch (NullPointerException ignored) {
-        }
-        return s;
+        return sp.getUsername();
     }
 
     public static void logOut(){
-        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        try{
-            sp.deleteInstance();
-        } catch (NullPointerException ignored) {
-        }
+        SingletonPlayer.deleteInstance();
     }
 
 }

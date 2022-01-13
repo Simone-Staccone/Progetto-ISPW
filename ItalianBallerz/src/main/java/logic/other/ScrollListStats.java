@@ -38,48 +38,41 @@ public class ScrollListStats implements ScrollList{
                         BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 b.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(1),
                         new Insets(0.0, 0.0, 0.0, 0.0))));
-                try {
-                    b.setOnMouseEntered(event -> {
-                        b.setBorder(new Border(new BorderStroke(Color.WHITE,
-                                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                        b.setCursor(Cursor.HAND);
-                    });
+
+                b.setOnMouseEntered(event -> {
+                    b.setBorder(new Border(new BorderStroke(Color.WHITE,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    b.setCursor(Cursor.HAND);
+                });
 
 
-                    b.setOnMouseExited(event -> {
-                        b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
-                                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                        b.setCursor(Cursor.DEFAULT);
-                    });
-                    try{
-                        Pane pane = new Pane();
-                        Stage stage = new Stage();
-                        Button button = new Button();
+                b.setOnMouseExited(event -> {
+                    b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    b.setCursor(Cursor.DEFAULT);
+                });
+                Pane pane = new Pane();
+                Stage stage = new Stage();
+                Button button = new Button();
 
-                        button.setText("Delete");
-                        button.setLayoutX(170);
-                        button.setLayoutY(80);
-                        Stat finalS = s;
-                        button.setOnMouseClicked(event -> {
-                            BeanStats.delete(statList.indexOf(finalS));
-                            stage.close();
-                        });
+                button.setText("Delete");
+                button.setLayoutX(170);
+                button.setLayoutY(80);
+                Stat finalS = s;
+                button.setOnMouseClicked(event -> {
+                    BeanStats.delete(statList.indexOf(finalS));
+                    stage.close();
+                });
 
-                        pane.getChildren().add(button);
-                        Scene scene = new Scene(pane, 400, 200);
-                        stage.setTitle("Stat " + statList.indexOf(s));
-                        stage.setScene(scene);
-                        stage.setResizable(false);
-                        b.setOnMouseClicked(event -> {
-                            stage.show();
-                            stage.toFront();
-                        });
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                pane.getChildren().add(button);
+                Scene scene = new Scene(pane, 400, 200);
+                stage.setTitle("Stat " + statList.indexOf(s));
+                stage.setScene(scene);
+                stage.setResizable(false);
+                b.setOnMouseClicked(event -> {
+                    stage.show();
+                    stage.toFront();
+                });
             }
         } catch (Exception e) {
             e.printStackTrace();

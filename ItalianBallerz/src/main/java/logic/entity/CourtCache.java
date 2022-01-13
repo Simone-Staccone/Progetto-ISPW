@@ -11,12 +11,7 @@ public class CourtCache {
     private static String phone;
     private static String owner;
 
-    public CourtCache(String name, String location, String money, String phone, String owner){
-        CourtCache.setName(name);
-        CourtCache.setName(location);
-        CourtCache.setName(money);
-        CourtCache.setName(phone);
-        CourtCache.setName(owner);
+    private CourtCache(){
     }
 
     public static String getName() {
