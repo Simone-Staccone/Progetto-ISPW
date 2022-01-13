@@ -1,10 +1,27 @@
 package logic.other;
 
+
 import errorlogic.MyException;
-import javafx.scene.layout.HBox;
 
-import java.util.List;
 
-public interface ScrollList {
-    public List<HBox> getList() throws MyException;
+public class FactoryScrollList{
+    public ScrollList createList(int type) throws MyException {
+        switch (type) {
+            case 1:
+                return statsList();
+            case 2:
+                return courtList();
+            default:
+                throw new MyException("Invalid type : " + type,null);
+        }
+    }
+
+    public ScrollList statsList(){
+        return new ScrollListStats();
+    }
+
+    public ScrollList courtList(){
+        return new CourtScrollList();
+    }
+
 }

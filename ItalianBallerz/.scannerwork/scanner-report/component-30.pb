@@ -1,1 +1,1 @@
- 2javaXnhr:src/main/java/guicontroller/LoggedInterfaceController.java
+ 2javaXnhr:src/main/java/guicontroller/LoggedInterfaceController.java

@@ -2,11 +2,7 @@ package logic.entity;
 
 import logic.other.SingletonPlayer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PlayerUser extends SingletonPlayer {
-    private List<Stat> playerStats = new ArrayList<>();
     private static String name;
     private static Boolean owner;
 

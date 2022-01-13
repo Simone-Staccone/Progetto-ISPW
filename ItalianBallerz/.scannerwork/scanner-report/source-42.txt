@@ -1,15 +1,19 @@
 package logic.control;
 
+import logic.other.CourtConst;
+
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /* Questa classe ha la responsabilità di comunicare con i file*/
 
 public class FileManager {
     private long fp;
-    private String path;
+    private final String path;
 
     public FileManager(String path)
     {
@@ -75,7 +79,6 @@ public class FileManager {
     }
 
     public String readLine() throws FileNotFoundException {
-        File file;
         String text = "";
         FileManager.check(this.path);
 
@@ -106,7 +109,7 @@ public class FileManager {
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             List<String> str = new ArrayList<>();
-            String s = "";
+            String s;
             int count = 0;
             do{
                 s = br.readLine();
@@ -118,9 +121,9 @@ public class FileManager {
             }while(s != null);
             br.close();
 
-            PrintWriter writer = new PrintWriter(this.path, "UTF-8");
-            for(int j = 0;j<str.size();j++){
-                writer.println(str.get(j));
+            PrintWriter writer = new PrintWriter(this.path, StandardCharsets.UTF_8);
+            for (String value : str) {
+                writer.println(value);
             }
             writer.close();
 
@@ -137,7 +140,7 @@ public class FileManager {
         if (!folder.exists())
             folder.mkdir();
         try {
-            file = new File(this.path + "\\"+ what + ".txt");
+            file = new File(this.path + File.separator + what + ".txt");
             if (!file.exists())
                 file.createNewFile();
         } catch (IOException e) {
@@ -159,31 +162,36 @@ public class FileManager {
     }
 
     public String searchOwner(String name) throws FileNotFoundException {
-        String actualPath = this.path + "court\\";
+        String actualPath = this.path + CourtConst.getCourt() + File.separator;
         File file = new File(actualPath);
         String[] names = file.list();
         String ret = "";
 
 
-        for(String s : names)
+        for(String s : Objects.requireNonNull(names))
         {
             File file2 = new File(actualPath + s);
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
-                for (String str : subNames) {
+                for (String str : Objects.requireNonNull(subNames)) {
                     FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
-                    String s2;
-                    while(!fm2.checkEnd()) {
-                        s2 = fm2.readLine();
-                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
-                            ret = s2.substring(s2.indexOf("@") + 1);
-                            break;
-                        }
-                    }
+                    ret = FileManager.tryFind(fm2,name);
                 }
             }
         }
         return ret;
+    }
+
+    private static String tryFind(FileManager fm2, String name) throws FileNotFoundException {
+        String s2 = "";
+        while(!fm2.checkEnd()) {
+            s2 = fm2.readLine();
+            if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
+                s2 = s2.substring(s2.indexOf("@") + 1);
+                break;
+            }
+        }
+        return s2;
     }
 
     public String searchMoney(String name) throws FileNotFoundException {
@@ -193,12 +201,12 @@ public class FileManager {
         String ret = "";
 
 
-        for(String s : names)
+        for(String s : Objects.requireNonNull(names))
         {
             File file2 = new File(actualPath + s);
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
-                for (String str : subNames) {
+                for (String str : Objects.requireNonNull(subNames)) {
                     FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
                     String s2;
                     while(!fm2.checkEnd()) {
@@ -221,12 +229,12 @@ public class FileManager {
         String ret = "";
 
 
-        for(String s : names)
+        for(String s : Objects.requireNonNull(names))
         {
             File file2 = new File(actualPath + s);
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
-                for (String str : subNames) {
+                for (String str : Objects.requireNonNull(subNames)) {
                     FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
                     String s2;
                     while(!fm2.checkEnd()) {

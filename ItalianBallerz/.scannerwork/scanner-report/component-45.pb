@@ -1,1 +1,1 @@
-- 2javaXshr-src/main/java/logic/control/LoginControl.java
+- 2javaXlhr-src/main/java/logic/control/LoginControl.java
