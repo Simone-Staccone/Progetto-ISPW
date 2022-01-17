@@ -97,7 +97,10 @@ public class LoginControl{
 
     public String getUsername(){
         SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        return sp.getUsername();
+        String ret = null;
+        if(sp != null)
+            ret = sp.getUsername();
+        return ret;
     }
 
     public static void logOut(){

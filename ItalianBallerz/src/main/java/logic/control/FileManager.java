@@ -103,8 +103,9 @@ public class FileManager {
     }
 
     public void deleteLine(int i) throws FileNotFoundException {
-        File file = null;
         FileManager.check(this.path);
+
+        File file = new File(path);
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));

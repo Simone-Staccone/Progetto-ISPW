@@ -64,16 +64,16 @@
                      </font>
                   </Text>
                   <Button layoutX="476.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#addStats" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: #FFA700;" text="ADD" textFill="WHITE" />
-                  <Button layoutX="450.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#SwaptoA" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="GET AVAREGE" textFill="#ffa700" />
+                  <Button layoutX="450.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#swaptoA" onMouseEntered="#genericEnter" onMouseExited="#genericExit" style="-fx-background-color: WHITE; -fx-border-color: #FFA700;" text="GET AVAREGE" textFill="#ffa700" />
                </children></AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#SwaptoH" onMouseEntered="#PassOnH" onMouseExited="#PassOffH" text="Home" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#swaptoH" onMouseEntered="#passOnH" onMouseExited="#passOffH" text="Home" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#SwaptoP" onMouseEntered="#PassOnP" onMouseExited="#PassOffP" text="Playground" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#swaptoP" onMouseEntered="#passOnP" onMouseExited="#passOffP" text="Playground" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -88,7 +88,7 @@
                         <Image url="@../Images/Logo.png" />
                      </image>
                   </ImageView>
-                  <Pane fx:id="userIconPane" layoutX="1195.0" layoutY="5.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Pane fx:id="userIconPane" layoutX="1195.0" layoutY="5.0" onMouseClicked="#swaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <children>
                         <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                            <image>

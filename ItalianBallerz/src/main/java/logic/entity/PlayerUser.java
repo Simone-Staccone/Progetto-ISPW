@@ -7,7 +7,7 @@ public class PlayerUser extends SingletonPlayer {
     private static Boolean owner;
 
     protected PlayerUser(String init) {
-        super(init,owner);
+        super(init, owner);
     }
 
 

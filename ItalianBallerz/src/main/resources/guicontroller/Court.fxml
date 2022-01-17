@@ -2,11 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
@@ -34,15 +36,6 @@
             <AnchorPane fx:id="topAnchorPane" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" style="-fx-background-color: WHITE; -fx-border-color: #FFA700; -fx-border-width: 3;" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-3.0">
                <children>
-                  <Pane fx:id="statsImagePane" layoutX="661.0" layoutY="76.0" prefHeight="440.0" prefWidth="601.0">
-                     <children>
-                        <ImageView fitHeight="440.0" fitWidth="602.0">
-                           <image>
-                              <Image url="@../Images/campo-basket-2.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
                   <Text fx:id="label" fill="#ffa700" layoutX="55.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOR VERGATA SPORTING CENTER">
                      <font>
                         <Font size="36.0" />
@@ -69,6 +62,15 @@
                   <Text layoutX="58.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Luogo:" />
                   <Text fx:id="location" layoutX="203.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Text layoutX="187.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" />
+                  <ScrollPane layoutX="696.0" layoutY="64.0" prefHeight="453.0" prefWidth="543.0">
+                    <content>
+                      <AnchorPane fx:id="container" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="539.0">
+                           <children>
+                              <VBox fx:id="scrollList" prefHeight="454.0" prefWidth="543.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

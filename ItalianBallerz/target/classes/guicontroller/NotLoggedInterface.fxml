@@ -33,17 +33,17 @@
             </AnchorPane>
             <AnchorPane fx:id="topAnchor" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFA700;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#SwaptoH" onMouseEntered="#PassOnH" onMouseExited="#PassOffH" text="Home" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="homeLabel" layoutX="14.0" layoutY="18.0" onMouseClicked="#swaptoH" onMouseEntered="#passOnH" onMouseExited="#passOffH" text="Home" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#SwaptoP" onMouseEntered="#PassOnP" onMouseExited="#PassOffP" text="Playground" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="playgroundLabel" layoutX="96.0" layoutY="15.0" onMouseClicked="#swaptoP" onMouseEntered="#passOnP" onMouseExited="#passOffP" text="Playground" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#SwaptoS" onMouseEntered="#PassOnS" onMouseExited="#PassOffS" text="Statistics" AnchorPane.topAnchor="15.0">
+                  <Label fx:id="statsLabel" layoutX="233.0" layoutY="15.0" onMouseClicked="#swaptoS" onMouseEntered="#passOnS" onMouseExited="#passOffS" text="Statistics" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -55,7 +55,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#SwaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Pane fx:id="userIconPane" layoutX="1205.0" layoutY="10.0" onMouseClicked="#swaptoL" onMouseEntered="#passOnInstance" onMouseExited="#passOffInstance" prefHeight="70.0" prefWidth="70.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <children>
                   <ImageView fx:id="userIcon" fitHeight="60.0" fitWidth="60.0">
                      <image>
