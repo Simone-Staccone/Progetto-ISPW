@@ -66,7 +66,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         Scene scene = new Scene(pane);
         Button bYes = new Button("     Yes     ");
         Button bNo = new Button("      No     ");
-        Text txt = new Text("Are you sure you want to log out?");
+        Text txt = new Text("Sei sicuro di voler uscire?");
 
         try {
             txt.setLayoutY(30);
