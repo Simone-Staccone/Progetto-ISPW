@@ -62,11 +62,11 @@
                   <Text layoutX="58.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Luogo:" />
                   <Text fx:id="location" layoutX="203.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                   <Text layoutX="187.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" />
-                  <ScrollPane layoutX="696.0" layoutY="64.0" prefHeight="453.0" prefWidth="543.0">
+                  <ScrollPane layoutX="696.0" layoutY="64.0" prefHeight="454.0" prefWidth="545.0">
                     <content>
-                      <AnchorPane fx:id="container" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="539.0">
+                      <AnchorPane fx:id="container" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="530.0">
                            <children>
-                              <VBox fx:id="scrollList" prefHeight="454.0" prefWidth="543.0" />
+                              <VBox fx:id="scrollList" prefHeight="454.0" prefWidth="530.0" />
                            </children>
                         </AnchorPane>
                     </content>

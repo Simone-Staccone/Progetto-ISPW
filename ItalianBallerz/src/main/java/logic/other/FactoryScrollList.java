@@ -11,9 +11,15 @@ public class FactoryScrollList{
                 return statsList();
             case 2:
                 return courtList();
+            case 3:
+                return scheduleList();
             default:
                 throw new MyException("Invalid type : " + type,null);
         }
+    }
+
+    private ScrollList scheduleList() {
+        return new ScheduleList();
     }
 
     public ScrollList statsList(){

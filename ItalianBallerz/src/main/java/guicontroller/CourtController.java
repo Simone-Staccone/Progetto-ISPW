@@ -47,7 +47,7 @@ public class CourtController extends GenericInterface implements Initializable {
         FactoryScrollList factory = new FactoryScrollList();
 
         try {
-            scL = factory.createList(2);
+            scL = factory.createList(3);
             bList = scL.getList();
         } catch (Exception e) {
             e.printStackTrace();
