@@ -13,7 +13,8 @@ import java.util.List;
 
 
 public class StatsController {
-    private final String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\users\\";
+    private final String path = Paths.get("").toAbsolutePath() + File.separator + "src" + File.separator +
+            "main" + File.separator + "java" +File.separator + "data" + File.separator + "users" + File.separator;
 
 
     public Stat create(float points, float assists, float rebounds, float minutes){

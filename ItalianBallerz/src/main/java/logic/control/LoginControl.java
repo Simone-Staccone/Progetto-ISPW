@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 public class LoginControl{
     public void writePlayerUser(String name, String password,String email,Boolean owner) throws FileNotFoundException {
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
+        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data" + File.separator;
         if(owner)
             path = path + "owner.txt";
         else
@@ -27,7 +27,7 @@ public class LoginControl{
 
     public Boolean searchUser(String user,String password,Boolean owner){
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
+        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data" + File.separator;
 
         if(owner)
             path = path + "owner.txt";
@@ -65,7 +65,7 @@ public class LoginControl{
 
     public Boolean searchUserU(String user,boolean owner){
         Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + File.separator + "src\\main\\java\\data\\";
+        String path = currentRelativePath.toAbsolutePath() + File.separator + "src\\main\\java\\data" + File.separator;
         String name;
         boolean b = false;
 

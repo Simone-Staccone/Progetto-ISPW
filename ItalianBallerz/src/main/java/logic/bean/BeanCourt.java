@@ -1,9 +1,11 @@
 package logic.bean;
 
 import errorlogic.MyException;
+import errorlogic.NotLoggedException;
 import logic.control.AddPlaygroundController;
 import javafx.scene.layout.HBox;
 import logic.control.GetPlaygroundListController;
+import logic.control.GetReservationController;
 
 import java.util.List;
 
@@ -71,5 +73,9 @@ public class BeanCourt {
     public static String getCurrentPhone() {
         GetPlaygroundListController gr = new GetPlaygroundListController();
         return gr.getPhone();
+    }
+
+    public static void addSchedule(int start) throws NotLoggedException {
+        GetReservationController gr = new GetReservationController(start);
     }
 }

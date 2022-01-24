@@ -22,7 +22,8 @@ public class FileManager {
     public FileManager()
     {
 
-        this.path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\";
+        this.path = Paths.get("").toAbsolutePath() + File.separator + "src" +
+                File.separator + "main" + File.separator + "java" + File.separator + "data" + File.separator;
     }
 
     private static void check(String path) throws FileNotFoundException{
@@ -136,11 +137,12 @@ public class FileManager {
 
     public void writeAppend(String s,String what) {
         File folder;
-        File file = null;
+        File file;
         folder = new File(this.path);
         if (!folder.exists())
             folder.mkdir();
         try {
+            System.out.println(this.path +  what + ".txt");
             file = new File(this.path + File.separator + what + ".txt");
             if (!file.exists())
                 file.createNewFile();
@@ -148,11 +150,11 @@ public class FileManager {
             e.printStackTrace();
         }
 
-        System.out.println(file.getAbsolutePath());
+
 
         try {
             String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path + "\\"+ what + ".txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(this.path + File.separator + what + ".txt", "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();
@@ -208,7 +210,7 @@ public class FileManager {
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
+                    FileManager fm2 = new FileManager(actualPath + s + File.separator+ str);
                     String s2;
                     while(!fm2.checkEnd()) {
                         s2 = fm2.readLine();
