@@ -14,23 +14,27 @@ import java.util.Objects;
 public class FileManager {
     private long fp;
     private final String path;
+    private final String constPath = Paths.get("").toAbsolutePath() + File.separator + "src" +
+            File.separator + "main" + File.separator + "java" + File.separator + "data" + File.separator;
 
     public FileManager(String path)
     {
-        this.path = path;
+        this.path = constPath + path;
     }
     public FileManager()
     {
 
-        this.path = Paths.get("").toAbsolutePath() + File.separator + "src" +
-                File.separator + "main" + File.separator + "java" + File.separator + "data" + File.separator;
+        this.path = constPath;
     }
 
     private static void check(String path) throws FileNotFoundException{
         try {
             File file = new File(path);
-            if (!file.exists())
-                file.createNewFile();
+            if (!file.exists()) {
+                boolean newFile = file.createNewFile();
+                if(!newFile)
+                    throw new IOException();
+            }
         } catch (IOException e) {
             throw new FileNotFoundException();
         }
@@ -38,6 +42,7 @@ public class FileManager {
 
     public Boolean checkEnd() throws FileNotFoundException {
         boolean ret = false;
+
         FileManager.check(this.path);
 
         try {
@@ -62,7 +67,7 @@ public class FileManager {
 
         try {
             String res = text + "\n";
-            RandomAccessFile raf = new RandomAccessFile(path, "rw");
+            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();
@@ -72,22 +77,17 @@ public class FileManager {
         }
     }
 
-    public void exist() throws FileNotFoundException{
-        File file;
-        file = new File(this.path);
-        if (!file.exists())
-            throw new FileNotFoundException();
-    }
 
     public String readLine() throws FileNotFoundException {
         String text = "";
+
         FileManager.check(this.path);
 
         try {
             StringBuilder buffer = new StringBuilder();
 
 
-            RandomAccessFile raf = new RandomAccessFile(path, "rw");
+            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
 
             raf.seek(this.fp);
 
@@ -139,13 +139,19 @@ public class FileManager {
         File folder;
         File file;
         folder = new File(this.path);
-        if (!folder.exists())
-            folder.mkdir();
+
         try {
-            System.out.println(this.path +  what + ".txt");
-            file = new File(this.path + File.separator + what + ".txt");
-            if (!file.exists())
-                file.createNewFile();
+            if (!folder.exists()) {
+                final boolean mkdir = folder.mkdir();
+                if(!mkdir)
+                    throw new IOException();
+            }
+            file = new File(this.path + File.separator + what);
+            if (!file.exists()) {
+                final boolean newFile = file.createNewFile();
+                if(!newFile)
+                    throw new IOException();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -154,7 +160,7 @@ public class FileManager {
 
         try {
             String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path + File.separator + what + ".txt", "rw");
+            RandomAccessFile raf = new RandomAccessFile(this.path + File.separator + what, "rw");
             raf.seek(raf.length());
             raf.write(res.getBytes());
             raf.close();
@@ -177,7 +183,8 @@ public class FileManager {
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
+                    FileManager fm2 = new FileManager("court" + File.separator +  s + File.separator + str);
+
                     ret = FileManager.tryFind(fm2,name);
                 }
             }
@@ -198,7 +205,7 @@ public class FileManager {
     }
 
     public String searchMoney(String name) throws FileNotFoundException {
-        String actualPath = this.path + "court\\";
+        String actualPath = this.path + "court" + File.separator;
         File file = new File(actualPath);
         String[] names = file.list();
         String ret = "";
@@ -206,11 +213,11 @@ public class FileManager {
 
         for(String s : Objects.requireNonNull(names))
         {
-            File file2 = new File(actualPath + s);
+            File file2 = new File( actualPath + s);
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager(actualPath + s + File.separator+ str);
+                    FileManager fm2 = new FileManager( "court" + File.separator +  s + File.separator + str);
                     String s2;
                     while(!fm2.checkEnd()) {
                         s2 = fm2.readLine();
@@ -226,7 +233,7 @@ public class FileManager {
     }
 
     public String searchPhone(String name) throws FileNotFoundException {
-        String actualPath = this.path + "court\\";
+        String actualPath = this.path + "court" + File.separator;
         File file = new File(actualPath);
         String[] names = file.list();
         String ret = "";
@@ -238,7 +245,7 @@ public class FileManager {
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager(actualPath + s + "\\"+ str);
+                    FileManager fm2 = new FileManager("court" + File.separator +  s + File.separator + str);
                     String s2;
                     while(!fm2.checkEnd()) {
                         s2 = fm2.readLine();

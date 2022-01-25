@@ -1,15 +1,21 @@
 package logic.entity;
 
+import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
 import logic.control.FileManager;
+import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Court {
     private String name;
+    private String path;
+
     public Court(String name){
         this.name = name;
+        this.path = "schedule" + File.separator + this.name;
     }
 
     public String getName() {
@@ -29,6 +35,19 @@ public class Court {
         else
             who = SingletonPlayer.getLoginInstance().getUsername();
 
-        fm.writeAppend(start + "-" + who,"schedule" + File.separator + this.name);
+        fm.writeAppend(start + "-" + who,path + CourtConst.getExtension());
+    }
+
+    public void search(int start) throws FileNotFoundException, AlreadyReserved {
+        FileManager fm = new FileManager(path +  CourtConst.getExtension());
+        String s;
+
+        while(!fm.checkEnd()){
+            s = fm.readLine();
+            if(SingletonPlayer.getLoginInstance() != null && s.compareTo(start + "-" + SingletonPlayer.getLoginInstance().getUsername()) == 0){
+                System.out.println("dasfas");
+                throw new AlreadyReserved("",null);
+            }
+        }
     }
 }

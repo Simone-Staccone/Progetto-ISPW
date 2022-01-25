@@ -1,6 +1,7 @@
 package guicontroller;
 
 
+import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +20,7 @@ import logic.bean.BeanCourt;
 import logic.other.FactoryScrollList;
 import logic.other.ScrollList;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -70,13 +72,13 @@ public class CourtController extends GenericInterface implements Initializable {
         }
     }
 
-    public void waringMessage() {
+    public void waringMessage(String message,int space) {
         Stage stage = new Stage();
         Pane pane = new Pane();
-        Text txt = new Text("Log in necessario!");
+        Text txt = new Text(message);
 
         txt.setLayoutY(30);
-        txt.setLayoutX(80);
+        txt.setLayoutX(space);
         txt.setFont(Font.font(txt.getFont().getName(), 18));
 
 
@@ -118,8 +120,13 @@ public class CourtController extends GenericInterface implements Initializable {
                 BeanCourt.addSchedule(i);
             } catch (NotLoggedException e) {
                 CourtController cc = new CourtController();
-                cc.waringMessage();
-            }finally {
+                cc.waringMessage("Log in necessario!",80);
+            } catch (FileNotFoundException f) {
+                System.out.println("Libero");
+            } catch (AlreadyReserved a) {
+                CourtController cc = new CourtController();
+                cc.waringMessage("Sei già prenotato in quest'orario!",30);
+            } finally {
                 stage.close();
             }
         });
@@ -147,10 +154,8 @@ public class CourtController extends GenericInterface implements Initializable {
         txt.setLayoutY(30);
         txt.setLayoutX(15);
 
-
-
-
         stage.setScene(scene);
         stage.show();
     }
+
 }

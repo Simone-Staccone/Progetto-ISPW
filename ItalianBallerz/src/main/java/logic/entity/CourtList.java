@@ -1,7 +1,9 @@
 package logic.entity;
 
 import logic.control.FileManager;
+import logic.other.CourtConst;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ public class CourtList {
     private static final List<Court> COURTS = new ArrayList<>();
 
     public CourtList(String name){
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + ".txt");
+        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name);
         String s;
         try {
             while (!fm.checkEnd()) {
@@ -39,9 +41,8 @@ public class CourtList {
 
     public static void setCourts(String name){
         COURTS.clear();
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name + "\\" + name + ".txt");
+        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.getExtension());
         try {
-            fm.exist();
             String s;
             while (!fm.checkEnd()) {
                 s = fm.readLine();

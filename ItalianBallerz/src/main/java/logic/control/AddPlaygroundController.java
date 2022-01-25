@@ -3,12 +3,10 @@ package logic.control;
 import logic.other.SingletonPlayer;
 
 import java.io.File;
-import java.nio.file.Paths;
 
 
 public class AddPlaygroundController {
-    private final String path = Paths.get("").toAbsolutePath() + File.separator + "src" + File.separator +
-            "main" + File.separator + "java" + File.separator + "data" + File.separator + "court";
+    private final String path = "court";
 
 
     public void addCourt(String name,String location, String phone, String money) {

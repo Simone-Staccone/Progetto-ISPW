@@ -2,8 +2,10 @@ package logic.entity;
 
 import logic.control.FileManager;
 import logic.control.StatsController;
+import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,12 +15,11 @@ public class StatsList {
     private final List<Stat> stlst = new ArrayList<>();
 
     public StatsList() throws FileNotFoundException {
-        String path = Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\users\\"
-                + SingletonPlayer.getLoginInstance().getUsername();
-        FileManager fm = new FileManager(path + "\\points.txt");
-        FileManager fm2 = new FileManager(path + "\\assists.txt");
-        FileManager fm3 = new FileManager(path + "\\rebounds.txt");
-        FileManager fm4 = new FileManager(path + "\\minutes.txt");
+        String path = "users" + File.separator + SingletonPlayer.getLoginInstance().getUsername();
+        FileManager fm = new FileManager(path + File.separator + "points" + CourtConst.getExtension());
+        FileManager fm2 = new FileManager(path + File.separator + "assists" + CourtConst.getExtension());
+        FileManager fm3 = new FileManager(path + File.separator + "rebounds" + CourtConst.getExtension());
+        FileManager fm4 = new FileManager(path + File.separator + "minutes" + CourtConst.getExtension());
         StatsController st = new StatsController();
         Stat s;
         try {

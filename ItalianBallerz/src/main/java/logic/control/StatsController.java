@@ -3,31 +3,28 @@ package logic.control;
 import errorlogic.MyException;
 import logic.entity.Stat;
 import logic.entity.StatsList;
+import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class StatsController {
-    private final String path = Paths.get("").toAbsolutePath() + File.separator + "src" + File.separator +
-            "main" + File.separator + "java" +File.separator + "data" + File.separator + "users" + File.separator;
-
 
     public Stat create(float points, float assists, float rebounds, float minutes){
         return new Stat(points, assists, rebounds, minutes);
     }
 
     public void write(float points, float assists, float rebounds, float minutes){
-        FileManager fm = new FileManager(path + SingletonPlayer.getLoginInstance().getUsername());
+        FileManager fm = new FileManager("users" + File.separator + SingletonPlayer.getLoginInstance().getUsername());
 
-        fm.writeAppend(Float.toString(points),"points");
-        fm.writeAppend(Float.toString(assists),"assists");
-        fm.writeAppend(Float.toString(rebounds),"rebounds");
-        fm.writeAppend(Float.toString(minutes),"minutes");
+        fm.writeAppend(Float.toString(points),"points" + CourtConst.getExtension());
+        fm.writeAppend(Float.toString(assists),"assists" + CourtConst.getExtension());
+        fm.writeAppend(Float.toString(rebounds),"rebounds" + CourtConst.getExtension());
+        fm.writeAppend(Float.toString(minutes),"minutes" + CourtConst.getExtension());
     }
 
     public Stat average() throws MyException {
@@ -35,30 +32,28 @@ public class StatsController {
         return st.create(st.getAverege("points"),st.getAverege("assists"),st.getAverege("rebounds"),st.getAverege("minutes"));
     }
 
-    public Boolean delete(int i) {
-        String actualPath = this.path + SingletonPlayer.getLoginInstance().getUsername()+ File.separator;
-        FileManager fm = new FileManager(actualPath + "points.txt");
-        FileManager fm2 = new FileManager(actualPath + "assists.txt");
-        FileManager fm3 = new FileManager(actualPath + "rebounds.txt");
-        FileManager fm4 = new FileManager(actualPath + "minutes.txt");
-        boolean b;
+    public void delete(int i) {
+        String actualPath = "users" + File.separator + SingletonPlayer.getLoginInstance().getUsername()+ File.separator;
+        FileManager fm = new FileManager(actualPath + "points" + CourtConst.getExtension());
+        FileManager fm2 = new FileManager(actualPath + "assists" + CourtConst.getExtension());
+        FileManager fm3 = new FileManager(actualPath + "rebounds" + CourtConst.getExtension());
+        FileManager fm4 = new FileManager(actualPath + "minutes" + CourtConst.getExtension());
         try{
             fm.deleteLine(i);
             fm2.deleteLine(i);
             fm3.deleteLine(i);
             fm4.deleteLine(i);
-            b = true;
         } catch (Exception e) {
             e.printStackTrace();
-            b = false;
+
         }
-        return b;
+
     }
 
 
     public float getAverege(String str) throws MyException
     {
-        String actualPath = this.path + SingletonPlayer.getLoginInstance().getUsername() + File.separator +str + ".txt";
+        String actualPath = "users" + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator +str + CourtConst.getExtension();
         float x = 0;
         int count = 0;
         float avg;

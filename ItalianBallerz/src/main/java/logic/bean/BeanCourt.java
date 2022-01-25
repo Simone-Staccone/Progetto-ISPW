@@ -1,5 +1,6 @@
 package logic.bean;
 
+import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
 import errorlogic.NotLoggedException;
 import logic.control.AddPlaygroundController;
@@ -7,6 +8,7 @@ import javafx.scene.layout.HBox;
 import logic.control.GetPlaygroundListController;
 import logic.control.GetReservationController;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class BeanCourt {
@@ -75,7 +77,7 @@ public class BeanCourt {
         return gr.getPhone();
     }
 
-    public static void addSchedule(int start) throws NotLoggedException {
+    public static void addSchedule(int start) throws NotLoggedException, FileNotFoundException, AlreadyReserved {
         GetReservationController gr = new GetReservationController(start);
     }
 }
