@@ -127,6 +127,8 @@ public class CourtController extends GenericInterface implements Initializable {
             }
         });
 
+
+
         yes.setLayoutY(60);
         yes.setLayoutX(60);
         yes.setFont(Font.font(txt.getFont().getName(), 14));

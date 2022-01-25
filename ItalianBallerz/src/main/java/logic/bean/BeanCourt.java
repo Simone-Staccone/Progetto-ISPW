@@ -3,6 +3,7 @@ package logic.bean;
 import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
 import errorlogic.NotLoggedException;
+import guicontroller.LoggedInterfaceController;
 import logic.control.AddPlaygroundController;
 import javafx.scene.layout.HBox;
 import logic.control.GetPlaygroundListController;
@@ -58,8 +59,7 @@ public class BeanCourt {
         try {
             s = gp.getOwner();
         } catch (Exception e) {
-            Logger log = Logger.getRootLogger();
-            log.debug("Not Found!");
+            e.printStackTrace();
         }
         return s;
     }
@@ -82,5 +82,10 @@ public class BeanCourt {
     public static void addSchedule(int start) throws NotLoggedException, FileNotFoundException, AlreadyReserved {
         GetReservationController gr = new GetReservationController();
         gr.tryAdd(start);
+    }
+
+    public static void notifyOwner(String owner, String location, String name) {
+        LoggedInterfaceController lg = new LoggedInterfaceController();
+        lg.notify(owner,location,name);
     }
 }

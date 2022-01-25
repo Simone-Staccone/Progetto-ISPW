@@ -2,6 +2,7 @@ package logic.control;
 
 import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
+import logic.bean.BeanCourt;
 import logic.entity.Court;
 import logic.entity.CourtCache;
 
@@ -17,5 +18,6 @@ public class GetReservationController {
     public void tryAdd(int start) throws FileNotFoundException, AlreadyReserved, NotLoggedException {
         this.crt.search(start);
         this.crt.addReservation(start);
+        BeanCourt.notifyOwner(CourtCache.getOwner(),CourtCache.getLocation(),CourtCache.getName());
     }
 }

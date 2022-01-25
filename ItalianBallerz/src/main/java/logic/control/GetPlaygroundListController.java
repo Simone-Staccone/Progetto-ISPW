@@ -62,9 +62,9 @@ public class GetPlaygroundListController {
         try{
             owner = CourtCache.findOwner(name);
         }catch (FileNotFoundException f){
-            Logger log = Logger.getRootLogger();
-            log.debug("File per il proprietario non trovato!");
+            f.printStackTrace();
         }
+        System.out.println(owner + "jdisaad");
         CourtCache.setOwner(owner);
     }
 

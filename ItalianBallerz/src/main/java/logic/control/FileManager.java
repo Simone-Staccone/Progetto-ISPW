@@ -176,8 +176,14 @@ public class FileManager {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
                     FileManager fm2 = new FileManager("court" + File.separator +  s + File.separator + str);
-
-                    ret = FileManager.tryFind(fm2,name);
+                    String s2;
+                    while(!fm2.checkEnd()) {
+                        s2 = fm2.readLine();
+                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
+                            ret = s2.substring(s2.indexOf("@") + 1);
+                            break;
+                        }
+                    }
                 }
             }
         }
