@@ -5,18 +5,18 @@ import logic.entity.PlayerUser;
 
 public class SingletonPlayer {
     private static SingletonPlayer instance = null;
-    private static String username;
-    private Boolean owner;
+    private String username;
+    private final boolean owner;
 
 
     protected SingletonPlayer(String init, Boolean owner) {
-        SingletonPlayer.username = init;
+        this.username = init;
         this.owner = owner;
     }
 
     public static synchronized  SingletonPlayer getLoginInstance() {
         if (SingletonPlayer.instance == null && PlayerUser.getUsernameP() != null){
-            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getUsernameP() , PlayerUser.getOwnerP());
+            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getUsernameP(),PlayerUser.getOwnerP());
         }
         return instance;
     }
@@ -27,8 +27,8 @@ public class SingletonPlayer {
 
     public static void deleteInstance(){
         if (SingletonPlayer.instance != null){
+            SingletonPlayer.instance.username = null;
             SingletonPlayer.instance = null;
-            SingletonPlayer.username = null;
             PlayerUser.setUsernameP(null);
         }
     }

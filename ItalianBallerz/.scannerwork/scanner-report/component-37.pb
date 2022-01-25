@@ -1,1 +1,1 @@
-% 2javaX6hr6src/main/java/guicontroller/StatsInterfaceControl.java
+% 2javaXŠhr1src/main/java/guicontroller/GenericInterface.java

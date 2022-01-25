@@ -45,17 +45,17 @@ public class FileManager {
 
         FileManager.check(this.path);
 
-        try {
-            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
+
+        try (RandomAccessFile raf = new RandomAccessFile(this.path, "rw")){
             if(raf.length() == this.fp)
             {
                 ret = true;
             }
-            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
         }
+
         return ret;
     }
 
@@ -64,13 +64,11 @@ public class FileManager {
     {
         FileManager.check(this.path);
 
+        String res = text + "\n";
 
-        try {
-            String res = text + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
+        try (RandomAccessFile raf = new RandomAccessFile(this.path, "rw")){
             raf.seek(raf.length());
             raf.write(res.getBytes());
-            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -82,20 +80,17 @@ public class FileManager {
         String text = "";
 
         FileManager.check(this.path);
-
-        try {
-            StringBuilder buffer = new StringBuilder();
+        StringBuilder buffer = new StringBuilder();
 
 
-            RandomAccessFile raf = new RandomAccessFile(this.path, "rw");
 
+        try (RandomAccessFile raf = new RandomAccessFile(this.path, "rw")){
             raf.seek(this.fp);
 
             buffer.append(raf.readLine());
 
             text = buffer.toString();
             this.fp = raf.getFilePointer();
-            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -108,8 +103,7 @@ public class FileManager {
 
         File file = new File(path);
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
             List<String> str = new ArrayList<>();
             String s;
             int count = 0;
@@ -156,14 +150,12 @@ public class FileManager {
             e.printStackTrace();
         }
 
+        String res = s + "\n";
 
 
-        try {
-            String res = s + "\n";
-            RandomAccessFile raf = new RandomAccessFile(this.path + File.separator + what, "rw");
+        try (RandomAccessFile raf = new RandomAccessFile(this.path + File.separator + what, "rw")){
             raf.seek(raf.length());
             raf.write(res.getBytes());
-            raf.close();
         }
         catch(IOException e) {
             e.printStackTrace();
@@ -171,7 +163,7 @@ public class FileManager {
     }
 
     public String searchOwner(String name) throws FileNotFoundException {
-        String actualPath = this.path + CourtConst.getCourt() + File.separator;
+        String actualPath = this.path + CourtConst.COURT + File.separator;
         File file = new File(actualPath);
         String[] names = file.list();
         String ret = "";

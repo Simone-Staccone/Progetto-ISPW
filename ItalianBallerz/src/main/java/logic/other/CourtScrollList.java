@@ -20,10 +20,10 @@ public class CourtScrollList implements ScrollList{
         Court c;
         HBox b;
 
-        for(int i = 0;i<crt.size();i++){
-            c = crt.get(i);
+        for (Court court : crt) {
+            c = court;
             b = new HBox(new Text(c.getName()));
-            try{
+            try {
                 b.setMinHeight(40);
                 b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
                         BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
@@ -52,9 +52,7 @@ public class CourtScrollList implements ScrollList{
                 e.printStackTrace();
             }
 
-            if(c != null){
-                bList.add(b);
-            }
+            bList.add(b);
         }
 
         return bList;

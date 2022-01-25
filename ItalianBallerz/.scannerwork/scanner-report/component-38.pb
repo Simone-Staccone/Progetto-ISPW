@@ -1,1 +1,1 @@
-& 2javaXLhr'src/main/java/logic/bean/BeanCourt.java
+& 2javaXnhr:src/main/java/guicontroller/LoggedInterfaceController.java

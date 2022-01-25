@@ -2,6 +2,7 @@ package logic.entity;
 
 import logic.control.FileManager;
 import logic.other.CourtConst;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,7 +42,7 @@ public class CourtList {
 
     public static void setCourts(String name){
         COURTS.clear();
-        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.getExtension());
+        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.EXTENSION);
         try {
             String s;
             while (!fm.checkEnd()) {
@@ -49,7 +50,8 @@ public class CourtList {
                 COURTS.add(new Court(s.substring(0,s.indexOf("$"))));
             }
         } catch (Exception e) {
-            System.out.println("File non esiste");
+            Logger log = Logger.getRootLogger();
+            log.debug("File non esiste!");
         }
     }
 }

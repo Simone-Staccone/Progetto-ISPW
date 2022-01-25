@@ -7,7 +7,6 @@ import logic.other.SingletonPlayer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +14,11 @@ public class StatsList {
     private final List<Stat> stlst = new ArrayList<>();
 
     public StatsList() throws FileNotFoundException {
-        String path = "users" + File.separator + SingletonPlayer.getLoginInstance().getUsername();
-        FileManager fm = new FileManager(path + File.separator + "points" + CourtConst.getExtension());
-        FileManager fm2 = new FileManager(path + File.separator + "assists" + CourtConst.getExtension());
-        FileManager fm3 = new FileManager(path + File.separator + "rebounds" + CourtConst.getExtension());
-        FileManager fm4 = new FileManager(path + File.separator + "minutes" + CourtConst.getExtension());
+        String path = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername();
+        FileManager fm = new FileManager(path + File.separator + CourtConst.POINTS + CourtConst.EXTENSION);
+        FileManager fm2 = new FileManager(path + File.separator + CourtConst.ASSISTS + CourtConst.EXTENSION);
+        FileManager fm3 = new FileManager(path + File.separator + CourtConst.REBOUNDS + CourtConst.EXTENSION);
+        FileManager fm4 = new FileManager(path + File.separator + CourtConst.MINUTES + CourtConst.EXTENSION);
         StatsController st = new StatsController();
         Stat s;
         try {
@@ -34,14 +33,5 @@ public class StatsList {
 
     public List<Stat> getStlst() {
         return stlst;
-    }
-
-    public void print() {
-        System.err.println(stlst.size());
-        Stat s;
-        for (Stat stat : stlst) {
-            s = stat;
-            System.err.println(s.getPoints() + "-" + s.getAssists() + "-" + s.getRebounds() + "-" + s.getMinutes());
-        }
     }
 }

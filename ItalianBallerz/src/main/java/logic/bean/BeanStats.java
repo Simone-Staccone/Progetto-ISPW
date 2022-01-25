@@ -69,7 +69,6 @@ public class BeanStats {
         try {
             s = st.average();
         } catch (Exception e) {
-            System.err.println("Errore!!!");
             throw new MyException("Error message",e);
         }
         return s;

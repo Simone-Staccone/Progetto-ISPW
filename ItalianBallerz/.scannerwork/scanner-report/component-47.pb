@@ -1,1 +1,1 @@
-/ 2javaXhr%src/main/java/logic/entity/Court.java
+/ 2javaXbhr'src/main/java/logic/bean/BeanLogin.java

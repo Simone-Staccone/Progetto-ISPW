@@ -8,11 +8,14 @@ import logic.entity.CourtCache;
 import java.io.FileNotFoundException;
 
 public class GetReservationController {
+    private final Court crt;
 
-    public GetReservationController(int start) throws NotLoggedException, AlreadyReserved, FileNotFoundException {
-        Court crt = new Court(CourtCache.getName());
+    public GetReservationController(){
+        this.crt = new Court(CourtCache.getName());
+    }
 
-        crt.search(start);
-        crt.addReservation(start);
+    public void tryAdd(int start) throws FileNotFoundException, AlreadyReserved, NotLoggedException {
+        this.crt.search(start);
+        this.crt.addReservation(start);
     }
 }

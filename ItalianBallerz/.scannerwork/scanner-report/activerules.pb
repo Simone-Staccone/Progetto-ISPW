@@ -275,7 +275,14 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 apexS101"
 format^[A-Z][a-zA-Z0-9_]*$(Ð¸¾Âø,0Ð¸¾Âø,:AX4K75YdOopw1G-NQzRF3
 apexS2757(Ð¸¾Âø,0Ð¸¾Âø,:AX4K75YdOopw1G-NQzRF3
-apexS1481(Ð¸¾Âø,0Ð¸¾Âø,:AX4K75YdOopw1G-NQzRFQ
+apexS1481(Ð¸¾Âø,0Ð¸¾Âø,:AX4K75YdOopw1G-NQzRFH
+javaS5843"
+maxComplexity20(øœ÷ã¶.0øœ÷ã¶.:AX4K75YeOopw1G-NQzRg3
+javaS4544(À‚ñÙÎ,0À‚ñÙÎ,:AX4K75YeOopw1G-NQzRg3
+javaS2122(ø•à©Ä)0øØóÅæ*:AX4K75YeOopw1G-NQzRg3
+javaS6217(˜’µµç/0˜’µµç/:AX4K75YeOopw1G-NQzRg[
+javaS115"'
+format^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$(¸˜Ù±ñ(0àå‰ºì*:AX4K75YeOopw1G-NQzRgQ
 javaS107"
 max7"
 constructorMax7(¸˜Ù±ñ(0  Ù±ñ(:AX4K75YeOopw1G-NQzRgQ
@@ -320,7 +327,6 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 javaS1181(¸˜Ù±ñ(0°õ‰ºì*:AX4K75YeOopw1G-NQzRg3
 javaS5876(È„¥™Ð.0È„¥™Ð.:AX4K75YeOopw1G-NQzRg3
 javaS4423(ˆ¤Þ¹¯,0ðÃù–’/:AX4K75YeOopw1G-NQzRg3
-javaS4544(À‚ñÙÎ,0À‚ñÙÎ,:AX4K75YeOopw1G-NQzRg3
 javaS2245(À•ŠñÚ,0À•ŠñÚ,:AX4K75YeOopw1G-NQzRg3
 javaS4426(°½Î½,0èœù–’/:AX4K75YeOopw1G-NQzRg3
 javaS4425(°½Î½,0°½Î½,:AX4K75YeOopw1G-NQzRg3
@@ -609,9 +615,7 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 javaS3065(ÐŽ¬»ð,0ÐŽ¬»ð,:AX4K75YeOopw1G-NQzRg3
 javaS2097(ÐÛ˜ªÙ)0øØóÅæ*:AX4K75YeOopw1G-NQzRg3
 javaS2094(ÈÓÏ)0˜ý‰ºì*:AX4K75YeOopw1G-NQzRg3
-javaS2093(¨Á¢œ¥*0˜ý‰ºì*:AX4K75YeOopw1G-NQzRg[
-javaS115"'
-format^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$(¸˜Ù±ñ(0àå‰ºì*:AX4K75YeOopw1G-NQzRg3
+javaS2093(¨Á¢œ¥*0˜ý‰ºì*:AX4K75YeOopw1G-NQzRg3
 javaS1171(¸˜Ù±ñ(0  Ù±ñ(:AX4K75YeOopw1G-NQzRg3
 javaS1199(¸˜Ù±ñ(0°õ‰ºì*:AX4K75YeOopw1G-NQzRg3
 javaS6205( æšÊŽ/0 æšÊŽ/:AX4K75YeOopw1G-NQzRg3
@@ -619,9 +623,7 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 javaS6213( ã›ÊŽ/0 ã›ÊŽ/:AX4K75YeOopw1G-NQzRg3
 javaS3551(¸—ïŸ‰-0¸—ïŸ‰-:AX4K75YeOopw1G-NQzRg3
 javaS2165(ø•à©Ä)0€…Šºì*:AX4K75YeOopw1G-NQzRg3
-javaS6103(ÐòØ«ð.0ÐòØ«ð.:AX4K75YeOopw1G-NQzRgH
-javaS5843"
-maxComplexity20(øœ÷ã¶.0øœ÷ã¶.:AX4K75YeOopw1G-NQzRg3
+javaS6103(ÐòØ«ð.0ÐòØ«ð.:AX4K75YeOopw1G-NQzRg3
 javaS5411(È²–£Ë-0È²–£Ë-:AX4K75YeOopw1G-NQzRg3
 javaS4454(ÀÍš¿¦,0ÀÍš¿¦,:AX4K75YeOopw1G-NQzRg3
 javaS2129(øØóÅæ*0 òÌäµ+:AX4K75YeOopw1G-NQzRg3
@@ -701,7 +703,6 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 javaS2390(€Ö»Ÿ²+0˜£ŸÆØ+:AX4K75YeOopw1G-NQzRg3
 javaS1158(¸˜Ù±ñ(0°õ‰ºì*:AX4K75YeOopw1G-NQzRg3
 javaS1157(¸˜Ù±ñ(0°õ‰ºì*:AX4K75YeOopw1G-NQzRg3
-javaS2122(ø•à©Ä)0øØóÅæ*:AX4K75YeOopw1G-NQzRg3
 javaS1155(¸˜Ù±ñ(0°õ‰ºì*:AX4K75YeOopw1G-NQzRg3
 javaS2123(àà©Ä)0øØóÅæ*:AX4K75YeOopw1G-NQzRg3
 javaS1153(¸˜Ù±ñ(0¸¢ü Ì*:AX4K75YeOopw1G-NQzRg3
@@ -729,7 +730,6 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 javaS1201(¸˜Ù±ñ(0™öÙ—*:AX4K75YeOopw1G-NQzRg3
 javaS3626(¸”Þ¹¯,0¸”Þ¹¯,:AX4K75YeOopw1G-NQzRg3
 javaS1940( ¿×¿Å*0¸¢ü Ì*:AX4K75YeOopw1G-NQzRg3
-javaS2912(èÄÙŠÝ)0èŒŠºì*:AX4K75YeOopw1G-NQzRg3
 javaS1905(€µƒž)0Èóû Ì*:AX4K75YeOopw1G-NQzRg3
 javaS4065( Ç ÆØ+0 Ç ÆØ+:AX4K75YeOopw1G-NQzRg3
 javaS5164(¸ä•£Ë-0¸ä•£Ë-:AX4K75YeOopw1G-NQzRg3
@@ -837,6 +837,10 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 flexS1481(¸˜Ù±ñ(0À»Ê¢«,:AX4K75YdOopw1G-NQzRE3
 flexS1952(è™¡®˜)0è™¡®˜):AX4K75YdOopw1G-NQzRE;
 flexWithStatement(èšáÜï(0¨ÙáÜï(:AX4K75YdOopw1G-NQzRE:
+csharpsquidS3925(˜‹¯Á½+0ø±òÌ+:AX4K75YeOopw1G-NQzRh:
+csharpsquidS3442(€³í©+0€³í©+:AX4K75YeOopw1G-NQzRh:
+csharpsquidS5753(Ðó¢©ò.0Ðó¢©ò.:AX4K75YeOopw1G-NQzRh:
+csharpsquidS4457(èÆåÄ¶,0èÆåÄ¶,:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2344(°À¨ú™*0°À¨ú™*:AX4K75YeOopw1G-NQzRh:
 csharpsquidS3267(¥ßÏÅ/0ð¸ˆéÒ/:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2225(ð–ñï)0 Þ»  +:AX4K75YeOopw1G-NQzRh:
@@ -861,7 +865,6 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 csharpsquidS2245(ˆ‰ñÚ,0ˆ‰ñÚ,:AX4K75YeOopw1G-NQzRh:
 csharpsquidS4426(€¿åÄ¶,0¸ààÛ“/:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2486(ø¡™ªÙ)0°ÝÄøœ.:AX4K75YeOopw1G-NQzRh:
-csharpsquidS5753(Ðó¢©ò.0Ðó¢©ò.:AX4K75YeOopw1G-NQzRh:
 csharpsquidS3330(Ï²Þ„-0àãµá-:AX4K75YeOopw1G-NQzRh:
 csharpsquidS5766(ø¢å§°.0ø¢å§°.:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2257(ÈÅ¿Æê.0ÈÅ¿Æê.:AX4K75YeOopw1G-NQzRh:
@@ -921,14 +924,12 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 csharpsquidS3011(èÄÚ÷õ,0˜÷¬ò .:AX4K75YeOopw1G-NQzRh:
 csharpsquidS1075(Øí›ÆØ+0Øí›ÆØ+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2178(ˆÙî–‡+0À³›à¶+:AX4K75YeOopw1G-NQzRh:
-csharpsquidS3260(ØãÏÅ/0ØãÏÅ/:AX4K75YeOopw1G-NQzRh:
-csharpsquidS3925(˜‹¯Á½+0ø±òÌ+:AX4K75YeOopw1G-NQzRh9
+csharpsquidS3260(ØãÏÅ/0ØãÏÅ/:AX4K75YeOopw1G-NQzRh9
 csharpsquidS101(€»Ì“Æ*0€»Ì“Æ*:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2699( ˆÂ–©-0 ˆÂ–©-:AX4K75YeOopw1G-NQzRh:
 csharpsquidS3877(À³›à¶+0À³›à¶+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2757(Øžñï)0 Þ»  +:AX4K75YeOopw1G-NQzRh:
-csharpsquidS3247(À³›à¶+0À³›à¶+:AX4K75YeOopw1G-NQzRh:
-csharpsquidS4457(èÆåÄ¶,0èÆåÄ¶,:AX4K75YeOopw1G-NQzRhc
+csharpsquidS3247(À³›à¶+0À³›à¶+:AX4K75YeOopw1G-NQzRhc
 csharpsquidS3776"
 	threshold15"
 propertyThreshold3(€³í©+0€³í©+:AX4K75YeOopw1G-NQzRh:
@@ -938,7 +939,6 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 csharpsquidS2479(¨Ìµá-0¨Ìµá-:AX4K75YeOopw1G-NQzRh:
 csharpsquidS2114(¨—æÇá+0¨—æÇá+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS1144(Øô­Ä¹*0Øô­Ä¹*:AX4K75YeOopw1G-NQzRh:
-csharpsquidS3442(€³í©+0€³í©+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS1264(˜îÅÐ¡,0˜îÅÐ¡,:AX4K75YeOopw1G-NQzRh:
 csharpsquidS3443(Øô­Ä¹*0˜‹¯Á½+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS3440(ÐÂþÐ*0ÐÂþÐ*:AX4K75YeOopw1G-NQzRh:
@@ -1104,7 +1104,13 @@ PlSql.Goto(èšáÜï(0ðÁáÜï(:AX4K75YeOopw1G-NQzRH<
 csharpsquidS4200(àšÒ—™,0àšÒ—™,:AX4K75YeOopw1G-NQzRh:
 csharpsquidS4214(ÿÍÊû+0ÿÍÊû+:AX4K75YeOopw1G-NQzRh:
 csharpsquidS4456(èÆåÄ¶,0èÆåÄ¶,:AX4K75YeOopw1G-NQzRhF
-common-swiftDuplicatedBlocks(¨„ÁÂ)0¨„ÁÂ):AX4K75YeOopw1G-NQzRON
+common-swiftDuplicatedBlocks(¨„ÁÂ)0¨„ÁÂ):AX4K75YeOopw1G-NQzRO9
+
+typescriptS6268(àÏ¦×ž/0àÏ¦×ž/:AX4K75YeOopw1G-NQzRd9
+
+typescriptS2819(è´æªÕ.0è´æªÕ.:AX4K75YeOopw1G-NQzRd9
+
+typescriptS6299(Ø¼ìà¥/0Ø¼ìà¥/:AX4K75YeOopw1G-NQzRdN
 
 typescriptS5843"
 maxComplexity20( ÃÓš¾/0 ÃÓš¾/:AX4K75YeOopw1G-NQzRd9
@@ -1120,8 +1126,6 @@ typescriptS1135(ø·²¨ú.0ø·²¨ú.:AX4K75YeOopw1G-NQzRd9
 typescriptS5734(èÂÁÝ.0èÂÁÝ.:AX4K75YeOopw1G-NQzRd9
 
 typescriptS1134(à¿²¨ú.0à¿²¨ú.:AX4K75YeOopw1G-NQzRd9
-
-typescriptS6268(àÏ¦×ž/0àÏ¦×ž/:AX4K75YeOopw1G-NQzRd9
 
 typescriptS5730(ÐÊÁÝ.0ÐÊÁÝ.:AX4K75YeOopw1G-NQzRd9
 
@@ -1162,8 +1166,6 @@ typescriptS5659(¸ÄæªÕ.0¸ÄæªÕ.:AX4K75YeOopw1G-NQzRd9
 
 typescriptS1854(ÈžîÇá+0ÈžîÇá+:AX4K75YeOopw1G-NQzRd9
 
-typescriptS2819(è´æªÕ.0è´æªÕ.:AX4K75YeOopw1G-NQzRd9
-
 typescriptS5547(¸ÄæªÕ.0¸ÄæªÕ.:AX4K75YeOopw1G-NQzRd9
 
 typescriptS5542( ÌæªÕ.0ˆòþµ“/:AX4K75YeOopw1G-NQzRd9
@@ -1187,8 +1189,6 @@ typescriptS128(˜ƒ«„ÿ-0˜ƒ«„ÿ-:AX4K75YeOopw1G-NQzRd9
 typescriptS5527(è´æªÕ.0è´æªÕ.:AX4K75YeOopw1G-NQzRd9
 
 typescriptS4790(àÓ ùÚ-0àÓ ùÚ-:AX4K75YeOopw1G-NQzRd9
-
-typescriptS6299(Ø¼ìà¥/0Ø¼ìà¥/:AX4K75YeOopw1G-NQzRd9
 
 typescriptS5332(È¼ÂÆê.0È¼ÂÆê.:AX4K75YeOopw1G-NQzRdc
 
@@ -1474,7 +1474,10 @@ typescriptS4140(ð¤ŠŽ”,0ð¤ŠŽ”,:AX4K75YeOopw1G-NQzRd9
 
 typescriptS3863(ÈÊ±¨ú.0ÈÊ±¨ú.:AX4K75YeOopw1G-NQzRd9
 
-typescriptS4156(°Ò±¨ú.0°Ò±¨ú.:AX4K75YeOopw1G-NQzRd4
+typescriptS4156(°Ò±¨ú.0°Ò±¨ú.:AX4K75YeOopw1G-NQzRd3
+textS6389( ùõÛè/0 ùõÛè/:AX6LfYfnEtnFPnYRcZYi4
+vbnetS5753(¨¹ž©ò.0¨¹ž©ò.:AX4K75YeOopw1G-NQzRf4
+vbnetS4275(È£‰Æî,0È£‰Æî,:AX4K75YeOopw1G-NQzRf4
 vbnetS1135(˜÷–åŽ-0˜÷–åŽ-:AX4K75YeOopw1G-NQzRf4
 vbnetS1134(˜÷–åŽ-0˜÷–åŽ-:AX4K75YeOopw1G-NQzRfj
 vbnetS2068"4
@@ -1494,7 +1497,6 @@ typescriptS4156(°Ò±¨ú.0°Ò±¨ú.:AX4K75YeOopw1G-NQzRd4
 vbnetS5542( þÑ˜ñ-0à»ÚÛ“/:AX4K75YeOopw1G-NQzRf4
 vbnetS1313(È£‰Æî,0È£‰Æî,:AX4K75YeOopw1G-NQzRf4
 vbnetS4423(·¼Æê.0¸ìÜÛ“/:AX4K75YeOopw1G-NQzRf4
-vbnetS5753(¨¹ž©ò.0¨¹ž©ò.:AX4K75YeOopw1G-NQzRf4
 vbnetS4830(ÀÒ˜ñ-0ÀÒ˜ñ-:AX4K75YeOopw1G-NQzRf4
 vbnetS2257(ÈÎ¼Æê.0ÈÎ¼Æê.:AX4K75YeOopw1G-NQzRf4
 vbnetS4036(» ©ò.0» ©ò.:AX4K75YeOopw1G-NQzRf4
@@ -1537,7 +1539,6 @@ typescriptS4156(°Ò±¨ú.0°Ò±¨ú.:AX4K75YeOopw1G-NQzRd4
 vbnetS3981(àÀçÊû+0àÀçÊû+:AX4K75YeOopw1G-NQzRf4
 vbnetS3869(È£‰Æî,0È£‰Æî,:AX4K75YeOopw1G-NQzRf4
 vbnetS2372(È¯Ž†+0È¯Ž†+:AX4K75YeOopw1G-NQzRf4
-vbnetS4275(È£‰Æî,0È£‰Æî,:AX4K75YeOopw1G-NQzRf4
 vbnetS4136(ÐˆŸùÚ-0ÐˆŸùÚ-:AX4K75YeOopw1G-NQzRf4
 vbnetS4210(à›‰Æî,0à›‰Æî,:AX4K75YeOopw1G-NQzRf4
 vbnetS2692(ÝƒŒù.0ÝƒŒù.:AX4K75YeOopw1G-NQzRf4
@@ -1634,6 +1635,7 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cloudformationS6295(×®/0×®/:AX4K75YeOopw1G-NQzRYm
 cloudformationS6273".
 format$^([A-Z][A-Za-z]*:)*([A-Z][A-Za-z]*)$(×®/0×®/:AX4K75YeOopw1G-NQzRY:
+phpsecurityS5144(Ð–¬Ä›-0Ð–¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS5135(€˜Áéº-0€˜Áéº-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS2078( ¦¬Ä›-0 ¦¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS5146(èŽ¬Ä›-0èŽ¬Ä›-:AX4K75YeOopw1G-NQzRb:
@@ -1641,7 +1643,6 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 phpsecurityS5335( ·Áéº-0 ·Áéº-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS3649(¸ž¬Ä›-0¸ž¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS5131(Ð–¬Ä›-0Ð–¬Ä›-:AX4K75YeOopw1G-NQzRb:
-phpsecurityS5144(Ð–¬Ä›-0Ð–¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS2083(ˆ®¬Ä›-0ˆ®¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS6287( ÌˆˆÌ/0 ÌˆˆÌ/:AX4K75YeOopw1G-NQzRb:
 phpsecurityS2091(ˆ®¬Ä›-0ˆ®¬Ä›-:AX4K75YeOopw1G-NQzRb:
@@ -1649,7 +1650,9 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 phpsecurityS5883(ØØþ¹Ô/0ØØþ¹Ô/:AX4K75YeOopw1G-NQzRb:
 phpsecurityS2076( ¦¬Ä›-0 ¦¬Ä›-:AX4K75YeOopw1G-NQzRb:
 phpsecurityS5334( ·Áéº-0 ·Áéº-:AX4K75YeOopw1G-NQzRb:
-phpsecurityS6350(à‚þ¹Ô/0à‚þ¹Ô/:AX4K75YeOopw1G-NQzRb4
+phpsecurityS6350(à‚þ¹Ô/0à‚þ¹Ô/:AX4K75YeOopw1G-NQzRbR
+swiftS114"
+format^[A-Z][a-zA-Z0-9]*$(°Ž²ç)0°Ž²ç):AX4K75YeOopw1G-NQzRO4
 swiftS1301(Àü€ÁÂ)0Àü€ÁÂ):AX4K75YeOopw1G-NQzRO4
 swiftS2094(Àü€ÁÂ)0„ïÇá+:AX4K75YeOopw1G-NQzROR
 swiftS116"
@@ -1699,9 +1702,7 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 swiftS1125(€¶èÄ¶,0€¶èÄ¶,:AX4K75YeOopw1G-NQzRO4
 swiftS1133(Àü€ÁÂ)0Àü€ÁÂ):AX4K75YeOopw1G-NQzRO4
 swiftS1134(Àü€ÁÂ)0Àü€ÁÂ):AX4K75YeOopw1G-NQzRO4
-swiftS1135(È‡Ž²ç)0È‡Ž²ç):AX4K75YeOopw1G-NQzROR
-swiftS114"
-format^[A-Z][a-zA-Z0-9]*$(°Ž²ç)0°Ž²ç):AX4K75YeOopw1G-NQzRO4
+swiftS1135(È‡Ž²ç)0È‡Ž²ç):AX4K75YeOopw1G-NQzRO4
 swiftS1144(˜Ç–’ì*0˜Ç–’ì*:AX4K75YeOopw1G-NQzROR
 swiftS117"
 format^[a-z][a-zA-Z0-9]*$(¨üîÇá+0¨üîÇá+:AX4K75YeOopw1G-NQzRO4
@@ -1725,7 +1726,11 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 swiftS3923(€¶èÄ¶,0€¶èÄ¶,:AX4K75YeOopw1G-NQzRO4
 swiftS3981(ó÷ç+0ó÷ç+:AX4K75YeOopw1G-NQzRO4
 swiftS4144(€¶èÄ¶,0€¶èÄ¶,:AX4K75YeOopw1G-NQzRO4
-swiftS4186(ó÷ç+0ó÷ç+:AX4K75YeOopw1G-NQzRO=
+swiftS4186(ó÷ç+0ó÷ç+:AX4K75YeOopw1G-NQzRO2
+cppS1768(˜ÀÍØŽ*0°õ±ƒì*:AX4K75YeOopw1G-NQzRJ2
+cppS2665( ±Â‡Ë)0°õ±ƒì*:AX4K75YeOopw1G-NQzRJ:
+cppCommentedCode(èšáÜï(0 ²áÜï(:AX4K75YeOopw1G-NQzRJ2
+cppS6069(ðõ½Ý.0ðõ½Ý.:AX4K75YeOopw1G-NQzRJ=
 cppPPBadIncludeForm(¸˜Ù±ñ(0  Ù±ñ(:AX4K75YeOopw1G-NQzRJ2
 cppS3805(Ð˜­œ—+0Ð˜­œ—+:AX4K75YeOopw1G-NQzRJ2
 cppS1016(•¾Ý.0•¾Ý.:AX4K75YeOopw1G-NQzRJ2
@@ -1936,11 +1941,9 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cppS3708(À¼€¥ù*0À¼€¥ù*:AX4K75YeOopw1G-NQzRJ2
 cppS2737(àå±ƒì*0àå±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS2738(°‡õ§Í)0°õ±ƒì*:AX4K75YeOopw1G-NQzRJ2
-cppS1768(˜ÀÍØŽ*0°õ±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS1767( ±Â‡Ë)0Èí±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS2612(ÐüšðÍ.0ÐüšðÍ.:AX4K75YeOopw1G-NQzRJ2
 cppS4963(Ç’-0Ç’-:AX4K75YeOopw1G-NQzRJ2
-cppS2665( ±Â‡Ë)0°õ±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS4962(à¤¾Ý.0à¤¾Ý.:AX4K75YeOopw1G-NQzRJ2
 cppS5812(Ðõ«è©.0Ðõ«è©.:AX4K75YeOopw1G-NQzRJ2
 cppS3630(˜‘ô†/0˜‘ô†/:AX4K75YeOopw1G-NQzRJ2
@@ -2035,8 +2038,7 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cppS6012(Ð€­¨ú.0Ð€­¨ú.:AX4K75YeOopw1G-NQzRJ2
 cppS5281(¨õ˜¾§-0¨õ˜¾§-:AX4K75YeOopw1G-NQzRJ2
 cppS5280(Àí˜¾§-0Àí˜¾§-:AX4K75YeOopw1G-NQzRJ2
-cppS5283(Àí˜¾§-0Àí˜¾§-:AX4K75YeOopw1G-NQzRJ2
-cppS6069(ðõ½Ý.0ðõ½Ý.:AX4K75YeOopw1G-NQzRJH
+cppS5283(Àí˜¾§-0Àí˜¾§-:AX4K75YeOopw1G-NQzRJH
 cppPPBackslashNotLastCharacter(¸˜Ù±ñ(0˜ý±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS1854(Ð’ÇÏ°*0Ð’ÇÏ°*:AX4K75YeOopw1G-NQzRJ2
 cppS6181(à­¦/0à­¦/:AX4K75YeOopw1G-NQzRJ2
@@ -2060,8 +2062,7 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cppS6169(¨âœô†/0¨âœô†/:AX4K75YeOopw1G-NQzRJ2
 cppS6168(ÀÚœô†/0ÀÚœô†/:AX4K75YeOopw1G-NQzRJ;
 cppS134"
-max3(°µ’Ý‡.0°µ’Ý‡.:AX4K75YeOopw1G-NQzRJ:
-cppCommentedCode(èšáÜï(0 ²áÜï(:AX4K75YeOopw1G-NQzRJ2
+max3(°µ’Ý‡.0°µ’Ý‡.:AX4K75YeOopw1G-NQzRJ2
 cppS1709(¸˜Ù±ñ(0àå±ƒì*:AX4K75YeOopw1G-NQzRJ2
 cppS6165(ÀÚœô†/0ÀÚœô†/:AX4K75YeOopw1G-NQzRJ2
 cppS6164(ØÒœô†/0ØÒœô†/:AX4K75YeOopw1G-NQzRJ2
@@ -2151,7 +2152,9 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cppS897(˜ßù¼à*0˜ßù¼à*:AX4K75YeOopw1G-NQzRJ2
 cppS5485(ˆ‘üêñ-0ˆ‘üêñ-:AX4K75YeOopw1G-NQzRJ2
 cppS5000(àœÇ’-0àœÇ’-:AX4K75YeOopw1G-NQzRJ2
-cppS2095(¨øî–‡+0¨øî–‡+:AX4K75YeOopw1G-NQzRJ5
+cppS2095(¨øî–‡+0¨øî–‡+:AX4K75YeOopw1G-NQzRJJ
+pythonS5843"
+maxComplexity20(ð¯ŸÐ/0ð¯ŸÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS2737(Ð¼“ìç-0Ð¼“ìç-:AX4K75YeOopw1G-NQzRR5
 pythonS1134(ðºÄ‡Ë)0ðºÄ‡Ë):AX4K75YeOopw1G-NQzRR5
 pythonS5850(àá€ŸÐ/0àá€ŸÐ/:AX4K75YeOopw1G-NQzRR5
@@ -2177,18 +2180,14 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 pythonS4507(àÂÀÛ—-0°‡§„ÿ-:AX4K75YeOopw1G-NQzRR5
 pythonS6002(ÈæŸÐ/0ÈæŸÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS1764(˜¯þ+0˜¯þ+:AX4K75YeOopw1G-NQzRR5
-pythonS6019(À¿ŸÐ/0À¿ŸÐ/:AX4K75YeOopw1G-NQzRRJ
-pythonS5843"
-maxComplexity20(ð¯ŸÐ/0ð¯ŸÐ/:AX4K75YeOopw1G-NQzRR5
+pythonS6019(À¿ŸÐ/0À¿ŸÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS1763(ØÂÄ‡Ë)0ØÂÄ‡Ë):AX4K75YeOopw1G-NQzRR5
 pythonS5842(  ŸÐ/0  ŸÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS5443(ˆÈÈîÓ-0ˆÈÈîÓ-:AX4K75YeOopw1G-NQzRR5
 pythonS5445(ˆÈÈîÓ-0Õ™¹ÿ.:AX4K75YeOopw1G-NQzRR5
 pythonS2612(øÜ™¹ÿ.0øÜ™¹ÿ.:AX4K75YeOopw1G-NQzRR5
-pythonS1523(ÏŸÐ/0ÏŸÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS5042(¨¸ñ•….0¨¸ñ•….:AX4K75YeOopw1G-NQzRR5
 pythonS2053(¨¸ñ•….0¨¸ñ•….:AX4K75YeOopw1G-NQzRR5
-pythonS4721(°ýüžÐ/0°ýüžÐ/:AX4K75YeOopw1G-NQzRR5
 pythonS3752(àí–¹ÿ.0àí–¹ÿ.:AX4K75YeOopw1G-NQzRR5
 pythonS5659(¸ž™¹ÿ.0¸ž™¹ÿ.:AX4K75YeOopw1G-NQzRR5
 pythonS1854(Ð¼“ìç-0Ð¼“ìç-:AX4K75YeOopw1G-NQzRR5
@@ -2314,7 +2313,10 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 pythonPrintStatementUsage(èšáÜï(0ÀÐ™¿¦,:AX4K75YeOopw1G-NQzRR4
 pythonS108(¸˜Ù±ñ(0  Ù±ñ(:AX4K75YeOopw1G-NQzRR5
 pythonS1845(ØÂÄ‡Ë)0ÀÞ”‚Â+:AX4K75YeOopw1G-NQzRR5
-pythonS2711(ðºÄ‡Ë)0ÀÞ”‚Â+:AX4K75YeOopw1G-NQzRR0
+pythonS2711(ðºÄ‡Ë)0ÀÞ”‚Â+:AX4K75YeOopw1G-NQzRR8
+cCommentedCode(èšáÜï(0àðáÜï(:AX4K75YeOopw1G-NQzRc0
+cS1768(à¨ÍØŽ*0àè°ƒì*:AX4K75YeOopw1G-NQzRc0
+cS2665(°‚Â‡Ë)0Èð°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS3807(àé¬œ—+0àé¬œ—+:AX4K75YeOopw1G-NQzRc/
 cS935(˜òþÕ§/0˜òþÕ§/:AX4K75YeOopw1G-NQzRc0
 cS5332(ðò¾Ý.0ðò¾Ý.:AX4K75YeOopw1G-NQzRc0
@@ -2420,8 +2422,7 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 max3(ˆì’Ý‡.0ˆì’Ý‡.:AX4K75YeOopw1G-NQzRc0
 cS1836(ð‚žöþ(0àè°ƒì*:AX4K75YeOopw1G-NQzRc7
 cDigraphUsage(èšáÜï(0øà°ƒì*:AX4K75YeOopw1G-NQzRc0
-cS1831(àè°ƒì*0àè°ƒì*:AX4K75YeOopw1G-NQzRc8
-cCommentedCode(èšáÜï(0àðáÜï(:AX4K75YeOopw1G-NQzRc;
+cS1831(àè°ƒì*0àè°ƒì*:AX4K75YeOopw1G-NQzRc;
 cFunctionEllipsis(èšáÜï(0øà°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS2259(àð”†°)0Èð°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS3588(¸ù¼à*0¸ù¼à*:AX4K75YeOopw1G-NQzRcM
@@ -2470,11 +2471,9 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cS5443(‰ê¬æ.0‰ê¬æ.:AX4K75YeOopw1G-NQzRc0
 cS1760(ð‚žöþ(0àè°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS3949(¸Ã™¾§-0¸Ã™¾§-:AX4K75YeOopw1G-NQzRc0
-cS1768(à¨ÍØŽ*0àè°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS1767(àð”†°)0àè°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS2612(À¨œðÍ.0À¨œðÍ.:AX4K75YeOopw1G-NQzRc0
 cS1081(èšáÜï(0øà°ƒì*:AX4K75YeOopw1G-NQzRc0
-cS2665(°‚Â‡Ë)0Èð°ƒì*:AX4K75YeOopw1G-NQzRc0
 cS5259(Ð»™¾§-0Ð»™¾§-:AX4K75YeOopw1G-NQzRc0
 cS3518(˜âÃŠ¿*0˜âÃŠ¿*:AX4K75YeOopw1G-NQzRc0
 cS3519(Ÿó¾«+0Ÿó¾«+:AX4K75YeOopw1G-NQzRc0
@@ -2530,6 +2529,8 @@ common-phpDuplicatedBlocks(˜¦°Â„+0˜¦°Â„+:AX4K75YeOopw1G-NQzRb=
 cS5000(ðêÇ’-0ðêÇ’-:AX4K75YeOopw1G-NQzRc0
 cS2095(˜âÃŠ¿*0˜âÃŠ¿*:AX4K75YeOopw1G-NQzRc9
 
+tssecurityS5144(€ŒÐ‹/0€ŒÐ‹/:AX4K75YeOopw1G-NQzRd9
+
 tssecurityS5146(ˆ³Ð‹/0ˆ³Ð‹/:AX4K75YeOopw1G-NQzRd9
 
 tssecurityS5147(èÒà«ð.0èÒà«ð.:AX4K75YeOopw1G-NQzRd9
@@ -2537,8 +2538,6 @@ tssecurityS5147(èÒà«ð.0èÒà«ð.:AX4K75YeOopw1G-NQzRd9
 tssecurityS3649(ÀŸŸðÍ.0ÀŸŸðÍ.:AX4K75YeOopw1G-NQzRd9
 
 tssecurityS5131(À‰á«ð.0À‰á«ð.:AX4K75YeOopw1G-NQzRd9
-
-tssecurityS5144(€ŒÐ‹/0€ŒÐ‹/:AX4K75YeOopw1G-NQzRd9
 
 tssecurityS2083( Ñì¬æ.0 Ñì¬æ.:AX4K75YeOopw1G-NQzRd9
 
@@ -2684,13 +2683,13 @@ tssecurityS6096(¸Éì¬æ.0¸Éì¬æ.:AX4K75YeOopw1G-NQzRd5
 maximum30(ÀƒäÄ¶,0ÀƒäÄ¶,:AX4K75YeOopw1G-NQzRa1
 goS2757(ÈîÆ¢«,0ÈîÆ¢«,:AX4K75YeOopw1G-NQzRa1
 goS4144(ÈîÆ¢«,0ÈîÆ¢«,:AX4K75YeOopw1G-NQzRaO
+ roslyn.sonaranalyzer.security.csS5144(è—©Ä›-0è—©Ä›-:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS5135(¸áå§°.0¸áå§°.:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS5146(è—©Ä›-0è—©Ä›-:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS2078(ÐÝ”Á,0ÐÝ”Á,:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS5145(è—©Ä›-0è—©Ä›-:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS3649(ðå›ÆØ+0ðå›ÆØ+:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS5131(˜ˆ©Ä›-0˜ˆ©Ä›-:AX4K75YeOopw1G-NQzRhO
- roslyn.sonaranalyzer.security.csS5144(è—©Ä›-0è—©Ä›-:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS2083(¸å”Á,0¸å”Á,:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS6287(¨ÿ„ˆÌ/0¨ÿ„ˆÌ/:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS2091(¸å”Á,0¸å”Á,:AX4K75YeOopw1G-NQzRhO
@@ -2700,6 +2699,7 @@ tssecurityS6096(¸Éì¬æ.0¸Éì¬æ.:AX4K75YeOopw1G-NQzRd5
  roslyn.sonaranalyzer.security.csS5334(˜ã®¨ú.0˜ã®¨ú.:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS6350(ØÞü¹Ô/0ØÞü¹Ô/:AX4K75YeOopw1G-NQzRhO
  roslyn.sonaranalyzer.security.csS6096(àÈ¯¨ú.0àÈ¯¨ú.:AX4K75YeOopw1G-NQzRh3
+tsqlS2737(øç™¿¦,0øç™¿¦,:AX4K75YeOopw1G-NQzRN3
 tsqlS1135(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS1134(øç™¿¦,0øç™¿¦,:AX4K75YeOopw1G-NQzRN[
 tsqlS2068"&
@@ -2727,7 +2727,6 @@ tssecurityS6096(¸Éì¬æ.0¸Éì¬æ.:AX4K75YeOopw1G-NQzRd5
 tsqlS1116(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS1764(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS1763(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
-tsqlS2737(øç™¿¦,0øç™¿¦,:AX4K75YeOopw1G-NQzRN3
 tsqlS1523(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS4790(È…ÆÜÛ.0È…ÆÜÛ.:AX4K75YeOopw1G-NQzRN3
 tsqlS4075(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN2
@@ -2764,13 +2763,14 @@ tssecurityS6096(¸Éì¬æ.0¸Éì¬æ.:AX4K75YeOopw1G-NQzRd5
 tsqlS4154(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS4155(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN3
 tsqlS4196(ˆûäÇá+0ˆûäÇá+:AX4K75YeOopw1G-NQzRN=
+pythonsecurityS5147(€©´„é/0€©´„é/:AX4K75YeOopw1G-NQzRR=
+pythonsecurityS5144(€ôŒ¾‡.0€ôŒ¾‡.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS2078(èûŒ¾‡.0èûŒ¾‡.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS5146(èáÓ×.0èáÓ×.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS5135(ÈŒøÜ™.0ÈŒøÜ™.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS5145(Ðƒ¾‡.0Ðƒ¾‡.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS3649(¨“ùï-0¨“ùï-:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS5131(¨®šç¢.0¨®šç¢.:AX4K75YeOopw1G-NQzRR=
-pythonsecurityS5144(€ôŒ¾‡.0€ôŒ¾‡.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS2083(˜òŠ¾‡.0˜òŠ¾‡.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS6287(ÈÂù‡Ì/0ÈÂù‡Ì/:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS2091(¸‹¾‡.0¸‹¾‡.:AX4K75YeOopw1G-NQzRR=
@@ -2779,6 +2779,14 @@ tssecurityS6096(¸Éì¬æ.0¸Éì¬æ.:AX4K75YeOopw1G-NQzRd5
 pythonsecurityS5334(˜œøÜ™.0˜œøÜ™.:AX4K75YeOopw1G-NQzRR=
 pythonsecurityS6350( ëð¹Ô/0 ëð¹Ô/:AX4K75YeOopw1G-NQzRRE
 common-objcDuplicatedBlocks(¨ÕÃ‡Ë)0¨ÕÃ‡Ë):AX4K75YeOopw1G-NQzRe9
+
+javascriptS6268(Ð¢›×ž/0Ð¢›×ž/:AX4K75YeOopw1G-NQzRQ9
+
+javascriptS2819(øÞÒ÷º+0øÞÒ÷º+:AX4K75YeOopw1G-NQzRQ9
+
+javascriptS6299(ØæÞà¥/0ØæÞà¥/:AX4K75YeOopw1G-NQzRQ9
+
+javascriptS4138( ¨¥¨ú.0 ¨¥¨ú.:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS3001(¨Ö¯¤*0ðÖîçñ*:AX4K75YeOopw1G-NQzRQN
 
@@ -2794,8 +2802,6 @@ javascriptS1135(ˆ°¥¨ú.0ˆ°¥¨ú.:AX4K75YeOopw1G-NQzRQ9
 javascriptS5734(˜Ë¹Ý.0˜Ë¹Ý.:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS1134(ð·¥¨ú.0ð·¥¨ú.:AX4K75YeOopw1G-NQzRQ9
-
-javascriptS6268(Ð¢›×ž/0Ð¢›×ž/:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS5730(°Ã¹Ý.0°Ã¹Ý.:AX4K75YeOopw1G-NQzRQ9
 
@@ -2836,8 +2842,6 @@ javascriptS5659(°²ßªÕ.0°²ßªÕ.:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS1854(øžšªÙ)0øžšªÙ):AX4K75YeOopw1G-NQzRQ9
 
-javascriptS2819(øÞÒ÷º+0øÞÒ÷º+:AX4K75YeOopw1G-NQzRQ9
-
 javascriptS5547(ÈªßªÕ.0ÈªßªÕ.:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS5542(ÈªßªÕ.0ÈÎõµ“/:AX4K75YeOopw1G-NQzRQ9
@@ -2863,8 +2867,6 @@ javascriptS5527(ØûÞªÕ.0ØûÞªÕ.:AX4K75YeOopw1G-NQzRQ9
 javascriptS4790( Óî¾”-0 Óî¾”-:AX4K75YeOopw1G-NQzRQ8
 
 javascriptS930(ðÖ‹²ç)0ðÖ‹²ç):AX4K75YeOopw1G-NQzRQ9
-
-javascriptS6299(ØæÞà¥/0ØæÞà¥/:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS5332(€ò¸Æê.0€ò¸Æê.:AX4K75YeOopw1G-NQzRQc
 
@@ -2941,8 +2943,6 @@ javascriptS5842(ðüÅš¾/0ðüÅš¾/:AX4K75YeOopw1G-NQzRQ9
 javascriptS6351(€ËÆš¾/0€ËÆš¾/:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS6353(È³Æš¾/0È³Æš¾/:AX4K75YeOopw1G-NQzRQ9
-
-javascriptS4138( ¨¥¨ú.0 ¨¥¨ú.:AX4K75YeOopw1G-NQzRQ9
 
 javascriptS5856(èËÁø²/0èËÁø²/:AX4K75YeOopw1G-NQzRQ9
 
@@ -3208,6 +3208,8 @@ javascriptS4030(ÈŸËÊû+0ÈŸËÊû+:AX4K75YeOopw1G-NQzRQ3
 rubyS2757(´ñÍÚ,0´ñÍÚ,:AX4K75YeOopw1G-NQzRS3
 rubyS4144(´ñÍÚ,0´ñÍÚ,:AX4K75YeOopw1G-NQzRS9
 
+jssecurityS5144( ÉÆ‹/0 ÉÆ‹/:AX4K75YeOopw1G-NQzRQ9
+
 jssecurityS5146( ÉÆ‹/0 ÉÆ‹/:AX4K75YeOopw1G-NQzRQ9
 
 jssecurityS5147(°ÙÖ«ð.0°ÙÖ«ð.:AX4K75YeOopw1G-NQzRQ9
@@ -3215,8 +3217,6 @@ jssecurityS5147(°ÙÖ«ð.0°ÙÖ«ð.:AX4K75YeOopw1G-NQzRQ9
 jssecurityS3649(øÑ–ðÍ.0øÑ–ðÍ.:AX4K75YeOopw1G-NQzRQ9
 
 jssecurityS5131(ÈÑÖ«ð.0ÈÑÖ«ð.:AX4K75YeOopw1G-NQzRQ9
-
-jssecurityS5144( ÉÆ‹/0 ÉÆ‹/:AX4K75YeOopw1G-NQzRQ9
 
 jssecurityS2083( øß¬æ.0 øß¬æ.:AX4K75YeOopw1G-NQzRQ9
 
@@ -3237,13 +3237,14 @@ jssecurityS5334(˜áÖ«ð.0˜áÖ«ð.:AX4K75YeOopw1G-NQzRQ9
 jssecurityS6350(ø­í¹Ô/0ø­í¹Ô/:AX4K75YeOopw1G-NQzRQ9
 
 jssecurityS6096( òá¬æ.0 òá¬æ.:AX4K75YeOopw1G-NQzRQ;
+javasecurityS6384(¸±¹„é/0¸±¹„é/:AX4K75YeOopw1G-NQzRg;
+javasecurityS5144(ÛÀû¢-0ÛÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS5146(ÛÀû¢-0ÛÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS5135(€¤½éº-0€¤½éº-:AX4K75YeOopw1G-NQzRg;
 javasecurityS2078(ÛÀû¢-0ÛÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS5145(¨ÓÀû¢-0¨ÓÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS3649(ÈòÀû¢-0ÈòÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS5131(¨ÓÀû¢-0¨ÓÀû¢-:AX4K75YeOopw1G-NQzRg;
-javasecurityS5144(ÛÀû¢-0ÛÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS2083(ÛÀû¢-0ÛÀû¢-:AX4K75YeOopw1G-NQzRg;
 javasecurityS6287(ØŠü‡Ì/0ØŠü‡Ì/:AX4K75YeOopw1G-NQzRg;
 javasecurityS2091(øâÀû¢-0øâÀû¢-:AX4K75YeOopw1G-NQzRg;
@@ -3597,7 +3598,9 @@ ExclusionsTRUNCATE(¸˜Ù±ñ(0˜ŸŸ­ö*:AX4K75YdOopw1G-NQzRB4
 	terraformS6252(¸Ò©®/0¸Ò©®/:AX4K75YeOopw1G-NQzRZ8
 	terraformS6255(¸Ò©®/0¸Ò©®/:AX4K75YeOopw1G-NQzRZ8
 	terraformS6265(¸Ò©®/0¸Ò©®/:AX4K75YeOopw1G-NQzRZ8
-	terraformS6281(¸Ò©®/0¸Ò©®/:AX4K75YeOopw1G-NQzRZ3
+	terraformS6281(¸Ò©®/0¸Ò©®/:AX4K75YeOopw1G-NQzRZX
+abapS1545"#
+format[A-Z0-9_-]++|[a-z0-9_-]++(øƒíçñ*0øƒíçñ*:AX4K75YeOopw1G-NQzRT3
 abapS4721(Èé„à²-0à÷ÇÜÛ.:AX4K75YeOopw1G-NQzRT[
 abapS2068"&
 credentialWordspassword,passwd,pwd(Èé„à²-0Èé„à²-:AX4K75YeOopw1G-NQzRT3
@@ -3663,9 +3666,7 @@ ExclusionsTRUNCATE(¸˜Ù±ñ(0˜ŸŸ­ö*:AX4K75YdOopw1G-NQzRB4
 abapS1507(èšáÜï(0øƒíçñ*:AX4K75YeOopw1G-NQzRT3
 abapS1540(èšáÜï(0àðáÜï(:AX4K75YeOopw1G-NQzRTX
 abapS1544"#
-format^([A-Z0-9_]*|[a-z0-9_]*)$(èšáÜï(0øƒíçñ*:AX4K75YeOopw1G-NQzRTX
-abapS1545"#
-format[A-Z0-9_-]++|[a-z0-9_-]++(øƒíçñ*0øƒíçñ*:AX4K75YeOopw1G-NQzRTA
+format^([A-Z0-9_]*|[a-z0-9_]*)$(èšáÜï(0øƒíçñ*:AX4K75YeOopw1G-NQzRTA
 abapS1597"
 Maximum3(ãÁ‡Ë)0ãÁ‡Ë):AX4K75YeOopw1G-NQzRT3
 abapS1669(èúÆ•”)0øƒíçñ*:AX4K75YeOopw1G-NQzRT3
@@ -3676,7 +3677,10 @@ ExclusionsTRUNCATE(¸˜Ù±ñ(0˜ŸŸ­ö*:AX4K75YdOopw1G-NQzRB4
 abapS2242(ãÁ‡Ë)0ãÁ‡Ë):AX4K75YeOopw1G-NQzRT3
 abapS2243(ãÁ‡Ë)0øƒíçñ*:AX4K75YeOopw1G-NQzRT3
 abapS3626(ð™ÈÙß,0ð™ÈÙß,:AX4K75YeOopw1G-NQzRT3
-abapS3633(ˆçòéì+0ˆçòéì+:AX4K75YeOopw1G-NQzRT3
+abapS3633(ˆçòéì+0ˆçòéì+:AX4K75YeOopw1G-NQzRT;
+objcCommentedCode(˜ —ûú(0˜ —ûú(:AX4K75YeOopw1G-NQzRe3
+objcS1768(¨ŽÎØŽ*0ÐŒ……ì*:AX4K75YeOopw1G-NQzRe3
+objcS2665(øäÃ‡Ë)0ÐŒ……ì*:AX4K75YeOopw1G-NQzRe3
 objcS3807(€äýêñ-0€äýêñ-:AX4K75YeOopw1G-NQzRe2
 objcS935( ƒÖ§/0 ƒÖ§/:AX4K75YeOopw1G-NQzRe3
 objcS5332(øÃÝ.0øÃÝ.:AX4K75YeOopw1G-NQzRe3
@@ -3783,8 +3787,7 @@ ExclusionsTRUNCATE(¸˜Ù±ñ(0˜ŸŸ­ö*:AX4K75YdOopw1G-NQzRB4
 max3(¨…•Ý‡.0¨…•Ý‡.:AX4K75YeOopw1G-NQzRe3
 objcS1836(€¨—ûú(0è„……ì*:AX4K75YeOopw1G-NQzRe:
 objcDigraphUsage(˜ —ûú(0˜õ„…ì*:AX4K75YeOopw1G-NQzRe3
-objcS1831(è„……ì*0è„……ì*:AX4K75YeOopw1G-NQzRe;
-objcCommentedCode(˜ —ûú(0˜ —ûú(:AX4K75YeOopw1G-NQzRe>
+objcS1831(è„……ì*0è„……ì*:AX4K75YeOopw1G-NQzRe>
 objcFunctionEllipsis(˜ —ûú(0€ý„…ì*:AX4K75YeOopw1G-NQzRe3
 objcS2259(˜Üýêñ-0˜Üýêñ-:AX4K75YeOopw1G-NQzRe3
 objcS3588(˜Üýêñ-0˜Üýêñ-:AX4K75YeOopw1G-NQzReP
@@ -3836,11 +3839,9 @@ ExclusionsTRUNCATE(¸˜Ù±ñ(0˜ŸŸ­ö*:AX4K75YdOopw1G-NQzRB4
 objcS3949(°“œ¾§-0°“œ¾§-:AX4K75YeOopw1G-NQzRe3
 objcS2737(˜õ„…ì*0˜õ„…ì*:AX4K75YeOopw1G-NQzRe3
 objcS2738(øìõ§Í)0¸”……ì*:AX4K75YeOopw1G-NQzRe3
-objcS1768(¨ŽÎØŽ*0ÐŒ……ì*:AX4K75YeOopw1G-NQzRe3
 objcS1767(°§â©Ä)0è„……ì*:AX4K75YeOopw1G-NQzRe3
 objcS2612(°È¡ðÍ.0°È¡ðÍ.:AX4K75YeOopw1G-NQzRe3
 objcS1081(˜ —ûú(0˜õ„…ì*:AX4K75YeOopw1G-NQzRe3
-objcS2665(øäÃ‡Ë)0ÐŒ……ì*:AX4K75YeOopw1G-NQzRe3
 objcS5259(€£œ¾§-0€£œ¾§-:AX4K75YeOopw1G-NQzRe3
 objcS3518(èëýêñ-0èëýêñ-:AX4K75YeOopw1G-NQzRe3
 objcS3519(èëýêñ-0èëýêñ-:AX4K75YeOopw1G-NQzRe3

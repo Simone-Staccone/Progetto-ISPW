@@ -1,1 +1,1 @@
-* 2javaXþhr,src/main/java/logic/control/FileManager.java
+* 2javaX,hr/src/main/java/guicontroller/MyStatsControl.java

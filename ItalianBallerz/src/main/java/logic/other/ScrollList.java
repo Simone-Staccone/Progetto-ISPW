@@ -6,5 +6,5 @@ import javafx.scene.layout.HBox;
 import java.util.List;
 
 public interface ScrollList {
-    public List<HBox> getList() throws MyException;
+    List<HBox> getList() throws MyException;
 }

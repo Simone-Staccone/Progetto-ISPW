@@ -6,6 +6,7 @@ import logic.entity.CourtCache;
 import logic.entity.CourtList;
 import logic.other.FactoryScrollList;
 import logic.other.ScrollList;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class GetPlaygroundListController {
         CourtCache.setLocation(name);
     }
 
-    public String getOwner() throws Exception{
+    public String getOwner() throws MyException{
         String s;
         try{
             s = CourtCache.getOwner();
@@ -61,7 +62,8 @@ public class GetPlaygroundListController {
         try{
             owner = CourtCache.findOwner(name);
         }catch (FileNotFoundException f){
-            System.err.println("File not found!");
+            Logger log = Logger.getRootLogger();
+            log.debug("File per il proprietario non trovato!");
         }
         CourtCache.setOwner(owner);
     }
@@ -75,7 +77,8 @@ public class GetPlaygroundListController {
         try{
             money = CourtCache.findMoney(name);
         }catch (FileNotFoundException f){
-            System.err.println("File not found!");
+            Logger log = Logger.getRootLogger();
+            log.debug("File per il prezzo non trovato!");
         }
         CourtCache.setMoney(money);
     }
@@ -89,7 +92,8 @@ public class GetPlaygroundListController {
         try{
             phone = CourtCache.findPhone(name);
         }catch (FileNotFoundException f){
-            System.err.println("File not found!");
+            Logger log = Logger.getRootLogger();
+            log.debug("File per il numero di telefono non trovato");
         }
         CourtCache.setPhone(phone);
     }

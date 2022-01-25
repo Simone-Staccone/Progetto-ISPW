@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 
 public class Court {
     private String name;
-    private String path;
+    private final String path;
 
     public Court(String name){
         this.name = name;
@@ -35,17 +35,16 @@ public class Court {
         else
             who = SingletonPlayer.getLoginInstance().getUsername();
 
-        fm.writeAppend(start + "-" + who,path + CourtConst.getExtension());
+        fm.writeAppend(start + "-" + who,path + CourtConst.EXTENSION);
     }
 
     public void search(int start) throws FileNotFoundException, AlreadyReserved {
-        FileManager fm = new FileManager(path +  CourtConst.getExtension());
+        FileManager fm = new FileManager(path +  CourtConst.EXTENSION);
         String s;
 
         while(!fm.checkEnd()){
             s = fm.readLine();
             if(SingletonPlayer.getLoginInstance() != null && s.compareTo(start + "-" + SingletonPlayer.getLoginInstance().getUsername()) == 0){
-                System.out.println("dasfas");
                 throw new AlreadyReserved("",null);
             }
         }

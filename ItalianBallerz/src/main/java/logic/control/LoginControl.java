@@ -6,38 +6,36 @@ import logic.entity.PlayerUser;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 
 public class LoginControl{
-    public void writePlayerUser(String name, String password,String email,Boolean owner) throws FileNotFoundException {
+    public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
         String path;
         if(owner)
-            path = CourtConst.getOWNER();
+            path = CourtConst.OWNER;
         else
-            path = CourtConst.getLOG();
+            path = CourtConst.LOG;
 
 
         FileManager fm = new FileManager(path);
         fm.writeAppendE(name + "$" + password + "%" + email);
     }
 
-    public Boolean searchUser(String user,String password,Boolean owner){
+    public boolean searchUser(String user,String password,boolean owner){
         String path;
 
         if(owner)
-            path = CourtConst.getOWNER();
+            path = CourtConst.OWNER;
         else
-            path = CourtConst.getLOG();
+            path = CourtConst.LOG;
 
 
         String name;
         String psw;
         boolean b = false;
 
-        FileManager fm = new FileManager(path + CourtConst.getExtension());
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
 
         try {
             while (!fm.checkEnd()) {
@@ -61,19 +59,19 @@ public class LoginControl{
     }
 
 
-    public Boolean searchUserU(String user,boolean owner){
+    public boolean searchUserU(String user,boolean owner){
         String path;
         String name;
         boolean b = false;
 
         if(owner)
-            path = CourtConst.getOWNER();
+            path = CourtConst.OWNER;
         else
-            path = CourtConst.getLOG();
+            path = CourtConst.LOG;
 
 
 
-        FileManager fm = new FileManager(path + CourtConst.getExtension());
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
 
         try {
             while (!fm.checkEnd()) {

@@ -9,6 +9,7 @@ module com.example.italianballerz {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires log4j;
 
     opens guicontroller to javafx.fxml;
     exports guicontroller;

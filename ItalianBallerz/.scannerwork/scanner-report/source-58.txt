@@ -1,39 +1,27 @@
-package logic.other;
+package logic.entity;
 
+import logic.other.SingletonPlayer;
 
-import logic.entity.PlayerUser;
+public class PlayerUser extends SingletonPlayer {
+    private static String name;
+    private static Boolean owner;
 
-public class SingletonPlayer {
-    private static SingletonPlayer instance = null;
-    private static String username;
-    private Boolean owner;
-
-
-    protected SingletonPlayer(Boolean owner) {
-        this.owner = owner;
+    protected PlayerUser(String init) {
+        super(init, owner);
     }
 
-    public static synchronized  SingletonPlayer getLoginInstance() {
-        if (SingletonPlayer.instance == null && PlayerUser.getUsernameP() != null){
-            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getOwnerP());
-            SingletonPlayer.username = PlayerUser.getUsernameP();
-        }
-        return instance;
+
+    public static String getUsernameP() {
+        return PlayerUser.name;
+    }
+    public static void setUsernameP(String s) {
+        PlayerUser.name = s;
     }
 
-    public String getUsername() {
-        return username;
+    public static void setOwner(Boolean owner) {
+        PlayerUser.owner = owner;
     }
-
-    public static void deleteInstance(){
-        if (SingletonPlayer.instance != null){
-            SingletonPlayer.instance = null;
-            SingletonPlayer.username = null;
-            PlayerUser.setUsernameP(null);
-        }
-    }
-
-    public Boolean getOwner() {
-        return owner;
+    public static Boolean getOwnerP() {
+        return PlayerUser.owner;
     }
 }

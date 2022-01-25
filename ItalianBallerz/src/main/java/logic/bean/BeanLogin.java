@@ -2,6 +2,7 @@ package logic.bean;
 
 import logic.control.LoginControl;
 import logic.other.SingletonPlayer;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 
@@ -17,12 +18,14 @@ public class BeanLogin {
 
         if(username.compareTo("") == 0)
         {
-            System.out.println("Empty username");
+            Logger log = Logger.getRootLogger();
+            log.debug("Empty username!");
             ret = -1;
         }
         else if(password.compareTo("") == 0)
         {
-            System.out.println("Empty password");
+            Logger log = Logger.getRootLogger();
+            log.debug("Empty password!");
             ret = -2;
         }
         else{
@@ -33,14 +36,16 @@ public class BeanLogin {
             }
             if(!b)
             {
-                System.out.println("User not found");
+                Logger log = Logger.getRootLogger();
+                log.debug("User not found!");
                 ret = 1;
             }
             else
             {
                 b = lg.searchUser(username,password,owner);
                 if(b){
-                    System.out.println("User found!");
+                    Logger log = Logger.getRootLogger();
+                    log.debug("User found!");
                     ret = 2;
                 }
             }

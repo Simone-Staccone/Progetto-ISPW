@@ -7,6 +7,7 @@ import logic.control.AddPlaygroundController;
 import javafx.scene.layout.HBox;
 import logic.control.GetPlaygroundListController;
 import logic.control.GetReservationController;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -20,7 +21,7 @@ public class BeanCourt {
         return gpl.get(name);
     }
 
-    public static void addCourt(String name, String location, String phone, String money) throws Exception{
+    public static void addCourt(String name, String location, String phone, String money) throws MyException{
         if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0 || money.compareTo("") == 0) {
             throw new MyException("Empty field",null);
         }
@@ -57,7 +58,8 @@ public class BeanCourt {
         try {
             s = gp.getOwner();
         } catch (Exception e) {
-            System.err.println("Not found!");
+            Logger log = Logger.getRootLogger();
+            log.debug("Not Found!");
         }
         return s;
     }
@@ -78,6 +80,7 @@ public class BeanCourt {
     }
 
     public static void addSchedule(int start) throws NotLoggedException, FileNotFoundException, AlreadyReserved {
-        GetReservationController gr = new GetReservationController(start);
+        GetReservationController gr = new GetReservationController();
+        gr.tryAdd(start);
     }
 }

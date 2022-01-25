@@ -5,7 +5,6 @@ import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -45,7 +44,8 @@ public class CourtController extends GenericInterface implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ScrollList scL;
-        List<HBox> bList = null;
+        List<HBox> bList
+                ;
 
 
         label.setText(BeanCourt.getCurrentName());
@@ -59,11 +59,7 @@ public class CourtController extends GenericInterface implements Initializable {
         try {
             scL = factory.createList(3);
             bList = scL.getList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        try{
             container.setMinHeight(bList.size()*40);
             for (HBox hBox : bList)
                 scrollList.getChildren().add(hBox);
@@ -122,7 +118,7 @@ public class CourtController extends GenericInterface implements Initializable {
                 CourtController cc = new CourtController();
                 cc.waringMessage("Log in necessario!",80);
             } catch (FileNotFoundException f) {
-                System.out.println("Libero");
+                f.printStackTrace();
             } catch (AlreadyReserved a) {
                 CourtController cc = new CourtController();
                 cc.waringMessage("Sei già prenotato in quest'orario!",30);

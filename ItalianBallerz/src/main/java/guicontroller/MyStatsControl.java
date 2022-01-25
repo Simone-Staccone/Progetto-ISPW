@@ -25,20 +25,14 @@ public class MyStatsControl extends GenericInterface implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ScrollList scL;
-        List<HBox> bList = null;
+        List<HBox> bList;
 
         FactoryScrollList factory = new FactoryScrollList();
 
         try {
             scL = factory.createList(1);
             bList = scL.getList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-
-
-        try{
             ancPane.setMinHeight(bList.size()*40);
             for (HBox hBox : bList)
                 box.getChildren().add(hBox);

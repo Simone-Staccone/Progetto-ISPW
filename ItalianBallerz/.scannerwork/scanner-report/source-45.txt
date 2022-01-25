@@ -1,107 +1,52 @@
-package logic.control;
+package guicontroller;
 
-/* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
+import javafx.scene.text.Text;
+import logic.bean.BeanStats;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
-import logic.entity.PlayerUser;
-import logic.other.CourtConst;
-import logic.other.SingletonPlayer;
+public class StatsInterfaceControl extends GenericInterface {
+    @FXML
+    private TextField pointsField;
+    @FXML
+    private TextField assistsField;
+    @FXML
+    private TextField reboundsField;
+    @FXML
+    private TextField minutesField;
+    @FXML
+    private Text returnText;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-public class LoginControl{
-    public void writePlayerUser(String name, String password,String email,Boolean owner) throws FileNotFoundException {
-        Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
-        if(owner)
-            path = path + "owner.txt";
-        else
-            path = path + "log.txt";
-
-
-        FileManager fm = new FileManager(path);
-        fm.writeAppendE(name + "$" + password + "%" + email);
+    public void showM(String s){
+        returnText.setText(s);
     }
 
-    public Boolean searchUser(String user,String password,Boolean owner){
-        Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + "\\src\\main\\java\\data\\";
-
-        if(owner)
-            path = path + "owner.txt";
-        else
-            path = path + "log.txt";
-
-
-        String name;
-        String psw;
-        boolean b = false;
-
-        FileManager fm = new FileManager(path);
+    @FXML
+    private void addStats() {
+        String p;
+        String a;
+        String r;
+        String m;
 
         try {
-            while (!fm.checkEnd()) {
-                name = fm.readLine();
+            p = pointsField.getText();
+            a = assistsField.getText();
+            r = reboundsField.getText();
+            m = minutesField.getText();
 
-                psw = name.substring(name.indexOf("$") + 1, name.indexOf("%"));
-                name = name.substring(0, name.indexOf("$"));
-                System.out.println(name + " " + psw);
-                if (name.compareTo(user) == 0 && psw.compareTo(password) == 0) {
-                    PlayerUser.setUsernameP(user);
-                    PlayerUser.setOwner(owner);
-                    SingletonPlayer.getLoginInstance();
-                    b = true;
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            BeanStats.add(p, a, r, m);
+            returnText.setText("*Successfully added");
+            returnText.setStyle("-fx-fill: GREEN");
+            returnText.toFront();
+        } catch (Exception e) {
+            returnText.setText("*Wrong input");
+            returnText.setStyle("-fx-fill: RED");
+            returnText.toFront();
+        } finally {
+            pointsField.setText("");
+            assistsField.setText("");
+            reboundsField.setText("");
+            minutesField.setText("");
         }
-        return b;
     }
-
-
-    public Boolean searchUserU(String user,boolean owner){
-        Path currentRelativePath = Paths.get("");
-        String path = currentRelativePath.toAbsolutePath() + File.separator + "src\\main\\java\\data\\";
-        String name;
-        boolean b = false;
-
-        if(owner)
-            path = path + CourtConst.getOWNER();
-        else
-            path = path + CourtConst.getLOG();
-
-
-
-        FileManager fm = new FileManager(path);
-
-        try {
-            while (!fm.checkEnd()) {
-                name = fm.readLine();
-                name = name.substring(0, name.indexOf("$"));
-                if (name.compareTo(user) == 0) {
-                    b = true;
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return b;
-    }
-
-
-
-    public String getUsername(){
-        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        return sp.getUsername();
-    }
-
-    public static void logOut(){
-        SingletonPlayer.deleteInstance();
-    }
-
 }

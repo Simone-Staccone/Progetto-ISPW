@@ -18,7 +18,7 @@ public class StatsInterfaceControl extends GenericInterface {
     private Text returnText;
 
     public void showM(String s){
-        System.out.println("Interaction returned: " + s);
+        returnText.setText(s);
     }
 
     @FXML
@@ -39,7 +39,6 @@ public class StatsInterfaceControl extends GenericInterface {
             returnText.setStyle("-fx-fill: GREEN");
             returnText.toFront();
         } catch (Exception e) {
-            System.out.println("Wrong input");
             returnText.setText("*Wrong input");
             returnText.setStyle("-fx-fill: RED");
             returnText.toFront();

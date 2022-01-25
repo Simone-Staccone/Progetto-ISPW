@@ -1,9 +1,9 @@
 
-3logic.other.CourtConst#getCourt()Ljava/lang/String;m
-cC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/CourtConst.java (!"1*î
-1m
-cC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/CourtConst.java ("z
-m
-cC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/CourtConst.java (	
-courtB"
-logic.other.CourtConst
+1logic.bean.BeanLogin#isOwner()Ljava/lang/Boolean;k
+aC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/bean/BeanLogin.java[ [(!"1*ç
+1k
+aC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/bean/BeanLogin.java\ \(,"u
+k
+aC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/bean/BeanLogin.java] ](
+""B"
+logic.bean.BeanLogin

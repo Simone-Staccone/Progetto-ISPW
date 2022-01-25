@@ -41,7 +41,7 @@ public class Swap {
             Objects.requireNonNull(window).setScene(scene);
             Objects.requireNonNull(window).show();
         } catch (Exception e) {
-            System.err.println("Trovato errore nello swap");
+            e.printStackTrace();
         }
     }
 }

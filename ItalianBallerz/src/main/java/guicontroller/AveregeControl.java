@@ -1,6 +1,6 @@
 package guicontroller;
 
-
+import org.apache.log4j.Logger;
 import errorlogic.MyException;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
@@ -35,6 +35,7 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Logger log = Logger.getRootLogger();
         try {
             Stat s = BeanStats.averege();
             String temp;
@@ -57,7 +58,8 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
             minutesText.setText(temp);
         } catch (MyException e) {
-            System.err.print("Errore" + e.getCause() + e.getMessage());
+
+            log.debug("Errore" + e.getCause() + e.getMessage());
             errorText.toFront();
         }
 

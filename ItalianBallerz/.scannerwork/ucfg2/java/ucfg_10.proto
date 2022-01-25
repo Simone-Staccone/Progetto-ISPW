@@ -1,71 +1,62 @@
 
 7logic.control.FileManager#checkEnd()Ljava/lang/Boolean;p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java& &("8*Õ
-3p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java0 0(–Õ
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java0 0(
-
-%6void"!java.io.RandomAccessFile#close()V*!
-
-rafjava.io.RandomAccessFile2close()*
-1*ê
-6p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+ +(Iæ
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+ +("7*ê
+5p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java1 1(Iæ
 ª
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+ +(I
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java1 1(I
 rafjava.io.RandomAccessFile"__id* 
 
 %3java.io.RandomAccessFile“œ
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java, ,(
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java2 2(
 
 %5long""java.io.RandomAccessFile#length()J*!
 
 rafjava.io.RandomAccessFile2length()*
-3*ı
-7p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+8 +(<º
+1*ı
+6p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java19 1(=º
 π
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+8 +(A
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java19 1(B
 %2java.lang.String"__id*'*%
 logic.control.FileManager"
 pathØ¨
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+' +(7
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java1( 1(8
 %3java.io.RandomAccessFile"java.io.RandomAccessFileá
 Ñ
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+# +(H
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java1$ 1(I
 %4"Fjava.io.RandomAccessFile#<init>(Ljava/lang/String;Ljava/lang/String;)V* 
 
 %3java.io.RandomAccessFile*
 
 %2java.lang.String*
 rw*
-6*¨
-8p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java' '(º
+5*¨
+7p
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java, ,(º
 π
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java( ((#
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java. .(#
 %0java.lang.String"__id*'*%
 logic.control.FileManager"
 path
 Ì
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java( (($
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java. .($
 
 %1void"4logic.control.FileManager#check(Ljava/lang/String;)V*"
 logic.control.FileManager*
 
 %0java.lang.String*
-7*Ò
+6*Ò
 1p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java5 5("z
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java; ;("z
 p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java5 5(
+fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java; ;(
 ""B
 logic.control.FileManager
