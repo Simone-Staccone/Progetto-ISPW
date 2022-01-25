@@ -13,14 +13,25 @@ import java.util.List;
 
 
 public class StatsController {
-    private final String actualPath = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator;
+    private String actualPath;
+
+    public StatsController()
+    {
+        if(SingletonPlayer.getLoginInstance() != null)
+            this.actualPath = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator;
+    }
+    public StatsController(String s)
+    {
+        this.actualPath = s;
+    }
 
     public Stat create(float points, float assists, float rebounds, float minutes){
         return new Stat(points, assists, rebounds, minutes);
     }
 
+
     public void write(float points, float assists, float rebounds, float minutes){
-        FileManager fm = new FileManager(actualPath);
+        FileManager fm = new FileManager(this.actualPath);
 
         fm.writeAppend(Float.toString(points),CourtConst.POINTS + CourtConst.EXTENSION);
         fm.writeAppend(Float.toString(assists),CourtConst.ASSISTS + CourtConst.EXTENSION);
@@ -29,16 +40,16 @@ public class StatsController {
     }
 
     public Stat average() throws MyException {
-        StatsController st = new StatsController();
+        StatsController st = new StatsController(this.actualPath);
         return st.create(st.getAverege(CourtConst.POINTS),st.getAverege(CourtConst.ASSISTS),
                 st.getAverege(CourtConst.REBOUNDS),st.getAverege(CourtConst.MINUTES));
     }
 
     public void delete(int i) {
-        FileManager fm = new FileManager(actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
-        FileManager fm2 = new FileManager(actualPath + CourtConst.ASSISTS + CourtConst.EXTENSION);
-        FileManager fm3 = new FileManager(actualPath + CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        FileManager fm4 = new FileManager(actualPath + CourtConst.MINUTES + CourtConst.EXTENSION);
+        FileManager fm = new FileManager(this.actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
+        FileManager fm2 = new FileManager(this.actualPath + CourtConst.ASSISTS + CourtConst.EXTENSION);
+        FileManager fm3 = new FileManager(this.actualPath + CourtConst.REBOUNDS + CourtConst.EXTENSION);
+        FileManager fm4 = new FileManager(this.actualPath + CourtConst.MINUTES + CourtConst.EXTENSION);
         try{
             fm.deleteLine(i);
             fm2.deleteLine(i);
@@ -61,7 +72,8 @@ public class StatsController {
 
         FileManager fm;
         try {
-            fm = new FileManager(actualPath + str + CourtConst.EXTENSION);
+            fm = new FileManager(this.actualPath + str + CourtConst.EXTENSION);
+
 
             while(!fm.checkEnd()) {
                 buffer.delete(0,buffer.length());

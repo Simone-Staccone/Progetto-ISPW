@@ -23,7 +23,6 @@ public class FileManager {
     }
     public FileManager()
     {
-
         this.path = constPath;
     }
 
@@ -42,6 +41,7 @@ public class FileManager {
 
     public Boolean checkEnd() throws FileNotFoundException {
         boolean ret = false;
+
 
         FileManager.check(this.path);
 
@@ -140,6 +140,7 @@ public class FileManager {
                 if(!mkdir)
                     throw new IOException();
             }
+
             file = new File(this.path + File.separator + what);
             if (!file.exists()) {
                 final boolean newFile = file.createNewFile();

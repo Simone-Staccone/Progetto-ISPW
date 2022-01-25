@@ -1,7 +1,6 @@
 package logic.bean;
 
 import errorlogic.MyException;
-import guicontroller.StatsInterfaceControl;
 import logic.control.StatsController;
 import logic.entity.Stat;
 
@@ -20,21 +19,12 @@ public class BeanStats {
         String res4 = BeanStats.control(minutes);
         if(res.compareTo("") == 0 && res2.compareTo("") == 0 && res3.compareTo("") == 0 && res4.compareTo("") == 0)
         {
-            res = "Success";
-            BeanStats.notify(res);
             StatsController st = new StatsController();
             st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
         }
-        else
-        {
-            BeanStats.notify(res);
-        }
+
     }
 
-    private static void notify(String res) {
-        StatsInterfaceControl guistats = new StatsInterfaceControl();
-        guistats.showM(res);
-    }
 
     private static String control(String s)
     {
