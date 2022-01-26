@@ -27,7 +27,7 @@ public class RegisterInterfaceController extends GenericInterface{
 
 
     @FXML
-    private void Register(){
+    private void register(){
         int b = 0;
         errorText.setText("");
 
@@ -36,7 +36,6 @@ public class RegisterInterfaceController extends GenericInterface{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(b);
         switch (b) {
             case -1 -> {
                 errorText.setText("*Every field is required!");

@@ -13,7 +13,7 @@ public class MainInterface extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        FXMLLoader xml =  new FXMLLoader(MainInterface.class.getResource("MainInterface.fxml"));
+        FXMLLoader xml =  new FXMLLoader(MainInterface.class.getResource("ChooseController.fxml"));
         Scene scene = new Scene(xml.load());
         stage.setResizable(false);
         stage.setTitle("Italian Ballerz");

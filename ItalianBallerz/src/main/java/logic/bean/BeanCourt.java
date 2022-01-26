@@ -4,11 +4,10 @@ import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
 import errorlogic.NotLoggedException;
 import guicontroller.LoggedInterfaceController;
-import logic.control.AddPlaygroundController;
 import javafx.scene.layout.HBox;
+import logic.control.AddPlaygroundController;
 import logic.control.GetPlaygroundListController;
 import logic.control.GetReservationController;
-import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -36,6 +35,7 @@ public class BeanCourt {
         GetPlaygroundListController gp = new GetPlaygroundListController();
         return gp.getCurrentName();
     }
+
     public static void setCacheName(String name){
         GetPlaygroundListController gp = new GetPlaygroundListController();
         gp.setCacheName(name);

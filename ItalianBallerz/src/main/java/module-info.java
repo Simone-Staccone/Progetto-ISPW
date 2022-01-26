@@ -14,6 +14,9 @@ module com.example.italianballerz {
     opens guicontroller to javafx.fxml;
     exports guicontroller;
 
+    opens guicontroller2 to javafx.fxml;
+    exports guicontroller2;
+
     opens logic.other to javafx.fxml;
     exports logic.other;
 }

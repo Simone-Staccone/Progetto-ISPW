@@ -22,7 +22,6 @@ public class BeanStats {
             StatsController st = new StatsController();
             st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
         }
-
     }
 
 

@@ -18,7 +18,7 @@ public class LoginControl{
             path = CourtConst.LOG;
 
 
-        FileManager fm = new FileManager(path);
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
         fm.writeAppendE(name + "$" + password + "%" + email);
     }
 

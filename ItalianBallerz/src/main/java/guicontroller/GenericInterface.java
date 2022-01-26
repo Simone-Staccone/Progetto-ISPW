@@ -1,14 +1,16 @@
 package guicontroller;
 
-import logic.other.Swap;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-
+import javafx.stage.Stage;
+import logic.other.Swap;
+import logic.other.Swap2;
 
 
 public class  GenericInterface {
@@ -131,6 +133,26 @@ public class  GenericInterface {
     @FXML
     protected void swaptoR()  {
         Swap.goTo("RegisterInterface.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swapto1(){Swap.goTo("MainInterface.fxml",mainPane);}
+
+    @FXML
+    protected void swaptoC(){
+        Swap.goTo("ChooseController.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swapto2(){
+        Swap2 s = new Swap2();
+        s.goTo("LoginForm.fxml",mainPane);
+    }
+
+    @FXML
+    private void close(){
+        Stage stage = (Stage)mainPane.getScene().getWindow();
+        stage.close();
     }
 }
 
