@@ -19,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="package.json" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,6 +73,7 @@
       <recent name="C:\Users\simon\Desktop\Progetto-ISPW\trunk\ItalianBallerz\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="guicontroller" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -170,6 +171,7 @@
       <workItem from="1643102446325" duration="21408000" />
       <workItem from="1643146224770" duration="6310000" />
       <workItem from="1643152620222" duration="815000" />
+      <workItem from="1643186108234" duration="21879000" />
     </task>
     <servers />
   </component>
