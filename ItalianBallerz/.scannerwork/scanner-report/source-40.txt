@@ -1,17 +1,17 @@
 package errorlogic;
 
-public class MyException extends Exception{
+public class NotLoggedException extends Exception{
     private static final long serialVersionUID = 1L;
 
-    public MyException (String message){
+    public NotLoggedException (String message){
         super("this was the original message :" + message);
     }
 
-    public MyException (Throwable cause) {
+    public NotLoggedException (Throwable cause) {
         super(cause);
     }
 
-    public MyException (String message, Throwable cause) {
+    public NotLoggedException (String message, Throwable cause) {
         super(" +++ " + message + " +++ ", cause);
     }
 }

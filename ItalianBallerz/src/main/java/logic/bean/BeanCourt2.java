@@ -1,6 +1,7 @@
 package logic.bean;
 
 import errorlogic.MyException;
+import second_guicontroller.HomeController;
 import logic.control.AddPlaygroundController;
 import logic.control.GetPlaygroundListController;
 import logic.entity.Court;
@@ -8,6 +9,10 @@ import logic.entity.Court;
 import java.util.List;
 
 public class BeanCourt2 {
+    private BeanCourt2(){
+
+    }
+
     public static List<Court> get(String s) {
         List<Court> crt;
 
@@ -26,5 +31,10 @@ public class BeanCourt2 {
             AddPlaygroundController apc = new AddPlaygroundController();
             apc.addCourt(name, location, phone, String.valueOf(money));
         }
+    }
+
+    public static void notifyOwner(String owner, String location, String name,String when) {
+        HomeController hc = new HomeController();
+        hc.notify(owner,location,name,when);
     }
 }

@@ -145,8 +145,7 @@ public class  GenericInterface {
 
     @FXML
     protected void swapto2(){
-        Swap2 s = new Swap2();
-        s.goTo("LoginForm.fxml",mainPane);
+        Swap2.goTo("LoginForm.fxml",mainPane);
     }
 
     @FXML

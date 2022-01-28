@@ -1,1 +1,1 @@
-( 2javaXhr)src/main/java/errorlogic/MyException.java
+( 2javaXhr0src/main/java/errorlogic/NotLoggedException.java

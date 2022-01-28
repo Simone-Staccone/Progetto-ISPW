@@ -1,157 +1,163 @@
 package guicontroller;
 
-
-import errorlogic.AlreadyReserved;
-import errorlogic.NotLoggedException;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import logic.bean.BeanCourt;
-import logic.other.FactoryScrollList;
-import logic.other.ScrollList;
+import logic.other.Swap;
+import logic.other.Swap2;
 
-import java.io.FileNotFoundException;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
-public class CourtController extends GenericInterface implements Initializable {
+public class  GenericInterface {
     @FXML
-    private Text label;
+    public AnchorPane mainPane;
     @FXML
-    private Text owner;
+    private Pane userIconPane;
     @FXML
-    private Text phone;
+    private ImageView userIcon;
     @FXML
-    private Text money;
+    public Label homeLabel;
     @FXML
-    private Text location;
+    public Label playgroundLabel;
     @FXML
-    private VBox scrollList;
+    public Label statsLabel;
+
     @FXML
-    private AnchorPane container;
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ScrollList scL;
-        List<HBox> bList;
-
-        label.setText(BeanCourt.getCurrentName());
-        owner.setText(BeanCourt.getCurrentOwner());
-        money.setText(BeanCourt.getCurrentMoney());
-        phone.setText(BeanCourt.getCurrentPhone());
-        location.setText(BeanCourt.getCurrentLocation());
-
-        FactoryScrollList factory = new FactoryScrollList();
-
-        try {
-            scL = factory.createList(3);
-            bList = scL.getList();
-
-            container.setMinHeight(bList.size()*40);
-            for (HBox hBox : bList)
-                scrollList.getChildren().add(hBox);
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void passOnInstance(){
+        this.passOn(userIcon,null);
+    }
+    @FXML
+    private void passOffInstance(){
+        this.passOff(userIcon,null);
+    }
+    @FXML
+    protected void passOnS(){
+        this.passOn(null,statsLabel);
+    }
+    @FXML
+    protected void passOffS(){
+        this.passOff(null,statsLabel);
+    }
+    @FXML
+    protected void passOnP(){
+        passOn(null,playgroundLabel);
+    }
+    @FXML
+    protected void passOffP(){
+        passOff(null,playgroundLabel);
+    }
+    @FXML
+    protected void passOnH(){
+        passOn(null,homeLabel);
+    }
+    @FXML
+    protected void passOffH(){
+        passOff(null,homeLabel);
+    }
+    @FXML
+    private void passOn(ImageView img, Label label) {
+        if (img != null) {
+            ColorAdjust colorAdjust = new ColorAdjust();
+            colorAdjust.setBrightness(+0.5);
+            img.setEffect(colorAdjust);
+            userIconPane.setCursor(Cursor.HAND);
+        } else if (label != null) {
+            label.setTextFill(Color.GREY);
+            label.setCursor(Cursor.HAND);
         }
     }
 
-    public void waringMessage(String message,int space) {
-        Stage stage = new Stage();
-        Pane pane = new Pane();
-        Text txt = new Text(message);
-
-        txt.setLayoutY(30);
-        txt.setLayoutX(space);
-        txt.setFont(Font.font(txt.getFont().getName(), 18));
-
-
-
-        Button btn = new Button("Chiudi");
-        btn.setOnMouseEntered(event -> btn.setCursor(Cursor.HAND));
-        btn.setOnMouseExited(event -> btn.setCursor(Cursor.DEFAULT));
-        btn.setOnMouseClicked(event -> stage.close());
-
-        btn.setLayoutY(60);
-        btn.setLayoutX(120);
-        btn.setFont(Font.font(txt.getFont().getName(), 14));
-
-        Scene scene = new Scene(pane,300,100);
-
-        pane.getChildren().addAll(txt,btn);
-        stage.setResizable(false);
-        stage.setTitle("WARING!!!");
-        stage.setScene(scene);
-        stage.show();
+    @FXML
+    private void passOff(ImageView img, Label label) {
+        if (img != null) {
+            ColorAdjust colorAdjust = new ColorAdjust();
+            colorAdjust.setBrightness(-0.5);
+            img.setEffect(colorAdjust);
+            userIconPane.setCursor(Cursor.DEFAULT);
+        }
+        else if (label != null) {
+            label.setTextFill(Color.BLACK);
+            label.setCursor(Cursor.DEFAULT);
+        }
     }
 
-    public void confirmWindow(int i,Text t) {
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setTitle(t.getText().substring(0,t.getText().indexOf("\t")));
-
-        Pane p1 = new Pane();
-        Button yes = new Button("     Yes     ");
-        Button no = new Button("      No     ");
-        Text txt = new Text("  Sei sicuro di voler prenotare?");
 
 
-        yes.setOnMouseEntered(mouseEvent -> yes.setCursor(Cursor.HAND));
-        yes.setOnMouseExited(mouseEvent -> yes.setCursor(Cursor.DEFAULT));
-        yes.setOnMouseClicked(mouseEvent ->
-        {
-            try {
-                BeanCourt.addSchedule(i);
-            } catch (NotLoggedException e) {
-                CourtController cc = new CourtController();
-                cc.waringMessage("Log in necessario!",80);
-            } catch (FileNotFoundException f) {
-                f.printStackTrace();
-            } catch (AlreadyReserved a) {
-                CourtController cc = new CourtController();
-                cc.waringMessage("Sei già prenotato in quest'orario!",30);
-            } finally {
-                stage.close();
-            }
-        });
-
-
-
-        yes.setLayoutY(60);
-        yes.setLayoutX(60);
-        yes.setFont(Font.font(txt.getFont().getName(), 14));
-
-        no.setOnMouseEntered(mouseEvent -> no.setCursor(Cursor.HAND));
-        no.setOnMouseExited(mouseEvent -> no.setCursor(Cursor.DEFAULT));
-        no.setOnMouseClicked(mouseEvent -> stage.close());
-
-        no.setLayoutY(60);
-        no.setLayoutX(160);
-        no.setFont(Font.font(txt.getFont().getName(), 14));
-
-
-        p1.getChildren().addAll(txt, yes, no);
-
-
-        Scene scene = new Scene(p1,300,100);
-
-        txt.setFont(Font.font(txt.getFont().getName(), 18));
-
-        txt.setLayoutY(30);
-        txt.setLayoutX(15);
-
-        stage.setScene(scene);
-        stage.show();
+    @FXML
+    protected void swaptoH(){
+        Swap.goTo("MainInterface.fxml",mainPane);
     }
 
+
+    @FXML
+    protected void genericEnter()
+    {
+        mainPane.setCursor(Cursor.HAND);
+    }
+
+    @FXML
+    protected void genericExit()
+    {
+        mainPane.setCursor(Cursor.DEFAULT);
+    }
+
+    @FXML
+    protected void swaptoP(){
+        Swap.goTo("PlaygroundShowInterface.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swaptoS(){
+        Swap.goTo("StatsInterfaceUse.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swaptoL(){
+        Swap.goTo("LoginInterface.fxml",mainPane);
+    }
+    @FXML
+    protected void swaptoA(){
+        Swap.goTo("AveregeStats.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swaptoS2(){
+        Swap.goTo("MyStatsInterface.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swaptoR()  {
+        Swap.goTo("RegisterInterface.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swapto1(){Swap.goTo("MainInterface.fxml",mainPane);}
+
+    @FXML
+    protected void swaptoC(){
+        Swap.goTo("ChooseController.fxml",mainPane);
+    }
+
+    @FXML
+    protected void swapto2(){
+        Swap2.goTo("LoginForm.fxml",mainPane);
+    }
+
+    @FXML
+    private void close(){
+        Stage stage = (Stage)mainPane.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void swaptoHome(){
+        Swap2.goTo("Home.fxml",mainPane);
+    }
 }
+
+

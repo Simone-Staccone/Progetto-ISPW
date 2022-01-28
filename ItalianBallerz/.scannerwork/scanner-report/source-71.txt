@@ -1,71 +1,61 @@
-package logic.entity;
+package logic.other;
 
-import logic.control.FileManager;
+import errorlogic.MyException;
+import javafx.geometry.Insets;
+import javafx.scene.Cursor;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
+import logic.entity.Court;
+import logic.entity.CourtList;
 
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CourtCache {
-    private static String name;
-    private static String location;
-    private static String money;
-    private static String phone;
-    private static String owner;
+public class CourtScrollList implements ScrollList{
+    @Override
+    public List<HBox> getList() throws MyException {
+        List<Court> crt = BeanCourt.get();
+        List<HBox> bList = new ArrayList<>();
+        Court c;
+        HBox b;
 
-    private CourtCache(){
-    }
+        for (Court court : crt) {
+            c = court;
+            b = new HBox(new Text(c.getName()));
+            try {
+                b.setMinHeight(40);
+                b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
+                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                b.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(1),
+                        new Insets(0.0, 0.0, 0.0, 0.0))));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-    public static String getName() {
-        return name;
-    }
+            try {
+                HBox finalB = b;
+                b.setOnMouseEntered(event -> {
+                    finalB.setBorder(new Border(new BorderStroke(Color.WHITE,
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    finalB.setCursor(Cursor.HAND);
+                });
 
-    public static void setName(String name) {
-        CourtCache.name = name;
-    }
 
-    public static String getLocation() {
-        return location;
-    }
+                HBox finalB1 = b;
+                b.setOnMouseExited(event -> {
+                    finalB1.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
+                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    finalB1.setCursor(Cursor.DEFAULT);
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-    public static void setLocation(String location) {
-        CourtCache.location = location;
-    }
+            bList.add(b);
+        }
 
-    public static String getMoney() {
-        return money;
-    }
-
-    public static void setMoney(String money) {
-        CourtCache.money = money;
-    }
-
-    public static String getPhone() {
-        return phone;
-    }
-
-    public static void setPhone(String phone) {
-        CourtCache.phone = phone;
-    }
-
-    public static String getOwner() {
-        return owner;
-    }
-
-    public static void setOwner(String owner) {
-        CourtCache.owner = owner;
-    }
-
-    public static String findOwner(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchOwner(name);
-    }
-
-    public static String findMoney(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchMoney(name);
-    }
-
-    public static String findPhone(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchPhone(name);
+        return bList;
     }
 }

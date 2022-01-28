@@ -1,31 +1,58 @@
-module com.example.italianballerz {
-    requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.web;
+package second_guicontroller;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires validatorfx;
-    requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
-    requires log4j;
+import guicontroller.GenericInterface;
+import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import logic.bean.BeanLogin;
+import logic.other.Swap2;
 
-    opens guicontroller to javafx.fxml;
-    exports guicontroller;
+public class RegisterFormController extends GenericInterface {
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField confirmPassword;
+    @FXML
+    private TextField email;
+    @FXML
+    private AnchorPane mainPane;
+    @FXML
+    private Text returnText;
+    @FXML
+    private CheckBox owner;
 
-    opens guicontroller2 to javafx.fxml;
-    exports guicontroller2;
 
-    opens logic.other to javafx.fxml;
-    exports logic.other;
 
-    opens logic.control to javafx.fxml;
-    exports logic.control;
+    @FXML
+    private void register(){
+        int b = 0;
+        returnText.setText("");
 
-    opens logic.entity to javafx.fxml;
-    exports logic.entity;
+        try {
+            b = BeanLogin.addUser(username.getText(), password.getText(), confirmPassword.getText(), email.getText(),owner.isSelected());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        switch (b) {
+            case -1 -> {
+                returnText.setText("Every field is required!");
+                returnText.setStyle("-fx-fill: RED");
+            }
+            case 0 -> {
+                returnText.setText("*Username already used!");
+                confirmPassword.setText("");
+            }
+            case 1 -> {
+                returnText.setText("Password and confirm password doesn't match");
+                returnText.setStyle("-fx-fill: RED");
+            }
+            case 2 -> Swap2.goTo("LoginForm.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + b);
+        }
 
-    opens errorlogic to javafx.fxml;
-    exports errorlogic;
+    }
 }

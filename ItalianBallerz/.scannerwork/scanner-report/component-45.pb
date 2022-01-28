@@ -1,1 +1,1 @@
-- 2javaX¥hr1src/main/java/guicontroller/GenericInterface.java
+- 2javaX´hr:src/main/java/guicontroller/LoggedInterfaceController.java

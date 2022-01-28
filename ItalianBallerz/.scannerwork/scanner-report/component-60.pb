@@ -1,1 +1,1 @@
-< 2javaXahr'src/main/java/logic/bean/BeanCourt.java
+< 2javaXhr9src/main/java/logic/control/GetReservationController.java

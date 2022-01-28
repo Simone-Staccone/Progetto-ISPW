@@ -4,7 +4,6 @@ import errorlogic.MyException;
 import logic.entity.Court;
 import logic.entity.CourtCache;
 import logic.entity.CourtList;
-import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -59,8 +58,7 @@ public class GetPlaygroundListController {
         try{
             money = CourtCache.findMoney(name);
         }catch (FileNotFoundException f){
-            Logger log = Logger.getRootLogger();
-            log.debug("File per il prezzo non trovato!");
+            f.printStackTrace();
         }
         CourtCache.setMoney(money);
     }
@@ -74,8 +72,7 @@ public class GetPlaygroundListController {
         try{
             phone = CourtCache.findPhone(name);
         }catch (FileNotFoundException f){
-            Logger log = Logger.getRootLogger();
-            log.debug("File per il numero di telefono non trovato");
+            f.printStackTrace();
         }
         CourtCache.setPhone(phone);
     }

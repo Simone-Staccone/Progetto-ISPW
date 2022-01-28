@@ -1,1 +1,1 @@
-t 2javaX hr*src/test/javaTest/StatsControllerTest.java
+t 2javaXFhr7src/test/java_test/GetPlaygroundListControllerTest.java

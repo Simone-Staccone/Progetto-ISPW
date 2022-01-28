@@ -1,32 +1,70 @@
 import errorlogic.MyException;
-import logic.control.StatsController;
-import logic.entity.Stat;
-import logic.other.CourtConst;
+import logic.control.GetPlaygroundListController;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StatsControllerTest {
-    @Test
-    public void averege(){
-        StatsController sc = new StatsController(CourtConst.USER_PACKAGE + File.separator +
-                "test" + File.separator);
-        Stat st;
-        try {
-            st = sc.average();
-            double points = st.getPoints();
-            double assists = st.getAssists();
-            double rebounds = st.getRebounds();
-            double minutes = st.getMinutes();
+class GetPlaygroundListControllerTest {
 
-            assertEquals(2.5, points, 0);
-            assertEquals(2.5, assists, 0);
-            assertEquals(4, rebounds, 0);
-            assertEquals(5, minutes, 0);
+    @Test
+    void getCurrentName() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheName("test");
+
+        s = gpc.getCurrentName();
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getOwner() {
+        String s = "";
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheOwner("test");
+
+        try {
+            s = gpc.getOwner();
         } catch (MyException e) {
             e.printStackTrace();
         }
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getLocation() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheLocation("test");
+
+        s = gpc.getLocation();
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getMoney() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheMoney("test");
+
+
+
+        s = gpc.getMoney();
+
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getPhone() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCachePhone("test");
+
+        s = gpc.getPhone();
+
+        assertEquals(0,s.compareTo("test"),0);
     }
 }

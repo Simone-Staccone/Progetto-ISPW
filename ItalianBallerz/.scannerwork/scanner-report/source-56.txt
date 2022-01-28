@@ -1,128 +1,65 @@
-package guicontroller2;
+package logic.bean;
 
-import guicontroller.GenericInterface;
-import javafx.fxml.FXML;
-import javafx.scene.Cursor;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import logic.bean.BeanLogin;
-import logic.other.Swap2;
+import errorlogic.MyException;
+import logic.control.StatsController;
+import logic.entity.Stat;
 
-public class HomeController extends GenericInterface {
+import java.io.IOException;
+import java.util.List;
 
-    @FXML
-    private void swaptoStatForm(){
-        Swap2.goTo("StatsForm.fxml",mainPane);
+public class BeanStats {
+    private BeanStats(){
     }
-    @FXML
-    private void swaptoCourtForm(){
-        Swap2.goTo("CourtForm.fxml",mainPane);
-    }
-    @FXML
-    private void tryswaptoCourtAdd(){
-        boolean b = false;
-        if(BeanLogin.getUsername() != null)
+
+
+    public static void add(String points, String assists, String rebounds, String minutes) throws IOException {
+        String res = BeanStats.control(points);
+        String res2 = BeanStats.control(assists);
+        String res3 = BeanStats.control(rebounds);
+        String res4 = BeanStats.control(minutes);
+        if(res.compareTo("") == 0 && res2.compareTo("") == 0 && res3.compareTo("") == 0 && res4.compareTo("") == 0)
         {
-            b = BeanLogin.isOwner();
+            StatsController st = new StatsController();
+            st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
         }
+    }
 
-        if(b){
-            Swap2.goTo("CourtAdd.fxml",mainPane);
-        }
-        else
+
+    private static String control(String s)
+    {
+        String res = "";
+        int conv = (int)Float.parseFloat(s);
+
+        if(conv<0)
         {
-            HomeController hc = new HomeController();
-            Stage stage = hc.newWindow("Solo i propietari possono aggiungere nuovi campetti");
-            Pane pane = (Pane)stage.getScene().getRoot();
-
-            Button close = new Button("Chiudi");
-
-            try{
-                close.setLayoutX(120);
-                close.setLayoutY(70);
-
-                close.setOnMouseEntered(mouseEvent -> close.setCursor(Cursor.HAND));
-                close.setOnMouseExited(mouseEvent -> close.setCursor(Cursor.DEFAULT));
-                close.setOnMouseClicked(mouseEvent -> stage.close());
-
-                pane.getChildren().add(close);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-            stage.show();
+            res = "Invalid number, must be positive";
         }
+        else if(Float.compare(conv,Float.parseFloat(s)) != 0)
+        {
+            res = "Invalid number, must be integer";
+        }
+        return res;
     }
 
-    private Stage newWindow(String s) {
-        Stage stage = new Stage();
-        Pane pane = new Pane();
-
-        Scene scene = new Scene(pane,300,100);
-
-        Text txt = new Text(s);
-
-        try {
-            txt.setLayoutY(30);
-            txt.setLayoutX(15);
-
-            pane.setMinSize(300, 100);
-
-            pane.getChildren().add(txt);
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        stage.setScene(scene);
-
-        return stage;
+    public static List<Stat> getStatsList() throws MyException
+    {
+        StatsController sc = new StatsController();
+        return sc.getList();
     }
 
-    @FXML
-    private void logout(){
-        HomeController hc = new HomeController();
-        Stage stage = hc.newWindow("Sei sicuro di voler uscire?");
-        Pane pane = (Pane)stage.getScene().getRoot();
+    public static void delete(int i) {
+        StatsController st = new StatsController();
+        st.delete(i);
+    }
 
-
-        Button bYes = new Button("     Yes     ");
-        Button bNo = new Button("      No     ");
-
+    public static Stat averege() throws MyException {
+        StatsController st = new StatsController();
+        Stat s;
         try {
-            bYes.setLayoutY(60);
-            bYes.setLayoutX(60);
-
-
-            bNo.setLayoutY(60);
-            bNo.setLayoutX(160);
-
-
-            bYes.setOnMouseEntered(mouseEvent -> bYes.setCursor(Cursor.HAND));
-            bYes.setOnMouseExited(mouseEvent -> bYes.setCursor(Cursor.DEFAULT));
-            bYes.setOnMouseClicked(mouseEvent -> {
-                BeanLogin.logOut();
-                stage.close();
-                Swap2.goTo("LoginForm.fxml", mainPane);
-            });
-
-            bNo.setOnMouseEntered(mouseEvent -> bNo.setCursor(Cursor.HAND));
-            bNo.setOnMouseExited(mouseEvent -> bNo.setCursor(Cursor.DEFAULT));
-            bNo.setOnMouseClicked(mouseEvent -> stage.close());
-
-
-            pane.getChildren().addAll(bYes, bNo);
+            s = st.average();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new MyException("Error message",e);
         }
-        stage.setTitle("Log Out");
-        stage.setResizable(false);
-
-        stage.show();
+        return s;
     }
 }

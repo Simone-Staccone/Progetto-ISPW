@@ -1,1 +1,1 @@
-> 2javaXbhr'src/main/java/logic/bean/BeanLogin.java
+> 2javaXmhr0src/main/java/logic/control/StatsController.java

@@ -1,48 +1,43 @@
 package guicontroller;
 
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 
 
-public class MainInterfaceController extends GenericInterface{
-    @FXML
-    private Pane playgroundImagePane;
-    @FXML
-    private Pane statsImagePane;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
+
+
+
+public class MyStatsControl extends GenericInterface implements Initializable {
     @FXML
-    private void highlightOn(Pane pane){
-        pane.setBorder(new Border(new BorderStroke(Color.ORANGE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
-        pane.toFront();
-        pane.getScene().setCursor(Cursor.HAND);
+    private AnchorPane ancPane;
+    @FXML
+    private VBox box;
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScrollList scL;
+        List<HBox> bList;
+
+        FactoryScrollList factory = new FactoryScrollList();
+
+        try {
+            scL = factory.createList(1);
+            bList = scL.getList();
+
+            ancPane.setMinHeight(bList.size()*40);
+            for (HBox hBox : bList)
+                box.getChildren().add(hBox);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-    @FXML
-    private void highlightOff(Pane pane){
-        pane.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
-        pane.toFront();
-        pane.getScene().setCursor(Cursor.DEFAULT);
-    }
-
-    @FXML
-    public void highlightOnL(){
-        this.highlightOn(playgroundImagePane);
-    }
-    @FXML
-    public void highlightOffL(){
-        this.highlightOff(playgroundImagePane);
-    }
-
-    @FXML
-    public void highlightOnD(){
-        this.highlightOn(statsImagePane);
-    }
-    @FXML
-    public void highlightOffD(){
-        this.highlightOff(statsImagePane);
-    }
-
 }
-

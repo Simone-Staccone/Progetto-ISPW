@@ -39,7 +39,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
     private Text counter;
 
     private static int notify = 0;
-    private static List<String> names = new ArrayList();
+    private static List<String> names = new ArrayList<>();
 
 
     @Override
@@ -66,7 +66,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         }
     }
 
-    private void reservations(List<String> names, Text counter) {
+    private static void reservations(List<String> names, Text counter) {
         Stage stage = new Stage();
         Pane pane = new Pane();
         Scene scene = new Scene(pane,300,150);
@@ -169,7 +169,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         }
     }
 
-    public void notify(String owner, String location, String name) {
+    public static void notify(String owner, String location, String name) {
         names.add(owner);
         names.add(location);
         names.add(name);

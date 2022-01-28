@@ -1,1 +1,1 @@
-8 2javaXÅhr0src/main/java/guicontroller2/HomeController.java
+8 2javaXBhr'src/main/java/logic/bean/BeanStats.java

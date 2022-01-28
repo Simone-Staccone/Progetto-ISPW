@@ -3,6 +3,7 @@ package logic.control;
 import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
 import logic.bean.BeanCourt;
+import logic.bean.BeanCourt2;
 import logic.entity.Court;
 import logic.entity.CourtCache;
 
@@ -19,5 +20,6 @@ public class GetReservationController {
         this.crt.search(start);
         this.crt.addReservation(start);
         BeanCourt.notifyOwner(CourtCache.getOwner(),CourtCache.getLocation(),CourtCache.getName());
+        BeanCourt2.notifyOwner(CourtCache.getOwner(),CourtCache.getLocation(),CourtCache.getName(),String.valueOf(start));
     }
 }

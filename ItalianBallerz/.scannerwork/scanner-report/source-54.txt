@@ -1,61 +1,40 @@
-package guicontroller2;
+package logic.bean;
 
 import errorlogic.MyException;
-import guicontroller.GenericInterface;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import logic.bean.BeanCourt2;
+import second_guicontroller.HomeController;
+import logic.control.AddPlaygroundController;
+import logic.control.GetPlaygroundListController;
+import logic.entity.Court;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.List;
 
-public class CourtAddFormController extends GenericInterface implements Initializable {
-    @FXML
-    private TextField name;
-    @FXML
-    private TextField location;
-    @FXML
-    private TextField phone;
-    @FXML
-    private SplitMenuButton money;
-    @FXML
-    private Text errorText;
+public class BeanCourt2 {
+    private BeanCourt2(){
 
+    }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        for(int i = 0;i<20;i++)
-        {
-            MenuItem menu = new MenuItem();
-            int finalI = i;
-            menu.setOnAction(event -> money.setText(String.valueOf(finalI)));
-            money.getItems().add(menu);
+    public static List<Court> get(String s) {
+        List<Court> crt;
+
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.set(s);
+
+        crt = gpc.getCourtList();
+
+        return crt;
+    }
+
+    public static void addCourt(String name, String location, String phone, int money) throws MyException {
+        if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0)
+            throw new MyException("Empty field",null);
+        else {
+            AddPlaygroundController apc = new AddPlaygroundController();
+            apc.addCourt(name, location, phone, String.valueOf(money));
         }
     }
 
-
-    @FXML
-    private void add(){
-        try {
-            BeanCourt2.addCourt(name.getText(),location.getText(),phone.getText(),Integer.parseInt(money.getText()));
-
-            errorText.setText(name.getText() + " aggiunto con successo");
-            errorText.setStyle("-fx-fill: GREEN");
-
-            name.setText("");
-            location.setText("");
-            phone.setText("");
-            money.setText("0");
-
-        } catch (MyException e) {
-            errorText.setText("Tutti i campi devono essere riempiti");
-            errorText.setStyle("-fx-fill: RED");
-        }
-
-
+    public static void notifyOwner(String owner, String location, String name,String when) {
+        HomeController hc = new HomeController();
+        hc.notify(owner,location,name,when);
     }
 }

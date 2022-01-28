@@ -1,56 +1,33 @@
-package logic.entity;
+package logic.other;
 
-import logic.control.FileManager;
-import logic.other.CourtConst;
-import org.apache.log4j.Logger;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
+import errorlogic.MyException;
 
-public class CourtList {
-    private static final List<Court> COURTS = new ArrayList<>();
 
-    public CourtList(String name){
-        FileManager fm = new FileManager("court" + File.separator + name);
-        String s;
-        try {
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+public class FactoryScrollList{
+    public ScrollList createList(int type) throws MyException {
+        switch (type) {
+            case 1:
+                return statsList();
+            case 2:
+                return courtList();
+            case 3:
+                return scheduleList();
+            default:
+                throw new MyException("Invalid type : " + type,null);
         }
     }
-    public int size(){
-        return COURTS.size();
+
+    private ScrollList scheduleList() {
+        return new ScheduleList();
     }
 
-    public Court get(int i) {
-        Court c = null;
-        if(COURTS.size() > i)
-            c = COURTS.get(i);
-        return c;
+    public ScrollList statsList(){
+        return new ScrollListStats();
     }
 
-    public static List<Court> getCourts(){
-        return CourtList.COURTS;
+    public ScrollList courtList(){
+        return new CourtScrollList();
     }
 
-    public static void setCourts(String name){
-        COURTS.clear();
-        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.EXTENSION);
-        try {
-            String s;
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s.substring(0,s.indexOf("$"))));
-            }
-        } catch (Exception e) {
-            Logger log = Logger.getRootLogger();
-            log.debug("File non esiste!");
-        }
-    }
 }

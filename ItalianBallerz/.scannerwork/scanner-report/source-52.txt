@@ -1,57 +1,51 @@
 package guicontroller;
 
-import logic.bean.BeanLogin;
-import logic.other.Swap;
-import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.bean.BeanStats;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class StatsInterfaceControl extends GenericInterface {
+    @FXML
+    private TextField pointsField;
+    @FXML
+    private TextField assistsField;
+    @FXML
+    private TextField reboundsField;
+    @FXML
+    private TextField minutesField;
+    @FXML
+    private Text returnText;
 
 
-public class RegisterInterfaceController extends GenericInterface{
-    @FXML
-    private TextField username;
-    @FXML
-    private TextField password;
-    @FXML
-    private TextField passwordConf;
-    @FXML
-    private TextField email;
-    @FXML
-    private AnchorPane mainPane;
-    @FXML
-    private Text errorText;
-    @FXML
-    private RadioButton owner;
-
 
     @FXML
-    private void register(){
-        int b = 0;
-        errorText.setText("");
+    private void addStats() {
+        String p;
+        String a;
+        String r;
+        String m;
 
         try {
-            b = BeanLogin.addUser(username.getText(), password.getText(), passwordConf.getText(), email.getText(),owner.isSelected());
+            p = pointsField.getText();
+            a = assistsField.getText();
+            r = reboundsField.getText();
+            m = minutesField.getText();
+
+            BeanStats.add(p, a, r, m);
+            returnText.setText("*Successfully added");
+            returnText.setStyle("-fx-fill: GREEN");
+            returnText.toFront();
         } catch (Exception e) {
             e.printStackTrace();
+            returnText.setText("*Wrong input");
+            returnText.setStyle("-fx-fill: RED");
+            returnText.toFront();
+        } finally {
+            pointsField.setText("");
+            assistsField.setText("");
+            reboundsField.setText("");
+            minutesField.setText("");
         }
-        switch (b) {
-            case -1 -> {
-                errorText.setText("*Every field is required!");
-                errorText.setStyle("-fx-fill: RED");
-            }
-            case 0 -> {
-                errorText.setText("*Username already used!");
-                passwordConf.setText("");
-            }
-            case 1 -> {
-                errorText.setText("*Password and confirm password doesn't match");
-                errorText.setStyle("-fx-fill: RED");
-            }
-            case 2 -> Swap.goTo("LoginInterface.fxml", mainPane);
-            default -> throw new IllegalStateException("Unexpected value: " + b);
-        }
-
     }
 }

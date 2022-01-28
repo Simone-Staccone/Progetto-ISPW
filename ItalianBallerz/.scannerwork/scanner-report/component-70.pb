@@ -1,1 +1,1 @@
-F 2javaX5hr%src/main/java/logic/entity/Court.java
+F 2javaXhr)src/main/java/logic/other/CourtConst.java

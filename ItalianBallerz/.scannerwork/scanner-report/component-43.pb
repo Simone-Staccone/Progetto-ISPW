@@ -1,1 +1,1 @@
-+ 2javaX{hr/src/main/java/guicontroller/AveregeControl.java
++ 2javaXžhr0src/main/java/guicontroller/CourtController.java

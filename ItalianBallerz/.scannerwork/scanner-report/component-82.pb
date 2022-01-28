@@ -1,1 +1,1 @@
-R 2javaX(hr.src/main/java/logic/other/SingletonPlayer.java
+R 2javaXPhr;src/main/java/second_guicontroller/CourtInfoController.java

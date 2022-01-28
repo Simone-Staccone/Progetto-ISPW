@@ -1,16 +1,39 @@
 package logic.other;
 
-public class CourtConst {
-    private CourtConst(){}
 
-    public static final String COURT = "court";
-    public static final String LOG = "log";
-    public static final String OWNER = "owner";
-    public static final String EXTENSION = ".txt";
-    public static final String USER_PACKAGE = "users";
-    public static final String POINTS = "points";
-    public static final String ASSISTS = "assists";
-    public static final String REBOUNDS = "rebounds";
-    public static final String MINUTES = "minutes";
+import logic.entity.PlayerUser;
 
+public class SingletonPlayer {
+    private static SingletonPlayer instance = null;
+    private String username;
+    private final boolean owner;
+
+
+    protected SingletonPlayer(String init, Boolean owner) {
+        this.username = init;
+        this.owner = owner;
+    }
+
+    public static synchronized  SingletonPlayer getLoginInstance() {
+        if (SingletonPlayer.instance == null && PlayerUser.getUsernameP() != null){
+            SingletonPlayer.instance = new SingletonPlayer(PlayerUser.getUsernameP(),PlayerUser.getOwnerP());
+        }
+        return instance;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public static void deleteInstance(){
+        if (SingletonPlayer.instance != null){
+            SingletonPlayer.instance.username = null;
+            SingletonPlayer.instance = null;
+            PlayerUser.setUsernameP(null);
+        }
+    }
+
+    public Boolean getOwner() {
+        return owner;
+    }
 }
