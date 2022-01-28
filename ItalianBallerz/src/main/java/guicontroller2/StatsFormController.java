@@ -15,7 +15,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
-import logic.other.Swap2;
 
 import java.net.URL;
 import java.util.List;
@@ -123,10 +122,7 @@ public class StatsFormController extends GenericInterface implements Initializab
         stage.show();
     }
 
-    @FXML
-    private void swaptoHome(){
-        Swap2.goTo("Home.fxml",mainPane);
-    }
+
 
     @FXML
     private void getAverege(){

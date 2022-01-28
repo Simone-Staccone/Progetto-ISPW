@@ -1,1 +1,1 @@
-; 2javaX hr$src/main/java/logic/entity/Stat.java
+; 2javaXÇhr5src/main/java/guicontroller2/StatsFormController.java

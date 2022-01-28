@@ -4,10 +4,11 @@ import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
 import errorlogic.NotLoggedException;
 import guicontroller.LoggedInterfaceController;
-import javafx.scene.layout.HBox;
 import logic.control.AddPlaygroundController;
 import logic.control.GetPlaygroundListController;
 import logic.control.GetReservationController;
+import logic.entity.Court;
+import logic.entity.CourtList;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -16,9 +17,9 @@ public class BeanCourt {
     private BeanCourt(){
     }
 
-    public static List<HBox> search(String name) {
+    public static void set(String name) {
         GetPlaygroundListController gpl = new GetPlaygroundListController();
-        return gpl.get(name);
+        gpl.set(name);
     }
 
     public static void addCourt(String name, String location, String phone, String money) throws MyException{
@@ -87,5 +88,9 @@ public class BeanCourt {
     public static void notifyOwner(String owner, String location, String name) {
         LoggedInterfaceController lg = new LoggedInterfaceController();
         lg.notify(owner,location,name);
+    }
+
+    public static List<Court> get() {
+        return CourtList.getCourts();
     }
 }

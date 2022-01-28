@@ -1,96 +1,61 @@
-package logic.control;
+package guicontroller2;
 
 import errorlogic.MyException;
-import logic.entity.Stat;
-import logic.entity.StatsList;
-import logic.other.CourtConst;
-import logic.other.SingletonPlayer;
+import guicontroller.GenericInterface;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import logic.bean.BeanCourt2;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class CourtAddFormController extends GenericInterface implements Initializable {
+    @FXML
+    private TextField name;
+    @FXML
+    private TextField location;
+    @FXML
+    private TextField phone;
+    @FXML
+    private SplitMenuButton money;
+    @FXML
+    private Text errorText;
 
 
-public class StatsController {
-    private final String actualPath = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator;
-
-    public Stat create(float points, float assists, float rebounds, float minutes){
-        return new Stat(points, assists, rebounds, minutes);
-    }
-
-    public void write(float points, float assists, float rebounds, float minutes){
-        FileManager fm = new FileManager(actualPath);
-
-        fm.writeAppend(Float.toString(points),CourtConst.POINTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(assists),CourtConst.ASSISTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(rebounds),CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(minutes),CourtConst.MINUTES + CourtConst.EXTENSION);
-    }
-
-    public Stat average() throws MyException {
-        StatsController st = new StatsController();
-        return st.create(st.getAverege(CourtConst.POINTS),st.getAverege(CourtConst.ASSISTS),
-                st.getAverege(CourtConst.REBOUNDS),st.getAverege(CourtConst.MINUTES));
-    }
-
-    public void delete(int i) {
-        FileManager fm = new FileManager(actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
-        FileManager fm2 = new FileManager(actualPath + CourtConst.ASSISTS + CourtConst.EXTENSION);
-        FileManager fm3 = new FileManager(actualPath + CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        FileManager fm4 = new FileManager(actualPath + CourtConst.MINUTES + CourtConst.EXTENSION);
-        try{
-            fm.deleteLine(i);
-            fm2.deleteLine(i);
-            fm3.deleteLine(i);
-            fm4.deleteLine(i);
-        } catch (Exception e) {
-            e.printStackTrace();
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for(int i = 0;i<20;i++)
+        {
+            MenuItem menu = new MenuItem();
+            int finalI = i;
+            menu.setOnAction(event -> money.setText(String.valueOf(finalI)));
+            money.getItems().add(menu);
         }
-
     }
 
-    public float getAverege(String str) throws MyException
-    {
-        float x = 0;
-        int count = 0;
-        float avg = 0;
-        StringBuilder buffer = new StringBuilder();
-        String s;
 
-        FileManager fm;
+    @FXML
+    private void add(){
         try {
-            fm = new FileManager(actualPath + str + CourtConst.EXTENSION);
+            BeanCourt2.addCourt(name.getText(),location.getText(),phone.getText(),Integer.parseInt(money.getText()));
 
-            while(!fm.checkEnd()) {
-                buffer.delete(0,buffer.length());
-                buffer.append(fm.readLine());
-                s = buffer.toString();
-                count++;
-                x+=Float.parseFloat(s);
-            }
-            if(count != 0)
-                avg = x/count;
-        }catch (FileNotFoundException e){
-            throw new MyException("No file found",e);
-        }
-        return avg;
-    }
+            errorText.setText(name.getText() + " aggiunto con successo");
+            errorText.setStyle("-fx-fill: GREEN");
 
-    public List<Stat> getList() throws MyException{
-        List<Stat> stLst = null;
-        boolean flag = true;
-        try {
-            StatsList st = new StatsList();
-            stLst = st.getStlst();
-            flag = false;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            if(flag)
-                stLst = new ArrayList<>();
+            name.setText("");
+            location.setText("");
+            phone.setText("");
+            money.setText("0");
+
+        } catch (MyException e) {
+            errorText.setText("Tutti i campi devono essere riempiti");
+            errorText.setStyle("-fx-fill: RED");
         }
-        return stLst;
+
+
     }
 }

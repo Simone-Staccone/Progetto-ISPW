@@ -154,6 +154,11 @@ public class  GenericInterface {
         Stage stage = (Stage)mainPane.getScene().getWindow();
         stage.close();
     }
+
+    @FXML
+    private void swaptoHome(){
+        Swap2.goTo("Home.fxml",mainPane);
+    }
 }
 
 

@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class CourtList {
     private static final List<Court> COURTS = new ArrayList<>();
 
     public CourtList(String name){
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name);
+        FileManager fm = new FileManager("court" + File.separator + name);
         String s;
         try {
             while (!fm.checkEnd()) {

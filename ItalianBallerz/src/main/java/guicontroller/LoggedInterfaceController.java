@@ -1,11 +1,5 @@
 package guicontroller;
 
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.shape.Circle;
-import logic.bean.BeanLogin;
-import logic.other.SingletonPlayer;
-import logic.other.Swap;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -15,9 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import logic.bean.BeanLogin;
+import logic.other.SingletonPlayer;
+import logic.other.Swap;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -153,7 +151,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
             bYes.setOnMouseClicked(mouseEvent -> {
                 BeanLogin.logOut();
                 stage.close();
-                Swap.goTo("MainInterface.fxml",mainPane);
+                Swap.goTo("LoginInterface.fxml",mainPane);
             });
 
             bNo.setOnMouseEntered(mouseEvent -> bNo.setCursor(Cursor.HAND));

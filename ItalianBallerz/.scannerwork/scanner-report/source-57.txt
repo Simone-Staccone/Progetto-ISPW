@@ -1,57 +1,61 @@
-package logic.entity;
+package guicontroller2;
 
-import logic.control.FileManager;
-import logic.other.CourtConst;
-import org.apache.log4j.Logger;
+import guicontroller.GenericInterface;
+import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import logic.bean.BeanLogin;
+import logic.other.Swap2;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+public class LoginFormController extends GenericInterface {
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField password;
+    @FXML
+    private Text returnText;
+    @FXML
+    private CheckBox owner;
 
-public class CourtList {
-    private static final List<Court> COURTS = new ArrayList<>();
 
-    public CourtList(String name){
-        FileManager fm = new FileManager(Paths.get("").toAbsolutePath() + "\\src\\main\\java\\data\\court\\" + name);
-        String s;
-        try {
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s));
+
+
+    @FXML
+    private void swaptoR2(){
+        Swap2 s = new Swap2();
+        s.goTo("RegisterForm.fxml",mainPane);
+    }
+
+    @FXML
+    private void logIn(){
+        int ret;
+        returnText.setText("");
+        returnText.setStyle("-fx-fill: RED");
+        ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
+
+        switch (ret) {
+            case -1 -> returnText.setText("*Username field is empty!");
+            case -2 -> returnText.setText("*Password field is empty!");
+            case 0 -> {
+                returnText.setText("*Wrong password!");
+                password.setText("");
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            case 1 -> {
+                returnText.setText("*Username not found!");
+                username.setText("");
+                password.setText("");
+            }
+            case 2 -> Swap2.goTo("Home.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + ret);
         }
     }
-    public int size(){
-        return COURTS.size();
+
+    @FXML
+    private void tryL(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            logIn();
     }
 
-    public Court get(int i) {
-        Court c = null;
-        if(COURTS.size() > i)
-            c = COURTS.get(i);
-        return c;
-    }
-
-    public static List<Court> getCourts(){
-        return CourtList.COURTS;
-    }
-
-    public static void setCourts(String name){
-        COURTS.clear();
-        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.EXTENSION);
-        try {
-            String s;
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s.substring(0,s.indexOf("$"))));
-            }
-        } catch (Exception e) {
-            Logger log = Logger.getRootLogger();
-            log.debug("File non esiste!");
-        }
-    }
 }

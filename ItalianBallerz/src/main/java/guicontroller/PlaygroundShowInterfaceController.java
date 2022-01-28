@@ -10,9 +10,12 @@ import javafx.scene.text.Text;
 import logic.bean.BeanCourt;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
 import logic.other.Swap;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -30,9 +33,24 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
     @FXML
     public void search(){
         String s = searchBar.getText();
-        List<HBox> bList = BeanCourt.search(s);
+        List<HBox> bList = new ArrayList<>();
+        ScrollList scr;
 
         courtList.getChildren().clear();
+
+        BeanCourt.set(s);
+
+        FactoryScrollList factory = new FactoryScrollList();
+
+        try {
+            scr = factory.createList(2);
+            bList = scr.getList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         if(bList.size() == 0)
             bList.add(new HBox(new Text("Nessun risultato per questa ricerca")));
         for(HBox b : bList)

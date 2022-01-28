@@ -1,43 +1,44 @@
 package guicontroller;
 
-import logic.other.FactoryScrollList;
-import logic.other.ScrollList;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.*;
-
-
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+import javafx.scene.control.TextField;
 
 
 
-
-public class MyStatsControl extends GenericInterface implements Initializable {
+public class AddPlaygroundController extends GenericInterface {
     @FXML
-    private AnchorPane ancPane;
+    private TextField nameField;
     @FXML
-    private VBox box;
+    private TextField locationField;
+    @FXML
+    private TextField phoneField;
+    @FXML
+    private TextField moneyField;
+    @FXML
+    private Text errorText;
 
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ScrollList scL;
-        List<HBox> bList;
-
-        FactoryScrollList factory = new FactoryScrollList();
-
+    @FXML
+    private void addCourt() {
         try {
-            scL = factory.createList(1);
-            bList = scL.getList();
-
-            ancPane.setMinHeight(bList.size()*40);
-            for (HBox hBox : bList)
-                box.getChildren().add(hBox);
+            BeanCourt.addCourt(nameField.getText(),locationField.getText(),phoneField.getText(),moneyField.getText());
         } catch (Exception e) {
-            e.printStackTrace();
+            errorText.setText("*Empty field");
+            errorText.setStyle("-fx-fill : RED");
+            errorText.toFront();
+        } finally {
+            nameField.setText("");
+            locationField.setText("");
+            phoneField.setText("");
+            moneyField.setText("");
         }
+    }
+
+    @FXML
+    private void tryAdd(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            addCourt();
     }
 }

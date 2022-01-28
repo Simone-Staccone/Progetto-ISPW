@@ -44,9 +44,7 @@ public class CourtController extends GenericInterface implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ScrollList scL;
-        List<HBox> bList
-                ;
-
+        List<HBox> bList;
 
         label.setText(BeanCourt.getCurrentName());
         owner.setText(BeanCourt.getCurrentOwner());

@@ -6,6 +6,7 @@ import javafx.scene.Cursor;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
 import logic.entity.Court;
 import logic.entity.CourtList;
 
@@ -15,7 +16,7 @@ import java.util.List;
 public class CourtScrollList implements ScrollList{
     @Override
     public List<HBox> getList() throws MyException {
-        List<Court> crt = CourtList.getCourts();
+        List<Court> crt = BeanCourt.get();
         List<HBox> bList = new ArrayList<>();
         Court c;
         HBox b;

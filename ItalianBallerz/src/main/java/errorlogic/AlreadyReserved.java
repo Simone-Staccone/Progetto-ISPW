@@ -1,0 +1,17 @@
+package errorlogic;
+
+public class AlreadyReserved extends Exception {
+    private static final long serialVersionUID = 1L;
+
+    public AlreadyReserved(String message){
+        super("this was the original message :" + message);
+    }
+
+    public AlreadyReserved (Throwable cause) {
+        super(cause);
+    }
+
+    public AlreadyReserved (String message, Throwable cause) {
+        super(" +++ " + message + " +++ ", cause);
+    }
+}

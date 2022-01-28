@@ -10,10 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatsControllerTest {
     @Test
-    public void write(){
-    }
-
-    @Test
     public void averege(){
         StatsController sc = new StatsController(CourtConst.USER_PACKAGE + File.separator +
                 "test" + File.separator);

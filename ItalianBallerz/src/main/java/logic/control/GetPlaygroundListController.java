@@ -1,35 +1,18 @@
 package logic.control;
 
 import errorlogic.MyException;
-import javafx.scene.layout.HBox;
+import logic.entity.Court;
 import logic.entity.CourtCache;
 import logic.entity.CourtList;
-import logic.other.FactoryScrollList;
-import logic.other.ScrollList;
 import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class GetPlaygroundListController {
-    public List<HBox> get(String name){
-        List<HBox> bList = new ArrayList<>();
-        ScrollList scr;
-
+    public void set(String name){
         CourtList.setCourts(name);
-
-        FactoryScrollList factory = new FactoryScrollList();
-
-        try {
-            scr = factory.createList(2);
-            bList = scr.getList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return bList;
     }
     public String getCurrentName(){
         return CourtCache.getName();
@@ -64,7 +47,6 @@ public class GetPlaygroundListController {
         }catch (FileNotFoundException f){
             f.printStackTrace();
         }
-        System.out.println(owner + "jdisaad");
         CourtCache.setOwner(owner);
     }
 
@@ -96,5 +78,9 @@ public class GetPlaygroundListController {
             log.debug("File per il numero di telefono non trovato");
         }
         CourtCache.setPhone(phone);
+    }
+
+    public List<Court> getCourtList() {
+        return CourtList.getCourts();
     }
 }
