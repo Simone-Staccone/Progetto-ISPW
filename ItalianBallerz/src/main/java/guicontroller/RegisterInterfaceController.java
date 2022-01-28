@@ -9,6 +9,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 
+/**
+ * Questo controller grafico ha la responsabilità di gestire l'interfaccia di registrazione.
+ */
 public class RegisterInterfaceController extends GenericInterface{
     @FXML
     private TextField username;

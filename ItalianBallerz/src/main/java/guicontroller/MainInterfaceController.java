@@ -6,6 +6,9 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 
+/**
+ * Gestisce l'interfaccia home da dove si può navigare nel software-
+ */
 public class MainInterfaceController extends GenericInterface{
     @FXML
     private Pane playgroundImagePane;

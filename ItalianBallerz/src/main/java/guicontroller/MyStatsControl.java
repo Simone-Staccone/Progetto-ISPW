@@ -12,8 +12,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-
-
+/**
+ * Gestisce il display di tutte le statistiche di un utente.
+ */
 public class MyStatsControl extends GenericInterface implements Initializable {
     @FXML
     private AnchorPane ancPane;

@@ -84,7 +84,7 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StatsControllerTest.averege">
+  <component name="RunManager" selected="Application.MainInterface">
     <configuration name="MainInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="guicontroller.MainInterface" />
       <module name="ItalianBallerz" />
@@ -165,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainInterface" />
         <item itemvalue="JUnit.StatsControllerTest.averege" />
         <item itemvalue="JUnit.StatsControllerTest.averege" />
         <item itemvalue="JUnit.StatsControllerTest" />
         <item itemvalue="JUnit.LoginControlTest" />
-        <item itemvalue="JUnit.GetPlaygroundListControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +220,7 @@
       <workItem from="1643234165196" duration="19173000" />
       <workItem from="1643327812120" duration="89000" />
       <workItem from="1643363039862" duration="13373000" />
-      <workItem from="1643378622494" duration="738000" />
+      <workItem from="1643378622494" duration="7456000" />
     </task>
     <servers />
   </component>

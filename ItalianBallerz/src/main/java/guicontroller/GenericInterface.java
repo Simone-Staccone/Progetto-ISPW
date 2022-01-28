@@ -13,6 +13,9 @@ import logic.other.Swap;
 import logic.other.Swap2;
 
 
+/**
+ * Classe che ha la responsabilità di fornire funzioni a tutti i controller grafici che sono ricorrenti e riutilizzabili,
+ */
 public class  GenericInterface {
     @FXML
     public AnchorPane mainPane;

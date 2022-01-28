@@ -1,6 +1,5 @@
 package guicontroller;
 
-import org.apache.log4j.Logger;
 import errorlogic.MyException;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
@@ -19,6 +18,10 @@ import java.util.ResourceBundle;
 import static java.lang.Math.min;
 
 
+/**
+ * Questa classe ha la responsabilità di mostrare la media delle statistiche di un utente.
+ * Mostra anche un grafico con l'andamento passato di tutte le statistiche avute.
+ */
 public class AveregeControl extends GenericInterface implements Initializable {
     @FXML
     private Text pointsText;
@@ -33,9 +36,14 @@ public class AveregeControl extends GenericInterface implements Initializable {
     @FXML
     private Text errorText;
 
+    /**
+     * L'inizializzazione consiste nel tentare di recuperare i dati dell'utente.
+     * Se questo avviene con successo si mostra media e grafico.
+     * Altrimenti si avrà un messaggio di errore a schermo.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Logger log = Logger.getRootLogger();
+
         try {
             Stat s = BeanStats.averege();
             String temp;
@@ -58,8 +66,6 @@ public class AveregeControl extends GenericInterface implements Initializable {
 
             minutesText.setText(temp);
         } catch (MyException e) {
-
-            log.debug("Errore" + e.getCause() + e.getMessage());
             errorText.toFront();
         }
 

@@ -7,7 +7,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 
-
+/**
+ * Controller grafico utilizzato per la gestione dell'aggiunta di un nuovo campetto.
+ * La classe tryAdd server per premere ENTER invece che dover schiacciare il pulsante manualmente con un click.
+ * La classe addCourt prova ad aggiungere un nuovo campetto nel sistema.
+ */
 public class AddPlaygroundController extends GenericInterface {
     @FXML
     private TextField nameField;
@@ -20,6 +24,9 @@ public class AddPlaygroundController extends GenericInterface {
     @FXML
     private Text errorText;
 
+    /**
+     * Aggiungi un nuovo campetto. Se viene trovato un errore il campetto non viene aggiunto, ma viene mostrato il testo di errore.
+     */
     @FXML
     private void addCourt() {
         try {
@@ -36,6 +43,9 @@ public class AddPlaygroundController extends GenericInterface {
         }
     }
 
+    /**
+     * Server per premere ENTER invece che cliccare.
+     */
     @FXML
     private void tryAdd(KeyEvent k){
         if(k.getCode().toString().compareTo("ENTER") == 0)

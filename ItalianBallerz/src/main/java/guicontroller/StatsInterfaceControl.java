@@ -5,6 +5,9 @@ import logic.bean.BeanStats;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+/**
+ * Gestisce l'interfaccia grafica che permette all'utente di aggiungere statistiche.
+ */
 public class StatsInterfaceControl extends GenericInterface {
     @FXML
     private TextField pointsField;

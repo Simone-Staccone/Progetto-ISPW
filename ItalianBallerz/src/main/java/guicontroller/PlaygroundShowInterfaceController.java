@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
+/**
+ * Controller grafico che si occupa dell'interfaccia per la ricerca dei campetti salvati nel sistema.
+ */
 public class PlaygroundShowInterfaceController extends GenericInterface implements Initializable {
     private boolean first = true;
 
@@ -30,6 +33,9 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
     @FXML
     private Button searchButton;
 
+    /**
+     * Metodo che cerca i campetti per una città selezionata nella searchBar
+     */
     @FXML
     public void search(){
         String s = searchBar.getText();

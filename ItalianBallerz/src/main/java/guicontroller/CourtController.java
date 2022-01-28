@@ -24,6 +24,10 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Questa classe ha la responsabilità di gestire le informazioni relative ad un campetto sdcelto.
+ * Inoltre permette di prenotare uno slot dello schedule del campetto.
+ */
 public class CourtController extends GenericInterface implements Initializable {
     @FXML
     private Text label;
@@ -41,6 +45,10 @@ public class CourtController extends GenericInterface implements Initializable {
     private AnchorPane container;
 
 
+    /**
+     * Nell'inizializzazione si prova a prendere le informazioni del campetto da sistema. Se tutto avviene correttamente
+     * vengono mostrate, altrimenti si avrà un messaggio di errore a terminale in cui è scritta la traccia dello stack.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ScrollList scL;
@@ -66,6 +74,11 @@ public class CourtController extends GenericInterface implements Initializable {
         }
     }
 
+    /**
+     * La classe serve per fornire una finestra standard di errore.
+     * @param message Cosa scrivere nella finestra
+     * @param space Quanto spazio lasciare a sinistra del messaggio
+     */
     public void waringMessage(String message,int space) {
         Stage stage = new Stage();
         Pane pane = new Pane();
@@ -95,6 +108,11 @@ public class CourtController extends GenericInterface implements Initializable {
         stage.show();
     }
 
+    /**
+     * La classe serve per gestire la finestra di conferma di prenotazione di uno slot e quindi prova a prenotare.
+     * @param i orario in cui prenotare
+     * @param t titolo della finestra
+     */
     public void confirmWindow(int i,Text t) {
         Stage stage = new Stage();
         stage.setResizable(false);

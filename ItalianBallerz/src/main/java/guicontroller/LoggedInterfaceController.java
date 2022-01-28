@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller grafico che ha la responsabilità di gestire l'interfaccia grafica di gestione una volta eseguito il log in.
+ */
 public class LoggedInterfaceController extends GenericInterface implements Initializable {
     @FXML
     private Text text;
@@ -66,6 +69,11 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         }
     }
 
+    /**
+     * La classe si occupa di mostrare le nuove prenotazioni se ce ne sono.
+     * @param names array di stringhe relative alle nuove prenotazioni
+     * @param counter numero di nuove notifiche in formato stringa
+     */
     private static void reservations(List<String> names, Text counter) {
         Stage stage = new Stage();
         Pane pane = new Pane();
@@ -104,6 +112,10 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
     }
 
 
+    /**
+     * Serve per evidenziare il container sul cui passa il cursore.
+     * @param e evento sul quale si genera il passiaggio del cursore
+     */
     @FXML
     private void in(MouseEvent e)
     {
@@ -112,6 +124,10 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         p.setCursor(Cursor.HAND);
     }
 
+    /**
+     * Serve per far tornare allo stato normale il container una volta evidenziato.
+     * @param e evento dal quale esce il cursore
+     */
     @FXML
     private void out(MouseEvent e)
     {
@@ -120,6 +136,10 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         p.setCursor(Cursor.DEFAULT);
     }
 
+    /**
+     * Apre una finestra per confermare il logout.
+     * Se la conferma avviene effettua il logout.
+     */
     @FXML
     private void logOut() {
         Stage stage = new Stage();
@@ -169,6 +189,12 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
         }
     }
 
+    /**
+     * La classe si occupa di fare l'update delle nuove prenotazioni.
+     * @param owner proprietario del campetto
+     * @param location città in cui si trova il campetto
+     * @param name nome del campetto
+     */
     public static void notify(String owner, String location, String name) {
         names.add(owner);
         names.add(location);
