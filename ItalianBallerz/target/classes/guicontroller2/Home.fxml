@@ -14,9 +14,9 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button layoutX="204.0" layoutY="140.0" mnemonicParsing="false" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="190.0" text="Cerca campetto" />
+      <Button layoutX="204.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#swaptoCourtForm" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="190.0" text="Cerca campetto" />
       <Text fx:id="returnText" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="600.0" />
-      <Button layoutX="204.0" layoutY="220.0" mnemonicParsing="false" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="189.0" text="Aggiungi campetto" />
-      <Button layoutX="204.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#swaptoC" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="189.0" text="Log out" />
+      <Button layoutX="204.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#tryswaptoCourtAdd" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="189.0" text="Aggiungi campetto" />
+      <Button layoutX="204.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#logout" onMouseEntered="#genericEnter" onMouseExited="#genericExit" prefHeight="26.0" prefWidth="189.0" text="Log out" />
    </children>
 </AnchorPane>
