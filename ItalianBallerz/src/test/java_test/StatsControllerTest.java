@@ -1,21 +1,24 @@
 import errorlogic.MyException;
-import logic.control.StatsController;
+import logic.control.AveregeControl;
+import logic.control.LoginControl;
 import logic.entity.Stat;
-import logic.other.CourtConst;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatsControllerTest {
     @Test
     void averege(){
-        StatsController sc = new StatsController(CourtConst.USER_PACKAGE + File.separator +
-                "test" + File.separator);
+        LoginControl lg = new LoginControl();
+
+        if(lg.searchUserU("test",false))
+            lg.searchUser("test","test",false);
+
+
+        AveregeControl ac = new AveregeControl();
         Stat st;
         try {
-            st = sc.average();
+            st = ac.average();
             double points = st.getPoints();
             double assists = st.getAssists();
             double rebounds = st.getRebounds();

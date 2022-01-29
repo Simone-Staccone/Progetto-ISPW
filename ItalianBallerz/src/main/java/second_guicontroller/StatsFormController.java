@@ -41,10 +41,10 @@ public class StatsFormController extends GenericInterface implements Initializab
             int i = 0;
             statList = BeanStats.getStatsList();
             for(Stat s : statList){
-                listContainer.getItems().add(i + ".Points: " + String.valueOf(s.getPoints()).substring(0,3) +
-                        " Assists: " + String.valueOf(s.getAssists()).substring(0,3)  +
-                        " Rebounds: " + String.valueOf(s.getRebounds()).substring(0,3)  +
-                        " Minutes: " + String.valueOf(s.getMinutes()).substring(0,3) );
+                listContainer.getItems().add(i + ".Points: " + Math.round(s.getPoints()) +
+                        " Assists: " + Math.round(s.getAssists())  +
+                        " Rebounds: " + Math.round(s.getRebounds())  +
+                        " Minutes: " + Math.round(s.getMinutes()) );
                 i++;
             }
             if(statList.size() == 0){
@@ -140,12 +140,21 @@ public class StatsFormController extends GenericInterface implements Initializab
             Stat s = BeanStats.averege();
 
             Button close = new Button("     Chiudi     ");
+            String sTemp;
+            String sTemp2;
 
-            Text txt2 = new Text("Points: " + String.valueOf(s.getPoints()).substring(0,3) +
-                    " Assists: " + String.valueOf(s.getAssists()).substring(0,3));
+            sTemp = String.valueOf(s.getPoints());
+            sTemp2 = String.valueOf(s.getAssists());
 
-            Text txt3 = new Text(" Rebounds: " + String.valueOf(s.getRebounds()).substring(0,3)  +
-                    " Minutes: " + String.valueOf(s.getMinutes()).substring(0,3) );
+            Text txt2 = new Text("Points: " + sTemp.substring(0,sTemp.indexOf(".") + 2) +
+                    " Assists: " + sTemp2.substring(0,sTemp2.indexOf(".") + 2));
+
+
+            sTemp = String.valueOf(s.getRebounds());
+            sTemp2 = String.valueOf(s.getMinutes());
+
+            Text txt3 = new Text(" Rebounds: " + sTemp.substring(0,sTemp.indexOf(".") + 2)  +
+                    " Minutes: " + sTemp2.substring(0,sTemp2.indexOf(".") + 2) );
 
             close.setOnMouseEntered(mouseEvent -> close.setCursor(Cursor.HAND));
             close.setOnMouseExited(mouseEvent -> close.setCursor(Cursor.DEFAULT));

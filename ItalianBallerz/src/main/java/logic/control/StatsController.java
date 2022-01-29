@@ -7,7 +7,6 @@ import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +38,7 @@ public class StatsController {
         fm.writeAppend(Float.toString(minutes),CourtConst.MINUTES + CourtConst.EXTENSION);
     }
 
-    public Stat average() throws MyException {
-        StatsController st = new StatsController(this.actualPath);
-        return st.create(st.getAverege(CourtConst.POINTS),st.getAverege(CourtConst.ASSISTS),
-                st.getAverege(CourtConst.REBOUNDS),st.getAverege(CourtConst.MINUTES));
-    }
+
 
     public void delete(int i) {
         FileManager fm = new FileManager(this.actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
@@ -59,35 +54,6 @@ public class StatsController {
             e.printStackTrace();
 
         }
-
-    }
-
-    public float getAverege(String str) throws MyException
-    {
-        float x = 0;
-        int count = 0;
-        float avg = 0;
-        StringBuilder buffer = new StringBuilder();
-        String s;
-
-        FileManager fm;
-        try {
-            fm = new FileManager(this.actualPath + str + CourtConst.EXTENSION);
-
-
-            while(!fm.checkEnd()) {
-                buffer.delete(0,buffer.length());
-                buffer.append(fm.readLine());
-                s = buffer.toString();
-                count++;
-                x+=Float.parseFloat(s);
-            }
-            if(count != 0)
-                avg = x/count;
-        }catch (FileNotFoundException e){
-            throw new MyException("No file found",e);
-        }
-        return avg;
     }
 
     public List<Stat> getList() throws MyException{

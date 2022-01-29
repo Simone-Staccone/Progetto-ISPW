@@ -1,6 +1,10 @@
 package logic.entity;
 
 
+import errorlogic.MyException;
+import logic.dao.StatsDao;
+
+import java.util.List;
 
 public class Stat {
     private final float points;
@@ -26,6 +30,13 @@ public class Stat {
     }
     public float getMinutes() {
         return this.minutes;
+    }
+
+
+    public static List<Float> getAverege(String str) throws MyException
+    {
+        StatsDao sd = new StatsDao();
+        return sd.getAverege(str);
     }
 
 }

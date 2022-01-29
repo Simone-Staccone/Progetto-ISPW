@@ -1,6 +1,7 @@
 package logic.bean;
 
 import errorlogic.MyException;
+import logic.control.AveregeControl;
 import logic.control.StatsController;
 import logic.entity.Stat;
 
@@ -53,10 +54,10 @@ public class BeanStats {
     }
 
     public static Stat averege() throws MyException {
-        StatsController st = new StatsController();
+        AveregeControl ac = new AveregeControl();
         Stat s;
         try {
-            s = st.average();
+            s = ac.average();
         } catch (Exception e) {
             throw new MyException("Error message",e);
         }
