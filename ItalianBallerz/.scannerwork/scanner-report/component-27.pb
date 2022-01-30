@@ -1,1 +1,0 @@
- 2javaXyhr/src/main/java/guicontroller/AveregeControl.java
