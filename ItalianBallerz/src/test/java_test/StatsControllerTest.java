@@ -4,6 +4,8 @@ import logic.control.LoginControl;
 import logic.entity.Stat;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatsControllerTest {
@@ -11,8 +13,13 @@ class StatsControllerTest {
     void averege(){
         LoginControl lg = new LoginControl();
 
-        if(lg.searchUserU("test",false))
-            lg.searchUser("test","test",false);
+        if(lg.searchUserU("test",false)) {
+            try {
+                lg.searchUser("test","test",false);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
 
         AveregeControl ac = new AveregeControl();

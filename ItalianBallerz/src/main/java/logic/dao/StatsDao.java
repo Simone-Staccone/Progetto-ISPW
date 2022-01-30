@@ -1,7 +1,6 @@
 package logic.dao;
 
 import errorlogic.MyException;
-import logic.control.FileManager;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
@@ -33,5 +32,30 @@ public class StatsDao {
             throw new MyException("No file found",e);
         }
         return list;
+    }
+
+    public void write(float points, float assists, float rebounds, float minutes){
+        FileManager fm = new FileManager(actualPath);
+
+        fm.writeAppend(Float.toString(points),CourtConst.POINTS + CourtConst.EXTENSION);
+        fm.writeAppend(Float.toString(assists),CourtConst.ASSISTS + CourtConst.EXTENSION);
+        fm.writeAppend(Float.toString(rebounds),CourtConst.REBOUNDS + CourtConst.EXTENSION);
+        fm.writeAppend(Float.toString(minutes),CourtConst.MINUTES + CourtConst.EXTENSION);
+    }
+
+    public void delete(int number) {
+        FileManager fm = new FileManager(actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
+        FileManager fm2 = new FileManager(actualPath + CourtConst.ASSISTS + CourtConst.EXTENSION);
+        FileManager fm3 = new FileManager(actualPath + CourtConst.REBOUNDS + CourtConst.EXTENSION);
+        FileManager fm4 = new FileManager(actualPath + CourtConst.MINUTES + CourtConst.EXTENSION);
+        try{
+            fm.deleteLine(number);
+            fm2.deleteLine(number);
+            fm3.deleteLine(number);
+            fm4.deleteLine(number);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
     }
 }

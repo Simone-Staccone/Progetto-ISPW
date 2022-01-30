@@ -2,8 +2,8 @@ package logic.control;
 
 /* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
 
+import logic.entity.PlayerCache;
 import logic.entity.PlayerUser;
-import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
 import java.io.FileNotFoundException;
@@ -11,81 +11,23 @@ import java.io.FileNotFoundException;
 
 public class LoginControl{
     public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
-        String path;
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-        fm.writeAppendE(name + "$" + password + "%" + email);
+        PlayerUser pu = new PlayerUser(name,owner);
+        pu.writePlayerUser(password,email);
     }
 
-    public boolean searchUser(String user,String password,boolean owner){
-        String path;
-
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-        String name;
-        String psw;
-        boolean b = false;
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-
-        try {
-            while (!fm.checkEnd()) {
-                name = fm.readLine();
-
-                psw = name.substring(name.indexOf("$") + 1, name.indexOf("%"));
-                name = name.substring(0, name.indexOf("$"));
-
-                if (name.compareTo(user) == 0 && psw.compareTo(password) == 0) {
-                    PlayerUser.setUsernameP(user);
-                    PlayerUser.setOwner(owner);
-                    SingletonPlayer.getLoginInstance();
-                    b = true;
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public boolean searchUser(String user,String password,boolean owner) throws FileNotFoundException {
+        PlayerUser pd = new PlayerUser(user,owner);
+        boolean b = pd.searchUser(password);
+        PlayerCache.setUsername(user);
+        PlayerCache.setOwner(owner);
+        SingletonPlayer.getLoginInstance();
         return b;
     }
 
 
     public boolean searchUserU(String user,boolean owner){
-        String path;
-        String name;
-        boolean b = false;
-
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-
-        try {
-            while (!fm.checkEnd()) {
-                name = fm.readLine();
-                name = name.substring(0, name.indexOf("$"));
-                if (name.compareTo(user) == 0) {
-                    b = true;
-                    break;
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return b;
+        PlayerUser pu = new PlayerUser(user,owner);
+        return pu.searchUserU();
     }
 
 

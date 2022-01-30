@@ -158,7 +158,7 @@ public class  GenericInterface {
     }
 
     @FXML
-    private void swaptoHome(){
+    protected void swaptoHome(){
         Swap2.goTo("Home.fxml",mainPane);
     }
 }

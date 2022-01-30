@@ -1,6 +1,8 @@
 import logic.control.LoginControl;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LoginControlTest {
@@ -12,7 +14,11 @@ class LoginControlTest {
         int conf = 1;
 
         if(lg.searchUserU("test",false)) {
-            ret = lg.searchUser("test", "test", false);
+            try {
+                ret = lg.searchUser("test", "test", false);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
 
 
@@ -30,7 +36,11 @@ class LoginControlTest {
         int conf = 1;
 
         if(lg.searchUserU("test",false)) {
-            ret = lg.searchUser("test", "test", false);
+            try {
+                ret = lg.searchUser("test", "test", false);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
 
         if(ret){

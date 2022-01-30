@@ -9,8 +9,7 @@ public class BeanLogin {
     private BeanLogin(){
     }
 
-    public static int verifyUser(String username, String password,Boolean owner)
-    {
+    public static int verifyUser(String username, String password,Boolean owner) throws FileNotFoundException {
         LoginControl lg = new LoginControl();
         int ret  = 0;
         boolean b = false;

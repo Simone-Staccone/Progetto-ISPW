@@ -9,6 +9,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
+import java.io.FileNotFoundException;
+
 
 /**
  * Questo controller grafico ha la responsabilità di gestire l'interfaccia di login.
@@ -27,10 +29,14 @@ public class LoginInterfaceController extends GenericInterface{
 
     @FXML
     private void login(){
-        int ret;
+        int ret = 0;
         errorText.setText("");
         errorText.setStyle("-fx-fill: RED");
-        ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
+        try {
+            ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
+        } catch (FileNotFoundException e) {
+            password.setText("");
+        }
 
         switch (ret) {
             case -1 -> errorText.setText("*Username field is empty!");

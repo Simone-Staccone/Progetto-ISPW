@@ -2,7 +2,7 @@ package logic.entity;
 
 import errorlogic.AlreadyReserved;
 import errorlogic.NotLoggedException;
-import logic.control.FileManager;
+import logic.dao.FileManager;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 

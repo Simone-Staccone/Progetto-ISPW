@@ -1,6 +1,6 @@
 package logic.entity;
 
-import logic.control.FileManager;
+import logic.dao.FileManager;
 import logic.control.StatsController;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;

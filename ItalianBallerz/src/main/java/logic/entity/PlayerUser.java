@@ -1,27 +1,56 @@
 package logic.entity;
 
-import logic.other.SingletonPlayer;
 
-public class PlayerUser extends SingletonPlayer {
-    private static String name;
-    private static Boolean owner;
+import logic.dao.PlayerDao;
 
-    protected PlayerUser(String init) {
-        super(init, owner);
+import java.io.FileNotFoundException;
+
+public class PlayerUser {
+    private String name;
+    private boolean owner;
+
+    public PlayerUser(String init) {
+        this.name = init;
+        this.owner = false;
+    }
+
+    public PlayerUser(String init, boolean owner) {
+        this.name = init;
+        this.owner = owner;
     }
 
 
-    public static String getUsernameP() {
-        return PlayerUser.name;
+    public String getUsername() {
+        return this.name;
     }
-    public static void setUsernameP(String s) {
-        PlayerUser.name = s;
+    public void setUsername(String s) {
+        this.name = s;
     }
 
-    public static void setOwner(Boolean owner) {
-        PlayerUser.owner = owner;
+    public void setOwner(boolean owner) {
+        this.owner = owner;
     }
-    public static Boolean getOwnerP() {
-        return PlayerUser.owner;
+
+
+    public boolean getOwner() {
+        return this.owner;
+    }
+
+    public boolean searchUserU() {
+        PlayerDao pd = new PlayerDao();
+        PlayerCache.setUsername(this.name);
+        PlayerCache.setOwner(this.owner);
+        return pd.searchUserU(this.name,this.owner);
+    }
+
+    public void writePlayerUser(String password,String email) throws FileNotFoundException {
+        PlayerDao pd = new PlayerDao();
+        pd.writePlayerUser(this.name,password,email,this.owner);
+    }
+
+
+    public boolean searchUser(String password) throws FileNotFoundException {
+        PlayerDao pd = new PlayerDao();
+        return pd.searchUser(this.name,password,this.owner);
     }
 }

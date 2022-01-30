@@ -3,57 +3,25 @@ package logic.control;
 import errorlogic.MyException;
 import logic.entity.Stat;
 import logic.entity.StatsList;
-import logic.other.CourtConst;
-import logic.other.SingletonPlayer;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class StatsController {
-    private String actualPath;
-
-    public StatsController()
-    {
-        if(SingletonPlayer.getLoginInstance() != null)
-            this.actualPath = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator;
-    }
-    public StatsController(String s)
-    {
-        this.actualPath = s;
-    }
-
     public Stat create(float points, float assists, float rebounds, float minutes){
         return new Stat(points, assists, rebounds, minutes);
     }
 
 
     public void write(float points, float assists, float rebounds, float minutes){
-        FileManager fm = new FileManager(this.actualPath);
-
-        fm.writeAppend(Float.toString(points),CourtConst.POINTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(assists),CourtConst.ASSISTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(rebounds),CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(minutes),CourtConst.MINUTES + CourtConst.EXTENSION);
+        Stat st = new Stat(points, assists, rebounds, minutes);
+        st.write();
     }
 
-
-
     public void delete(int i) {
-        FileManager fm = new FileManager(this.actualPath + CourtConst.POINTS + CourtConst.EXTENSION);
-        FileManager fm2 = new FileManager(this.actualPath + CourtConst.ASSISTS + CourtConst.EXTENSION);
-        FileManager fm3 = new FileManager(this.actualPath + CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        FileManager fm4 = new FileManager(this.actualPath + CourtConst.MINUTES + CourtConst.EXTENSION);
-        try{
-            fm.deleteLine(i);
-            fm2.deleteLine(i);
-            fm3.deleteLine(i);
-            fm4.deleteLine(i);
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        }
+        Stat st = new Stat();
+        st.delete(i);
     }
 
     public List<Stat> getList() throws MyException{

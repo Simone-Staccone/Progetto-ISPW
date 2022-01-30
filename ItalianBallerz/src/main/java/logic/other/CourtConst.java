@@ -12,5 +12,6 @@ public class CourtConst {
     public static final String ASSISTS = "assists";
     public static final String REBOUNDS = "rebounds";
     public static final String MINUTES = "minutes";
+    public static final String SCHEDULE = "schedule";
 
 }

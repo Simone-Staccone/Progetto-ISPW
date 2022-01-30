@@ -28,4 +28,6 @@ module com.example.italianballerz {
 
     opens errorlogic to javafx.fxml;
     exports errorlogic;
+    opens logic.dao to javafx.fxml;
+    exports logic.dao;
 }

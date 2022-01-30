@@ -29,9 +29,9 @@ public class CourtAddFormController extends GenericInterface implements Initiali
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for(int i = 0;i<20;i++)
+        for(int i = 0;i<=20;i++)
         {
-            MenuItem menu = new MenuItem();
+            MenuItem menu = new MenuItem(String.valueOf(i));
             int finalI = i;
             menu.setOnAction(event -> money.setText(String.valueOf(finalI)));
             money.getItems().add(menu);

@@ -17,9 +17,6 @@ public class ScheduleList implements ScrollList{
         List<HBox> bList = new ArrayList<>();
         HBox b;
 
-
-
-
         for(int i = 0;i<24;i++){
             Pane p = new Pane();
             Text t = new Text("   " + i + ":00 - " + (i+1) + ":00" + "\t\t");

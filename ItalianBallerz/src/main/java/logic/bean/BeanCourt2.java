@@ -10,7 +10,6 @@ import java.util.List;
 
 public class BeanCourt2 {
     private BeanCourt2(){
-
     }
 
     public static List<Court> get(String s) {
