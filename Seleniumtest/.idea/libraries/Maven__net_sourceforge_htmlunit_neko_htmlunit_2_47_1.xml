@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: net.sourceforge.htmlunit:neko-htmlunit:2.47.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/htmlunit/neko-htmlunit/2.47.1/neko-htmlunit-2.47.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/htmlunit/neko-htmlunit/2.47.1/neko-htmlunit-2.47.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/htmlunit/neko-htmlunit/2.47.1/neko-htmlunit-2.47.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

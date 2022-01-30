@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39332343-38b3-433b-bca6-7af300dcf22f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="21JVHkPlqbPk3wFBwl5oJPSTS4v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\simon\IdeaProjects\Seleniumtest\src\test\java\com\example\seleniumtest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MainPageTest">
+    <configuration name="ProvaSelenium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.seleniumtest.ProvaSelenium" />
+      <module name="Seleniumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.seleniumtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSelenium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.seleniumtest.TestSelenium" />
+      <module name="Seleniumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.seleniumtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Seleniumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.seleniumtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.seleniumtest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.seleniumtest.MainPageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainPageTest.TestProvaSelenium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Seleniumtest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.seleniumtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.seleniumtest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.seleniumtest.MainPageTest" />
+      <option name="METHOD_NAME" value="TestProvaSelenium" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MainPageTest" />
+        <item itemvalue="JUnit.MainPageTest.TestProvaSelenium" />
+        <item itemvalue="Application.ProvaSelenium" />
+        <item itemvalue="Application.TestSelenium" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39332343-38b3-433b-bca6-7af300dcf22f" name="Changes" comment="" />
+      <created>1637659095841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637659095841</updated>
+      <workItem from="1637659097392" duration="785000" />
+      <workItem from="1637659930233" duration="2735000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Seleniumtest$MainPageTest_TestProvaSelenium.ic" NAME="MainPageTest.TestProvaSelenium Coverage Results" MODIFIED="1637662678003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.seleniumtest.*</FILTER>
+    </SUITE>
+  </component>
+</project>
