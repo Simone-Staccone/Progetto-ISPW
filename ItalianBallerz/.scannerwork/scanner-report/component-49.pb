@@ -1,1 +1,1 @@
-1 2javaX,hr/src/main/java/guicontroller/MyStatsControl.java
+1 2javaX§hr1src/main/java/guicontroller/GenericInterface.java

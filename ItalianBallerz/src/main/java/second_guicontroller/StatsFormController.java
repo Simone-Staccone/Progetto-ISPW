@@ -16,10 +16,15 @@ import javafx.stage.Stage;
 import logic.bean.BeanStats;
 import logic.entity.Stat;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller grafico che gestisce la form che mostra le statistiche dell'utente e genera la media di esse, permettendone anche
+ * l'aggiunta di nuove.
+ */
 public class StatsFormController extends GenericInterface implements Initializable {
     @FXML
     private SplitMenuButton points;
@@ -51,7 +56,7 @@ public class StatsFormController extends GenericInterface implements Initializab
                 listContainer.getItems().add("Nessuna statistica trovata");
             }
         } catch (MyException e) {
-            e.printStackTrace();
+            listContainer.getItems().add("Non ci sono statistiche per questo utente");
         }
 
         listContainer.setOnMouseClicked(event -> {
@@ -63,7 +68,7 @@ public class StatsFormController extends GenericInterface implements Initializab
                     StatsFormController sfc = new StatsFormController();
                     sfc.deleteWindow(Integer.parseInt(t.getText().substring(0,1)));
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    returnText.setText("Errore");
                 }finally{
                     stage.close();
                 }
@@ -111,7 +116,11 @@ public class StatsFormController extends GenericInterface implements Initializab
         button.setLayoutY(35);
 
         button.setOnMouseClicked(event -> {
-            BeanStats.delete(i);
+            try {
+                BeanStats.delete(i);
+            } catch (IOException e) {
+                returnText.setText("Cancellazione non riuscita");
+            }
             stage.close();
         });
         button.setOnMouseEntered(event -> button.setCursor(Cursor.HAND));
@@ -173,7 +182,6 @@ public class StatsFormController extends GenericInterface implements Initializab
             txt3.setLayoutY(70);
 
         } catch (MyException e) {
-            e.printStackTrace();
             txt.setText("An error occurred!");
             pane.getChildren().add(txt);
         }
@@ -192,7 +200,6 @@ public class StatsFormController extends GenericInterface implements Initializab
             returnText.setStyle("-fx-fill: GREEN");
             returnText.toFront();
         } catch (Exception e) {
-            e.printStackTrace();
             returnText.setText("*Wrong input");
             returnText.setStyle("-fx-fill: RED");
             returnText.toFront();

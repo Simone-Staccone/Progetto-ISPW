@@ -1,5 +1,6 @@
 package logic.other;
 
+import javafx.scene.text.Text;
 import second_guicontroller.LoginFormController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,9 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+/**
+ * Ha la responsabilità di cambiare scene nei controller grafici della seconda interfaccia grafica
+ */
 public class Swap2 {
     private Swap2(){
 
@@ -22,7 +26,7 @@ public class Swap2 {
             Objects.requireNonNull(window).setScene(scene);
             Objects.requireNonNull(window).show();
         } catch (Exception e) {
-            e.printStackTrace();
+            mainPane.getChildren().add(new Text("Errore"));
         }
     }
 }

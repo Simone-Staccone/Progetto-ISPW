@@ -1,31 +1,59 @@
-module com.example.italianballerz {
-    requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.web;
+package logic.entity;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires validatorfx;
-    requires org.kordamp.ikonli.javafx;
-    requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
-    requires log4j;
 
-    opens guicontroller to javafx.fxml;
-    exports guicontroller;
+import logic.dao.PlayerDao;
 
-    opens second_guicontroller to javafx.fxml;
-    exports second_guicontroller;
+import java.io.FileNotFoundException;
 
-    opens logic.other to javafx.fxml;
-    exports logic.other;
+/**
+ * Model relativo all'utente
+ */
+public class PlayerUser {
+    private String name;
+    private boolean owner;
 
-    opens logic.control to javafx.fxml;
-    exports logic.control;
+    public PlayerUser(String init) {
+        this.name = init;
+        this.owner = false;
+    }
 
-    opens logic.entity to javafx.fxml;
-    exports logic.entity;
+    public PlayerUser(String init, boolean owner) {
+        this.name = init;
+        this.owner = owner;
+    }
 
-    opens errorlogic to javafx.fxml;
-    exports errorlogic;
+
+    public String getUsername() {
+        return this.name;
+    }
+    public void setUsername(String s) {
+        this.name = s;
+    }
+
+    public void setOwner(boolean owner) {
+        this.owner = owner;
+    }
+
+
+    public boolean getOwner() {
+        return this.owner;
+    }
+
+    public boolean searchUserU() throws FileNotFoundException {
+        PlayerDao pd = new PlayerDao();
+        PlayerCache.setUsername(this.name);
+        PlayerCache.setOwner(this.owner);
+        return pd.searchUserU(this.name,this.owner);
+    }
+
+    public void writePlayerUser(String password,String email) throws FileNotFoundException {
+        PlayerDao pd = new PlayerDao();
+        pd.writePlayerUser(this.name,password,email,this.owner);
+    }
+
+
+    public boolean searchUser(String password) throws FileNotFoundException {
+        PlayerDao pd = new PlayerDao();
+        return pd.searchUser(this.name,password,this.owner);
+    }
 }

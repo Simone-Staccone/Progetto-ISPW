@@ -1,5 +1,6 @@
 package guicontroller;
 
+import javafx.scene.text.Text;
 import logic.other.FactoryScrollList;
 import logic.other.ScrollList;
 import javafx.fxml.FXML;
@@ -38,7 +39,7 @@ public class MyStatsControl extends GenericInterface implements Initializable {
             for (HBox hBox : bList)
                 box.getChildren().add(hBox);
         } catch (Exception e) {
-            e.printStackTrace();
+            box.getChildren().add(new HBox(new Text("Ancora nessuna statistica")));
         }
     }
 }

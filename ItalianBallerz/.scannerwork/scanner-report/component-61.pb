@@ -1,1 +1,1 @@
-= 2javaXjhr-src/main/java/logic/control/LoginControl.java
+= 2javaXWhr'src/main/java/logic/bean/BeanStats.java

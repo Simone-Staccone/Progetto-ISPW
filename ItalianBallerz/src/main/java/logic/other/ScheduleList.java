@@ -11,6 +11,9 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ScrollList specifica per la gestione dello schedule
+ */
 public class ScheduleList implements ScrollList{
     @Override
     public List<HBox> getList() throws MyException {
@@ -22,36 +25,31 @@ public class ScheduleList implements ScrollList{
             Text t = new Text("   " + i + ":00 - " + (i+1) + ":00" + "\t\t");
             b = new HBox(t);
 
-            try{
-                p.setMinWidth(350);
-                b.getChildren().add(p);
-                bList.add(b);
+            p.setMinWidth(350);
+            b.getChildren().add(p);
+            bList.add(b);
 
 
-                b.setMinHeight(40);
-                b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
-                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                b.setBackground(new Background(new BackgroundFill(Color.WHITE, null,
-                        null)));
+            b.setMinHeight(40);
+            b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
+                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            b.setBackground(new Background(new BackgroundFill(Color.WHITE, null,
+                    null)));
 
-                Button btn = new Button("Prenota");
-
-
-                int finalI = i;
-                btn.setOnMouseClicked(event -> {
-                    CourtController cc = new CourtController();
-                    cc.confirmWindow(finalI,t);
-                });
+            Button btn = new Button("Prenota");
 
 
-                btn.setOnMouseEntered(event -> btn.setCursor(Cursor.HAND));
-                btn.setOnMouseExited(event -> btn.setCursor(Cursor.DEFAULT));
+            int finalI = i;
+            btn.setOnMouseClicked(event -> {
+                CourtController cc = new CourtController();
+                cc.confirmWindow(finalI,t);
+            });
 
-                b.getChildren().add(btn);
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            btn.setOnMouseEntered(event -> btn.setCursor(Cursor.HAND));
+            btn.setOnMouseExited(event -> btn.setCursor(Cursor.DEFAULT));
+
+            b.getChildren().add(btn);
         }
 
         return bList;

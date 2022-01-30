@@ -1,71 +1,36 @@
-package logic.entity;
+package logic.control;
 
-import logic.dao.FileManager;
+import errorlogic.AlreadyReserved;
+import errorlogic.NotLoggedException;
+import logic.bean.BeanCourt;
+import logic.bean.BeanCourt2;
+import logic.entity.Court;
+import logic.entity.CourtCache;
 
 import java.io.FileNotFoundException;
 
-public class CourtCache {
-    private static String name;
-    private static String location;
-    private static String money;
-    private static String phone;
-    private static String owner;
-
-    private CourtCache(){
+/**
+ * Controller applicativo che ha la responsabilità di gestire le prenotazioni di un campetto.
+ * In particolare la classe propaga 3 eccezioni di cui AlreadyReserved e NotLoggedException sono tipiche del sistema.
+ */
+public class GetReservationController {
+    public void tryAdd(int start) throws FileNotFoundException, AlreadyReserved, NotLoggedException {
+        Court crt = new Court(CourtCache.getName());
+        crt.search(start);
+        crt.addReservation(start);
+        GetReservationController.notify(CourtCache.getOwner(),CourtCache.getLocation(),CourtCache.getName(),start);
     }
 
-    public static String getName() {
-        return name;
-    }
-
-    public static void setName(String name) {
-        CourtCache.name = name;
-    }
-
-    public static String getLocation() {
-        return location;
-    }
-
-    public static void setLocation(String location) {
-        CourtCache.location = location;
-    }
-
-    public static String getMoney() {
-        return money;
-    }
-
-    public static void setMoney(String money) {
-        CourtCache.money = money;
-    }
-
-    public static String getPhone() {
-        return phone;
-    }
-
-    public static void setPhone(String phone) {
-        CourtCache.phone = phone;
-    }
-
-    public static String getOwner() {
-        return owner;
-    }
-
-    public static void setOwner(String owner) {
-        CourtCache.owner = owner;
-    }
-
-    public static String findOwner(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchOwner(name);
-    }
-
-    public static String findMoney(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchMoney(name);
-    }
-
-    public static String findPhone(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchPhone(name);
+    /**
+     * Il metodo notifica le Bean e quindi i controller grafici che mostrano una nuova prenotazione al proprietario.
+     * @param owner proprietario del campetto
+     * @param location luogo dove si trova
+     * @param name nome del campetto
+     * @param start orario
+     */
+    private static void notify(String owner, String location, String name, int start)
+    {
+        BeanCourt.notifyOwner(owner, location, name);
+        BeanCourt2.notifyOwner(owner, location, name, String.valueOf(start));
     }
 }

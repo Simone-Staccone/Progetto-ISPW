@@ -1,1 +1,1 @@
-6 2javaX)hr(src/main/java/logic/bean/BeanCourt2.java
+6 2javaX.hr/src/main/java/guicontroller/MyStatsControl.java

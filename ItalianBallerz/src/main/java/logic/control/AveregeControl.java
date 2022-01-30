@@ -4,8 +4,14 @@ import errorlogic.MyException;
 import logic.entity.Stat;
 import logic.other.CourtConst;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
+/**
+ * Controller che gestisce la restituzione della media delle statistiche dell'utente loggato.
+ * Converte le eccezioni generiche in MyException, tipica del sistema.
+ *
+ */
 public class AveregeControl {
     public Stat average() throws MyException {
         StatsController st = new StatsController();
@@ -13,10 +19,10 @@ public class AveregeControl {
         List<Float> assists;
         List<Float> rebounds;
         List<Float> minutes;
-        float avgPoints = 0.0f;
-        float avgAssists = 0.0f;
-        float avgRebounds = 0.0f;
-        float avgMinutes = 0.0f;
+        float avgPoints;
+        float avgAssists;
+        float avgRebounds;
+        float avgMinutes;
 
         try{
             points = Stat.getAverege(CourtConst.POINTS);
@@ -28,8 +34,8 @@ public class AveregeControl {
             avgAssists = AveregeControl.makeAvg(assists);
             avgRebounds = AveregeControl.makeAvg(rebounds);
             avgMinutes = AveregeControl.makeAvg(minutes);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException f) {
+            throw new MyException(f.getCause());
         }
 
         return st.create(avgPoints,avgAssists,avgRebounds,avgMinutes);
@@ -43,7 +49,8 @@ public class AveregeControl {
             ret+=num;
             count++;
         }
-        ret = ret/count;
+        if(count != 0)
+            ret = ret/count;
         return ret;
     }
 }

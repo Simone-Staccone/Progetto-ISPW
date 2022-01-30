@@ -1,7 +1,6 @@
 package errorlogic;
 
 public class NotLoggedException extends Exception{
-    private static final long serialVersionUID = 1L;
 
     public NotLoggedException (String message){
         super("this was the original message :" + message);
@@ -12,6 +11,6 @@ public class NotLoggedException extends Exception{
     }
 
     public NotLoggedException (String message, Throwable cause) {
-        super(" +++ " + message + " +++ ", cause);
+        super(" +++ " + message + " +++ " + "\n" + "L'utente non è loggato", cause);
     }
 }

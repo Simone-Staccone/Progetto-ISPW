@@ -52,7 +52,7 @@ public class PlaygroundShowInterfaceController extends GenericInterface implemen
             scr = factory.createList(2);
             bList = scr.getList();
         } catch (Exception e) {
-            e.printStackTrace();
+            bList.add(new HBox(new Text("Vuoto")));
         }
 
 

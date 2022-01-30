@@ -1,88 +1,105 @@
-package logic.bean;
+package guicontroller;
 
-import logic.control.LoginControl;
-import logic.other.SingletonPlayer;
+import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
+import logic.other.Swap;
 
-import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class BeanLogin {
-    private BeanLogin(){
+
+/**
+ * Controller grafico che si occupa dell'interfaccia per la ricerca dei campetti salvati nel sistema.
+ */
+public class PlaygroundShowInterfaceController extends GenericInterface implements Initializable {
+    private boolean first = true;
+
+    @FXML
+    private TextField searchBar;
+    @FXML
+    private VBox courtList;
+    @FXML
+    private Button searchButton;
+
+    /**
+     * Metodo che cerca i campetti per una città selezionata nella searchBar
+     */
+    @FXML
+    public void search(){
+        String s = searchBar.getText();
+        List<HBox> bList = new ArrayList<>();
+        ScrollList scr;
+
+        courtList.getChildren().clear();
+
+        BeanCourt.set(s);
+
+        FactoryScrollList factory = new FactoryScrollList();
+
+        try {
+            scr = factory.createList(2);
+            bList = scr.getList();
+        } catch (Exception e) {
+            bList.add(new HBox(new Text("Vuoto")));
+        }
+
+
+
+        if(bList.size() == 0)
+            bList.add(new HBox(new Text("Nessun risultato per questa ricerca")));
+        for(HBox b : bList)
+        {
+            b.setOnMouseClicked(mouseEvent -> {
+                Text t = (Text)b.getChildren().get(0);
+                BeanCourt.setCacheName(t.getText());
+                BeanCourt.setCacheLocation(s);
+                Swap.goTo("Court.fxml", super.mainPane);
+            });
+            courtList.getChildren().add(b);
+        }
+
     }
 
-    public static int verifyUser(String username, String password,Boolean owner)
+    @FXML
+    private void tryClear()
     {
-        LoginControl lg = new LoginControl();
-        int ret  = 0;
-        boolean b = false;
-
-        if(username.compareTo("") == 0)
+        if(this.first)
         {
-            ret = -1;
+            searchBar.setText("");
+            this.first = false;
         }
-        else if(password.compareTo("") == 0)
-        {
-            ret = -2;
-        }
-        else{
-            try{
-                b = lg.searchUserU(username,owner);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if(!b)
-            {
-                ret = 1;
-            }
-            else
-            {
-                b = lg.searchUser(username,password,owner);
-                if(b){
-                    ret = 2;
-                }
-            }
-
-        }
-        return ret;
     }
 
-    public static int addUser(String user,String password,String passwordConf,String email,Boolean owner){
-        int b = 0;
-        if(user.compareTo("") == 0 || password.compareTo("") == 0 ||
-                passwordConf.compareTo("") == 0 || email.compareTo("") == 0){
-            b = -1;
-        }
-        else if(password.compareTo(passwordConf) != 0)
-        {
-            b = 1;
-        }
-        else{
-            LoginControl lg = new LoginControl();
-            if(!lg.searchUserU(user,owner))
-            {
-                try {
-                    lg.writePlayerUser(user,password,email,owner);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                b = 2;
-            }
-        }
-        return b;
+    @FXML
+    private void tryS(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            search();
     }
 
-    public static String getUsername(){
-        LoginControl lg = new LoginControl();
-        return lg.getUsername();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        searchButton.setOnMouseEntered(mouseEvent -> {
+            searchButton.setBorder(new Border(new BorderStroke(Color.WHITE,
+                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            searchButton.setCursor(Cursor.HAND);
+        });
+
+        searchButton.setOnMouseExited(mouseEvent -> {
+            searchButton.setBorder(null);
+            searchButton.setCursor(Cursor.DEFAULT);
+        });
+
     }
-
-    public static void logOut(){
-        LoginControl.logOut();
-    }
-
-    public static Boolean isOwner(){
-        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        return sp.getOwner();
-    }
-
-
 }

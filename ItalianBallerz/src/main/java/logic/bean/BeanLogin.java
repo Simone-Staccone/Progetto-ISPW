@@ -5,6 +5,9 @@ import logic.other.SingletonPlayer;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Classe bean che fa comunicare i controller grafici con le classi control relative alla gestione del login
+ */
 public class BeanLogin {
     private BeanLogin(){
     }
@@ -26,7 +29,7 @@ public class BeanLogin {
             try{
                 b = lg.searchUserU(username,owner);
             } catch (Exception e) {
-                e.printStackTrace();
+                b = true;
             }
             if(!b)
             {
@@ -55,15 +58,14 @@ public class BeanLogin {
             b = 1;
         }
         else{
+            b = 2;
             LoginControl lg = new LoginControl();
-            if(!lg.searchUserU(user,owner))
-            {
-                try {
-                    lg.writePlayerUser(user,password,email,owner);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+            try {
+                if (!lg.searchUserU(user, owner)) {
+                    lg.writePlayerUser(user, password, email, owner);
                 }
-                b = 2;
+            }catch (FileNotFoundException e) {
+                b = 0;
             }
         }
         return b;

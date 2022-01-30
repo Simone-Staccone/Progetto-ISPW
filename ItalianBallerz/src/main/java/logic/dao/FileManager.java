@@ -1,5 +1,6 @@
 package logic.dao;
 
+import errorlogic.MyException;
 import logic.other.CourtConst;
 
 import java.io.*;
@@ -9,7 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/* Questa classe ha la responsabilità di comunicare con i file*/
+/**
+ * Classe aggiunta per non ripetere le stesse righe di codice per ogni DAO, dato che la logica di scrittura e lettura su file
+ * è sempre la stessa.
+ * Inoltre aggiungendo questa classe si aumenta il disaccoppiamento tra DAO e file system, rendendo un eventuale passaggio
+ * a DB più semplice.
+ * Questa soluzione risente di una scarsa high coesion, dato che una sola classe comprende più operazioni, però aumenta
+ * l'information hiding tra DAO e come sono scritti i file.
+ */
 
 public class FileManager {
     private long fp;
@@ -39,7 +47,7 @@ public class FileManager {
         }
     }
 
-    public Boolean checkEnd() throws FileNotFoundException {
+    public boolean checkEnd() throws FileNotFoundException {
         boolean ret = false;
 
         FileManager.check(this.path);
@@ -52,7 +60,7 @@ public class FileManager {
             }
         }
         catch(IOException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException();
         }
 
         return ret;
@@ -70,7 +78,7 @@ public class FileManager {
             raf.write(res.getBytes());
         }
         catch(IOException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException();
         }
     }
 
@@ -92,7 +100,7 @@ public class FileManager {
             this.fp = raf.getFilePointer();
         }
         catch(IOException e) {
-            e.printStackTrace();
+            throw new FileNotFoundException();
         }
         return text;
     }
@@ -114,7 +122,7 @@ public class FileManager {
                 }
                 count++;
             }while(s != null);
-            br.close();
+
 
             PrintWriter writer = new PrintWriter(this.path, StandardCharsets.UTF_8);
             for (String value : str) {
@@ -124,11 +132,11 @@ public class FileManager {
 
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            throw new FileNotFoundException();
         }
     }
 
-    public void writeAppend(String s,String what) {
+    public void writeAppend(String s,String what) throws MyException {
         File folder;
         File file;
         folder = new File(this.path);
@@ -147,7 +155,7 @@ public class FileManager {
                     throw new IOException();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new MyException("Problema di IO",e.getCause());
         }
 
         String res = s + "\n";
@@ -158,11 +166,11 @@ public class FileManager {
             raf.write(res.getBytes());
         }
         catch(IOException e) {
-            e.printStackTrace();
+            throw new MyException("Problema di IO",e.getCause());
         }
     }
 
-    public String searchOwner(String name) throws FileNotFoundException {
+    public String search(String name, String symbol1, String symbol2) throws FileNotFoundException {
         String actualPath = this.path + CourtConst.COURT + File.separator;
         File file = new File(actualPath);
         String[] names = file.list();
@@ -175,88 +183,36 @@ public class FileManager {
             if (file2.isDirectory()) {
                 String[] subNames = file2.list();
                 for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager("court" + File.separator +  s + File.separator + str);
-                    String s2;
-                    while(!fm2.checkEnd()) {
-                        s2 = fm2.readLine();
-                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
-                            ret = s2.substring(s2.indexOf("@") + 1);
-                            break;
-                        }
-                    }
+                    ret = FileManager.trySearch(name,symbol1,symbol2,s,str);
+                    if(ret.compareTo("") != 0)
+                        break;
                 }
             }
+            if(ret.compareTo("") != 0)
+                break;
         }
         return ret;
     }
 
-    private static String tryFind(FileManager fm2, String name) throws FileNotFoundException {
-        String s2 = "";
+    private static String trySearch(String name, String symbol1, String symbol2, String s, String str) throws FileNotFoundException {
+        String ret = "";
+        FileManager fm2 = new FileManager(CourtConst.COURT + File.separator +  s + File.separator + str);
+        String s2;
         while(!fm2.checkEnd()) {
             s2 = fm2.readLine();
-            if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
-                s2 = s2.substring(s2.indexOf("@") + 1);
+            if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf(CourtConst.FIRST_SYMBOL))) == 0) {
+                if(symbol2 == null)
+                {
+                    ret = s2.substring(s2.indexOf(symbol1) + 1);
+                }
+                else
+                {
+                    ret = s2.substring(s2.indexOf(symbol1) + 1,s2.indexOf(symbol2));
+                }
                 break;
             }
         }
-        return s2;
-    }
 
-    public String searchMoney(String name) throws FileNotFoundException {
-        String actualPath = this.path + "court" + File.separator;
-        File file = new File(actualPath);
-        String[] names = file.list();
-        String ret = "";
-
-
-        for(String s : Objects.requireNonNull(names))
-        {
-            File file2 = new File( actualPath + s);
-            if (file2.isDirectory()) {
-                String[] subNames = file2.list();
-                for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager( "court" + File.separator +  s + File.separator + str);
-                    String s2;
-                    while(!fm2.checkEnd()) {
-                        s2 = fm2.readLine();
-                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
-                            ret = s2.substring(s2.indexOf("%")+1,s2.indexOf("@"));
-                            break;
-                        }
-                    }
-                }
-            }
-        }
         return ret;
     }
-
-    public String searchPhone(String name) throws FileNotFoundException {
-        String actualPath = this.path + "court" + File.separator;
-        File file = new File(actualPath);
-        String[] names = file.list();
-        String ret = "";
-
-
-        for(String s : Objects.requireNonNull(names))
-        {
-            File file2 = new File(actualPath + s);
-            if (file2.isDirectory()) {
-                String[] subNames = file2.list();
-                for (String str : Objects.requireNonNull(subNames)) {
-                    FileManager fm2 = new FileManager("court" + File.separator +  s + File.separator + str);
-                    String s2;
-                    while(!fm2.checkEnd()) {
-                        s2 = fm2.readLine();
-                        if (s2.compareTo("") != 0 && name.compareTo(s2.substring(0, s2.indexOf("$"))) == 0) {
-                            ret = s2.substring(s2.indexOf("$")+1,s2.indexOf("%"));
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        return ret;
-    }
-
-
 }

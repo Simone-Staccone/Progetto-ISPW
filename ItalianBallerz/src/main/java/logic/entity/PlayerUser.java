@@ -5,6 +5,9 @@ import logic.dao.PlayerDao;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Model relativo all'utente
+ */
 public class PlayerUser {
     private String name;
     private boolean owner;
@@ -36,7 +39,7 @@ public class PlayerUser {
         return this.owner;
     }
 
-    public boolean searchUserU() {
+    public boolean searchUserU() throws FileNotFoundException {
         PlayerDao pd = new PlayerDao();
         PlayerCache.setUsername(this.name);
         PlayerCache.setOwner(this.owner);

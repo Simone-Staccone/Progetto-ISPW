@@ -1,55 +1,54 @@
 package guicontroller;
 
-import logic.bean.BeanLogin;
-import logic.other.Swap;
-import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.bean.BeanCourt;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 
-public class LoginInterfaceController extends GenericInterface{
+/**
+ * Controller grafico utilizzato per la gestione dell'aggiunta di un nuovo campetto.
+ * La classe tryAdd server per premere ENTER invece che dover schiacciare il pulsante manualmente con un click.
+ * La classe addCourt prova ad aggiungere un nuovo campetto nel sistema.
+ */
+public class AddPlaygroundController extends GenericInterface {
     @FXML
-    private TextField username;
+    private TextField nameField;
     @FXML
-    private TextField password;
+    private TextField locationField;
     @FXML
-    private AnchorPane mainPane;
+    private TextField phoneField;
+    @FXML
+    private TextField moneyField;
     @FXML
     private Text errorText;
-    @FXML
-    private RadioButton owner;
 
+    /**
+     * Aggiungi un nuovo campetto. Se viene trovato un errore il campetto non viene aggiunto, ma viene mostrato il testo di errore.
+     */
     @FXML
-    private void login(){
-        int ret;
-        errorText.setText("");
-        errorText.setStyle("-fx-fill: RED");
-        ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
-
-        switch (ret) {
-            case -1 -> errorText.setText("*Username field is empty!");
-            case -2 -> errorText.setText("*Password field is empty!");
-            case 0 -> {
-                errorText.setText("*Wrong password!");
-                password.setText("");
-            }
-            case 1 -> {
-                errorText.setText("*Username not found!");
-                username.setText("");
-                password.setText("");
-            }
-            case 2 -> Swap.goTo("LoggedInterface.fxml", mainPane);
-            default -> throw new IllegalStateException("Unexpected value: " + ret);
+    private void addCourt() {
+        try {
+            BeanCourt.addCourt(nameField.getText(),locationField.getText(),phoneField.getText(),moneyField.getText());
+        } catch (Exception e) {
+            errorText.setText("*Empty field");
+            errorText.setStyle("-fx-fill : RED");
+            errorText.toFront();
+        } finally {
+            nameField.setText("");
+            locationField.setText("");
+            phoneField.setText("");
+            moneyField.setText("");
         }
     }
 
+    /**
+     * Server per premere ENTER invece che cliccare.
+     */
     @FXML
-    private void tryL(KeyEvent k){
+    private void tryAdd(KeyEvent k){
         if(k.getCode().toString().compareTo("ENTER") == 0)
-            login();
+            addCourt();
     }
 }
-

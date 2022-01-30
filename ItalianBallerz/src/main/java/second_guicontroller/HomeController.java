@@ -15,6 +15,9 @@ import logic.other.Swap2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Controller grafico della form relativa alla pagina di Home
+ */
 public class HomeController extends GenericInterface {
     private static List<String> nuovi = new ArrayList<>();
 
@@ -55,7 +58,7 @@ public class HomeController extends GenericInterface {
 
                 pane.getChildren().add(close);
             } catch (Exception e) {
-                e.printStackTrace();
+                pane.getChildren().add(new Text("Errore per aggiungere"));
             }
 
 
@@ -81,7 +84,7 @@ public class HomeController extends GenericInterface {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            pane.getChildren().add(new Text("Errore"));
         }
 
         stage.setResizable(false);
@@ -124,7 +127,7 @@ public class HomeController extends GenericInterface {
 
             pane.getChildren().addAll(bYes, bNo);
         } catch (Exception e) {
-            e.printStackTrace();
+            pane.getChildren().add(new Text("Errore per il bottone yes o no"));
         }
         stage.setTitle("Log Out");
         stage.setResizable(false);
@@ -198,7 +201,7 @@ public class HomeController extends GenericInterface {
                 close.setLayoutY(70);
 
             } catch (Exception e) {
-                e.printStackTrace();
+                pane.getChildren().add(new Text("Errore per il bottone close"));
             }
             stage.show();
         }

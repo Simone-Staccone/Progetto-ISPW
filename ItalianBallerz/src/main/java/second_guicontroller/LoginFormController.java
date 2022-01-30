@@ -11,6 +11,9 @@ import logic.other.Swap2;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Controller grafico che si occupa della gestione del form che permette il login
+ */
 public class LoginFormController extends GenericInterface {
     @FXML
     private TextField username;

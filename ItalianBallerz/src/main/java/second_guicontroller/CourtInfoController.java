@@ -17,6 +17,10 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Contoller grafico relativo alla form che si occupa di mostrare le info dei campetti e che permette all'utente di prenotare
+ * uno slot dello schedule
+ */
 public class CourtInfoController extends GenericInterface implements Initializable {
     @FXML
     private Text owner;
@@ -26,6 +30,8 @@ public class CourtInfoController extends GenericInterface implements Initializab
     private Text location;
     @FXML
     private Text money;
+    @FXML
+    private Text phone;
     @FXML
     private ListView<AnchorPane> listContainer;
     @FXML
@@ -38,6 +44,7 @@ public class CourtInfoController extends GenericInterface implements Initializab
         name.setText(BeanCourt.getCurrentName());
         location.setText(BeanCourt.getCurrentLocation());
         money.setText(BeanCourt.getCurrentMoney());
+        phone.setText(BeanCourt.getCurrentPhone());
 
         for(int i = 0;i<24;i++){
             AnchorPane pane = new AnchorPane();

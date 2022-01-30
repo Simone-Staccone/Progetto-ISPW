@@ -1,9 +1,12 @@
 package logic.entity;
 
-import logic.dao.FileManager;
+import logic.dao.CourtCacheDao;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Model relativo al campetto appena cercato dall'utente
+ */
 public class CourtCache {
     private static String name;
     private static String location;
@@ -55,17 +58,17 @@ public class CourtCache {
     }
 
     public static String findOwner(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchOwner(name);
+        CourtCacheDao ccd =  new CourtCacheDao();
+        return ccd.findOwner(name);
     }
 
     public static String findMoney(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchMoney(name);
+        CourtCacheDao ccd = new CourtCacheDao();
+        return ccd.findMoney(name);
     }
 
     public static String findPhone(String name) throws FileNotFoundException {
-        FileManager fm = new FileManager();
-        return fm.searchPhone(name);
+        CourtCacheDao ccd = new CourtCacheDao();
+        return ccd.findPhone(name);
     }
 }

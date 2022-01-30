@@ -1,1 +1,1 @@
-@ 2javaX5hr%src/main/java/logic/entity/Court.java
+@ 2javaXZhr<src/main/java/logic/control/GetPlaygroundListController.java

@@ -1,40 +1,45 @@
-package logic.bean;
+package guicontroller;
 
-import errorlogic.MyException;
-import second_guicontroller.HomeController;
-import logic.control.AddPlaygroundController;
-import logic.control.GetPlaygroundListController;
-import logic.entity.Court;
+import javafx.scene.text.Text;
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.*;
 
+
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class BeanCourt2 {
-    private BeanCourt2(){
 
-    }
+/**
+ * Gestisce il display di tutte le statistiche di un utente.
+ */
+public class MyStatsControl extends GenericInterface implements Initializable {
+    @FXML
+    private AnchorPane ancPane;
+    @FXML
+    private VBox box;
 
-    public static List<Court> get(String s) {
-        List<Court> crt;
 
-        GetPlaygroundListController gpc = new GetPlaygroundListController();
-        gpc.set(s);
 
-        crt = gpc.getCourtList();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScrollList scL;
+        List<HBox> bList;
 
-        return crt;
-    }
+        FactoryScrollList factory = new FactoryScrollList();
 
-    public static void addCourt(String name, String location, String phone, int money) throws MyException {
-        if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0)
-            throw new MyException("Empty field",null);
-        else {
-            AddPlaygroundController apc = new AddPlaygroundController();
-            apc.addCourt(name, location, phone, String.valueOf(money));
+        try {
+            scL = factory.createList(1);
+            bList = scL.getList();
+
+            ancPane.setMinHeight(bList.size()*40);
+            for (HBox hBox : bList)
+                box.getChildren().add(hBox);
+        } catch (Exception e) {
+            box.getChildren().add(new HBox(new Text("Vuoto")));
         }
-    }
-
-    public static void notifyOwner(String owner, String location, String name,String when) {
-        HomeController hc = new HomeController();
-        hc.notify(owner,location,name,when);
     }
 }

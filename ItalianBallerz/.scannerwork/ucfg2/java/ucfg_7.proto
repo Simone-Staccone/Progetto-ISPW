@@ -1,62 +1,50 @@
 
-7logic.control.FileManager#checkEnd()Ljava/lang/Boolean;p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java* *("7*ê
-5p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java2 2(Iæ
-ª
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java2 2(I
-rafjava.io.RandomAccessFile"__id* 
-
-%3java.io.RandomAccessFile“œ
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java3 3(
+Klogic.other.SingletonPlayer#getLoginInstance()Llogic/other/SingletonPlayer;r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java0 (@"4*â
+2r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (∑¥
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java+ (:!
+%1logic.other.SingletonPlayer"logic.other.SingletonPlayer˛
+˚
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java' (k
+%2"Jlogic.other.SingletonPlayer#<init>(Ljava/lang/String;Ljava/lang/Boolean;)V*#
+!
+%1logic.other.SingletonPlayer*
+""*
+""œ
+Ã
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (k+
+logic.other.SingletonPlayer"
 
-%5long""java.io.RandomAccessFile#length()J*!
-
-rafjava.io.RandomAccessFile2length()*
-1*ı
-6p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java29 2(=º
-π
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java29 2(B
-%2java.lang.String"__id*'*%
-logic.control.FileManager"
-pathØ¨
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java2( 2(8
-%3java.io.RandomAccessFile"java.io.RandomAccessFileá
-Ñ
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java2$ 2(I
-%4"Fjava.io.RandomAccessFile#<init>(Ljava/lang/String;Ljava/lang/String;)V* 
-
-%3java.io.RandomAccessFile*
-
-%2java.lang.String*
-rw*
-5*¨
-7p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java+ +(º
-π
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java/ /(#
-%0java.lang.String"__id*'*%
-logic.control.FileManager"
-path
-Ì
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java/ /($
+instance"__id*#
+!
+%1logic.other.SingletonPlayer*
+1*—
+4r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (œ
+Ã
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java ($!
+%0logic.other.SingletonPlayer"__id*-*+
+logic.other.SingletonPlayer"
 
-%1void"4logic.control.FileManager#check(Ljava/lang/String;)V*"
-logic.control.FileManager*
-
-%0java.lang.String*
-6*Ò
-1p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java< <("z
-p
-fC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/FileManager.java< <(
-""B
-logic.control.FileManager
+instance*
+2
+1*Â
+1r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (œ
+Ã
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (!
+%3logic.other.SingletonPlayer"__id*-*+
+logic.other.SingletonPlayer"
+
+instance"ô
+r
+hC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/other/SingletonPlayer.java (#
+!
+%3logic.other.SingletonPlayerB"
+logic.other.SingletonPlayer

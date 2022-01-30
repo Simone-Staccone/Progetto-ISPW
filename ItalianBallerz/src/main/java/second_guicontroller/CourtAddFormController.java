@@ -14,6 +14,9 @@ import logic.bean.BeanCourt2;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controller grafico che gestisce la form per aggiungere un nuovo campetto.
+ */
 public class CourtAddFormController extends GenericInterface implements Initializable {
     @FXML
     private TextField name;

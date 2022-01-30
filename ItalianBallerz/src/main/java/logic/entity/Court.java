@@ -1,11 +1,15 @@
 package logic.entity;
 
 import errorlogic.AlreadyReserved;
+import errorlogic.MyException;
 import errorlogic.NotLoggedException;
 import logic.dao.CourtDao;
 
 import java.io.FileNotFoundException;
 
+/**
+ * Model relativo ai campetti
+ */
 public class Court {
     private String name;
     private String location;
@@ -34,7 +38,11 @@ public class Court {
 
     public void addReservation(int start) throws NotLoggedException {
         CourtDao cd = new CourtDao();
-        cd.addReservation(start,this.name);
+        try {
+            cd.addReservation(start,this.name);
+        } catch (MyException e) {
+            throw new NotLoggedException("Problema di IO",e.getCause());
+        }
     }
 
     public void search(int start) throws FileNotFoundException, AlreadyReserved {
@@ -42,7 +50,7 @@ public class Court {
         cd.search(start,this.name);
     }
 
-    public void add(){
+    public void add() throws MyException {
         CourtDao cd = new CourtDao();
         cd.add(this.name,this.location,this.phone,this.money);
     }

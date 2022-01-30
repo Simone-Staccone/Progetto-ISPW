@@ -1,7 +1,7 @@
 package errorlogic;
 
 public class MyException extends Exception{
-    private static final long serialVersionUID = 1L;
+    public MyException(){super();}
 
     public MyException (String message){
         super("this was the original message :" + message);

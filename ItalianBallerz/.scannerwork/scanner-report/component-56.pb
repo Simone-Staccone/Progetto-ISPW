@@ -1,1 +1,1 @@
-8 2javaXBhr'src/main/java/logic/bean/BeanStats.java
+8 2javaX=hr<src/main/java/guicontroller/RegisterInterfaceController.java

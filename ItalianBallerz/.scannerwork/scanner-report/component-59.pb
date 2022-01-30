@@ -1,1 +1,1 @@
-; 2javaXThr<src/main/java/logic/control/GetPlaygroundListController.java
+; 2javaX&hr(src/main/java/logic/bean/BeanCourt2.java

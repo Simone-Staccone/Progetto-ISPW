@@ -29,8 +29,6 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
     @FXML
     private Text text;
     @FXML
-    private AnchorPane mainPane;
-    @FXML
     private Text txt3;
     @FXML
     private AnchorPane box3;
@@ -185,7 +183,7 @@ public class LoggedInterfaceController extends GenericInterface implements Initi
             stage.setResizable(false);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            txt.setText("Trovato un errore");
         }
     }
 

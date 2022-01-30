@@ -9,6 +9,9 @@ import javafx.scene.text.Text;
 import logic.bean.BeanLogin;
 import logic.other.Swap2;
 
+/**
+ * Controller grafico che si occupa della gestione del form che permette la registrazione nel sistema
+ */
 public class RegisterFormController extends GenericInterface {
     @FXML
     private TextField username;
@@ -35,7 +38,7 @@ public class RegisterFormController extends GenericInterface {
         try {
             b = BeanLogin.addUser(username.getText(), password.getText(), confirmPassword.getText(), email.getText(),owner.isSelected());
         } catch (Exception e) {
-            e.printStackTrace();
+            b = 5;
         }
         switch (b) {
             case -1 -> {

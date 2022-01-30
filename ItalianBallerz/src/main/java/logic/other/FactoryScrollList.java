@@ -4,6 +4,9 @@ package logic.other;
 import errorlogic.MyException;
 
 
+/**
+ * Factory pe rla creazione di oggetti di tipo ScrollList
+ */
 public class FactoryScrollList{
     public ScrollList createList(int type) throws MyException {
         switch (type) {

@@ -1,79 +1,26 @@
-package second_guicontroller;
-
-import errorlogic.AlreadyReserved;
-import errorlogic.NotLoggedException;
-import guicontroller.GenericInterface;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
-import logic.bean.BeanCourt;
-import logic.other.Swap2;
-
-import java.io.FileNotFoundException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class CourtInfoController extends GenericInterface implements Initializable {
-    @FXML
-    private Text owner;
-    @FXML
-    private Text name;
-    @FXML
-    private Text location;
-    @FXML
-    private Text money;
-    @FXML
-    private ListView<AnchorPane> listContainer;
-    @FXML
-    private Text errorText;
+package logic.other;
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        owner.setText(BeanCourt.getCurrentOwner());
-        name.setText(BeanCourt.getCurrentName());
-        location.setText(BeanCourt.getCurrentLocation());
-        money.setText(BeanCourt.getCurrentMoney());
+/**
+ * Classe per parametrizzare delle costanti nel sistema.
+ * Se cambia una costante basta cambiare solo questa classe.
+ */
+public class CourtConst {
+    private CourtConst(){}
 
-        for(int i = 0;i<24;i++){
-            AnchorPane pane = new AnchorPane();
-            int finalI = i;
-            Text txt = new Text(i + ":00 - " + (i+1) + ":00");
-            Button b = new Button("Prenota");
+    public static final String COURT = "court";
+    public static final String LOG = "log";
+    public static final String OWNER = "owner";
+    public static final String EXTENSION = ".txt";
+    public static final String USER_PACKAGE = "users";
+    public static final String POINTS = "points";
+    public static final String ASSISTS = "assists";
+    public static final String REBOUNDS = "rebounds";
+    public static final String MINUTES = "minutes";
+    public static final String SCHEDULE = "schedule";
+    public static final String FIRST_SYMBOL = "$";
+    public static final String SECOND_SYMBOL = "%";
+    public static final String THIRD_SYMBOL = "@";
 
-            txt.setLayoutX(5);
-            txt.setLayoutY(15);
 
-            b.setOnMouseEntered(event -> b.setCursor(Cursor.HAND));
-            b.setOnMouseExited(event -> b.setCursor(Cursor.DEFAULT));
-            b.setOnMouseClicked(event -> {
-                errorText.setText("");
-                try {
-                    BeanCourt.addSchedule(finalI);
-                    errorText.setText("Prenotazione finita correttamente");
-                } catch (NotLoggedException e) {
-                    errorText.setText("Devi aver effettuato il login per prenotare");
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (AlreadyReserved e) {
-                    errorText.setText("Hai già effettuato una prenotazione per questo orario");
-                }
-            });
-
-            b.setLayoutX(3);
-            b.setLayoutX(450);
-
-            pane.getChildren().addAll(txt,b);
-            listContainer.getItems().add(pane);
-        }
-    }
-
-    @FXML
-    private void swaptoSearch(){
-        Swap2.goTo("CourtForm.fxml",mainPane);
-    }
 }

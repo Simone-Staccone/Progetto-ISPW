@@ -100,8 +100,8 @@
     </configuration>
     <configuration name="GetPlaygroundListControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ItalianBallerz" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GetPlaygroundListControllerTest" />
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="cases.GetPlaygroundListControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,8 +115,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginControlTest" />
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="cases.LoginControlTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,8 +130,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StatsControllerTest" />
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="cases.StatsControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,8 +155,8 @@
     </configuration>
     <configuration name="StatsControllerTest.averege" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ItalianBallerz" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StatsControllerTest" />
+      <option name="PACKAGE_NAME" value="cases" />
+      <option name="MAIN_CLASS_NAME" value="cases.StatsControllerTest" />
       <option name="METHOD_NAME" value="averege" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -166,10 +166,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainInterface" />
-        <item itemvalue="JUnit.StatsControllerTest.averege" />
-        <item itemvalue="JUnit.StatsControllerTest.averege" />
         <item itemvalue="JUnit.StatsControllerTest" />
         <item itemvalue="JUnit.LoginControlTest" />
+        <item itemvalue="JUnit.GetPlaygroundListControllerTest" />
+        <item itemvalue="JUnit.StatsControllerTest.averege" />
       </list>
     </recent_temporary>
   </component>
@@ -224,6 +224,7 @@
       <workItem from="1643446623937" duration="15805000" />
       <workItem from="1643471689693" duration="4203000" />
       <workItem from="1643476380093" duration="11225000" />
+      <workItem from="1643536284352" duration="22698000" />
     </task>
     <servers />
   </component>
@@ -241,16 +242,16 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ItalianBallerz$GetPlaygroundListControllerTest.ic" NAME="GetPlaygroundListControllerTest Coverage Results" MODIFIED="1643378469839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ItalianBallerz$StatsControllerTest_averege.ic" NAME="StatsControllerTest.averege Coverage Results" MODIFIED="1643379248604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ItalianBallerz$GetPlaygroundListControllerTest.ic" NAME="GetPlaygroundListControllerTest Coverage Results" MODIFIED="1643566706531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ItalianBallerz$StatsControllerTest_averege.ic" NAME="StatsControllerTest.averege Coverage Results" MODIFIED="1643557605939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ItalianBallerz$GetPlaygroundListControllerTest_getMoney.ic" NAME="GetPlaygroundListControllerTest.getMoney Coverage Results" MODIFIED="1643295512154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ItalianBallerz$LoginControlTest.ic" NAME="LoginControlTest Coverage Results" MODIFIED="1643378477461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>testCases.*</FILTER>
+    <SUITE FILE_PATH="coverage/ItalianBallerz$LoginControlTest.ic" NAME="LoginControlTest Coverage Results" MODIFIED="1643566714055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ItalianBallerz$LoginControlTest_searchUserTest.ic" NAME="LoginControlTest.searchUserTest Coverage Results" MODIFIED="1643280398835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ItalianBallerz$StatsControllerTest_averege__1_.ic" NAME="StatsControllerTest.averege (1) Coverage Results" MODIFIED="1643294444968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ItalianBallerz$StatsControllerTest.ic" NAME="StatsControllerTest Coverage Results" MODIFIED="1643378534962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>testCases.*</FILTER>
+    <SUITE FILE_PATH="coverage/ItalianBallerz$StatsControllerTest.ic" NAME="StatsControllerTest Coverage Results" MODIFIED="1643566719827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>.*</FILTER>
     </SUITE>
   </component>
 </project>

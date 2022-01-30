@@ -4,8 +4,13 @@ package logic.entity;
 import errorlogic.MyException;
 import logic.dao.StatsDao;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
+/**
+ * Model relativo alle statistiche
+ */
 public class Stat {
     private float points;
     private float assists;
@@ -37,18 +42,17 @@ public class Stat {
     }
 
 
-    public static List<Float> getAverege(String str) throws MyException
-    {
+    public static List<Float> getAverege(String str) throws FileNotFoundException{
         StatsDao sd = new StatsDao();
         return sd.getAverege(str);
     }
 
-    public void write(){
+    public void write() throws MyException {
         StatsDao sd = new StatsDao();
         sd.write(this.points, this.assists, this.rebounds, this.minutes);
     }
 
-    public void delete(int number) {
+    public void delete(int number) throws IOException {
         StatsDao sd = new StatsDao();
         sd.delete(number);
     }

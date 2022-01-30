@@ -1,6 +1,7 @@
 package logic.other;
 
 import guicontroller.MainInterface;
+import javafx.scene.text.Text;
 import logic.bean.BeanLogin;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +12,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-/* Ha la responsabilità di cambiare scene nei controller grafici */
 
+
+/**
+ * Ha la responsabilità di cambiare scene nei controller grafici della prima interfaccia grafica
+ */
 public class Swap {
     private Swap(){}
 
@@ -32,7 +36,7 @@ public class Swap {
             Parent parent = FXMLLoader.load(Objects.requireNonNull(MainInterface.class.getResource(s)));
             scene = new Scene(parent);
         } catch (IOException e) {
-            e.printStackTrace();
+            mainPane.getChildren().add(new Text("Errore di IO"));
         }
         
         Stage window;
@@ -41,7 +45,7 @@ public class Swap {
             Objects.requireNonNull(window).setScene(scene);
             Objects.requireNonNull(window).show();
         } catch (Exception e) {
-            e.printStackTrace();
+            mainPane.getChildren().add(new Text("Errore"));
         }
     }
 }

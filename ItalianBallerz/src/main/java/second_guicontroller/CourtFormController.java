@@ -12,6 +12,9 @@ import logic.other.Swap2;
 
 import java.util.List;
 
+/**
+ * Controller grafico che si occupa della gestione della form relativa alla ricerca di nuovi campetti
+ */
 public class CourtFormController extends GenericInterface {
     @FXML
     private TextField searchBar;

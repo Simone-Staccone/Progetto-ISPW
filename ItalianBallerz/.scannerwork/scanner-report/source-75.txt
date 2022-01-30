@@ -1,83 +1,89 @@
-package logic.other;
+package logic.entity;
 
+import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
-import logic.bean.BeanStats;
-import logic.entity.Stat;
-import javafx.geometry.Insets;
-import javafx.scene.Cursor;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import errorlogic.NotLoggedException;
+import logic.dao.CourtDao;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileNotFoundException;
 
-public class ScrollListStats implements ScrollList{
-    @Override
-    public List<HBox> getList() throws MyException{
-        List<Stat> statList;
-        statList = BeanStats.getStatsList();
-        Stat s;
-        List<HBox> bList = new ArrayList<>();
+/**
+ * Model relativo ai campetti
+ */
+public class Court {
+    private String name;
+    private String location;
+    private String owner;
+    private String phone;
+    private String money;
 
-        try{
-            for (Stat stat : statList) {
-                s = stat;
-                HBox b = new HBox();
-                bList.add(b);
-                b.setMinHeight(40);
-                b.getChildren().add(new Text("Points:  " + s.getPoints() +
-                        "  Assists:  " + s.getAssists() +
-                        "  Rebounds:  " + s.getRebounds() +
-                        "  Minutes:  " + s.getMinutes()
-                ));
-                b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
-                        BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                b.setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(1),
-                        new Insets(0.0, 0.0, 0.0, 0.0))));
+    public Court(String name){
+        this.name = name;
+    }
 
-                b.setOnMouseEntered(event -> {
-                    b.setBorder(new Border(new BorderStroke(Color.WHITE,
-                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                    b.setCursor(Cursor.HAND);
-                });
+    public Court(String name, String location, String phone, String money) {
+        this.name = name;
+        this.location = location;
+        this.phone = phone;
+        this.money = money;
+    }
 
+    public String getName() {
+        return this.name;
+    }
 
-                b.setOnMouseExited(event -> {
-                    b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
-                            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                    b.setCursor(Cursor.DEFAULT);
-                });
-                Pane pane = new Pane();
-                Stage stage = new Stage();
-                Button button = new Button();
+    public void setName(String s) {
+        this.name = s;
+    }
 
-                button.setText("Delete");
-                button.setLayoutX(170);
-                button.setLayoutY(80);
-                Stat finalS = s;
-                button.setOnMouseClicked(event -> {
-                    BeanStats.delete(statList.indexOf(finalS));
-                    stage.close();
-                });
-
-                pane.getChildren().add(button);
-                Scene scene = new Scene(pane, 400, 200);
-                stage.setTitle("Stat " + statList.indexOf(s));
-                stage.setScene(scene);
-                stage.setResizable(false);
-                b.setOnMouseClicked(event -> {
-                    stage.show();
-                    stage.toFront();
-                });
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void addReservation(int start) throws NotLoggedException {
+        CourtDao cd = new CourtDao();
+        try {
+            cd.addReservation(start,this.name);
+        } catch (MyException e) {
+            throw new NotLoggedException("Problema di IO",e.getCause());
         }
+    }
 
-        return bList;
+    public void search(int start) throws FileNotFoundException, AlreadyReserved {
+        CourtDao cd = new CourtDao();
+        cd.search(start,this.name);
+    }
+
+    public void add() throws MyException {
+        CourtDao cd = new CourtDao();
+        cd.add(this.name,this.location,this.phone,this.money);
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
     }
 }

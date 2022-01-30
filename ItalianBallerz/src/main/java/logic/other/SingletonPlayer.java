@@ -3,13 +3,16 @@ package logic.other;
 import logic.entity.PlayerCache;
 import logic.entity.PlayerUser;
 
+/**
+ * Classe singleton che ha la responsabilità di mantenre un unica istanza relativa all'utente loggato
+ */
 public class SingletonPlayer {
     private static SingletonPlayer instance = null;
-    private static PlayerUser playerUser;
+    private PlayerUser playerUser;
 
 
     private SingletonPlayer(String init, Boolean owner) {
-        playerUser = new PlayerUser(init,owner);
+        this.playerUser = new PlayerUser(init,owner);
     }
 
     public static synchronized  SingletonPlayer getLoginInstance() {
@@ -26,8 +29,8 @@ public class SingletonPlayer {
     public static void deleteInstance(){
         if (SingletonPlayer.instance != null){
             PlayerCache.setUsername(null);
-            playerUser.setUsername(null);
-            playerUser = null;
+            SingletonPlayer.instance.playerUser.setUsername(null);
+            SingletonPlayer.instance.playerUser = null;
             SingletonPlayer.instance = null;
         }
     }

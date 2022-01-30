@@ -13,6 +13,9 @@ import logic.entity.CourtList;
 import java.io.FileNotFoundException;
 import java.util.List;
 
+/**
+ * Classe bean che fa comunicare i controller grafici con le classi control relative agli use cases dei campetti
+ */
 public class BeanCourt {
     private BeanCourt(){
     }
@@ -22,6 +25,15 @@ public class BeanCourt {
         gpl.set(name);
     }
 
+    /**
+     * La classe ha la responsabilità di propagare la richiesta di aggiungere un nuovo campetto dopo un controllo
+     * dei parametri da aggiungere.
+     * @param name name del campetto
+     * @param location luogo dove si trova
+     * @param phone numero di telefono
+     * @param money costo
+     * @throws MyException
+     */
     public static void addCourt(String name, String location, String phone, String money) throws MyException{
         if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0 || money.compareTo("") == 0) {
             throw new MyException("Empty field",null);
@@ -45,7 +57,7 @@ public class BeanCourt {
         try {
             gp.setCacheOwner(name);
         } catch (Exception e) {
-            e.printStackTrace();
+            gp.setCacheOwner("Non trovato!");
         }
     }
 
@@ -56,11 +68,11 @@ public class BeanCourt {
 
     public static String getCurrentOwner() {
         GetPlaygroundListController gp = new GetPlaygroundListController();
-        String s = "";
+        String s;
         try {
             s = gp.getOwner();
         } catch (Exception e) {
-            e.printStackTrace();
+            s = "Non trovato";
         }
         return s;
     }

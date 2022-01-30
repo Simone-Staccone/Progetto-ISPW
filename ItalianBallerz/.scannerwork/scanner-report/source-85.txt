@@ -1,58 +1,57 @@
-package second_guicontroller;
+package logic.other;
 
-import guicontroller.GenericInterface;
-import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import errorlogic.MyException;
+import guicontroller.CourtController;
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import logic.bean.BeanLogin;
-import logic.other.Swap2;
 
-public class RegisterFormController extends GenericInterface {
-    @FXML
-    private TextField username;
-    @FXML
-    private TextField password;
-    @FXML
-    private TextField confirmPassword;
-    @FXML
-    private TextField email;
-    @FXML
-    private AnchorPane mainPane;
-    @FXML
-    private Text returnText;
-    @FXML
-    private CheckBox owner;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * ScrollList specifica per la gestione dello schedule
+ */
+public class ScheduleList implements ScrollList{
+    @Override
+    public List<HBox> getList() throws MyException {
+        List<HBox> bList = new ArrayList<>();
+        HBox b;
+
+        for(int i = 0;i<24;i++){
+            Pane p = new Pane();
+            Text t = new Text("   " + i + ":00 - " + (i+1) + ":00" + "\t\t");
+            b = new HBox(t);
+
+            p.setMinWidth(350);
+            b.getChildren().add(p);
+            bList.add(b);
 
 
+            b.setMinHeight(40);
+            b.setBorder(new Border(new BorderStroke(Color.valueOf("#FFA700"),
+                    BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+            b.setBackground(new Background(new BackgroundFill(Color.WHITE, null,
+                    null)));
 
-    @FXML
-    private void register(){
-        int b = 0;
-        returnText.setText("");
+            Button btn = new Button("Prenota");
 
-        try {
-            b = BeanLogin.addUser(username.getText(), password.getText(), confirmPassword.getText(), email.getText(),owner.isSelected());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        switch (b) {
-            case -1 -> {
-                returnText.setText("Every field is required!");
-                returnText.setStyle("-fx-fill: RED");
-            }
-            case 0 -> {
-                returnText.setText("*Username already used!");
-                confirmPassword.setText("");
-            }
-            case 1 -> {
-                returnText.setText("Password and confirm password doesn't match");
-                returnText.setStyle("-fx-fill: RED");
-            }
-            case 2 -> Swap2.goTo("LoginForm.fxml", mainPane);
-            default -> throw new IllegalStateException("Unexpected value: " + b);
+
+            int finalI = i;
+            btn.setOnMouseClicked(event -> {
+                CourtController cc = new CourtController();
+                cc.confirmWindow(finalI,t);
+            });
+
+
+            btn.setOnMouseEntered(event -> btn.setCursor(Cursor.HAND));
+            btn.setOnMouseExited(event -> btn.setCursor(Cursor.DEFAULT));
+
+            b.getChildren().add(btn);
         }
 
+        return bList;
     }
 }

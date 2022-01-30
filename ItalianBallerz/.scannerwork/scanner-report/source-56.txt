@@ -1,65 +1,60 @@
-package logic.bean;
+package guicontroller;
 
-import errorlogic.MyException;
-import logic.control.StatsController;
-import logic.entity.Stat;
-
-import java.io.IOException;
-import java.util.List;
-
-public class BeanStats {
-    private BeanStats(){
-    }
+import logic.bean.BeanLogin;
+import logic.other.Swap;
+import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 
-    public static void add(String points, String assists, String rebounds, String minutes) throws IOException {
-        String res = BeanStats.control(points);
-        String res2 = BeanStats.control(assists);
-        String res3 = BeanStats.control(rebounds);
-        String res4 = BeanStats.control(minutes);
-        if(res.compareTo("") == 0 && res2.compareTo("") == 0 && res3.compareTo("") == 0 && res4.compareTo("") == 0)
-        {
-            StatsController st = new StatsController();
-            st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
-        }
-    }
+/**
+ * Questo controller grafico ha la responsabilità di gestire l'interfaccia di registrazione.
+ */
+public class RegisterInterfaceController extends GenericInterface{
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField passwordConf;
+    @FXML
+    private TextField email;
+    @FXML
+    private AnchorPane mainPane;
+    @FXML
+    private Text errorText;
+    @FXML
+    private RadioButton owner;
 
 
-    private static String control(String s)
-    {
-        String res = "";
-        int conv = (int)Float.parseFloat(s);
+    @FXML
+    private void register(){
+        int b = 0;
+        errorText.setText("");
 
-        if(conv<0)
-        {
-            res = "Invalid number, must be positive";
-        }
-        else if(Float.compare(conv,Float.parseFloat(s)) != 0)
-        {
-            res = "Invalid number, must be integer";
-        }
-        return res;
-    }
-
-    public static List<Stat> getStatsList() throws MyException
-    {
-        StatsController sc = new StatsController();
-        return sc.getList();
-    }
-
-    public static void delete(int i) {
-        StatsController st = new StatsController();
-        st.delete(i);
-    }
-
-    public static Stat averege() throws MyException {
-        StatsController st = new StatsController();
-        Stat s;
         try {
-            s = st.average();
+            b = BeanLogin.addUser(username.getText(), password.getText(), passwordConf.getText(), email.getText(),owner.isSelected());
         } catch (Exception e) {
-            throw new MyException("Error message",e);
+            e.printStackTrace();
         }
-        return s;
+        switch (b) {
+            case -1 -> {
+                errorText.setText("*Every field is required!");
+                errorText.setStyle("-fx-fill: RED");
+            }
+            case 0 -> {
+                errorText.setText("*Username already used!");
+                passwordConf.setText("");
+            }
+            case 1 -> {
+                errorText.setText("*Password and confirm password doesn't match");
+                errorText.setStyle("-fx-fill: RED");
+            }
+            case 2 -> Swap.goTo("LoginInterface.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + b);
+        }
+
     }
 }

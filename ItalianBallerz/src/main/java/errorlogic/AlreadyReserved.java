@@ -1,7 +1,6 @@
 package errorlogic;
 
 public class AlreadyReserved extends Exception {
-    private static final long serialVersionUID = 1L;
 
     public AlreadyReserved(String message){
         super("this was the original message :" + message);
@@ -12,6 +11,7 @@ public class AlreadyReserved extends Exception {
     }
 
     public AlreadyReserved (String message, Throwable cause) {
-        super(" +++ " + message + " +++ ", cause);
+        super(" --- " + message + " --- " + "\n" +
+                "L'utente era già prenotato per questo slot orario", cause);
     }
 }

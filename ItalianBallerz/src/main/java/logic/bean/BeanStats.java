@@ -8,6 +8,10 @@ import logic.entity.Stat;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Classe bean che fa comunicare i controller grafici con le classi control relative agli use cases riguardanti
+ * la statistiche di un utente
+ */
 public class BeanStats {
     private BeanStats(){
     }
@@ -21,11 +25,20 @@ public class BeanStats {
         if(res.compareTo("") == 0 && res2.compareTo("") == 0 && res3.compareTo("") == 0 && res4.compareTo("") == 0)
         {
             StatsController st = new StatsController();
-            st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
+            try {
+                st.write(Float.parseFloat(points), Float.parseFloat(assists), Float.parseFloat(rebounds), Float.parseFloat(minutes));
+            } catch (MyException e) {
+                throw new IOException();
+            }
         }
     }
 
 
+    /**
+     * Classe di appoggio che ha la responsabilità di controllare che l'input sia corretto.
+     * @param s stringa da controllare
+     * @return
+     */
     private static String control(String s)
     {
         String res = "";
@@ -48,19 +61,23 @@ public class BeanStats {
         return sc.getList();
     }
 
-    public static void delete(int i) {
+    public static void delete(int i) throws IOException {
         StatsController st = new StatsController();
         st.delete(i);
     }
 
+    /**
+     * Classe che ha la responsabilità di recuperare le statistiche media dell'utente loggato.
+     * Inoltre converte una eccezione generica dovuta dalla classe di control per trasformarla in un eccezione MyException
+     * specifica del sistema.
+     * @return
+     * @throws MyException
+     */
     public static Stat averege() throws MyException {
         AveregeControl ac = new AveregeControl();
         Stat s;
-        try {
-            s = ac.average();
-        } catch (Exception e) {
-            throw new MyException("Error message",e);
-        }
+        s = ac.average();
+
         return s;
     }
 }

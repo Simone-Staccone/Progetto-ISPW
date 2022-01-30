@@ -1,6 +1,7 @@
 package logic.dao;
 
 import errorlogic.AlreadyReserved;
+import errorlogic.MyException;
 import errorlogic.NotLoggedException;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
@@ -8,10 +9,13 @@ import logic.other.SingletonPlayer;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * Dao per la comunicazione con il file system
+ */
 public class CourtDao {
-    public void add(String name,String location, String phone, String money){
+    public void add(String name,String location, String phone, String money) throws MyException {
         FileManager fm = new FileManager(CourtConst.COURT + File.separator + location);
-        fm.writeAppend((name + "$" + phone + "%" + money + "@" + SingletonPlayer.getLoginInstance().getUsername()),location + CourtConst.EXTENSION);
+        fm.writeAppend((name + CourtConst.FIRST_SYMBOL + phone + CourtConst.SECOND_SYMBOL + money + CourtConst.THIRD_SYMBOL + SingletonPlayer.getLoginInstance().getUsername()),location + CourtConst.EXTENSION);
     }
 
     public void search(int start,String name) throws FileNotFoundException, AlreadyReserved {
@@ -26,7 +30,7 @@ public class CourtDao {
         }
     }
 
-    public void addReservation(int start,String name) throws NotLoggedException {
+    public void addReservation(int start,String name) throws NotLoggedException, MyException {
         FileManager fm = new FileManager();
         String who;
 

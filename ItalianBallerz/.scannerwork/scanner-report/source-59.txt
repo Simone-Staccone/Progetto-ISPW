@@ -1,83 +1,37 @@
-package logic.control;
+package logic.bean;
 
 import errorlogic.MyException;
+import second_guicontroller.HomeController;
+import logic.control.AddPlaygroundController;
+import logic.control.GetPlaygroundListController;
 import logic.entity.Court;
-import logic.entity.CourtCache;
-import logic.entity.CourtList;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
-
-public class GetPlaygroundListController {
-    public void set(String name){
-        CourtList.setCourts(name);
-    }
-    public String getCurrentName(){
-        return CourtCache.getName();
+/**
+ * Classe bean che fa comunicare i controller grafici con le classi control relative agli use cases dei campetti
+ */
+public class BeanCourt2 {
+    private BeanCourt2(){
     }
 
-    public void setCacheName(String name) {
-        CourtCache.setName(name);
+    public static List<Court> get(String s) {
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.set(s);
+        return gpc.getCourtList();
     }
 
-    public void setCacheLocation(String name) {
-        CourtCache.setLocation(name);
-    }
-
-    public String getOwner() throws MyException{
-        String s;
-        try{
-            s = CourtCache.getOwner();
-        } catch (Exception e) {
-            throw new MyException(e.getMessage(),e);
+    public static void addCourt(String name, String location, String phone, int money) throws MyException {
+        if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0)
+            throw new MyException("Empty field",null);
+        else {
+            AddPlaygroundController apc = new AddPlaygroundController();
+            apc.addCourt(name, location, phone, String.valueOf(money));
         }
-        return s;
     }
 
-    public String getLocation() {
-        return CourtCache.getLocation();
-    }
-
-    public void setCacheOwner(String name) {
-        String owner = "";
-        try{
-            owner = CourtCache.findOwner(name);
-        }catch (FileNotFoundException f){
-            f.printStackTrace();
-        }
-        CourtCache.setOwner(owner);
-    }
-
-    public String getMoney() {
-        return CourtCache.getMoney();
-    }
-
-    public void setCacheMoney(String name) {
-        String money = "";
-        try{
-            money = CourtCache.findMoney(name);
-        }catch (FileNotFoundException f){
-            f.printStackTrace();
-        }
-        CourtCache.setMoney(money);
-    }
-
-    public String getPhone() {
-        return CourtCache.getPhone();
-    }
-
-    public void setCachePhone(String name) {
-        String phone = "";
-        try{
-            phone = CourtCache.findPhone(name);
-        }catch (FileNotFoundException f){
-            f.printStackTrace();
-        }
-        CourtCache.setPhone(phone);
-    }
-
-    public List<Court> getCourtList() {
-        return CourtList.getCourts();
+    public static void notifyOwner(String owner, String location, String name,String when) {
+        HomeController hc = new HomeController();
+        hc.notify(owner,location,name,when);
     }
 }

@@ -1,37 +1,44 @@
-package logic.entity;
+package logic.dao;
 
-import logic.dao.FileManager;
-import logic.control.StatsController;
+import errorlogic.AlreadyReserved;
+import errorlogic.MyException;
+import errorlogic.NotLoggedException;
 import logic.other.CourtConst;
 import logic.other.SingletonPlayer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class StatsList {
-    private final List<Stat> stlst = new ArrayList<>();
+/**
+ * Dao per la comunicazione con il file system
+ */
+public class CourtDao {
+    public void add(String name,String location, String phone, String money) throws MyException {
+        FileManager fm = new FileManager(CourtConst.COURT + File.separator + location);
+        fm.writeAppend((name + CourtConst.FIRST_SYMBOL + phone + CourtConst.SECOND_SYMBOL + money + CourtConst.THIRD_SYMBOL + SingletonPlayer.getLoginInstance().getUsername()),location + CourtConst.EXTENSION);
+    }
 
-    public StatsList() throws FileNotFoundException {
-        String path = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername();
-        FileManager fm = new FileManager(path + File.separator + CourtConst.POINTS + CourtConst.EXTENSION);
-        FileManager fm2 = new FileManager(path + File.separator + CourtConst.ASSISTS + CourtConst.EXTENSION);
-        FileManager fm3 = new FileManager(path + File.separator + CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        FileManager fm4 = new FileManager(path + File.separator + CourtConst.MINUTES + CourtConst.EXTENSION);
-        StatsController st = new StatsController();
-        Stat s;
-        try {
-            while (!fm.checkEnd()) {
-                s = st.create(Float.parseFloat(fm.readLine()), Float.parseFloat(fm2.readLine()), Float.parseFloat(fm3.readLine()), Float.parseFloat(fm4.readLine()));
-                stlst.add(s);
+    public void search(int start,String name) throws FileNotFoundException, AlreadyReserved {
+        FileManager fm = new FileManager(CourtConst.SCHEDULE + File.separator + name +  CourtConst.EXTENSION);
+        String s;
+
+        while(!fm.checkEnd()){
+            s = fm.readLine();
+            if(SingletonPlayer.getLoginInstance() != null && s.compareTo(start + "-" + SingletonPlayer.getLoginInstance().getUsername()) == 0){
+                throw new AlreadyReserved("",null);
             }
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException();
         }
     }
 
-    public List<Stat> getStlst() {
-        return stlst;
+    public void addReservation(int start,String name) throws NotLoggedException, MyException {
+        FileManager fm = new FileManager();
+        String who;
+
+        if(SingletonPlayer.getLoginInstance() == null)
+            throw new NotLoggedException("Not logged",null);
+        else
+            who = SingletonPlayer.getLoginInstance().getUsername();
+
+        fm.writeAppend(start + "-" + who,CourtConst.SCHEDULE + File.separator + name + CourtConst.EXTENSION);
     }
 }

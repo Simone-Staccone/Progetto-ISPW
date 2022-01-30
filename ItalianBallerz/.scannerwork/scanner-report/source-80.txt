@@ -1,69 +1,59 @@
-package second_guicontroller;
+package logic.entity;
+
 
 import errorlogic.MyException;
-import guicontroller.GenericInterface;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.text.Text;
-import logic.bean.BeanCourt2;
+import logic.dao.StatsDao;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import java.util.List;
 
-public class CourtAddFormController extends GenericInterface implements Initializable {
-    @FXML
-    private TextField name;
-    @FXML
-    private TextField location;
-    @FXML
-    private TextField phone;
-    @FXML
-    private SplitMenuButton money;
-    @FXML
-    private Text errorText;
+/**
+ * Model relativo alle statistiche
+ */
+public class Stat {
+    private float points;
+    private float assists;
+    private float rebounds;
+    private float minutes;
 
+    public Stat(float points, float assists, float rebounds, float minutes){
+        this.points = points;
+        this.assists = assists;
+        this.rebounds = rebounds;
+        this.minutes = minutes;
+    }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        for(int i = 0;i<20;i++)
-        {
-            MenuItem menu = new MenuItem();
-            int finalI = i;
-            menu.setOnAction(event -> money.setText(String.valueOf(finalI)));
-            money.getItems().add(menu);
-        }
+    public Stat() {
+    }
+
+    public float getPoints()
+    {
+        return this.points;
+    }
+    public float getAssists() {
+        return this.assists;
+    }
+    public float getRebounds() {
+        return this.rebounds;
+    }
+    public float getMinutes() {
+        return this.minutes;
     }
 
 
-    @FXML
-    private void add(){
-        try {
-            BeanCourt2.addCourt(name.getText(),location.getText(),phone.getText(),Integer.parseInt(money.getText()));
-
-            errorText.setText(name.getText() + " aggiunto con successo");
-            errorText.setStyle("-fx-fill: GREEN");
-
-            name.setText("");
-            location.setText("");
-            phone.setText("");
-            money.setText("0");
-
-        } catch (MyException e) {
-            errorText.setText("Tutti i campi devono essere riempiti");
-            errorText.setStyle("-fx-fill: RED");
-        }
-
-
+    public static List<Float> getAverege(String str) throws MyException
+    {
+        StatsDao sd = new StatsDao();
+        return sd.getAverege(str);
     }
 
+    public void write() throws MyException {
+        StatsDao sd = new StatsDao();
+        sd.write(this.points, this.assists, this.rebounds, this.minutes);
+    }
 
-    @FXML
-    private void tryA(KeyEvent k){
-        if(k.getCode().toString().compareTo("ENTER") == 0)
-            add();
+    public void delete(int number) throws IOException {
+        StatsDao sd = new StatsDao();
+        sd.delete(number);
     }
 }

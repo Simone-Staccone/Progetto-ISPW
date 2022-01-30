@@ -1,1 +1,1 @@
-U 2javaX;hr>src/main/java/second_guicontroller/RegisterFormController.java
+U 2javaX:hr+src/main/java/logic/other/ScheduleList.java

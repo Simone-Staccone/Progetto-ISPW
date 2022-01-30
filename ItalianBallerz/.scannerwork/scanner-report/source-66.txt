@@ -1,56 +1,74 @@
-package logic.entity;
+package logic.control;
 
-import logic.dao.FileManager;
-import logic.other.CourtConst;
-import org.apache.log4j.Logger;
+/* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
 
-import java.io.File;
+import logic.entity.PlayerCache;
+import logic.entity.PlayerUser;
+import logic.other.SingletonPlayer;
+
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class CourtList {
-    private static final List<Court> COURTS = new ArrayList<>();
 
-    public CourtList(String name){
-        FileManager fm = new FileManager("court" + File.separator + name);
-        String s;
-        try {
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    public int size(){
-        return COURTS.size();
+/**
+ * Si occupa della gestione del login e della registrazione.
+ * Interagisce con l'istanza Singleton per verificare che l'utente sia effettivamente loggato.
+ */
+public class LoginControl{
+    /** Aggiunge un nuovo utente
+     * @param name nome utente
+     * @param password password
+     * @param email email
+     * @param owner booleano per indicare se l'utente è un proprietario o no
+     * @throws FileNotFoundException
+     */
+    public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
+        PlayerUser pu = new PlayerUser(name,owner);
+        pu.writePlayerUser(password,email);
     }
 
-    public Court get(int i) {
-        Court c = null;
-        if(COURTS.size() > i)
-            c = COURTS.get(i);
-        return c;
+    /**
+     * Cerca l'utente e ne verifica la password
+     * @param user nome utente
+     * @param password password
+     * @param owner booleano per indicare se l'utente è un proprietario o no
+     * @return
+     * @throws FileNotFoundException
+     */
+    public boolean searchUser(String user,String password,boolean owner) throws FileNotFoundException {
+        PlayerUser pd = new PlayerUser(user,owner);
+        boolean b = pd.searchUser(password);
+        PlayerCache.setUsername(user);
+        PlayerCache.setOwner(owner);
+        SingletonPlayer.getLoginInstance();
+        return b;
     }
 
-    public static List<Court> getCourts(){
-        return CourtList.COURTS;
+
+    /**
+     * Cerca se l'utente è presente nel sistema
+     * @param user nome utente
+     * @param owner booleano per indicare se l'utente è un proprietario o no
+     * @return
+     */
+    public boolean searchUserU(String user,boolean owner) throws FileNotFoundException {
+        PlayerUser pu = new PlayerUser(user,owner);
+        return pu.searchUserU();
     }
 
-    public static void setCourts(String name){
-        COURTS.clear();
-        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.EXTENSION);
-        try {
-            String s;
-            while (!fm.checkEnd()) {
-                s = fm.readLine();
-                COURTS.add(new Court(s.substring(0,s.indexOf("$"))));
-            }
-        } catch (Exception e) {
-            Logger log = Logger.getRootLogger();
-            log.debug("File non esiste!");
-        }
+
+    /**
+     * @return il nome dell'utente loggato o null
+     */
+    public String getUsername(){
+        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
+        String ret = null;
+        if(sp != null)
+            ret = sp.getUsername();
+        return ret;
     }
+
+    public static void logOut(){
+        SingletonPlayer.deleteInstance();
+    }
+
 }

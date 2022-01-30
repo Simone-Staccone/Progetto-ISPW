@@ -70,7 +70,7 @@ public class CourtController extends GenericInterface implements Initializable {
             for (HBox hBox : bList)
                 scrollList.getChildren().add(hBox);
         } catch (Exception e) {
-            e.printStackTrace();
+            scrollList.getChildren().add(new HBox(new Text("Vuoto")));
         }
     }
 
@@ -134,7 +134,8 @@ public class CourtController extends GenericInterface implements Initializable {
                 CourtController cc = new CourtController();
                 cc.waringMessage("Log in necessario!",80);
             } catch (FileNotFoundException f) {
-                f.printStackTrace();
+                CourtController cc = new CourtController();
+                cc.waringMessage("File non trovato",80);
             } catch (AlreadyReserved a) {
                 CourtController cc = new CourtController();
                 cc.waringMessage("Sei già prenotato in quest'orario!",30);
