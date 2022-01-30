@@ -1,60 +1,45 @@
 package guicontroller;
 
-import logic.bean.BeanLogin;
-import logic.other.Swap;
-import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.other.FactoryScrollList;
+import logic.other.ScrollList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.*;
+
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 
 /**
- * Questo controller grafico ha la responsabilità di gestire l'interfaccia di registrazione.
+ * Gestisce il display di tutte le statistiche di un utente.
  */
-public class RegisterInterfaceController extends GenericInterface{
+public class MyStatsControl extends GenericInterface implements Initializable {
     @FXML
-    private TextField username;
+    private AnchorPane ancPane;
     @FXML
-    private TextField password;
-    @FXML
-    private TextField passwordConf;
-    @FXML
-    private TextField email;
-    @FXML
-    private AnchorPane mainPane;
-    @FXML
-    private Text errorText;
-    @FXML
-    private RadioButton owner;
+    private VBox box;
 
 
-    @FXML
-    private void register(){
-        int b = 0;
-        errorText.setText("");
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScrollList scL;
+        List<HBox> bList;
+
+        FactoryScrollList factory = new FactoryScrollList();
 
         try {
-            b = BeanLogin.addUser(username.getText(), password.getText(), passwordConf.getText(), email.getText(),owner.isSelected());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        switch (b) {
-            case -1 -> {
-                errorText.setText("*Every field is required!");
-                errorText.setStyle("-fx-fill: RED");
-            }
-            case 0 -> {
-                errorText.setText("*Username already used!");
-                passwordConf.setText("");
-            }
-            case 1 -> {
-                errorText.setText("*Password and confirm password doesn't match");
-                errorText.setStyle("-fx-fill: RED");
-            }
-            case 2 -> Swap.goTo("LoginInterface.fxml", mainPane);
-            default -> throw new IllegalStateException("Unexpected value: " + b);
-        }
+            scL = factory.createList(1);
+            bList = scL.getList();
 
+            ancPane.setMinHeight(bList.size()*40);
+            for (HBox hBox : bList)
+                box.getChildren().add(hBox);
+        } catch (Exception e) {
+            box.getChildren().add(new HBox(new Text("Ancora nessuna statistica")));
+        }
     }
 }

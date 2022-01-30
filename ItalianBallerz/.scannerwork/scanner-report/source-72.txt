@@ -1,87 +1,46 @@
 package logic.dao;
 
+import logic.entity.Court;
 import logic.other.CourtConst;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Dao per la comunicazione con il file system
  */
-public class PlayerDao {
-    public boolean searchUserU(String user,boolean owner) throws FileNotFoundException {
-        String path;
-        String name;
-        boolean b = false;
+public class CourtListDao {
+    private static final List<Court> courts = new ArrayList<>();
 
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-
+    public List<Court> setCourtList(String name){
+        FileManager fm = new FileManager("court" + File.separator + name);
+        String s;
         try {
             while (!fm.checkEnd()) {
-                name = fm.readLine();
-                name = name.substring(0, name.indexOf(CourtConst.FIRST_SYMBOL));
-                if (name.compareTo(user) == 0) {
-                    b = true;
-                    break;
-                }
+                s = fm.readLine();
+                courts.add(new Court(s));
             }
         } catch (FileNotFoundException e) {
-            throw new FileNotFoundException();
+            courts.add(new Court("Non trovato"));
         }
-        return b;
+        return courts;
     }
 
 
-    public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
-        String path;
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-        fm.writeAppendE(name + CourtConst.FIRST_SYMBOL + password + CourtConst.SECOND_SYMBOL + email);
-    }
-
-
-    public boolean searchUser(String user,String password,boolean owner) throws FileNotFoundException {
-        String path;
-
-        if(owner)
-            path = CourtConst.OWNER;
-        else
-            path = CourtConst.LOG;
-
-
-        String name;
-        String psw;
-        boolean b = false;
-
-        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
-
-        while (!fm.checkEnd()) {
-            name = fm.readLine();
-
-            try {
-                psw = name.substring(name.indexOf(CourtConst.FIRST_SYMBOL) + 1, name.indexOf(CourtConst.SECOND_SYMBOL));
-                name = name.substring(0, name.indexOf(CourtConst.FIRST_SYMBOL));
-
-                if (name.compareTo(user) == 0 && psw.compareTo(password) == 0) {
-                    b = true;
-                    break;
-                }
-            } catch (Exception e) {
-                throw new FileNotFoundException();
+    public List<Court> setCourts(String name){
+        courts.clear();
+        FileManager fm = new FileManager("court" + File.separator + name + File.separator + name + CourtConst.EXTENSION);
+        try {
+            String s;
+            while (!fm.checkEnd()) {
+                s = fm.readLine();
+                courts.add(new Court(s.substring(0,s.indexOf("$"))));
             }
+        } catch (Exception e) {
+            courts.add(new Court("Non trovato"));
         }
-
-        return b;
+        return courts;
     }
 }

@@ -1,1 +1,1 @@
-/ 2javaXÅhr/src/main/java/guicontroller/AveregeControl.java
+/ 2javaXhr0src/main/java/errorlogic/NotLoggedException.java

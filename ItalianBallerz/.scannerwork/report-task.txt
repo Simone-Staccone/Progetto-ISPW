@@ -3,5 +3,5 @@ projectKey=Simone-Staccone_Progetto-ISPW/ItalianBallerz
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.26379
 dashboardUrl=https://sonarcloud.io/dashboard?id=Simone-Staccone_Progetto-ISPW%2FItalianBallerz
-ceTaskId=AX6sX2-9blUfrSbJ2s4d
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX6sX2-9blUfrSbJ2s4d
+ceTaskId=AX6syFxfblUfrSbJ2tEj
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX6syFxfblUfrSbJ2tEj

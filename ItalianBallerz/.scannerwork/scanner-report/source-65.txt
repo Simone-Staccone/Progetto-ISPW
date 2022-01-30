@@ -1,36 +1,56 @@
 package logic.control;
 
-import errorlogic.AlreadyReserved;
-import errorlogic.NotLoggedException;
-import logic.bean.BeanCourt;
-import logic.bean.BeanCourt2;
-import logic.entity.Court;
-import logic.entity.CourtCache;
+import errorlogic.MyException;
+import logic.entity.Stat;
+import logic.other.CourtConst;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
- * Controller applicativo che ha la responsabilità di gestire le prenotazioni di un campetto.
- * In particolare la classe propaga 3 eccezioni di cui AlreadyReserved e NotLoggedException sono tipiche del sistema.
+ * Controller che gestisce la restituzione della media delle statistiche dell'utente loggato.
+ * Converte le eccezioni generiche in MyException, tipica del sistema.
+ *
  */
-public class GetReservationController {
-    public void tryAdd(int start) throws FileNotFoundException, AlreadyReserved, NotLoggedException {
-        Court crt = new Court(CourtCache.getName());
-        crt.search(start);
-        crt.addReservation(start);
-        GetReservationController.notify(CourtCache.getOwner(),CourtCache.getLocation(),CourtCache.getName(),start);
+public class AveregeControl {
+    public Stat average() throws MyException {
+        StatsController st = new StatsController();
+        List<Float> points;
+        List<Float> assists;
+        List<Float> rebounds;
+        List<Float> minutes;
+        float avgPoints;
+        float avgAssists;
+        float avgRebounds;
+        float avgMinutes;
+
+        try{
+            points = Stat.getAverege(CourtConst.POINTS);
+            assists = Stat.getAverege(CourtConst.ASSISTS);
+            rebounds = Stat.getAverege(CourtConst.REBOUNDS);
+            minutes = Stat.getAverege(CourtConst.MINUTES);
+
+            avgPoints = AveregeControl.makeAvg(points);
+            avgAssists = AveregeControl.makeAvg(assists);
+            avgRebounds = AveregeControl.makeAvg(rebounds);
+            avgMinutes = AveregeControl.makeAvg(minutes);
+        } catch (FileNotFoundException f) {
+            throw new MyException(f.getCause());
+        }
+
+        return st.create(avgPoints,avgAssists,avgRebounds,avgMinutes);
     }
 
-    /**
-     * Il metodo notifica le Bean e quindi i controller grafici che mostrano una nuova prenotazione al proprietario.
-     * @param owner proprietario del campetto
-     * @param location luogo dove si trova
-     * @param name nome del campetto
-     * @param start orario
-     */
-    private static void notify(String owner, String location, String name, int start)
-    {
-        BeanCourt.notifyOwner(owner, location, name);
-        BeanCourt2.notifyOwner(owner, location, name, String.valueOf(start));
+    public static float makeAvg(List<Float> lst){
+        int count = 0;
+        float ret = 0.0f;
+
+        for(float num : lst){
+            ret+=num;
+            count++;
+        }
+        if(count != 0)
+            ret = ret/count;
+        return ret;
     }
 }

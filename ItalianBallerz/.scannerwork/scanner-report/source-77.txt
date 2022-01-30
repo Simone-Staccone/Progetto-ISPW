@@ -1,38 +1,89 @@
 package logic.entity;
 
-import logic.dao.CourtListDao;
+import errorlogic.AlreadyReserved;
+import errorlogic.MyException;
+import errorlogic.NotLoggedException;
+import logic.dao.CourtDao;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileNotFoundException;
 
 /**
- * Model relativo ad una loista di campetti
+ * Model relativo ai campetti
  */
-public class CourtList {
-    private static List<Court> courts = new ArrayList<>();
+public class Court {
+    private String name;
+    private String location;
+    private String owner;
+    private String phone;
+    private String money;
 
-    public CourtList(String name){
-        CourtListDao cld = new CourtListDao();
-        cld.setCourtList(name);
-    }
-    public int size(){
-        return courts.size();
-    }
-
-    public Court get(int i) {
-        Court c = null;
-        if(courts.size() > i)
-            c = courts.get(i);
-        return c;
+    public Court(String name){
+        this.name = name;
     }
 
-    public static List<Court> getCourts(){
-        return CourtList.courts;
+    public Court(String name, String location, String phone, String money) {
+        this.name = name;
+        this.location = location;
+        this.phone = phone;
+        this.money = money;
     }
 
-    public static void setCourts(String name){
-        CourtListDao cld = new CourtListDao();
-        courts.clear();
-        courts = cld.setCourts(name);
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String s) {
+        this.name = s;
+    }
+
+    public void addReservation(int start) throws NotLoggedException {
+        CourtDao cd = new CourtDao();
+        try {
+            cd.addReservation(start,this.name);
+        } catch (MyException e) {
+            throw new NotLoggedException("Problema di IO",e.getCause());
+        }
+    }
+
+    public void search(int start) throws FileNotFoundException, AlreadyReserved {
+        CourtDao cd = new CourtDao();
+        cd.search(start,this.name);
+    }
+
+    public void add() throws MyException {
+        CourtDao cd = new CourtDao();
+        cd.add(this.name,this.location,this.phone,this.money);
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
     }
 }

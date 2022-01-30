@@ -1,69 +1,87 @@
 package logic.dao;
 
-import errorlogic.MyException;
 import logic.other.CourtConst;
-import logic.other.SingletonPlayer;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Dao per la comunicazione con il file system
  */
-public class StatsDao {
-    private String actually;
+public class PlayerDao {
+    public boolean searchUserU(String user,boolean owner) throws FileNotFoundException {
+        String path;
+        String name;
+        boolean b = false;
 
-    public StatsDao(){
-        this.actually = CourtConst.USER_PACKAGE + File.separator + SingletonPlayer.getLoginInstance().getUsername() + File.separator;
-    }
+        if(owner)
+            path = CourtConst.OWNER;
+        else
+            path = CourtConst.LOG;
 
-    public List<Float> getAverege(String str) throws MyException {
-        List<Float> list = new ArrayList<>();
-        StringBuilder buffer = new StringBuilder();
-        String s;
 
-        FileManager fm;
+
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
+
         try {
-            fm = new FileManager(actually + str + CourtConst.EXTENSION);
-
-
-            while(!fm.checkEnd()) {
-                buffer.delete(0,buffer.length());
-                buffer.append(fm.readLine());
-                s = buffer.toString();
-                list.add(Float.parseFloat(s));
+            while (!fm.checkEnd()) {
+                name = fm.readLine();
+                name = name.substring(0, name.indexOf(CourtConst.FIRST_SYMBOL));
+                if (name.compareTo(user) == 0) {
+                    b = true;
+                    break;
+                }
             }
-        }catch (FileNotFoundException e){
-            throw new MyException("No file found",e);
+        } catch (FileNotFoundException e) {
+            throw new FileNotFoundException();
         }
-        return list;
+        return b;
     }
 
-    public void write(float points, float assists, float rebounds, float minutes) throws MyException {
-        FileManager fm = new FileManager(actually );
 
-        fm.writeAppend(Float.toString(points),CourtConst.POINTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(assists),CourtConst.ASSISTS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(rebounds),CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        fm.writeAppend(Float.toString(minutes),CourtConst.MINUTES + CourtConst.EXTENSION);
+    public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
+        String path;
+        if(owner)
+            path = CourtConst.OWNER;
+        else
+            path = CourtConst.LOG;
+
+
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
+        fm.writeAppendE(name + CourtConst.FIRST_SYMBOL + password + CourtConst.SECOND_SYMBOL + email);
     }
 
-    public void delete(int number) throws IOException {
-        FileManager fm = new FileManager(actually  + CourtConst.POINTS + CourtConst.EXTENSION);
-        FileManager fm2 = new FileManager(actually  + CourtConst.ASSISTS + CourtConst.EXTENSION);
-        FileManager fm3 = new FileManager(actually  + CourtConst.REBOUNDS + CourtConst.EXTENSION);
-        FileManager fm4 = new FileManager(actually  + CourtConst.MINUTES + CourtConst.EXTENSION);
-        try{
-            fm.deleteLine(number);
-            fm2.deleteLine(number);
-            fm3.deleteLine(number);
-            fm4.deleteLine(number);
-        } catch (Exception e) {
-            throw new IOException();
 
+    public boolean searchUser(String user,String password,boolean owner) throws FileNotFoundException {
+        String path;
+
+        if(owner)
+            path = CourtConst.OWNER;
+        else
+            path = CourtConst.LOG;
+
+
+        String name;
+        String psw;
+        boolean b = false;
+
+        FileManager fm = new FileManager(path + CourtConst.EXTENSION);
+
+        while (!fm.checkEnd()) {
+            name = fm.readLine();
+
+            try {
+                psw = name.substring(name.indexOf(CourtConst.FIRST_SYMBOL) + 1, name.indexOf(CourtConst.SECOND_SYMBOL));
+                name = name.substring(0, name.indexOf(CourtConst.FIRST_SYMBOL));
+
+                if (name.compareTo(user) == 0 && psw.compareTo(password) == 0) {
+                    b = true;
+                    break;
+                }
+            } catch (Exception e) {
+                throw new FileNotFoundException();
+            }
         }
+
+        return b;
     }
 }

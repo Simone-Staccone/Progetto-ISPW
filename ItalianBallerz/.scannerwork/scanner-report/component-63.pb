@@ -1,1 +1,1 @@
-? 2javaX;hr/src/main/java/logic/control/AveregeControl.java
+? 2javaXThr'src/main/java/logic/bean/BeanStats.java

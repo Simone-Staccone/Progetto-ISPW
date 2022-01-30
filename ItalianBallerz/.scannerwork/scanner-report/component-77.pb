@@ -1,1 +1,1 @@
-M 2javaX'hr)src/main/java/logic/entity/CourtList.java
+M 2javaXZhr%src/main/java/logic/entity/Court.java

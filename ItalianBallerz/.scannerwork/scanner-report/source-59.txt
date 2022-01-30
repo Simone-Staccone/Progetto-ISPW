@@ -1,37 +1,53 @@
-package logic.bean;
+package guicontroller;
 
-import errorlogic.MyException;
-import second_guicontroller.HomeController;
-import logic.control.AddPlaygroundController;
-import logic.control.GetPlaygroundListController;
-import logic.entity.Court;
-
-import java.util.List;
+import javafx.scene.text.Text;
+import logic.bean.BeanStats;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
 /**
- * Classe bean che fa comunicare i controller grafici con le classi control relative agli use cases dei campetti
+ * Gestisce l'interfaccia grafica che permette all'utente di aggiungere statistiche.
  */
-public class BeanCourt2 {
-    private BeanCourt2(){
-    }
+public class StatsInterfaceControl extends GenericInterface {
+    @FXML
+    private TextField pointsField;
+    @FXML
+    private TextField assistsField;
+    @FXML
+    private TextField reboundsField;
+    @FXML
+    private TextField minutesField;
+    @FXML
+    private Text returnText;
 
-    public static List<Court> get(String s) {
-        GetPlaygroundListController gpc = new GetPlaygroundListController();
-        gpc.set(s);
-        return gpc.getCourtList();
-    }
 
-    public static void addCourt(String name, String location, String phone, int money) throws MyException {
-        if(name.compareTo("") == 0 || location.compareTo("") == 0 || phone.compareTo("") == 0)
-            throw new MyException("Empty field",null);
-        else {
-            AddPlaygroundController apc = new AddPlaygroundController();
-            apc.addCourt(name, location, phone, String.valueOf(money));
+
+    @FXML
+    private void addStats() {
+        String p;
+        String a;
+        String r;
+        String m;
+
+        try {
+            p = pointsField.getText();
+            a = assistsField.getText();
+            r = reboundsField.getText();
+            m = minutesField.getText();
+
+            BeanStats.add(p, a, r, m);
+            returnText.setText("*Successfully added");
+            returnText.setStyle("-fx-fill: GREEN");
+            returnText.toFront();
+        } catch (Exception e) {
+            returnText.setText("*Wrong input");
+            returnText.setStyle("-fx-fill: RED");
+            returnText.toFront();
+        } finally {
+            pointsField.setText("");
+            assistsField.setText("");
+            reboundsField.setText("");
+            minutesField.setText("");
         }
-    }
-
-    public static void notifyOwner(String owner, String location, String name,String when) {
-        HomeController hc = new HomeController();
-        hc.notify(owner,location,name,when);
     }
 }

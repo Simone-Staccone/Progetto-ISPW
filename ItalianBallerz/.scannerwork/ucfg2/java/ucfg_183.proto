@@ -1,27 +1,11 @@
 
-:logic.control.LoginControl#getUsername()Ljava/lang/String;q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java> >("3*õ
-2q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.javaB B(ù
-ö
-q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.javaB B("
-retjava.lang.String"__id*
-""*
-1*û
-3q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java? ?(,ù
-ö
-q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java@ @(
-retjava.lang.String"__id*
-""*
-2
-1*á
+<logic.control.LoginControl#searchUserU(Ljava/lang/String;Z)Zq
+gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java5 5("1*Û
 1q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.javaC C("é
+gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java6' 6(+"{
 q
-gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.javaC C(
-
-retjava.lang.StringB
+gC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/control/LoginControl.java7 7( 
+"":
+userjava.lang.String:
+""B
 logic.control.LoginControl

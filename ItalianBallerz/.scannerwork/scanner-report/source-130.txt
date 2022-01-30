@@ -1,44 +1,75 @@
 package cases;
 
-import logic.control.AveregeControl;
-import logic.control.LoginControl;
-import logic.entity.Stat;
+import errorlogic.MyException;
+import logic.control.GetPlaygroundListController;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class StatsControllerTest {
+/**
+ * Test per verificare il corretto funzionamento del set e del get dell'entitò CourtChache
+ */
+class GetPlaygroundListControllerTest {
+
     @Test
-    void averege(){
-        LoginControl lg = new LoginControl();
-        AveregeControl ac = new AveregeControl();
-        double points;
-        double assists;
-        double rebounds;
-        double minutes;
-        Stat st;
+    void getCurrentName() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheName("test");
+
+        s = gpc.getCurrentName();
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getOwner() {
+        String s = "";
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheOwner("test");
 
         try {
-            if(lg.searchUserU("test",false)) {
-                    lg.searchUser("test","test",false);
-            }
-            st = ac.average();
-            points = st.getPoints();
-            assists = st.getAssists();
-            rebounds = st.getRebounds();
-            minutes = st.getMinutes();
-        } catch (Exception e) {
-            points = 0.0;
-            assists = 0.0;
-            rebounds = 0.0;
-            minutes = 0.0;
+            s = gpc.getOwner();
+        } catch (MyException e) {
+            e.printStackTrace();
         }
 
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getLocation() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheLocation("test");
+
+        s = gpc.getLocation();
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getMoney() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCacheMoney("test");
 
 
-        assertEquals(2.5, points, 0);
-        assertEquals(2.5, assists, 0);
-        assertEquals(4, rebounds, 0);
-        assertEquals(5, minutes, 0);
+
+        s = gpc.getMoney();
+
+
+        assertEquals(0,s.compareTo("test"),0);
+    }
+
+    @Test
+    void getPhone() {
+        String s;
+        GetPlaygroundListController gpc = new GetPlaygroundListController();
+        gpc.setCachePhone("test");
+
+        s = gpc.getPhone();
+
+        assertEquals(0,s.compareTo("test"),0);
     }
 }

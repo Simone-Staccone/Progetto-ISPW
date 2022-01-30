@@ -1,1 +1,1 @@
-3 2javaXAhr9src/main/java/guicontroller/LoginInterfaceController.java
+3 2javaX§hr1src/main/java/guicontroller/GenericInterface.java

@@ -1,1 +1,1 @@
-8 2javaX=hr<src/main/java/guicontroller/RegisterInterfaceController.java
+8 2javaX.hr/src/main/java/guicontroller/MyStatsControl.java

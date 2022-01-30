@@ -1,1 +1,1 @@
-W 2javaXXhr.src/main/java/logic/other/ScrollListStats.java
+W 2javaX:hr+src/main/java/logic/other/ScheduleList.java

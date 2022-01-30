@@ -1,1 +1,1 @@
-= 2javaXWhr'src/main/java/logic/bean/BeanStats.java
+= 2javaX&hr(src/main/java/logic/bean/BeanCourt2.java

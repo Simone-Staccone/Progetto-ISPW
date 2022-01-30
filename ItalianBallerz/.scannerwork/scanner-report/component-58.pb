@@ -1,1 +1,1 @@
-: 2javaXmhr'src/main/java/logic/bean/BeanCourt.java
+: 2javaX=hr<src/main/java/guicontroller/RegisterInterfaceController.java

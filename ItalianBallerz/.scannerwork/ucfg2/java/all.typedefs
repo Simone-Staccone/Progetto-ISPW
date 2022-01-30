@@ -1057,8 +1057,9 @@ Ccompare(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Vjava.util.
 toRadians(D)java.lang.Math#toRadians(D)Dº
 (second_guicontroller.CourtFormControllerGenericInterface>
 <init>()2second_guicontroller.CourtFormController#<init>()V>
-search()2second_guicontroller.CourtFormController#search()V”
-errorlogic.MyExceptionjava.lang.ExceptionP
+search()2second_guicontroller.CourtFormController#search()VÅ
+errorlogic.MyExceptionjava.lang.Exception,
+<init>() errorlogic.MyException#<init>()VP
 <init>(Ljava/lang/String;)2errorlogic.MyException#<init>(Ljava/lang/String;)Vz
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)Gerrorlogic.MyException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VV
 <init>(Ljava/lang/Throwable;)5errorlogic.MyException#<init>(Ljava/lang/Throwable;)Vé

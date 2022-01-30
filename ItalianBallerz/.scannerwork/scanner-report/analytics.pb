@@ -18,7 +18,7 @@
 
 msbuild_version16.9.0.11203
  
-peak_used_heap_byte	262899096
+peak_used_heap_byte	255648920
 
 scanner_type
 ScannerCLI

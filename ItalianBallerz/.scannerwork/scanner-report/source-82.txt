@@ -1,26 +1,59 @@
-package logic.other;
+package logic.entity;
 
+
+import errorlogic.MyException;
+import logic.dao.StatsDao;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 /**
- * Classe per parametrizzare delle costanti nel sistema.
- * Se cambia una costante basta cambiare solo questa classe.
+ * Model relativo alle statistiche
  */
-public class CourtConst {
-    private CourtConst(){}
+public class Stat {
+    private float points;
+    private float assists;
+    private float rebounds;
+    private float minutes;
 
-    public static final String COURT = "court";
-    public static final String LOG = "log";
-    public static final String OWNER = "owner";
-    public static final String EXTENSION = ".txt";
-    public static final String USER_PACKAGE = "users";
-    public static final String POINTS = "points";
-    public static final String ASSISTS = "assists";
-    public static final String REBOUNDS = "rebounds";
-    public static final String MINUTES = "minutes";
-    public static final String SCHEDULE = "schedule";
-    public static final String FIRST_SYMBOL = "$";
-    public static final String SECOND_SYMBOL = "%";
-    public static final String THIRD_SYMBOL = "@";
+    public Stat(float points, float assists, float rebounds, float minutes){
+        this.points = points;
+        this.assists = assists;
+        this.rebounds = rebounds;
+        this.minutes = minutes;
+    }
+
+    public Stat() {
+    }
+
+    public float getPoints()
+    {
+        return this.points;
+    }
+    public float getAssists() {
+        return this.assists;
+    }
+    public float getRebounds() {
+        return this.rebounds;
+    }
+    public float getMinutes() {
+        return this.minutes;
+    }
 
 
+    public static List<Float> getAverege(String str) throws FileNotFoundException{
+        StatsDao sd = new StatsDao();
+        return sd.getAverege(str);
+    }
+
+    public void write() throws MyException {
+        StatsDao sd = new StatsDao();
+        sd.write(this.points, this.assists, this.rebounds, this.minutes);
+    }
+
+    public void delete(int number) throws IOException {
+        StatsDao sd = new StatsDao();
+        sd.delete(number);
+    }
 }

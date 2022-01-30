@@ -1,17 +1,17 @@
 package errorlogic;
 
-public class NotLoggedException extends Exception{
-    private static final long serialVersionUID = 1L;
+public class AlreadyReserved extends Exception {
 
-    public NotLoggedException (String message){
+    public AlreadyReserved(String message){
         super("this was the original message :" + message);
     }
 
-    public NotLoggedException (Throwable cause) {
+    public AlreadyReserved (Throwable cause) {
         super(cause);
     }
 
-    public NotLoggedException (String message, Throwable cause) {
-        super(" +++ " + message + " +++ ", cause);
+    public AlreadyReserved (String message, Throwable cause) {
+        super(" --- " + message + " --- " + "\n" +
+                "L'utente era già prenotato per questo slot orario", cause);
     }
 }

@@ -1,44 +1,71 @@
-package logic.dao;
+package logic.control;
 
-import errorlogic.AlreadyReserved;
 import errorlogic.MyException;
-import errorlogic.NotLoggedException;
-import logic.other.CourtConst;
-import logic.other.SingletonPlayer;
+import logic.entity.Stat;
+import logic.entity.StatsList;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
- * Dao per la comunicazione con il file system
+ * Controller per gestire le istanze della classe Statm, derivata dallo use case per l'aggiunta di una nuova statistica
  */
-public class CourtDao {
-    public void add(String name,String location, String phone, String money) throws MyException {
-        FileManager fm = new FileManager(CourtConst.COURT + File.separator + location);
-        fm.writeAppend((name + CourtConst.FIRST_SYMBOL + phone + CourtConst.SECOND_SYMBOL + money + CourtConst.THIRD_SYMBOL + SingletonPlayer.getLoginInstance().getUsername()),location + CourtConst.EXTENSION);
+public class StatsController {
+    /**
+     * Crea una nuova istanza di Stat
+     * @param points punti
+     * @param assists assist
+     * @param rebounds rimbalzi
+     * @param minutes minuti
+     * @return
+     */
+    public Stat create(float points, float assists, float rebounds, float minutes){
+        return new Stat(points, assists, rebounds, minutes);
     }
 
-    public void search(int start,String name) throws FileNotFoundException, AlreadyReserved {
-        FileManager fm = new FileManager(CourtConst.SCHEDULE + File.separator + name +  CourtConst.EXTENSION);
-        String s;
 
-        while(!fm.checkEnd()){
-            s = fm.readLine();
-            if(SingletonPlayer.getLoginInstance() != null && s.compareTo(start + "-" + SingletonPlayer.getLoginInstance().getUsername()) == 0){
-                throw new AlreadyReserved("",null);
-            }
+    /**
+     * Salva una nuova istanza di Stat
+     * @param points punti
+     * @param assists assist
+     * @param rebounds rimbalzi
+     * @param minutes minuti
+     * @return
+     */
+    public void write(float points, float assists, float rebounds, float minutes) throws MyException {
+        Stat st = new Stat(points, assists, rebounds, minutes);
+        st.write();
+    }
+
+    /**
+     * Elimina una istanza di Stat salvata
+     * @param i numero della statistica da cancellare in ordine di inserimmento
+     * @return
+     */
+    public void delete(int i) throws IOException {
+        Stat st = new Stat();
+        st.delete(i);
+    }
+
+    /**
+     * @return lista di statistiche dell'utente loggato
+     * @throws MyException
+     */
+    public List<Stat> getList() throws MyException{
+        List<Stat> stLst;
+        boolean flag = true;
+        try {
+            StatsList st = new StatsList();
+            stLst = st.getStlst();
+            flag = false;
+        } catch (Exception e) {
+            throw new MyException("Errore nell'ottenere la lista di statistiche dell'utente",e.getCause());
+        }finally {
+            if(flag)
+                stLst = new ArrayList<>();
         }
-    }
-
-    public void addReservation(int start,String name) throws NotLoggedException, MyException {
-        FileManager fm = new FileManager();
-        String who;
-
-        if(SingletonPlayer.getLoginInstance() == null)
-            throw new NotLoggedException("Not logged",null);
-        else
-            who = SingletonPlayer.getLoginInstance().getUsername();
-
-        fm.writeAppend(start + "-" + who,CourtConst.SCHEDULE + File.separator + name + CourtConst.EXTENSION);
+        return stLst;
     }
 }

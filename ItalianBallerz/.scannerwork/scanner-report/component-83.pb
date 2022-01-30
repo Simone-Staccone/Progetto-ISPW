@@ -1,1 +1,1 @@
-S 2javaX8hr.src/main/java/logic/other/CourtScrollList.java
+S 2javaXhr)src/main/java/logic/entity/StatsList.java

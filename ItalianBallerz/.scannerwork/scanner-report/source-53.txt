@@ -1,51 +1,64 @@
 package guicontroller;
 
+import logic.bean.BeanLogin;
+import logic.other.Swap;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+
+import java.io.FileNotFoundException;
 
 
 /**
- * Gestisce l'interfaccia home da dove si può navigare nel software-
+ * Questo controller grafico ha la responsabilità di gestire l'interfaccia di login.
  */
-public class MainInterfaceController extends GenericInterface{
+public class LoginInterfaceController extends GenericInterface{
     @FXML
-    private Pane playgroundImagePane;
+    private TextField username;
     @FXML
-    private Pane statsImagePane;
+    private TextField password;
+    @FXML
+    private AnchorPane mainPane;
+    @FXML
+    private Text errorText;
+    @FXML
+    private RadioButton owner;
 
     @FXML
-    private void highlightOn(Pane pane){
-        pane.setBorder(new Border(new BorderStroke(Color.ORANGE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
-        pane.toFront();
-        pane.getScene().setCursor(Cursor.HAND);
+    private void login(){
+        int ret = 0;
+        errorText.setText("");
+        errorText.setStyle("-fx-fill: RED");
+        try {
+            ret = BeanLogin.verifyUser(username.getText(),password.getText(),owner.isSelected());
+        } catch (FileNotFoundException e) {
+            password.setText("");
+        }
+
+        switch (ret) {
+            case -1 -> errorText.setText("*Username field is empty!");
+            case -2 -> errorText.setText("*Password field is empty!");
+            case 0 -> {
+                errorText.setText("*Wrong password!");
+                password.setText("");
+            }
+            case 1 -> {
+                errorText.setText("*Username not found!");
+                username.setText("");
+                password.setText("");
+            }
+            case 2 -> Swap.goTo("LoggedInterface.fxml", mainPane);
+            default -> throw new IllegalStateException("Unexpected value: " + ret);
+        }
     }
 
     @FXML
-    private void highlightOff(Pane pane){
-        pane.setBorder(new Border(new BorderStroke(Color.WHITE, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(10))));
-        pane.toFront();
-        pane.getScene().setCursor(Cursor.DEFAULT);
+    private void tryL(KeyEvent k){
+        if(k.getCode().toString().compareTo("ENTER") == 0)
+            login();
     }
-
-    @FXML
-    public void highlightOnL(){
-        this.highlightOn(playgroundImagePane);
-    }
-    @FXML
-    public void highlightOffL(){
-        this.highlightOff(playgroundImagePane);
-    }
-
-    @FXML
-    public void highlightOnD(){
-        this.highlightOn(statsImagePane);
-    }
-    @FXML
-    public void highlightOffD(){
-        this.highlightOff(statsImagePane);
-    }
-
 }
 

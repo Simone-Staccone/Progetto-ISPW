@@ -1,1 +1,1 @@
-‚ 2javaX,hr1src/test/java_test/cases/StatsControllerTest.java
+‚ 2javaXKhr=src/test/java_test/cases/GetPlaygroundListControllerTest.java

@@ -1,1 +1,1 @@
-1 2javaXßhr1src/main/java/guicontroller/GenericInterface.java
+1 2javaXÅhr/src/main/java/guicontroller/AveregeControl.java

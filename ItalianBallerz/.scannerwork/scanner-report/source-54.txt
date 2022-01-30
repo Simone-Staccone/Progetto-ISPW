@@ -1,45 +1,33 @@
 package guicontroller;
 
-import javafx.scene.text.Text;
-import logic.other.FactoryScrollList;
-import logic.other.ScrollList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.*;
-
-
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 /**
- * Gestisce il display di tutte le statistiche di un utente.
+ * Questa è la entry principale del sistema. Appena entrato si farà scegliere quale interfaccia utilizzare.
+ * Il sistema ha come funzionalità principali quella di cercare e prenotare un campetto, oppure di salvare
+ * le proprie statistiche.
+ * Questa classe ha la responsabilità di caricare la prima pagina fxml per far partire il programma.
  */
-public class MyStatsControl extends GenericInterface implements Initializable {
-    @FXML
-    private AnchorPane ancPane;
-    @FXML
-    private VBox box;
-
+public class MainInterface extends Application {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ScrollList scL;
-        List<HBox> bList;
-
-        FactoryScrollList factory = new FactoryScrollList();
-
-        try {
-            scL = factory.createList(1);
-            bList = scL.getList();
-
-            ancPane.setMinHeight(bList.size()*40);
-            for (HBox hBox : bList)
-                box.getChildren().add(hBox);
-        } catch (Exception e) {
-            box.getChildren().add(new HBox(new Text("Vuoto")));
-        }
+    public void start(Stage stage) throws Exception{
+        FXMLLoader xml =  new FXMLLoader(MainInterface.class.getResource("ChooseController.fxml"));
+        Scene scene = new Scene(xml.load());
+        stage.setResizable(false);
+        stage.setTitle("Italian Ballerz");
+        stage.setScene(scene);
+        stage.show();
     }
+
+
+    public static void main(String[] args) {
+        launch();
+    }
+
 }

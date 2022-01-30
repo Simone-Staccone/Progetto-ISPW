@@ -1,27 +1,74 @@
 package logic.entity;
 
+import logic.dao.CourtCacheDao;
+
+import java.io.FileNotFoundException;
+
 /**
- * Model relativo all'utente che per ultimo ha provato a fare login nel sistema
+ * Model relativo al campetto appena cercato dall'utente
  */
-public class PlayerCache {
-    private static String username;
-    private static boolean owner;
+public class CourtCache {
+    private static String name;
+    private static String location;
+    private static String money;
+    private static String phone;
+    private static String owner;
 
-    private PlayerCache(){}
-
-    public static String getUsername() {
-        return username;
+    private CourtCache(){
     }
 
-    public static void setUsername(String username) {
-        PlayerCache.username = username;
+    public static String getName() {
+        return name;
     }
 
-    public static boolean isOwner() {
+    public static void setName(String name) {
+        CourtCache.name = name;
+    }
+
+    public static String getLocation() {
+        return location;
+    }
+
+    public static void setLocation(String location) {
+        CourtCache.location = location;
+    }
+
+    public static String getMoney() {
+        return money;
+    }
+
+    public static void setMoney(String money) {
+        CourtCache.money = money;
+    }
+
+    public static String getPhone() {
+        return phone;
+    }
+
+    public static void setPhone(String phone) {
+        CourtCache.phone = phone;
+    }
+
+    public static String getOwner() {
         return owner;
     }
 
-    public static void setOwner(boolean owner) {
-        PlayerCache.owner = owner;
+    public static void setOwner(String owner) {
+        CourtCache.owner = owner;
+    }
+
+    public static String findOwner(String name) throws FileNotFoundException {
+        CourtCacheDao ccd =  new CourtCacheDao();
+        return ccd.findOwner(name);
+    }
+
+    public static String findMoney(String name) throws FileNotFoundException {
+        CourtCacheDao ccd = new CourtCacheDao();
+        return ccd.findMoney(name);
+    }
+
+    public static String findPhone(String name) throws FileNotFoundException {
+        CourtCacheDao ccd = new CourtCacheDao();
+        return ccd.findPhone(name);
     }
 }

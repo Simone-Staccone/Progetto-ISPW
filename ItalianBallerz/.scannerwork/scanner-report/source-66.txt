@@ -1,74 +1,89 @@
 package logic.control;
 
-/* La classe deve essere resa singleton per gestire il numero degli ID degli utenti*/
-
-import logic.entity.PlayerCache;
-import logic.entity.PlayerUser;
-import logic.other.SingletonPlayer;
+import errorlogic.MyException;
+import logic.entity.Court;
+import logic.entity.CourtCache;
+import logic.entity.CourtList;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 
 /**
- * Si occupa della gestione del login e della registrazione.
- * Interagisce con l'istanza Singleton per verificare che l'utente sia effettivamente loggato.
+ * Il controller gestisce lo use case relativo al vedere tutti i campetti registrati per una determinata città.
+ * Tutti i metodi della classe non propagano le eccezioni di tipo FIleNotFound,potrebbero essere propagate con
+ * un altro tipo di eccezione e gestite a livello di controller grafico. (Come ad esempio nella classe getOwner
+ * per l'eccezione generica Exception).
  */
-public class LoginControl{
-    /** Aggiunge un nuovo utente
-     * @param name nome utente
-     * @param password password
-     * @param email email
-     * @param owner booleano per indicare se l'utente è un proprietario o no
-     * @throws FileNotFoundException
-     */
-    public void writePlayerUser(String name, String password,String email,boolean owner) throws FileNotFoundException {
-        PlayerUser pu = new PlayerUser(name,owner);
-        pu.writePlayerUser(password,email);
+public class GetPlaygroundListController {
+    public void set(String name){
+        CourtList.setCourts(name);
+    }
+    public String getCurrentName(){
+        return CourtCache.getName();
     }
 
-    /**
-     * Cerca l'utente e ne verifica la password
-     * @param user nome utente
-     * @param password password
-     * @param owner booleano per indicare se l'utente è un proprietario o no
-     * @return
-     * @throws FileNotFoundException
-     */
-    public boolean searchUser(String user,String password,boolean owner) throws FileNotFoundException {
-        PlayerUser pd = new PlayerUser(user,owner);
-        boolean b = pd.searchUser(password);
-        PlayerCache.setUsername(user);
-        PlayerCache.setOwner(owner);
-        SingletonPlayer.getLoginInstance();
-        return b;
+    public void setCacheName(String name) {
+        CourtCache.setName(name);
     }
 
-
-    /**
-     * Cerca se l'utente è presente nel sistema
-     * @param user nome utente
-     * @param owner booleano per indicare se l'utente è un proprietario o no
-     * @return
-     */
-    public boolean searchUserU(String user,boolean owner) throws FileNotFoundException {
-        PlayerUser pu = new PlayerUser(user,owner);
-        return pu.searchUserU();
+    public void setCacheLocation(String name) {
+        CourtCache.setLocation(name);
     }
 
-
-    /**
-     * @return il nome dell'utente loggato o null
-     */
-    public String getUsername(){
-        SingletonPlayer sp = SingletonPlayer.getLoginInstance();
-        String ret = null;
-        if(sp != null)
-            ret = sp.getUsername();
-        return ret;
+    public String getOwner() throws MyException{
+        String s;
+        try{
+            s = CourtCache.getOwner();
+        } catch (Exception e) {
+            throw new MyException(e.getMessage(),e);
+        }
+        return s;
     }
 
-    public static void logOut(){
-        SingletonPlayer.deleteInstance();
+    public String getLocation() {
+        return CourtCache.getLocation();
     }
 
+    public void setCacheOwner(String name) {
+        String owner;
+        try{
+            owner = CourtCache.findOwner(name);
+        }catch (FileNotFoundException f){
+            owner = "Non trovato!";
+        }
+        CourtCache.setOwner(owner);
+    }
+
+    public String getMoney() {
+        return CourtCache.getMoney();
+    }
+
+    public void setCacheMoney(String name) {
+        String money ;
+        try{
+            money = CourtCache.findMoney(name);
+        }catch (FileNotFoundException f){
+            money = "Noessun costo trovato";
+        }
+        CourtCache.setMoney(money);
+    }
+
+    public String getPhone() {
+        return CourtCache.getPhone();
+    }
+
+    public void setCachePhone(String name) {
+        String phone;
+        try{
+            phone = CourtCache.findPhone(name);
+        }catch (FileNotFoundException f){
+            phone = "Non trovato!";
+        }
+        CourtCache.setPhone(phone);
+    }
+
+    public List<Court> getCourtList() {
+        return CourtList.getCourts();
+    }
 }

@@ -1,36 +1,26 @@
 package logic.other;
 
 
-import errorlogic.MyException;
-
-
 /**
- * Factory pe rla creazione di oggetti di tipo ScrollList
+ * Classe per parametrizzare delle costanti nel sistema.
+ * Se cambia una costante basta cambiare solo questa classe.
  */
-public class FactoryScrollList{
-    public ScrollList createList(int type) throws MyException {
-        switch (type) {
-            case 1:
-                return statsList();
-            case 2:
-                return courtList();
-            case 3:
-                return scheduleList();
-            default:
-                throw new MyException("Invalid type : " + type,null);
-        }
-    }
+public class CourtConst {
+    private CourtConst(){}
 
-    private ScrollList scheduleList() {
-        return new ScheduleList();
-    }
+    public static final String COURT = "court";
+    public static final String LOG = "log";
+    public static final String OWNER = "owner";
+    public static final String EXTENSION = ".txt";
+    public static final String USER_PACKAGE = "users";
+    public static final String POINTS = "points";
+    public static final String ASSISTS = "assists";
+    public static final String REBOUNDS = "rebounds";
+    public static final String MINUTES = "minutes";
+    public static final String SCHEDULE = "schedule";
+    public static final String FIRST_SYMBOL = "$";
+    public static final String SECOND_SYMBOL = "%";
+    public static final String THIRD_SYMBOL = "@";
 
-    public ScrollList statsList(){
-        return new ScrollListStats();
-    }
-
-    public ScrollList courtList(){
-        return new CourtScrollList();
-    }
 
 }

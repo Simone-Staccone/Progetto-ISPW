@@ -1,21 +1,9 @@
 
-&logic.entity.PlayerUser#searchUserU()Zn
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java* *("1*ã
+#logic.entity.PlayerUser#getOwner()Zn
+dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java& &("1*í
 1n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java+ +(&¸
-µ
+dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java' '("x
 n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java,  ,()
-%0java.lang.String"__id*%*#
-logic.entity.PlayerUser"
-name¸
-µ
-n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java. .('
-%1java.lang.String"__id*%*#
-logic.entity.PlayerUser"
-name"x
-n
-dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java. .(4
+dC:/Users/simon/Desktop/Progetto-ISPW/trunk/ItalianBallerz/src/main/java/logic/entity/PlayerUser.java' '(
 ""B
 logic.entity.PlayerUser
